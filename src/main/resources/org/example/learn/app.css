@@ -299,6 +299,24 @@
     -fx-flex-grow: 0;
 
 }
+.table-view{
+    -fx-background-color:#FFFFFF ;
+}
 #IDcolumn, #NameColumn, #DateColumn, #DescriptionColumn, #AdditionalNoteColumn, #MoneyPayColumn{
 
+}
+.table-view .column-header{
+    -fx-background-color: white;
+}
+.table-view .column-header-background{
+    -fx-background-color: transparent;
+}
+.table-view .column-header-background.label{
+    -fx-text-fill: black;
+}
+.table-row-cell{
+    -fx-background-color: white;
+}
+.table-row-cell-odd{
+    -fx-background-color:#F7F6FE;
 }

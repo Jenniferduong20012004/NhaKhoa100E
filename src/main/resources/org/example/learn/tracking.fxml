@@ -23,19 +23,19 @@
                   <Font name="Calisto MT Bold" size="12.0" />
               </font>
           </Label>
-      <Button fx:id="addPatiendButton" layoutX="984.0" layoutY="136.0" maxHeight="32.0" maxWidth="139.0" minHeight="32.0" minWidth="139.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="139.0" stylesheets="@app.css" text="+ Add treatment" textFill="WHITE">
+      <Button fx:id="addPatiendButton" layoutX="984.0" layoutY="116.0" maxHeight="32.0" maxWidth="139.0" minHeight="32.0" minWidth="139.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="139.0" stylesheets="@app.css" text="+ Add treatment" textFill="WHITE">
          <padding>
             <Insets bottom="8.0" left="12.0" right="12.0" top="8.0" />
          </padding></Button>
       <Label fx:id="searchLabel" layoutX="60.0" layoutY="116.0" text="Show" textFill="Black" />
       <TableView layoutX="0" layoutY="174.0" prefWidth="1279.0" prefHeight="569.0">
         <columns>
-          <TableColumn prefWidth="213.0" text="Tracking ID" />
-          <TableColumn prefWidth="213.0" text="Name" />
-            <TableColumn prefWidth="213.0" text="Date" />
-            <TableColumn prefWidth="214.0" text="Description" />
-            <TableColumn prefWidth="213" text="Additional Note" />
-            <TableColumn prefWidth="213" text="Money Paid" />
+          <TableColumn fx:id="IDcolumn" prefWidth="213.0" text="Tracking ID" />
+          <TableColumn fx:id="NameColumn" prefWidth="213.0" text="Name" />
+            <TableColumn fx:id="DateColumn" prefWidth="213.0" text="Date" />
+            <TableColumn fx:id="DescriptionColumn" prefWidth="214.0" text="Description" />
+            <TableColumn fx:id="AdditionalNoteColumn" prefWidth="213" text="Additional Note" />
+            <TableColumn fx:id="MoneyPayColumn" prefWidth="213" text="Money Paid" />
         </columns>
       </TableView>
     </children>

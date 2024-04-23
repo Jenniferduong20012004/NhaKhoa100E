@@ -299,3 +299,6 @@
     -fx-flex-grow: 0;
 
 }
+#IDcolumn, #NameColumn, #DateColumn, #DescriptionColumn, #AdditionalNoteColumn, #MoneyPayColumn{
+
+}

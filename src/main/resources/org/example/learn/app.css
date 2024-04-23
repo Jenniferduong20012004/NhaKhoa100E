@@ -5,7 +5,7 @@
     -fx-font-family: 'Inter';
     -fx-font-size: 14;
 }
-.label{
+#label{
     /* Edit experiment */
 
     -fx-width: 778px;
@@ -13,14 +13,13 @@
 
     -fx-font-family: "Leelawadee UI";
 
-    -fx-font-weight: 600;
     -fx-font-size: 36px;
     -fx-line-height: 44px;
     -fx-display: flex;
     -fx-alignment: center;
 
     -fx-text-fill: #624DE3;
-
+    -fx-font-weight: bold;
 
 
     /* Inside auto layout */
@@ -254,5 +253,49 @@
     -fx-order: 0;
     -fx-flex-grow: 0;
     -fx-text-fill: black;
+
+}
+#addPatiendButton{
+    /* Frame 17 */
+
+    /* Auto layout */
+    -fx-display: flex;
+    -fx-flex-direction: row;
+    -fx-justify-content: center;
+    -fx-align-items: center;
+    -fx-padding: 8px 12px;
+    -fx-gap: 8px;
+    -fx-font-size: 15px;
+    -fx-max-width: 139px;
+    -fx-height: 32px;
+
+    -fx-background-color: #624DE3;
+    -fx-border-radius: 8px 8px 8px 8px;
+
+    /* Inside auto layout */
+    -fx-flex: none;
+    -fx-order: 1;
+    -fx-flex-grow: 0;
+
+}
+#searchlabel{
+    /* Show */
+
+    -fx-width: 34px;
+    -fx-height: 15px;
+
+    -fx-font-family: 'Montserrat';
+    -fx-font-style: normal;
+    -fx-font-weight: 500;
+    -fx-font-size: 12px;
+    -fx-line-height: 15px;
+    /* identical to box height */
+
+    -fx-text-fill: black;
+
+    /* Inside auto layout */
+    -fx-flex: none;
+    -fx-order: 0;
+    -fx-flex-grow: 0;
 
 }

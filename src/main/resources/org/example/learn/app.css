@@ -1,0 +1,225 @@
+.label{
+    /* Edit experiment */
+
+    -fx-width: 778px;
+    -fx-height: 61px;
+
+    -fx-font-family: "Leelawadee UI";
+
+    -fx-font-weight: 600;
+    -fx-font-size: 36px;
+    -fx-line-height: 44px;
+    -fx-display: flex;
+    -fx-alignment: center;
+
+    -fx-text-fill: #624DE3;
+
+
+
+    /* Inside auto layout */
+    -fx-flex: none;
+    -fx-order: 1;
+    -fx-flex-grow: 0;
+
+}
+.panel{
+    /* Frame 26921 */
+
+    /* Auto layout */
+    -fx-display: flex;
+    -fx-flex-direction: column;
+    -fx-align-items: center;
+    -fx-padding: 16px 0px;
+
+    -fx-position: absolute;
+    -fx-width: 244px;
+    -fx-height: 774px;
+    -fx-left: 0px;
+    -fx-top: 58px;
+    -fx-background-radius: 16px 16px 0px 0px;
+
+    -fx-background-color: #F7F6FE;
+
+}
+.parent{
+    /* Edit ex */
+
+    -fx-position: absolute;
+    -fx-width: 1280px;
+    -fx-height: 832px;
+    -fx-left: 4434px;
+    -fx-top: 1330px;
+
+    -fx-background-color: #FFFDFD;
+
+
+}
+.dashboard{
+    /* Frame 26924 */
+
+    /* Auto layout */
+    -fx-display: flex;
+    -fx-flex-direction: row;
+    -fx-align-items: center;
+    -fx-padding: 0px 14px;
+    -fx-gap: 20px;
+
+    -fx-position: absolute;
+    -fx-width: 1038px;
+    -fx-height: 83px;
+    -fx-left: 271px;
+    -fx-top: 65px;
+
+    -fx-background-colorbackground: #FFFFFF;
+
+}
+.logodash{
+    /* Frame 13 */
+
+    /* Auto layout */
+    -fx-display: flex;
+    -fx-flex-direction: row;
+    -fx-justify-content: center;
+    -fx-alignment: center;
+    -fx-padding: 16px;
+    -fx-gap: 16px;
+
+    -fx-width: 216px;
+    -fx-height: 56px;
+
+    -fx-background-color: #FFFFFF;
+    -fx-border-radius: 5px;
+
+    /* Inside auto layout */
+    -fx-flex: none;
+    -fx-order: 0;
+    -fx-flex-grow: 0;
+
+}
+.newpatient{
+    /* Frame 26926 */
+
+    -fx-box-sizing: border-box;
+
+    /* Auto layout */
+    -fx-display: flex;
+    -fx-flex-direction: row;
+    -fx-flex-wrap: wrap;
+    -fx-justify-content: center;
+    -fx-align-items: flex-end;
+    -fx-align-content: center;
+    -fx-padding: 76px 10px 99px;
+    -fx-gap: 32px 21px;
+
+    -fx-position: absolute;
+    -fx-max-width: 906px;
+    -fx-max-height: 502px;
+    -fx-left: 335px;
+    -fx-top: 126px;
+
+    -fx-border-color: #000000;
+    -fx-border-radius: 20px 20px 20px 20px;
+}
+.newpatientlabel{
+    /* New experiment */
+
+    -fx-width: 794px;
+    -fx-height: 53px;
+
+    -fx-font-family: 'Poppins';
+    -fx-font-style: normal;
+    -fx-font-weight: bold;
+    -fx-font-size: 32px;
+    -fx-line-height: 48px;
+    -fx-letter-spacing: 0.03em;
+
+    -fx-text-fill: #655E95;
+
+
+    /* Inside auto layout */
+    -fx-flex: none;
+    -fx-order: 0;
+    -fx-flex-grow: 0;
+
+}
+#PatientName, #Date, #Description, #AdditionalNote, #MoneyPay{
+    /* Background Colour */
+
+    -fx-pref-width: 201px;
+    -fx-pref-height: 21px;
+
+    -fx-font-family: 'Poppins';
+    -fx-font-style: normal;
+    -fx-font-weight: bold;
+    -fx-font-size: 20px;
+    -fx-line-height: 24px;
+    -fx-letter-spacing: 0.03em;
+
+    -fx-text-fill: #181818;
+    /* Frame 26919 */
+
+    box-sizing: border-box;
+
+    /* Auto layout */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px 27px 0px 7px;
+
+    width: 527px;
+    height: 118px;
+
+    -fx-border-radius:  5px;
+
+    /* Inside auto layout */
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+
+
+}
+#textField1, #textField2, #textField5{
+
+
+
+    -fx-max-width: 530px;
+    -fx-max-height: 30px;
+    -fx-min-width: 279px;
+    -fx-min-height: 30px;
+
+    -fx-border-color: #494949;
+    -fx-border-radius: 5px 5px 5px 5px;
+    -fx-alignment: center;
+
+
+}
+ #textField3, #textField4{
+     -fx-max-width: 530px;
+     -fx-max-height: 118px;
+     -fx-min-width: 279px;
+     -fx-min-height: 30px;
+
+     -fx-border-color: #494949;
+     -fx-border-radius: 5px 5px 5px 5px;
+     -fx-alignment: center;
+ }
+#labelNewPatient{
+    -fx-text-fill: #655E95;
+    -fx-font-size: 36;
+    -fx-font-weight: bold;
+}
+#labelNhaKhoa{
+    -fx-text-fill: #624DE3;
+    -fx-font-weight: bold;
+    -fx-font-size: 40;
+}
+#timeField
+{
+    -fx-max-width: 490px;
+    -fx-max-height: 30px;
+    -fx-min-width: 490px;
+    -fx-min-height: 30px;
+    -fx-border-color: #696969;
+    -fx-border-radius: 5px 5px 5px 5px;
+    -fx-alignment: center;
+}

@@ -2,15 +2,44 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<?import javafx.scene.control.Button?>
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="org.example.learn.HelloController">
-  <padding>
-    <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
-  </padding>
-
-  <Label fx:id="welcomeText"/>
-  <Button text="Hello!" onAction="#onHelloButtonClick"/>
-</VBox>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="832.0" prefWidth="1280.0" styleClass="parent" stylesheets="@app.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <AnchorPane layoutY="58.0" prefHeight="774.0" prefWidth="224.0" styleClass="panel" stylesheets="@app.css" />
+      <Label fx:id="labelNhaKhoa" layoutX="7.0" layoutY="1.0" text="Nha Khoa 100E" textFill="#141414">
+         <padding>
+            <Insets left="24.0" right="24.0" />
+         </padding>
+      </Label>
+      <VBox layoutX="224.0" layoutY="58.0" prefHeight="83.0" prefWidth="1038.0" styleClass="dashboard" stylesheets="@app.css">
+         <children>
+            <Label text="Dashboard">
+               <padding>
+                  <Insets left="14.0" right="14.0" />
+               </padding>
+               <font>
+                  <Font name="Calisto MT Bold" size="12.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+      <AnchorPane layoutX="335.0" layoutY="126.0" maxHeight="592.0" prefHeight="592.0" prefWidth="906.0" styleClass="newpatient" stylesheets="@app.css">
+         <children>
+            <Label fx:id="PatientName" layoutX="65.0" layoutY="93.0" text="Patient Name" />
+            <Label fx:id="labelNewPatient" layoutX="65.0" layoutY="27.0" text="New Treatment" />
+            <TextArea fx:id="textField1" layoutX="295.0" layoutY="93.0" maxWidth="467.0" prefHeight="30.0" prefWidth="530.0" />
+            <Label fx:id="Date" layoutX="65.0" layoutY="143.0" text="Date" />
+            <TextArea fx:id="textField2" layoutX="295.0" layoutY="143.0" maxWidth="441.0" prefHeight="30.0" prefWidth="530.0" />
+            <Label fx:id="Description" layoutX="65.0" layoutY="193.0" text="Description" />
+            <TextArea fx:id="textField3" layoutX="295.0" layoutY="193.0" maxHeight="83.0" maxWidth="385.0" prefHeight="118.0" prefWidth="530.0" />
+            <Label fx:id="AdditionalNote" layoutX="65.0" layoutY="333.0" text="Additional Note" />
+            <TextArea fx:id="textField4" layoutX="295.0" layoutY="333.0" maxHeight="83.0" maxWidth="385.0" prefHeight="118.0" prefWidth="530.0" />
+            <Label fx:id="MoneyPay" layoutX="65.0" layoutY="473.0" text="Money Paid" />
+            <TextArea fx:id="textField5" layoutX="295.0" layoutY="473.0" maxHeight="83.0" maxWidth="385.0" prefHeight="118.0" prefWidth="530.0" />
+         </children></AnchorPane>
+   </children>
+</AnchorPane>

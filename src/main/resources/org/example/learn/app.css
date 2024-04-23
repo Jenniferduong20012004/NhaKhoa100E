@@ -1,3 +1,10 @@
+.side{
+    -fx-background-color: #F7F6FE
+}
+.root {
+    -fx-font-family: 'Inter';
+    -fx-font-size: 14;
+}
 .label{
     /* Edit experiment */
 
@@ -222,4 +229,30 @@
     -fx-border-color: #696969;
     -fx-border-radius: 5px 5px 5px 5px;
     -fx-alignment: center;
+}
+#saveButton, #cancelButton{
+    /* Button 6 */
+
+    /* Auto layout */
+    -fx-display: flex;
+    -fx-font-family: 'Poppins';
+    -fx-font-style: normal;
+    -fx-flex-direction: row;
+    -fx-justify-content: center;
+    -fx-align-items: center;
+    -fx-padding: 18px 20px;
+    -fx-gap: 20px;
+
+    -fx-width: 103px;
+    -fx-height: 36px;
+
+    -fx-background-color: #624DE3;
+    -fx-border-radius: 9px 9px 9px 9px;
+
+    /* Inside auto layout */
+    -fx-flex: none;
+    -fx-order: 0;
+    -fx-flex-grow: 0;
+    -fx-text-fill: black;
+
 }

@@ -18,7 +18,7 @@
       </Label>
       <VBox layoutX="224.0" layoutY="58.0" prefHeight="83.0" prefWidth="1038.0" styleClass="dashboard" stylesheets="@app.css">
          <children>
-            <Label fx:id="label" text="Dashboard">
+            <Label fx:id="label" text="Treatment logs">
                <padding>
                   <Insets left="14.0" right="14.0" />
                </padding>
@@ -41,7 +41,7 @@
             <TextArea fx:id="textField4" layoutX="295.0" layoutY="333.0" maxHeight="83.0" maxWidth="385.0" prefHeight="118.0" prefWidth="530.0" />
             <Label fx:id="MoneyPay" layoutX="65.0" layoutY="473.0" text="Money Paid" />
             <TextArea fx:id="textField5" layoutX="295.0" layoutY="473.0" maxHeight="83.0" maxWidth="385.0" prefHeight="118.0" prefWidth="530.0" />
-            <Button fx:id="saveButton" layoutX="600.0" layoutY="598.0" maxHeight="36.0" maxWidth="117.0" minHeight="36.0" minWidth="117.0" mnemonicParsing="false" onAction="#submit" prefHeight="36.0" prefWidth="117.0" text="Save" />
+            <Button fx:id="saveButton" layoutX="600.0" layoutY="598.0" maxHeight="36.0" maxWidth="117.0" minHeight="36.0" minWidth="117.0" mnemonicParsing="false" onAction="#submit" prefHeight="36.0" prefWidth="117.0" text="Save" textFill="WHITE" />
             <Button fx:id="cancelButton" layoutX="760.0" layoutY="598.0" maxHeight="36.0" maxWidth="117.0" minHeight="36.0" minWidth="117.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="117.0" text="Cancel" />
          </children></AnchorPane>
    </children>

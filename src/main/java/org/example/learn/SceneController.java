@@ -1,16 +1,34 @@
 package org.example.learn;
 
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.stage.Stage;
 import org.controlsfx.control.action.Action;
 
-public class SceneController {
+import java.net.URL;
+import java.util.Date;
+import java.util.ResourceBundle;
+
+public class SceneController implements Initializable {
     private Stage stage;
     private Scene scene;
     private FXMLLoader fxmlLoader;
+    @FXML
+    private TableView<Patient> table;
+    @FXML
+    private TableColumn<Patient, Integer > IDcolumn;
+    private TableColumn<Patient, String> NameColumn;
+    private TableColumn<Patient, Date> DateColumn;
+    private TableColumn<Patient, String > DescriptionColumn;
+    private TableColumn<Patient, String > AdditionalNoteColumn;
+    private TableColumn<Patient, Integer > MoneyPayColumn;
+
     public void switchToAddTreatment(ActionEvent event){
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
@@ -25,4 +43,8 @@ public class SceneController {
     }
 
 
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+
+    }
 }

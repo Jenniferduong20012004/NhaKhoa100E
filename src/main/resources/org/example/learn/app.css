@@ -18,7 +18,7 @@
     -fx-display: flex;
     -fx-alignment: center;
 
-    -fx-text-fill: #624DE3;
+    -fx-text-fill: #3B937E;
     -fx-font-weight: bold;
 
 
@@ -139,7 +139,7 @@
     -fx-line-height: 48px;
     -fx-letter-spacing: 0.03em;
 
-    -fx-text-fill: #655E95;
+    -fx-text-fill: #C9E7EE;
 
 
     /* Inside auto layout */
@@ -210,12 +210,12 @@
      -fx-alignment: center;
  }
 #labelNewPatient{
-    -fx-text-fill: #655E95;
+    -fx-text-fill: #4C7D77;
     -fx-font-size: 36;
     -fx-font-weight: bold;
 }
 #labelNhaKhoa{
-    -fx-text-fill: #624DE3;
+    -fx-text-fill: #4FB0AA;
     -fx-font-weight: bold;
     -fx-font-size: 40;
 }
@@ -245,14 +245,14 @@
     -fx-width: 103px;
     -fx-height: 36px;
 
-    -fx-background-color: #624DE3;
+    -fx-background-color: #3B937E;
     -fx-border-radius: 9px 9px 9px 9px;
 
     /* Inside auto layout */
     -fx-flex: none;
     -fx-order: 0;
     -fx-flex-grow: 0;
-    -fx-text-fill: black;
+    -fx-text-fill: white;
 
 }
 #addPatiendButton{
@@ -269,7 +269,7 @@
     -fx-max-width: 139px;
     -fx-height: 32px;
 
-    -fx-background-color: #624DE3;
+    -fx-background-color: #3B937E;
     -fx-border-radius: 8px 8px 8px 8px;
 
     /* Inside auto layout */
@@ -319,4 +319,28 @@
 }
 .table-row-cell-odd{
     -fx-background-color:#F7F6FE;
+}
+#search{
+    /* Frame 16 */
+
+    -fx-box-sizing: border-box;
+
+    /* Auto layout */
+    -fx-display: flex;
+    -fx-flex-direction: row;
+    -fx-align-items: center;
+    -fx-padding: 8px 9px;
+    -fx-gap: 8px;
+
+    -fx-max-width: 441px;
+    -fx-max-height: 32px;
+
+    -fx-border: 1px solid #9E9E9E;
+    -fx-border-radius: 8px;
+
+    /* Inside auto layout */
+    -fx-flex: none;
+    -fx-order: 1;
+    -fx-flex-grow: 1;
+
 }

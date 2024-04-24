@@ -44,7 +44,7 @@
     -fx-top: 58px;
     -fx-background-radius: 16px 16px 0px 0px;
 
-    -fx-background-color: #F7F6FE;
+    -fx-background-color: #C9E7EE;
 
 }
 .parent{
@@ -342,5 +342,59 @@
     -fx-flex: none;
     -fx-order: 1;
     -fx-flex-grow: 1;
+
+}
+#dashboardIcon, #patientIcon, #Equipment, #Medication{
+    /* Frame 13 */
+
+    /* Auto layout */
+    -fx-display: flex;
+    -fx-flex-direction: row;
+    -fx-justify-content: center;
+    -fx-align-items: center;
+    -fx-padding: 16px;
+    -fx-gap: 16px;
+
+    -fx-max-width: 216px;
+    -fx-max-height: 56px;
+
+    -fx-background-color: #C9E7EE;
+    -fx-background-radius: 10;
+    -fx-border-color:#C9E7EE ;
+    -fx-text-fill: black;
+    -fx-font-size: 20;
+
+    /* Inside auto layout */
+    -fx-flex: none;
+    -fx-order: 0;
+    -fx-flex-grow: 0;
+    -fx-z-index: 0;
+
+}
+#treatmentLog{
+    /* Frame 13 */
+
+    /* Auto layout */
+    -fx-display: flex;
+    -fx-flex-direction: row;
+    -fx-justify-content: center;
+    -fx-align-items: center;
+    -fx-padding: 16px;
+    -fx-gap: 16px;
+
+    -fx-max-width: 216px;
+    -fx-max-height: 56px;
+
+    -fx-background-color: white;
+    -fx-background-radius: 10;
+    -fx-border-color: #C9E7EE;
+    -fx-text-fill: black;
+    -fx-font-size: 20;
+
+    /* Inside auto layout */
+    -fx-flex: none;
+    -fx-order: 0;
+    -fx-flex-grow: 0;
+    -fx-z-index: 0;
 
 }

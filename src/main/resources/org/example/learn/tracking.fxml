@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="832.0" prefWidth="1280.0" styleClass="parent" stylesheets="@app.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.learn.Tracking">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="832.0" prefWidth="1280.0" styleClass="parent" stylesheets="@app.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.learn.SceneController">
     <children>
         <Label fx:id="labelNhaKhoa" layoutX="7.0" layoutY="1.0" text="Nha Khoa 100E" textFill="#141414">
             <padding>
@@ -24,7 +24,7 @@
                   <Font name="Calisto MT Bold" size="12.0" />
               </font>
           </Label>
-      <Button fx:id="addPatiendButton" layoutX="992.0" layoutY="114.0" maxHeight="32.0" maxWidth="139.0" minHeight="32.0" minWidth="139.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="139.0" stylesheets="@app.css" text="+ Add treatment" textFill="WHITE">
+      <Button fx:id="addPatiendButton" layoutX="992.0" layoutY="114.0" maxHeight="32.0" maxWidth="139.0" minHeight="32.0" minWidth="139.0" mnemonicParsing="false" onAction="#switchToAddTreatment" prefHeight="32.0" prefWidth="139.0" stylesheets="@app.css" text="+ Add treatment" textFill="WHITE">
          <padding>
             <Insets bottom="8.0" left="12.0" right="12.0" top="8.0" />
          </padding></Button>

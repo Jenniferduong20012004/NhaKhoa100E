@@ -23,10 +23,15 @@ public class SceneController implements Initializable {
     private TableView<Patient> table;
     @FXML
     private TableColumn<Patient, Integer > IDcolumn;
+    @FXML
     private TableColumn<Patient, String> NameColumn;
+    @FXML
     private TableColumn<Patient, Date> DateColumn;
+    @FXML
     private TableColumn<Patient, String > DescriptionColumn;
+    @FXML
     private TableColumn<Patient, String > AdditionalNoteColumn;
+    @FXML
     private TableColumn<Patient, Integer > MoneyPayColumn;
 
     public void switchToAddTreatment(ActionEvent event){

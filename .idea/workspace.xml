@@ -6,9 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="01a30629-adf4-4571-9697-c07b86b80414" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/learn/SceneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/learn/SceneController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/learn/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/learn/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/learn/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/learn/hello-view.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/learn/tracking.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/learn/tracking.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -112,7 +110,7 @@
       <workItem from="1713783483898" duration="15827000" />
       <workItem from="1713836303563" duration="2659000" />
       <workItem from="1713840182611" duration="17840000" />
-      <workItem from="1713935969311" duration="4245000" />
+      <workItem from="1713935969311" duration="7913000" />
     </task>
     <servers />
   </component>

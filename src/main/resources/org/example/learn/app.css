@@ -5,13 +5,37 @@
     -fx-font-family: 'Inter';
     -fx-font-size: 14;
 }
+.combo-box{
+    /* Frame 15 */
+
+    /* Auto layout */
+    -fx-display: flex;
+    -fx-flex-direction: row;
+    -fx-align-items: center;
+    -fx-padding: 8px 9px;
+    -fx-gap: 4px;
+
+    -fx-max-width: 43px;
+    -fx-max-height: 31px;
+
+    -fx-background: #E0E0E0;
+    -fx-border-radius: 50px;
+    -fx-background-radius: 50px;
+
+
+    /* Inside auto layout */
+    -fx-flex: none;
+    -fx-order: 1;
+    -fx-flex-grow: 0;
+
+}
 #label{
     /* Edit experiment */
 
     -fx-width: 778px;
     -fx-height: 61px;
 
-    -fx-font-family: "Leelawadee UI";
+    -fx-font-family: "Open Sans";
 
     -fx-font-size: 36px;
     -fx-line-height: 44px;
@@ -229,33 +253,8 @@
     -fx-border-radius: 5px 5px 5px 5px;
     -fx-alignment: center;
 }
-#saveButton, #cancelButton{
-    /* Button 6 */
 
-    /* Auto layout */
-    -fx-display: flex;
-    -fx-font-family: 'Poppins';
-    -fx-font-style: normal;
-    -fx-flex-direction: row;
-    -fx-justify-content: center;
-    -fx-align-items: center;
-    -fx-padding: 18px 20px;
-    -fx-gap: 20px;
-
-    -fx-width: 103px;
-    -fx-height: 36px;
-
-    -fx-background-color: #3B937E;
-    -fx-border-radius: 9px 9px 9px 9px;
-
-    /* Inside auto layout */
-    -fx-flex: none;
-    -fx-order: 0;
-    -fx-flex-grow: 0;
-    -fx-text-fill: white;
-
-}
-#addPatiendButton{
+#addPatiendButton, #saveButton, #cancelButton{
     /* Frame 17 */
 
     /* Auto layout */
@@ -271,6 +270,7 @@
 
     -fx-background-color: #3B937E;
     -fx-border-radius: 8px 8px 8px 8px;
+    -fx-background-radius: 20;
 
     /* Inside auto layout */
     -fx-flex: none;
@@ -278,20 +278,18 @@
     -fx-flex-grow: 0;
 
 }
-#searchlabel{
+#searchLabel, #entriesLabel{
     /* Show */
 
-    -fx-width: 34px;
-    -fx-height: 15px;
-
-    -fx-font-family: 'Montserrat';
-    -fx-font-style: normal;
+    -fx-max-width: 49px;
+    -fx-max-height: 30px;
     -fx-font-weight: 500;
-    -fx-font-size: 12px;
+    -fx-font-size: 20px;
     -fx-line-height: 15px;
     /* identical to box height */
 
     -fx-text-fill: black;
+    -fx-font-family: "OpenSans";
 
     /* Inside auto layout */
     -fx-flex: none;
@@ -335,7 +333,7 @@
     -fx-max-width: 441px;
     -fx-max-height: 32px;
 
-    -fx-border: 1px solid #9E9E9E;
+    -fx-border: #9E9E9E;
     -fx-border-radius: 8px;
 
     /* Inside auto layout */
@@ -369,6 +367,7 @@
     -fx-order: 0;
     -fx-flex-grow: 0;
     -fx-z-index: 0;
+    -fx-font-family: "Open Sans";
 
 }
 #treatmentLog{
@@ -396,5 +395,6 @@
     -fx-order: 0;
     -fx-flex-grow: 0;
     -fx-z-index: 0;
+    -fx-font-family: "Open Sans";
 
 }

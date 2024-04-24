@@ -33,6 +33,18 @@ public class SceneController implements Initializable {
     private TableColumn<Patient, String > AdditionalNoteColumn;
     @FXML
     private TableColumn<Patient, Integer > MoneyPayColumn;
+    public void switchToEquipment(ActionEvent event){
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("equipment.fxml"));
+            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            scene = new Scene(fxmlLoader.load());
+            stage.setScene(scene);
+            stage.show();
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
+    }
 
     public void switchToAddTreatment(ActionEvent event){
         try {

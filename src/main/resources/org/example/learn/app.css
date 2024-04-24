@@ -254,7 +254,7 @@
     -fx-alignment: center;
 }
 
-#addPatiendButton, #saveButton, #cancelButton{
+#addPatiendButton,#addLaboratoryButton, #saveButton, #cancelButton{
     /* Frame 17 */
 
     /* Auto layout */
@@ -300,7 +300,7 @@
 .table-view{
     -fx-background-color:#FFFFFF ;
 }
-#IDcolumn, #NameColumn, #DateColumn, #DescriptionColumn, #AdditionalNoteColumn, #MoneyPayColumn{
+#IDcolumn, #NameColumn, #DateColumn, #DescriptionColumn, #AdditionalNoteColumn, #MoneyPayColumn, #laboratoryIdColumn, #labonameColumn, #contactNumberColumn, #CriteriaColumn, #QuantityColumn, #DateLaboColumn, #PatientName{
 
 }
 .table-view .column-header{
@@ -342,7 +342,7 @@
     -fx-flex-grow: 1;
 
 }
-#dashboardIcon, #patientIcon, #Equipment, #Medication{
+#dashboardIcon, #patientIcon, #Equipment, #Medication, #dashboardIcon_Equipment, #patientIcon_Equipment, #treatment_Equipment, #medication_Equipment{
     /* Frame 13 */
 
     /* Auto layout */
@@ -370,7 +370,7 @@
     -fx-font-family: "Open Sans";
 
 }
-#treatmentLog{
+#treatmentLog, #Equipment_Equipment{
     /* Frame 13 */
 
     /* Auto layout */
@@ -396,5 +396,74 @@
     -fx-flex-grow: 0;
     -fx-z-index: 0;
     -fx-font-family: "Open Sans";
+
+}
+#previous, #next{
+    /* Previous */
+
+    -fx-max-width: 80px;
+    -fx-max-height: 15px;
+
+    -fx-font-family: 'Montserrat';
+    -fx-font-style: normal;
+    -fx-font-weight: 500;
+    -fx-font-size: 12px;
+    -fx-line-height: 15px;
+    /* identical to box height */
+
+    -fx-text-fill: #9E9E9E;
+    -fx-background-color: white;
+
+
+    /* Inside auto layout */
+    -fx-flex: none;
+    -fx-order: 0;
+    -fx-flex-grow: 0;
+
+}
+#button1{
+    /* Frame 15 */
+
+    /* Auto layout */
+    -fx-display: flex;
+    -fx-flex-direction: row;
+    -fx-alignment: center;
+    -fx-padding: 8px 9px;
+    -fx-gap: 4px;
+
+    -fx-max-width: 31px;
+    -fx-max-height: 31px;
+
+    -fx-background-color: #3B937E;
+    -fx-border-radius: 8px;
+
+    /* Inside auto layout */
+    -fx-flex: none;
+    -fx-order: 1;
+    -fx-flex-grow: 0;
+    -fx-text-fill: white;
+
+}
+#button2, #button3{
+    /* Frame 15 */
+
+    /* Auto layout */
+    -fx-display: flex;
+    -fx-flex-direction: row;
+    -fx-alignment: center;
+    -fx-padding: 8px 9px;
+    -fx-gap: 4px;
+
+    -fx-max-width: 31px;
+    -fx-max-height: 31px;
+
+    -fx-background-color: #E0E0E0;
+    -fx-border-radius: 8px;
+
+    /* Inside auto layout */
+    -fx-flex: none;
+    -fx-order: 1;
+    -fx-flex-grow: 0;
+    -fx-text-fill: black;
 
 }

@@ -6,9 +6,6 @@
     -fx-font-size: 14;
 }
 .combo-box{
-    /* Frame 15 */
-
-    /* Auto layout */
     -fx-display: flex;
     -fx-flex-direction: row;
     -fx-align-items: center;
@@ -22,16 +19,14 @@
     -fx-border-radius: 50px;
     -fx-background-radius: 50px;
 
-
-    /* Inside auto layout */
     -fx-flex: none;
     -fx-order: 1;
     -fx-flex-grow: 0;
 
 }
-#label{
-    /* Edit experiment */
 
+/*NHA KHOA 100E*/
+#label{
     -fx-width: 778px;
     -fx-height: 61px;
 
@@ -52,10 +47,9 @@
     -fx-flex-grow: 0;
 
 }
-.panel{
-    /* Frame 26921 */
 
-    /* Auto layout */
+/*MENU BEN TRAI*/
+.panel{
     -fx-display: flex;
     -fx-flex-direction: column;
     -fx-align-items: center;
@@ -71,9 +65,8 @@
     -fx-background-color: #C9E7EE;
 
 }
+/*ANCHOR PANE*/
 .parent{
-    /* Edit ex */
-
     -fx-position: absolute;
     -fx-width: 1280px;
     -fx-height: 832px;
@@ -82,12 +75,9 @@
 
     -fx-background-color: #FFFDFD;
 
-
 }
+/*NHA KHOA 100E*/
 .dashboard{
-    /* Frame 26924 */
-
-    /* Auto layout */
     -fx-display: flex;
     -fx-flex-direction: row;
     -fx-align-items: center;
@@ -103,10 +93,8 @@
     -fx-background-colorbackground: #FFFFFF;
 
 }
-.logodash{
-    /* Frame 13 */
 
-    /* Auto layout */
+.logodash{
     -fx-display: flex;
     -fx-flex-direction: row;
     -fx-justify-content: center;
@@ -209,9 +197,6 @@
 
 }
 #textField1, #textField2, #textField5{
-
-
-
     -fx-max-width: 530px;
     -fx-max-height: 30px;
     -fx-min-width: 279px;
@@ -467,3 +452,126 @@
     -fx-text-fill: black;
 
 }
+
+#labelNhaKhoa100E
+{
+    /* NHA KHOA 100E */
+
+    -fx-width: 343px;
+    -fx-height: 58px;
+
+    -fx-font-family: "Open Sans";
+    -fx-font-style: normal;
+    -fx-font-weight: 700;
+    -fx-font-size: 37px;
+    -fx-line-height: 50px;
+    -fx-text-transform: capitalize;
+
+    -fx-text-fill: #489E98;
+
+    /* Inside auto layout */
+    -fx-flex: none;
+    -fx-order: 0;
+    -fx-flex-grow: 0;
+}
+
+#vBox{
+    -fx-display: flex;
+    -fx-flex-direction: column;
+    -fx-align-items: center;
+    -fx-padding: 16px 0px;
+    -fx-isolation: isolate;
+
+    -fx-position: absolute;
+    -fx-width: 250px;
+    -fx-height: 759px;
+    -fx-left: 0px;
+    -fx-top: 80px;
+
+    -fx-background-color: #C9E7EE;
+}
+#buttonMenu{
+
+    -fx-width: 157px;
+    -fx-height: 17px;
+
+    -fx-font-family: 'Montserrat';
+    -fx-font-style: normal;
+    -fx-font-weight: 700;
+    -fx-font-size: 15px;
+    -fx-line-height: 17px;
+
+    -fx-text-fill: #000000;
+    -fx-background-color: #C9E7EE;
+
+    -fx-flex: none;
+    -fx-order: 0;
+    -fx-flex-grow: 1;
+}
+
+#labelAddNewPatient{
+    /* Dashboard */
+
+    -fx-width: 772px;
+    -fx-height: 60.53px;
+
+    -fx-font-family: 'Inter';
+    -fx-font-style: normal;
+    -fx-font-weight: 700;
+    -fx-font-size: 35.7225px;
+    -fx-line-height: 43px;
+    -fx-display: flex;
+    -fx-align-items: center;
+
+    -fx-text-fill: #489E98;
+
+}
+
+#labelNewPatient{
+    /* New patient */
+
+    -fx-position: absolute;
+    -fx-width: 794px;
+    -fx-height: 53px;
+    -fx-left: 48px;
+    -fx-top: 19px;
+
+    -fx-font-family: 'Poppins';
+    -fx-font-style: normal;
+    -fx-font-weight: 700;
+    -fx-font-size: 32px;
+    -fx-line-height: 48px;
+    -fx-letter-spacing: 0.03em;
+
+    -fx-text-fill: #4C7D77;
+}
+
+#frame{
+    -fx-box-sizing: border-box;
+
+    -fx-position: absolute;
+    -fx-width: 906px;
+    -fx-height: 576px;
+    -fx-left: 322px;
+    -fx-top: 168px;
+
+    -fx-border-color: 1px solid #000000;
+    -fx-border-radius: 20px;
+
+}
+
+#normalLabel{
+
+    -fx-width: 250px;
+    -fx-height: 30px;
+
+    -fx-font-family: 'Poppins';
+    -fx-font-style: normal;
+    -fx-font-weight: 500;
+    -fx-font-size: 20px;
+    -fx-line-height: 30px;
+    -fx-letter-spacing: 0.03em;
+
+    -fx-color: #181818;
+}
+

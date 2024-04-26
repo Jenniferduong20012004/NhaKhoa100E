@@ -75,7 +75,7 @@
                     <graphic>
                         <ImageView fitHeight="38.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
                             <image>
-                                <Image url="@../../../../../../../NhaKhoa100E/icons/mingcute_menu-fill.png" />
+                                <Image url="@../../../pictures/mingcute_menu-fill.png" />
                             </image>
                         </ImageView>
                     </graphic>

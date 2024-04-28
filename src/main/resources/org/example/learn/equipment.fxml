@@ -7,7 +7,10 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="832.0" prefWidth="1280.0" styleClass="parent" stylesheets="@app.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.learn.Equipment">
@@ -17,46 +20,97 @@
                 <Insets left="24.0" right="24.0" />
             </padding>
         </Label>
-        <Label fx:id="label" layoutX="248.0" layoutY="58.0" text="Equipment">
-            <padding>
-                <Insets left="14.0" right="14.0" />
-            </padding>
-            <font>
-                <Font name="Calisto MT Bold" size="12.0" />
-            </font>
+        <Label id="labelAddNewPatient" layoutX="302.0" layoutY="88.0" stylesheets="@app.css" text="Equipment">
+            <graphic>
+                <ImageView fitHeight="38.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../../pictures/mingcute_menu-fill.png" />
+                    </image>
+                </ImageView>
+            </graphic>
         </Label>
-        <Button fx:id="addLaboratoryButton" layoutX="1092.0" layoutY="114.0" maxHeight="32.0" maxWidth="139.0" minHeight="32.0" minWidth="139.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="139.0" stylesheets="@app.css" text="+ Add laboratory" textFill="WHITE">
+        <Button fx:id="addLaboratoryButton" layoutX="1068.0" layoutY="170.0" maxHeight="36.0" maxWidth="170.0" minHeight="36.0" minWidth="170.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="170.0" stylesheets="@app.css" text="+ Add laboratory" textFill="WHITE">
             <padding>
                 <Insets bottom="8.0" left="12.0" right="12.0" top="8.0" />
             </padding></Button>
-        <Label fx:id="searchLabel" layoutX="275.0" layoutY="116.0" text="Show" textFill="Black">
+        <Label fx:id="searchLabel" layoutX="278.0" layoutY="170.0" text="Show" textFill="Black">
             <font>
                 <Font name="OpenSans" size="20.0" />
             </font></Label>
-        <TableView layoutX="250.0" layoutY="174.0" prefHeight="528.0" prefWidth="1030.">
+        <TableView layoutX="250.0" layoutY="219.0" prefHeight="483.0" prefWidth="1030.">
             <columns>
-                <TableColumn fx:id="laboratoryIdColumn" prefWidth="171.0" text="Laboratory ID" />
-                <TableColumn fx:id="labonameColumn" prefWidth="171.0" text="Name" />
+                <TableColumn fx:id="laboratoryIdColumn" prefWidth="171.0" text="Lab Name" />
+                <TableColumn fx:id="labonameColumn" prefWidth="171.0" text="Patient Name" />
                 <TableColumn fx:id="CriteriaColumn" prefWidth="171.0" text="Criteria" />
                 <TableColumn fx:id="QuạntityColumn" prefWidth="172.0" text="Quantity" />
                 <TableColumn fx:id="DateLaboColumn" prefWidth="171.0" text="Date" />
-                <TableColumn fx:id="PatientName" prefWidth="171.0" text="Patient Name" />
+                <TableColumn fx:id="PatientName" prefWidth="171.0" text="Action" />
             </columns>
         </TableView>
-        <TextField fx:id="search" layoutX="460.0" layoutY="114.0" maxHeight="32.0" maxWidth="441.0" minHeight="32.0" minWidth="441.0" prefHeight="32.0" prefWidth="441.0" promptText="Search..." />
-        <ComboBox layoutX="341.0" layoutY="115.0" maxHeight="31.0" maxWidth="43.0" minHeight="31.0" minWidth="43.0" prefHeight="31.0" prefWidth="43.0" />
-        <Label fx:id="entriesLabel" layoutX="390.0" layoutY="115.0" maxHeight="30.0" maxWidth="60.0" minHeight="30.0" minWidth="60.0" prefHeight="30.0" prefWidth="60.0" text="entries" textFill="Black">
+        <TextField fx:id="search" layoutX="476.0" layoutY="170.0" maxHeight="32.0" maxWidth="441.0" minHeight="32.0" minWidth="441.0" prefHeight="32.0" prefWidth="441.0" promptText="Search..." />
+        <ComboBox layoutX="341.0" layoutY="170.0" maxHeight="31.0" maxWidth="43.0" minHeight="31.0" minWidth="43.0" prefHeight="31.0" prefWidth="43.0" />
+        <Label fx:id="entriesLabel" layoutX="400.0" layoutY="170.0" maxHeight="30.0" maxWidth="60.0" minHeight="30.0" minWidth="60.0" prefHeight="30.0" prefWidth="60.0" text="entries" textFill="Black">
             <font>
                 <Font size="50.0" />
             </font></Label>
-        <AnchorPane layoutY="58.0" prefHeight="774.0" prefWidth="252.0" styleClass="panel" stylesheets="@app.css">
+        <Pane id="vBox" layoutY="80.0" prefHeight="759.0" prefWidth="252.0" stylesheets="@app.css">
             <children>
-                <Button fx:id="dashboardIcon_Equipment" layoutX="17.0" layoutY="17.0" maxHeight="56.0" maxWidth="216.0" minHeight="56.0" minWidth="216.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="216.0" text="Dashboard" />
-                <Button fx:id="patientIcon_Equipment" layoutX="17.0" layoutY="73.0" maxHeight="56.0" maxWidth="216.0" minHeight="56.0" minWidth="216.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="216.0" text="Patients" />
-                <Button fx:id="treatment_Equipment" layoutX="17.0" layoutY="129.0" maxHeight="56.0" maxWidth="216.0" minHeight="56.0" minWidth="216.0" mnemonicParsing="false" onAction="#switchToTreatment" prefHeight="56.0" prefWidth="216.0" text="Treatment Logs" />
-                <Button fx:id="Equipment_Equipment" layoutX="17.0" layoutY="185.0" maxHeight="56.0" maxWidth="216.0" minHeight="56.0" minWidth="216.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="216.0" text="Equipment" />
-                <Button fx:id="medication_Equipment" layoutX="17.0" layoutY="241.0" maxHeight="56.0" maxWidth="216.0" minHeight="56.0" minWidth="216.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="216.0" text="Medication" />
-            </children></AnchorPane>
+                <Button id="buttonMenu" alignment="BASELINE_LEFT" layoutX="17.0" layoutY="16.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="216.0" stylesheets="@app.css" text="Dashboard">
+                    <graphic>
+                        <ImageView fitHeight="27.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../../pictures/dashboard.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+                <Button id="buttonMenu" alignment="BASELINE_LEFT" layoutX="17.0" layoutY="76.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="216.0" stylesheets="@app.css" text="Patients">
+                    <graphic>
+                        <ImageView fitHeight="27.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../../pictures/patients.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+                <Button id="buttonMenu" alignment="BASELINE_LEFT" layoutX="17.0" layoutY="136.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="216.0" stylesheets="@app.css" text="Treatment logs">
+                    <graphic>
+                        <ImageView fitHeight="27.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../../pictures/Edit%20Property.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+                <Button id="buttonMenuChoose" alignment="BASELINE_LEFT" layoutX="17.0" layoutY="256.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="216.0" stylesheets="@app.css" text="Equipment">
+                    <graphic>
+                        <ImageView fitHeight="27.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../../pictures/Dental%20Machine.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+                <Button id="buttonMenu" alignment="BASELINE_LEFT" layoutX="17.0" layoutY="196.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="216.0" stylesheets="@app.css" text="Medication">
+                    <graphic>
+                        <ImageView fitHeight="27.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../../pictures/Pill.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+                <Button id="buttonMenu" alignment="BASELINE_LEFT" layoutX="19.0" layoutY="622.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="216.0" stylesheets="@app.css" text="Logout">
+                    <graphic>
+                        <ImageView fitHeight="27.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../../pictures/ic_outline-logout.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+            </children>
+        </Pane>
         <Button fx:id="previous" layoutX="614.0" layoutY="745.0" mnemonicParsing="false" text="Previous" />
         <Button fx:id="button1" layoutX="681.0" layoutY="745.0" maxHeight="31.0" maxWidth="31.0" minHeight="31.0" minWidth="31.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="31.0" text="1" />
         <Button fx:id="button2" layoutX="722.0" layoutY="745.0" maxHeight="31.0" maxWidth="31.0" minHeight="31.0" minWidth="31.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="31.0" text="2" />

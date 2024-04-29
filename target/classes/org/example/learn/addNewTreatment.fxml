@@ -9,7 +9,8 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 
-<AnchorPane maxHeight="832.0" maxWidth="1280.0" minHeight="832.0" minWidth="1280.0" prefHeight="832.0" prefWidth="1280.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.learn.AddTreatmentLog">
+<?import javafx.geometry.Insets?>
+<AnchorPane maxHeight="832.0" maxWidth="1280.0" minHeight="832.0" minWidth="1280.0" prefHeight="832.0" prefWidth="1280.0" styleClass="parent"  style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.learn.AddTreatmentLog">
     <children>
         <Label id="labelNhaKhoa100E" layoutX="24.0" layoutY="11.5" stylesheets="@app.css" text="NHA KHOA 100E" />
         <Pane id="vBox" layoutY="80.0" prefHeight="759.0" prefWidth="250.0" stylesheets="@app.css">
@@ -63,7 +64,7 @@
         </Pane>
         <AnchorPane layoutX="250.0" layoutY="80.0" prefHeight="759.0" prefWidth="958.0" style="-fx-background-color: #FFFFFF;">
             <children>
-                <Label id="labelAddNewPatient" layoutX="12.0" layoutY="14.0" stylesheets="@app.css" text="Dashboard">
+                <Label id="labelAddNewPatient" layoutX="23.0" stylesheets="@app.css" text="Dashboard">
                     <graphic>
                         <ImageView fitHeight="38.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
                             <image>
@@ -74,7 +75,7 @@
                 </Label>
                 <AnchorPane id="frame" layoutX="304.0" layoutY="90.0" maxHeight="528.0" maxWidth="700.0" minHeight="528.0" minWidth="700.0" prefHeight="528.0" prefWidth="700.0" style="-fx-border-color: #000000;" stylesheets="@app.css">
                     <children>
-                        <Label id="labelNewPatient" layoutX="48.0" layoutY="19.0" stylesheets="@app.css" text="New treatment log" />
+                        <Label id="labelNewPatient" layoutX="48.0" layoutY="19.0" stylesheets="@app.css" text="New Treatment Log" />
                         <Label id="normalLabel" layoutX="48.0" layoutY="136.0" stylesheets="@app.css" text="Contact number" />
                         <Label id="normalLabel" layoutX="48.0" layoutY="184.0" stylesheets="@app.css" text="Date" />
                         <Label id="normalLabel" layoutX="48.0" layoutY="88.0" prefHeight="30.0" prefWidth="118.0" stylesheets="@app.css" text="Patient name" />
@@ -92,7 +93,7 @@
                 <Button id="cancelButton" fx:id="saveButton1" layoutX="798.0" layoutY="640.0" maxHeight="36.0" maxWidth="117.0" minHeight="36.0" minWidth="117.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="117.0" stylesheets="@app.css" text="Cancel" textFill="WHITE" />
                 <Button id="dashboardbutton" layoutX="12.0" layoutY="107.0" maxHeight="30.0" maxWidth="250.0" minHeight="30.0" minWidth="250.0" mnemonicParsing="false" onAction="#switchToAddPatient" prefHeight="30.0" prefWidth="250.0" stylesheets="@app.css" text="New Patient" />
                 <Button id="dashboardbuttonchoose" layoutX="12.0" layoutY="165.0" maxHeight="30.0" maxWidth="250.0" minHeight="30.0" minWidth="250.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="250.0" stylesheets="@app.css" text="New Treatment Log" />
-                <Button id="dashboardbutton" layoutX="12.0" layoutY="223.0" maxHeight="30.0" maxWidth="250.0" minHeight="30.0" minWidth="250.0" mnemonicParsing="false" onAction="#switchToAddLaboratory" prefHeight="30.0" prefWidth="250.0" stylesheets="@app.css" text="New laboratory" />
+                <Button id="dashboardbutton" layoutX="12.0" layoutY="223.0" maxHeight="30.0" maxWidth="250.0" minHeight="30.0" minWidth="250.0" mnemonicParsing="false" onAction="#switchToAddLaboratory" prefHeight="30.0" prefWidth="250.0" stylesheets="@app.css" text="New Laboratory" />
 
             </children>
         </AnchorPane>

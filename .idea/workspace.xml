@@ -6,20 +6,20 @@
   <component name="ChangeListManager">
     <list default="true" id="01a30629-adf4-4571-9697-c07b86b80414" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/learn/AddTreatmentLog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/learn/AddTreatmentLog.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/learn/addNewLaboratory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/learn/addNewLaboratory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/learn/addNewPatient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/learn/addNewPatient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/learn/PatientLog.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/learn/PatientLog.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/learn/TreatmentLog.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/learn/TreatmentLog.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/learn/addLaboratory.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/learn/addLaboratory.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/learn/addNewPatient.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/learn/addNewPatient.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/learn/addNewTreatment.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/learn/addNewTreatment.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/learn/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/learn/app.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/learn/equipment.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/learn/equipment.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/learn/AddTreatmentLog.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/learn/AddTreatmentLog.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/learn/PatientLog.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/learn/PatientLog.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/example/learn/TreatmentLog.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/learn/TreatmentLog.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/example/learn/addLaboratory.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/learn/addLaboratory.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/learn/addNewLaboratory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/learn/addNewLaboratory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/learn/addNewPatient.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/learn/addNewPatient.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/learn/addNewPatient.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/learn/addNewPatient.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/example/learn/addNewTreatment.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/learn/addNewTreatment.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/learn/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/learn/app.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/example/learn/equipment.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/learn/equipment.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -146,7 +146,7 @@
       <workItem from="1714372654731" duration="66000" />
       <workItem from="1714378743133" duration="426000" />
       <workItem from="1714379180318" duration="412000" />
-      <workItem from="1714384355200" duration="11276000" />
+      <workItem from="1714384355200" duration="14305000" />
     </task>
     <servers />
   </component>

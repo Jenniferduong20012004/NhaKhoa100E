@@ -77,5 +77,5 @@ public class addNewLaboratory {
             e.printStackTrace();
         }
     }
-    
+
 }

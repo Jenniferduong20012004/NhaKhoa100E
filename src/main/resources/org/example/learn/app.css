@@ -215,8 +215,13 @@
 }
 #labelNhaKhoa{
     -fx-text-fill: #4FB0AA;
-    -fx-font-weight: bold;
-    -fx-font-size: 40;
+    -fx-font-family: "Open Sans";
+    -fx-font-style: normal;
+    -fx-font-weight: 700;
+    -fx-font-size: 37px;
+    -fx-line-height: 50px;
+    -fx-text-transform: capitalize;
+
 }
 #timeField
 {
@@ -462,7 +467,7 @@
     -fx-line-height: 50px;
     -fx-text-transform: capitalize;
 
-    -fx-text-fill: #489E98;
+    -fx-text-fill: #4FB0AA;
 
     /* Inside auto layout */
     -fx-flex: none;

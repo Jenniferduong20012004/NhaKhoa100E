@@ -196,28 +196,18 @@
 
 
 }
-#textField1, #textField2, #textField5{
+#textField, #textField2, #textField5{
+}
+#textField3, #textField4{
     -fx-max-width: 530px;
-    -fx-max-height: 30px;
+    -fx-max-height: 118px;
     -fx-min-width: 279px;
     -fx-min-height: 30px;
 
     -fx-border-color: #494949;
     -fx-border-radius: 5px 5px 5px 5px;
     -fx-alignment: center;
-
-
 }
- #textField3, #textField4{
-     -fx-max-width: 530px;
-     -fx-max-height: 118px;
-     -fx-min-width: 279px;
-     -fx-min-height: 30px;
-
-     -fx-border-color: #494949;
-     -fx-border-radius: 5px 5px 5px 5px;
-     -fx-alignment: center;
- }
 #labelNewPatient{
     -fx-text-fill: #4C7D77;
     -fx-font-size: 36;
@@ -509,6 +499,23 @@
     -fx-text-fill: #000000;
     -fx-background-color: #C9E7EE;
 
+    -fx-flex: none;
+    -fx-order: 0;
+    -fx-flex-grow: 1;
+}
+#dashboardbutton{
+    -fx-max-width: 250px;
+    -fx-max-height: 30px;
+
+    -fx-font-family: 'Montserrat';
+    -fx-font-style: normal;
+    -fx-font-weight: 700;
+    -fx-font-size: 15px;
+    -fx-line-height: 17px;
+
+    -fx-text-fill: white;
+    -fx-background-color: #489E98;
+    -fx-background-radius: 20;
     -fx-flex: none;
     -fx-order: 0;
     -fx-flex-grow: 1;

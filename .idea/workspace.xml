@@ -5,17 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="01a30629-adf4-4571-9697-c07b86b80414" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/learn/addNewLaboratory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/learn/addNewPatient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/learn/Treatmentlog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/learn/Treatmentlog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/learn/Dashboard.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/learn/PatientPageControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/learn/PatientPageControl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/learn/PatientLog.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/learn/PatientLog.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/learn/TreatmentLog.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/learn/TreatmentLog.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/learn/addLaboratory.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/learn/addLaboratory.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/learn/addNewPatient.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/learn/addNewPatient.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/learn/addNewTreatment.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/learn/addNewTreatment.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/learn/hello-view.fxml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -141,7 +132,7 @@
       <workItem from="1714372654731" duration="66000" />
       <workItem from="1714378743133" duration="426000" />
       <workItem from="1714379180318" duration="412000" />
-      <workItem from="1714384355200" duration="2309000" />
+      <workItem from="1714384355200" duration="3205000" />
     </task>
     <servers />
   </component>

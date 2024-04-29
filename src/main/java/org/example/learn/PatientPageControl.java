@@ -35,7 +35,7 @@ public class PatientPageControl{
     }
     public void switchToAddPatient(ActionEvent event) {
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("TreatmentLog.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("addNewPatient.fxml"));
             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             scene = new Scene(fxmlLoader.load());
             stage.setScene(scene);

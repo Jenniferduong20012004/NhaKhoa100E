@@ -29,7 +29,7 @@
                 </ImageView>
             </graphic>
         </Label>
-        <Button fx:id="addLaboratoryButton" layoutX="1068.0" layoutY="170.0" maxHeight="36.0" maxWidth="170.0" minHeight="36.0" minWidth="170.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="170.0" stylesheets="@app.css" text="+ Add laboratory" textFill="WHITE">
+        <Button fx:id="addLaboratoryButton" layoutX="1068.0" layoutY="170.0" maxHeight="36.0" maxWidth="170.0" minHeight="36.0" minWidth="170.0" mnemonicParsing="false" onAction="#switchToAddLaboratory" prefHeight="36.0" prefWidth="170.0" stylesheets="@app.css" text="+ Add laboratory" textFill="WHITE">
             <padding>
                 <Insets bottom="8.0" left="12.0" right="12.0" top="8.0" />
             </padding></Button>

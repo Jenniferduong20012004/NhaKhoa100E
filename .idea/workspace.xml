@@ -5,18 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="01a30629-adf4-4571-9697-c07b86b80414" name="Changes" comment="">
-<<<<<<< HEAD
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/learn/PatientPageControl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/org/example/learn/Dashboard.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-=======
-      <change afterPath="$PROJECT_DIR$/src/main/resources/org/example/learn/PatientLog.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/learn/Equipment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/learn/Equipment.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/learn/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/learn/HelloApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/learn/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/learn/NewTreatmentControl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/learn/SceneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/learn/TreatmentLogControl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/learn/PatientLog.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/learn/PatientLog.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/learn/addNewPatient.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/learn/addNewPatient.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/learn/addNewTreatment.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/learn/addNewTreatment.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/learn/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/learn/app.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/learn/equipment.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/learn/equipment.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/learn/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/learn/hello-view.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/learn/tracking.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/learn/tracking.fxml" afterDir="false" />
->>>>>>> 6d82864775c0457a070688d4a438b75506f42ac7
+      <change beforePath="$PROJECT_DIR$/src/main/resources/pictures/Dental Machine.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/pictures/DentalMachine.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/pictures/Edit Property.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/pictures/EditProperty.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,11 +42,11 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
-  &quot;lastFilter&quot;: {
+    &quot;lastFilter&quot;: {
     &quot;state&quot;: &quot;OPEN&quot;,
     &quot;assignee&quot;: &quot;Jenniferduong20012004&quot;
-  }
-}</component>
+    }
+    }</component>
   <component name="GithubPullRequestsUISettings">
     <option name="selectedUrlAndAccountId">
       <UrlAndAccount>
@@ -61,8 +66,8 @@
     </option>
   </component>
   <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 5
-}</component>
+    &quot;associatedIndex&quot;: 5
+    }</component>
   <component name="ProjectId" id="2fMa3UdEYe7xenxYsupiatAP0Fh" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -72,35 +77,20 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.HelloApplication.executor": "Run",
-<<<<<<< HEAD
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "UpdateTable",
-=======
     "DefaultHtmlFileTemplate": "HTML File",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "Qunu",
->>>>>>> 6d82864775c0457a070688d4a438b75506f42ac7
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "F:/New folder (2)",
+    "last_opened_file_path": "F:/nk",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-<<<<<<< HEAD
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "vue.rearranger.settings.migration": "true"
-  }
-}]]></component>
-=======
     "project.structure.last.edited": "Artifacts",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.2",
@@ -112,7 +102,6 @@
       <recent name="F:\New folder (2)\src\main\resources\org\example\learn" />
     </key>
   </component>
->>>>>>> 6d82864775c0457a070688d4a438b75506f42ac7
   <component name="RunManager">
     <configuration name="HelloApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.learn.HelloApplication" />
@@ -149,15 +138,15 @@
       <workItem from="1713840182611" duration="17840000" />
       <workItem from="1713935969311" duration="9883000" />
       <workItem from="1713951671211" duration="5257000" />
-<<<<<<< HEAD
-      <workItem from="1713957734099" duration="3425000" />
-      <workItem from="1714019584316" duration="1955000" />
-=======
       <workItem from="1713957734099" duration="1234000" />
       <workItem from="1714021052558" duration="8969000" />
       <workItem from="1714050965322" duration="6367000" />
       <workItem from="1714111908617" duration="5645000" />
->>>>>>> 6d82864775c0457a070688d4a438b75506f42ac7
+      <workItem from="1714372450410" duration="38000" />
+      <workItem from="1714372529443" duration="76000" />
+      <workItem from="1714372654731" duration="66000" />
+      <workItem from="1714378743133" duration="426000" />
+      <workItem from="1714379180318" duration="412000" />
     </task>
     <servers />
   </component>

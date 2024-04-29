@@ -20,7 +20,7 @@
                 <Insets left="24.0" right="24.0" />
             </padding>
         </Label>
-        <Label id="labelAddNewPatient" layoutX="302.0" layoutY="88.0" stylesheets="@app.css" text="Equipment">
+        <Label id="labelAddNewPatient" layoutX="272.0" layoutY="80.0" stylesheets="@app.css" text="Equipment">
             <graphic>
                 <ImageView fitHeight="38.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
                     <image>

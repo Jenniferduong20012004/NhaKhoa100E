@@ -8,10 +8,9 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-public class HelloController {
+public class AddTreatmentLog {
     private Stage stage;
     private Scene scene;
     private FXMLLoader fxmlLoader;

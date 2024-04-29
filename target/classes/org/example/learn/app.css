@@ -520,6 +520,23 @@
     -fx-order: 0;
     -fx-flex-grow: 1;
 }
+#dashboardbuttonchoose{
+    -fx-max-width: 250px;
+    -fx-max-height: 30px;
+
+    -fx-font-family: 'Montserrat';
+    -fx-font-style: normal;
+    -fx-font-weight: 700;
+    -fx-font-size: 15px;
+    -fx-line-height: 17px;
+
+    -fx-text-fill: white;
+    -fx-background-color: #4C7D77;
+    -fx-background-radius: 20;
+    -fx-flex: none;
+    -fx-order: 0;
+    -fx-flex-grow: 1;
+}
 #buttonMenuChoose{
 
     -fx-width: 157px;

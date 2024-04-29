@@ -55,7 +55,7 @@
             </font></Label>
         <Pane id="vBox" layoutY="80.0" prefHeight="759.0" prefWidth="252.0" stylesheets="@app.css">
             <children>
-                <Button id="buttonMenu" alignment="BASELINE_LEFT" layoutX="17.0" layoutY="16.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="216.0" stylesheets="@app.css" text="Dashboard">
+                <Button id="buttonMenu" alignment="BASELINE_LEFT" layoutX="17.0" layoutY="16.0" mnemonicParsing="false" onAction="#switchToDashboard" prefHeight="60.0" prefWidth="216.0" stylesheets="@app.css" text="Dashboard">
                     <graphic>
                         <ImageView fitHeight="27.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
                             <image>

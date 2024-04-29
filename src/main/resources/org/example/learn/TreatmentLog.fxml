@@ -77,7 +77,7 @@
                     <graphic>
                         <ImageView fitHeight="27.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
                             <image>
-                                <Image url="@../../../pictures/Edit%20Property.png" />
+                                <Image url="@../../../pictures/EditProperty.png" />
                             </image>
                         </ImageView>
                     </graphic>
@@ -86,7 +86,7 @@
                     <graphic>
                         <ImageView fitHeight="27.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
                             <image>
-                                <Image url="@../../../pictures/Dental%20Machine.png" />
+                                <Image url="@../../../pictures/DentalMachine.png" />
                             </image>
                         </ImageView>
                     </graphic>

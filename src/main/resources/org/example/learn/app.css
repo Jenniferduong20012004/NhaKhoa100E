@@ -603,4 +603,53 @@
 
     -fx-color: #181818;
 }
+.scroll-pane{
+    -fx-background-color: white;
+    -fx-border-color: white;
+    -fx-padding: 0px;
+}
+.scroll-pane .scroll-bar:vertical{
+    -fx-background-color: white;
+    -fx-background-radius: 0px;
+}
+.scroll-pane .scroll-bar:horizontal{
+    -fx-opacity: 0;
+    -fx-pref-width: 0;
+}
+.scroll-pane .scroll-bar:vertical .track{
+    -fx-background-color: white;
+    -fx-background-radius:0em;
+    -fx-border-radius: 2em;
+    -fx-border-color: white;
+
+
+
+
+
+}
+.scroll-pane .scroll-bar:horizontal .decrement-button{
+    -fx-padding: 0 ,0 ,10,0;
+    -fx-background-color: white;
+    -fx-background-radius: 0px;
+
+
+
+}
+.scroll-pane .scroll-bar:vertical .decrement-button{
+    -fx-background-color: white;
+    -fx-background-radius:0em;
+    -fx-padding: 0 10  0  0;
+
+}
+.scroll-pane .scroll-bar:vertical .increment-arrow,
+.scroll-pane .scroll-bar:vertical .decrement-arrow{
+
+    -fx-padding: -2;
+
+}
+.scroll-pane .scroll-bar:vertical .thumb{
+    -fx-background-color: #489E98;;
+    -fx-background-insets: 2,0,0;
+    -fx-background-radius: 0px;
+}
 

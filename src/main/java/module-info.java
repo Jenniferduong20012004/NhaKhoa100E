@@ -4,6 +4,7 @@ module org.example.learn {
 
     requires org.controlsfx.controls;
     requires org.kordamp.bootstrapfx.core;
+    requires java.sql;
 
     opens org.example.learn to javafx.fxml;
     exports org.example.learn;

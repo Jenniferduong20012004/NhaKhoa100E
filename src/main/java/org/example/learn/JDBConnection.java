@@ -1,5 +1,7 @@
 package org.example.learn;
 
+import javafx.collections.ObservableList;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -14,5 +16,8 @@ public class JDBConnection {
             throw new RuntimeException(e);
         }
         return connection;
+    }
+    public static ObservableList<Patient> getDataPatient(){
+        return;
     }
 }

@@ -1,20 +1,19 @@
 package org.example.learn;
 
+import javafx.beans.Observable;
+import javafx.fxml.FXML;
+import javafx.scene.control.TableView;
+
 import java.util.Date;
 
 public class Patient {
-    private int TrackingId;
     private String name;
-    private Date date;
-    private String additionalNote;
-    private String description;
-    private int MoneyPay;
-    public Patient (int TrackingId, String name, Date date,String additionalNote,  String description, int MoneyPay){
-        this.TrackingId = TrackingId;
+    private String address;
+    private String contactNumber;
+
+    public Patient (String name, String contactNumber, String address){
         this.name = name;
-        this.date = date;
-        this.additionalNote = additionalNote;
-        this.description = description;
-        this.MoneyPay = MoneyPay;
+        this.contactNumber= contactNumber;
+        this.address = address;
     }
 }

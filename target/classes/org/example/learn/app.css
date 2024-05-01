@@ -196,9 +196,9 @@
 
 
 }
-#textField, #textField2, #textField5{
+#textField, #textField2, #textField3{
 }
-#textField3, #textField4{
+#textField5, #textField4{
     -fx-max-width: 530px;
     -fx-max-height: 118px;
     -fx-min-width: 279px;

@@ -15,7 +15,7 @@ public class HelloApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("equipment.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("addNewPatient.fxml"));
             Scene scene = new Scene(fxmlLoader.load());
             stage.setScene(scene);
             stage.show();
@@ -26,17 +26,8 @@ public class HelloApplication extends Application {
     }
 
     public static void main(String[] args) {
-        String string = "jdbc:sqlserver://DESKTOP-9TRAU8I:1433;" +
-                "user=sa;password=Nhu1234@;databaseName=NhaKhoa100e;encrypt=false";
-        Connection connection =null;
-        try {
-            connection = DriverManager.getConnection(string);
-            System.out.println ("Success");
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
 
 
-        //launch();
+        launch();
     }
 }

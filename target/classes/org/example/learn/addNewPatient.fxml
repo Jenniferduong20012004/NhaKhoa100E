@@ -2,14 +2,12 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 
-<?import javafx.geometry.Insets?>
 <AnchorPane maxHeight="832.0" maxWidth="1280.0" minHeight="832.0" minWidth="1280.0" prefHeight="832.0" prefWidth="1280.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.learn.addNewPatient">
     <children>
         <Label id="labelNhaKhoa100E" layoutX="24.0" layoutY="11.5" stylesheets="@app.css" text="NHA KHOA 100E" />
@@ -73,7 +71,7 @@
                         </ImageView>
                     </graphic>
                 </Label>
-                <Button fx:id="saveButton" layoutX="640.0" layoutY="640.0" maxHeight="36.0" maxWidth="117.0" minHeight="36.0" minWidth="117.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="117.0" stylesheets="@app.css" text="Save" textFill="WHITE" />
+                <Button fx:id="saveButton" layoutX="640.0" layoutY="640.0" maxHeight="36.0" maxWidth="117.0" minHeight="36.0" minWidth="117.0" mnemonicParsing="false" onAction="#getInformation" prefHeight="36.0" prefWidth="117.0" stylesheets="@app.css" text="Save" textFill="WHITE" />
                 <Button id="cancelButton" fx:id="saveButton1" layoutX="798.0" layoutY="640.0" maxHeight="36.0" maxWidth="117.0" minHeight="36.0" minWidth="117.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="117.0" stylesheets="@app.css" text="Cancel" textFill="WHITE" />
                 <Button id="dashboardbuttonchoose" layoutX="12.0" layoutY="107.0" maxHeight="30.0" maxWidth="250.0" minHeight="30.0" minWidth="250.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="250.0" stylesheets="@app.css" text="New Patient" />
                 <Button id="dashboardbutton" layoutX="12.0" layoutY="165.0" maxHeight="30.0" maxWidth="250.0" minHeight="30.0" minWidth="250.0" mnemonicParsing="false" onAction="#switchToAddNewTreatmentLog" prefHeight="30.0" prefWidth="250.0" stylesheets="@app.css" text="New Treatment Log" />
@@ -84,14 +82,9 @@
                         <Label id="normalLabel" layoutX="48.0" layoutY="136.0" stylesheets="@app.css" text="Contact number" />
                         <Label id="normalLabel" layoutX="48.0" layoutY="184.0" stylesheets="@app.css" text="Address" />
                         <Label id="normalLabel" layoutX="48.0" layoutY="88.0" prefHeight="30.0" prefWidth="118.0" stylesheets="@app.css" text="Patient name" />
-                        <Label id="normalLabel" layoutX="48.0" layoutY="280.0" prefHeight="30.0" prefWidth="156.0" stylesheets="@app.css" text="Description" />
                         <TextField fx:id="textField" layoutX="287.0" layoutY="88.0" prefHeight="30.0" prefWidth="384.0" />
-                        <TextField layoutX="287.0" layoutY="133.0" prefHeight="30.0" prefWidth="384.0" />
-                        <TextField layoutX="287.0" layoutY="181.0" prefHeight="30.0" prefWidth="384.0" />
-                        <TextField layoutX="287.0" layoutY="280.0" prefHeight="120.0" prefWidth="384.0" />
-                        <Label id="normalLabel" layoutX="47.0" layoutY="418.0" prefHeight="30.0" prefWidth="156.0" stylesheets="@app.css" text="Equipment" />
-                        <RadioButton layoutX="287.0" layoutY="424.0" mnemonicParsing="false" text="Yes" />
-                        <RadioButton layoutX="359.0" layoutY="424.0" mnemonicParsing="false" text="No" />
+                        <TextField fx:id="textField1" layoutX="287.0" layoutY="133.0" prefHeight="30.0" prefWidth="384.0" />
+                        <TextField fx:id="textField2" layoutX="287.0" layoutY="181.0" prefHeight="30.0" prefWidth="384.0" />
                     </children>
                 </AnchorPane>
             </children>

@@ -285,8 +285,8 @@
 .table-view{
     -fx-background-color:#FFFFFF ;
 }
-#IDcolumn, #NameColumn, #DateColumn, #DescriptionColumn, #AdditionalNoteColumn, #MoneyPayColumn, #laboratoryIdColumn, #labonameColumn, #contactNumberColumn, #CriteriaColumn, #QuantityColumn, #DateLaboColumn, #PatientName{
-
+#Action, #NameColumn, #DateColumn,#PatientContactNumber, #DescriptionColumn, #AdditionalNoteColumn, #MoneyPayColumn, #laboratoryIdColumn, #contactNumberColumn, #AddressPatient, #QuantityColumn, #DateLaboColumn, #PatientName{
+-fx-font-size: 17;
 }
 .table-view .column-header{
     -fx-background-color: white;

@@ -57,6 +57,7 @@ public class addNewPatient implements Initializable {
         }
 
     }
+    @FXML
     public void switchToEquipment(ActionEvent event) {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("equipment.fxml"));

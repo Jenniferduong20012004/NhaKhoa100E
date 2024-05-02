@@ -46,6 +46,7 @@ public class addNewPatient implements Initializable {
                 pst.setString(3, address);
                 int i =pst.executeUpdate();
                 if (i==1){
+                    System.out.println("Sucess");
                     JOptionPane.showMessageDialog(null, "Save data successfully");
                 }
 

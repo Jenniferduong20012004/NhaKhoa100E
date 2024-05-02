@@ -15,6 +15,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
+import javax.swing.JOptionPane;
 
 public class addNewPatient implements Initializable {
     private Stage stage;
@@ -45,7 +46,7 @@ public class addNewPatient implements Initializable {
                 pst.setString(3, address);
                 int i =pst.executeUpdate();
                 if (i==1){
-                    System.out.println ("Data Insert");
+                    JOptionPane.showMessageDialog(null, "Save data successfully");
                 }
 
             } catch (SQLException e) {

@@ -206,7 +206,6 @@
 
     -fx-border-color: #494949;
     -fx-border-radius: 5px 5px 5px 5px;
-    -fx-alignment: center;
 }
 #labelNewPatient{
     -fx-text-fill: #4C7D77;

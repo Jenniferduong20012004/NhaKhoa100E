@@ -51,6 +51,7 @@ public class addNewPatient implements Initializable {
                 int i =pst.executeUpdate();
                 if (i==1){
                     JOptionPane.showMessageDialog(null, "Save data successfully");
+                    resetText();
                 }
                 pst.close();
                 connection.close();
@@ -60,6 +61,14 @@ public class addNewPatient implements Initializable {
         }
 
     }
+
+    private void resetText() {
+        textField.setText(null);
+        textField1.setText(null);
+        textField2.setText(null);
+        textField3.setText(null);
+    }
+
     @FXML
     public void switchToEquipment(ActionEvent event) {
         try {

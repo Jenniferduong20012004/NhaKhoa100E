@@ -24,12 +24,10 @@ import javax.swing.JOptionPane;
 public class addNewPatient implements Initializable {
     private Stage stage;
     @FXML
-    TextField textField, textField1, textField2;
+    TextField textField, textField1, textField2,textField3;
     private Scene scene;
     private FXMLLoader fxmlLoader;
     private Connection connection;
-    @FXML
-    private DatePicker datePicker;
 
     private PreparedStatement pst = null;
     @FXML
@@ -38,11 +36,8 @@ public class addNewPatient implements Initializable {
         String name = textField.getText().trim();
         String contactNumber = textField1.getText().trim();
         String address= textField2.getText().trim();
-        LocalDate localDate = datePicker.getValue();
-        Date date = Date.valueOf(localDate);
-        String pattern = "MMMM dd, yyyy";
-        String datePattern = localDate.format(DateTimeFormatter.ofPattern(pattern));
-        if (name.isEmpty()||contactNumber.isEmpty()||address.isEmpty()){
+        String dob = textField3.getText().trim();
+        if (name.isEmpty()||contactNumber.isEmpty()||address.isEmpty()||dob.isEmpty()){
             JOptionPane.showMessageDialog(null, "Please fill all data");
         }
         else {
@@ -50,7 +45,7 @@ public class addNewPatient implements Initializable {
                 connection =JDBConnection.NhaKhoa100eConnect();
                 pst = connection.prepareStatement(sql);
                 pst.setString(1, name);
-                pst.setDate(2,date);
+                pst.setString(2,dob);
                 pst.setString(3, contactNumber);
                 pst.setString(4, address);
                 int i =pst.executeUpdate();

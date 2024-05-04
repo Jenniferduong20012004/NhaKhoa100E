@@ -102,28 +102,22 @@ public class PatientPageControl implements Initializable {
     }
     @FXML
     private void setCellTable(){
-        /*patients = new TableView<>();
-        PatientName = new TableColumn<>();
-        PatientContactNumber = new TableColumn<>();
-        AddressPatient = new TableColumn<>();
-        DateColumn = new TableColumn<>();*/
         PatientName.setCellValueFactory(new PropertyValueFactory<>("name"));
-
         PatientContactNumber.setCellValueFactory(new PropertyValueFactory<>("contactNumber"));
         AddressPatient.setCellValueFactory(new PropertyValueFactory<>("address"));
         DateColumn.setCellValueFactory(new PropertyValueFactory<>("date"));
 
     }
     private void loadDataFromDatabase(){
-        /*try {
+        try {
             list.clear();
-            pst = connection.prepareStatement("Select Treatment.patientName, Patient.contactnumber, Patient.addressPatient, Treatment.dateTreatment from Treatment, Patient where Patient.patientName = Treatment.patientName and Patient.contactnumber =Treatment.contactnumber");
+            pst = connection.prepareStatement("Select Patient.namePatient, Patient.contactNumber, Patient.addressPatient, Max(dateCome) as dateLast from Treatment, Patient group by Patient.patient_id, Patient.contactNumber, Patient.addressPatient,Patient.namePatient ");
             rs = pst.executeQuery();
             while (rs.next()){
-                list.add(new Patient(rs.getString("patientName"),
-                        rs.getString("contactnumber"),
+                list.add(new Patient(rs.getString("namePatient"), //tên cột trong sql
+                        rs.getString("contactNumber"),
                         rs.getString("addressPatient"),
-                       "" +rs.getDate("dateTreatment")));
+                       "" +rs.getDate("dateLast")));
                 patients.setItems(list);
             }
 
@@ -131,6 +125,6 @@ public class PatientPageControl implements Initializable {
             Logger.getLogger(PatientPageControl.class.getName()).log(Level.SEVERE, null, e);
 
         }
-        patients.setItems(list);*/
+        patients.setItems(list);
     }
 }

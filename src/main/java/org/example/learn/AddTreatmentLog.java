@@ -29,12 +29,6 @@ public class AddTreatmentLog {
     private Label criterialabel;
 
     @FXML
-    private DatePicker datePicker;
-
-    @FXML
-    private DatePicker datePickerdob;
-
-    @FXML
     private Label labolabel;
 
     @FXML
@@ -60,9 +54,7 @@ public class AddTreatmentLog {
     @FXML
     private TextField textField4;
     @FXML
-    private TextField textField5;
-    @FXML
-    private Label Date;
+    private TextField textField5, textField6;
     private boolean clicked= false;
     private Connection connection;
     private PreparedStatement pst = null;
@@ -72,9 +64,7 @@ public class AddTreatmentLog {
     @FXML
     void CheckData(ActionEvent event) {
             String name = textField1.getText().trim();
-            LocalDate localDate = datePickerdob.getValue();
-            String pattern = "yyyy-MMMM-dd";
-            String datePattern = localDate.format(DateTimeFormatter.ofPattern(pattern));
+            String datePattern = textField6.getText().trim();
             if (name.isEmpty() ||  datePattern.isEmpty()) {
                 JOptionPane.showMessageDialog(null, "Please fill in missing data");
             }
@@ -87,12 +77,9 @@ public class AddTreatmentLog {
                     rs = pst.executeQuery();
                     System.out.println(rs);
                     if (rs.next()) {
-                        System.out.println(localDate);
                         LaboratoryLabelCheck.setVisible(true);
-                        Date.setVisible(true);
                         DescriptionLabel.setVisible(true);
                         textArea.setVisible(true);
-                        datePicker.setVisible(true);
                         radioButton.setVisible(true);
                         patientId = rs.getInt("patient_id");
                         System.out.println(patientId);
@@ -135,9 +122,9 @@ public class AddTreatmentLog {
     public void collectInformation (ActionEvent event) throws SQLException {
         if (checkedData ==true) {
             String Description = textArea.getText().trim();
-            LocalDate localDate = datePicker.getValue();
+            LocalDate localDate = LocalDate.now();
             Date date = java.sql.Date.valueOf(localDate);
-            String pattern = "yyyy-MMMM-dd";
+            String pattern = "yyyy-MM-dd";
             String datePattern = localDate.format(DateTimeFormatter.ofPattern(pattern));
             if (Description.isEmpty() ||  datePattern.isEmpty()) {
                 JOptionPane.showMessageDialog(null, "Please fill in missing data");

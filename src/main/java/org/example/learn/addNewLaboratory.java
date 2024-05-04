@@ -19,7 +19,6 @@ import java.time.format.DateTimeFormatter;
 public class addNewLaboratory {
     private Stage stage;
     private Scene scene;
-    private FXMLLoader fxmlLoader;
     @FXML
     private TextField textField;
 

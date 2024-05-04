@@ -35,9 +35,9 @@ public class addNewPatient implements Initializable {
     @FXML
     public void getInformation (ActionEvent event) throws SQLException {
         String sql = "Insert into Patient (namePatient, dateOfBirth, contactNumber, addressPatient) Values (?,?,?,?)";
-        String name = textField.getText();
-        String contactNumber = textField1.getText();
-        String address= textField2.getText();
+        String name = textField.getText().trim();
+        String contactNumber = textField1.getText().trim();
+        String address= textField2.getText().trim();
         LocalDate localDate = datePicker.getValue();
         Date date = Date.valueOf(localDate);
         String pattern = "MMMM dd, yyyy";

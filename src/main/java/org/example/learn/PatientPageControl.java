@@ -44,7 +44,7 @@ public class PatientPageControl implements Initializable {
     ResultSet rs = null;
     PreparedStatement pst = null;
     @FXML
-    public void switchToEquipment(ActionEvent event) {
+    private void switchToEquipment(ActionEvent event) {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("equipment.fxml"));
             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -56,7 +56,7 @@ public class PatientPageControl implements Initializable {
         }
     }
     @FXML
-    public void switchToTreatment(ActionEvent event) {
+    private void switchToTreatment(ActionEvent event) {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("TreatmentLog.fxml"));
             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -68,7 +68,7 @@ public class PatientPageControl implements Initializable {
         }
     }
     @FXML
-    public void switchToDashboard(ActionEvent event) {
+    private void switchToDashboard(ActionEvent event) {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("addNewPatient.fxml"));
             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -81,7 +81,7 @@ public class PatientPageControl implements Initializable {
     }
     @FXML
 
-    public void switchToAddPatient(ActionEvent event) {
+    private void switchToAddPatient(ActionEvent event) {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("addNewPatient.fxml"));
             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();

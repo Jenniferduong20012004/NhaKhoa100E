@@ -31,7 +31,7 @@ public class addNewPatient implements Initializable {
 
     private PreparedStatement pst = null;
     @FXML
-    public void getInformation (ActionEvent event) throws SQLException {
+    private void getInformation (ActionEvent event) throws SQLException {
         String sql = "Insert into Patient (namePatient, dateOfBirth, contactNumber, addressPatient) Values (?,?,?,?)";
         String name = textField.getText().trim();
         String contactNumber = textField1.getText().trim();
@@ -70,7 +70,7 @@ public class addNewPatient implements Initializable {
     }
 
     @FXML
-    public void switchToEquipment(ActionEvent event) {
+    private void switchToEquipment(ActionEvent event) {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("equipment.fxml"));
             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -81,7 +81,8 @@ public class addNewPatient implements Initializable {
             e.printStackTrace();
         }
     }
-    public void switchToTreatment(ActionEvent event) {
+    @FXML
+    private void switchToTreatment(ActionEvent event) {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("TreatmentLog.fxml"));
             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -92,7 +93,8 @@ public class addNewPatient implements Initializable {
             e.printStackTrace();
         }
     }
-    public void switchToPatient(ActionEvent event) {
+    @FXML
+    private void switchToPatient(ActionEvent event) {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("PatientLog.fxml"));
             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -103,7 +105,8 @@ public class addNewPatient implements Initializable {
             e.printStackTrace();
         }
     }
-    public void switchToAddNewTreatmentLog(ActionEvent event) {
+    @FXML
+    private void switchToAddNewTreatmentLog(ActionEvent event) {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("addNewTreatment.fxml"));
             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -114,7 +117,8 @@ public class addNewPatient implements Initializable {
             e.printStackTrace();
         }
     }
-    public void switchToAddNewLaboratory(ActionEvent event) {
+    @FXML
+    private void switchToAddNewLaboratory(ActionEvent event) {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("addLaboratory.fxml"));
             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -124,6 +128,10 @@ public class addNewPatient implements Initializable {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+    @FXML
+    private void Cancel(ActionEvent event){
+        resetText();
     }
 
     @Override

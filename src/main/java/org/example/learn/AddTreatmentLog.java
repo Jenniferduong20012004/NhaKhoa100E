@@ -62,7 +62,7 @@ public class AddTreatmentLog {
     private boolean checkedData = false;
     private int patientId;
     @FXML
-    void CheckData(ActionEvent event) {
+    private void CheckData(ActionEvent event) {
             String name = textField1.getText().trim();
             String datePattern = textField6.getText().trim();
             if (name.isEmpty() ||  datePattern.isEmpty()) {
@@ -97,7 +97,7 @@ public class AddTreatmentLog {
 
     }
     @FXML
-    public void clickYes(ActionEvent event){
+    private void clickYes(ActionEvent event){
         if (clicked == false){
             clicked = true;
             textField3.setVisible(true);
@@ -119,7 +119,7 @@ public class AddTreatmentLog {
     }
 
     @FXML
-    public void collectInformation (ActionEvent event) throws SQLException {
+    private void collectInformation (ActionEvent event) throws SQLException {
         if (checkedData ==true) {
             String Description = textArea.getText().trim();
             LocalDate localDate = LocalDate.now();
@@ -167,6 +167,7 @@ public class AddTreatmentLog {
         clicked = false;
         checkedData = false;
     }
+    @FXML
 
     private void addLaboratory (int patient, Date date) throws SQLException {
         try {
@@ -192,7 +193,8 @@ public class AddTreatmentLog {
             throw new RuntimeException(e);
         }
     }
-    public void switchToEquipment(ActionEvent event) {
+    @FXML
+    private void switchToEquipment(ActionEvent event) {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("equipment.fxml"));
             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -203,7 +205,8 @@ public class AddTreatmentLog {
             e.printStackTrace();
         }
     }
-    public void switchToTreatment(ActionEvent event) {
+    @FXML
+    private void switchToTreatment(ActionEvent event) {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("TreatmentLog.fxml"));
             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -214,7 +217,8 @@ public class AddTreatmentLog {
             e.printStackTrace();
         }
     }
-    public void switchToPatient(ActionEvent event) {
+    @FXML
+    private void switchToPatient(ActionEvent event) {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("PatientLog.fxml"));
             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -225,7 +229,8 @@ public class AddTreatmentLog {
             e.printStackTrace();
         }
     }
-    public void switchToAddPatient(ActionEvent event) {
+    @FXML
+    private void switchToAddPatient(ActionEvent event) {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("addNewPatient.fxml"));
             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -236,8 +241,8 @@ public class AddTreatmentLog {
             e.printStackTrace();
         }
     }
-
-    public void switchToAddLaboratory(ActionEvent event) {
+    @FXML
+    private void switchToAddLaboratory(ActionEvent event) {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("addLaboratory.fxml"));
             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -249,4 +254,8 @@ public class AddTreatmentLog {
         }
     }
 
+    @FXML
+    private void Cancel(ActionEvent event) {
+        resetPage();
+    }
 }

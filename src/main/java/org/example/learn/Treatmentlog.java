@@ -32,7 +32,8 @@ public class Treatmentlog implements Initializable {
     private TableColumn<Patient, String > AdditionalNoteColumn;
     @FXML
     private TableColumn<Patient, Integer > MoneyPayColumn;
-    public void switchToEquipment(ActionEvent event){
+    @FXML
+    private void switchToEquipment(ActionEvent event){
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("equipment.fxml"));
             stage = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -44,8 +45,8 @@ public class Treatmentlog implements Initializable {
             e.printStackTrace();
         }
     }
-
-    public void switchToAddTreatment(ActionEvent event){
+    @FXML
+    private void switchToAddTreatment(ActionEvent event){
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("addNewTreatment.fxml"));
             stage = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -57,7 +58,8 @@ public class Treatmentlog implements Initializable {
             e.printStackTrace();
         }
     }
-    public void switchToDashboard(ActionEvent event){
+    @FXML
+    private void switchToDashboard(ActionEvent event){
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("addNewTreatment.fxml"));
             stage = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -69,7 +71,8 @@ public class Treatmentlog implements Initializable {
             e.printStackTrace();
         }
     }
-    public void switchToPatient(ActionEvent event){
+    @FXML
+    private void switchToPatient(ActionEvent event){
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("PatientLog.fxml"));
             stage = (Stage)((Node)event.getSource()).getScene().getWindow();

@@ -142,6 +142,7 @@ public class AddTreatmentLog {
                     int i =pst.executeUpdate();
                     if (i==1){
                         JOptionPane.showMessageDialog(null, "Save data successfully");
+                        resetPage();
                     }
                     connection.close();
                     pst.close();
@@ -154,6 +155,19 @@ public class AddTreatmentLog {
             }
         }
     }
+
+    private void resetPage() {
+        textArea.setText(null);
+        textField1.setText(null);
+        textField3.setText(null);
+        textField4.setText(null);
+        textField4.setText(null);
+        textField5.setText(null);
+        textField6.setText(null);
+        clicked = false;
+        checkedData = false;
+    }
+
     private void addLaboratory (int patient, Date date) throws SQLException {
         try {
             connection =JDBConnection.NhaKhoa100eConnect();

@@ -33,7 +33,7 @@ public class addNewLaboratory {
     private PreparedStatement pst = null;
     private ResultSet rs = null;
     @FXML
-    public void saveLaboratory (ActionEvent event){
+    private void saveLaboratory (ActionEvent event){
         String sql = "Insert into Laboratory (laboName, contactNumber, addressLaboratory) Values (?,?,?)";
         String name = textField.getText();
         String contactNumber = textField1.getText();
@@ -51,6 +51,7 @@ public class addNewLaboratory {
                 int i =pst.executeUpdate();
                 if (i==1){
                     JOptionPane.showMessageDialog(null, "Save data successfully");
+                    resetText();
                 }
                 pst.close();
                 connection.close();
@@ -59,7 +60,15 @@ public class addNewLaboratory {
             }
         }
     }
-    public void switchToEquipment(ActionEvent event) {
+
+    private void resetText() {
+        textField.setText(null);
+        textField1.setText(null);
+        textField2.setText(null);
+    }
+
+    @FXML
+    private void switchToEquipment(ActionEvent event) {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("equipment.fxml"));
             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -70,7 +79,8 @@ public class addNewLaboratory {
             e.printStackTrace();
         }
     }
-    public void switchToAddTreatmentLog(ActionEvent event) {
+    @FXML
+    private void switchToAddTreatmentLog(ActionEvent event) {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("addNewTreatment.fxml"));
             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -81,7 +91,8 @@ public class addNewLaboratory {
             e.printStackTrace();
         }
     }
-    public void switchToTreatment(ActionEvent event) {
+    @FXML
+    private void switchToTreatment(ActionEvent event) {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("TreatmentLog.fxml"));
             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -92,7 +103,8 @@ public class addNewLaboratory {
             e.printStackTrace();
         }
     }
-    public void switchToPatient(ActionEvent event) {
+    @FXML
+    private void switchToPatient(ActionEvent event) {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("PatientLog.fxml"));
             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -103,7 +115,8 @@ public class addNewLaboratory {
             e.printStackTrace();
         }
     }
-    public void switchToAddPatient(ActionEvent event) {
+    @FXML
+    private void switchToAddPatient(ActionEvent event) {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("addNewPatient.fxml"));
             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -113,6 +126,10 @@ public class addNewLaboratory {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+    @FXML
+    private void Cancel (ActionEvent event){
+        resetText();
     }
 
 }

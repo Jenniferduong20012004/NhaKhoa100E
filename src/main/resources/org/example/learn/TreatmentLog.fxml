@@ -37,14 +37,12 @@
          <font>
             <Font name="OpenSans" size="20.0" />
          </font></Label>
-      <TableView layoutX="250.0" layoutY="219.0" prefHeight="483.0" prefWidth="1030.">
+      <TableView fx:id="treatmentTable" layoutX="250.0" layoutY="219.0" prefHeight="483.0" prefWidth="1030.">
         <columns>
-          <TableColumn fx:id="IDcolumn" prefWidth="171.0" text="Tracking ID" />
-          <TableColumn fx:id="NameColumn" prefWidth="171.0" text="Name" />
-            <TableColumn fx:id="DateColumn" prefWidth="171.0" text="Date" />
-            <TableColumn fx:id="DescriptionColumn" prefWidth="172.0" text="Description" />
-            <TableColumn fx:id="AdditionalNoteColumn" prefWidth="171.0" text="Additional Note" />
-            <TableColumn fx:id="MoneyPayColumn" prefWidth="171.0" text="Money Paid" />
+          <TableColumn fx:id="DateColumn" prefWidth="171.0" text="Date" />
+          <TableColumn fx:id="NameColumn" prefWidth="300.0" text="Name" />
+            <TableColumn fx:id="DescriptionColumn" prefWidth="370.0" text="Description" />
+            <TableColumn fx:id="AdditionalNoteColumn" prefWidth="200.0" text="Action" />
         </columns>
       </TableView>
       <TextField fx:id="search" layoutX="460.0" layoutY="170.0" maxHeight="32.0" maxWidth="441.0" minHeight="32.0" minWidth="441.0" prefHeight="32.0" prefWidth="441.0" promptText="Search..." />

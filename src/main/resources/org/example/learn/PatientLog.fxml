@@ -37,12 +37,12 @@
             <font>
                 <Font name="OpenSans" size="20.0" />
             </font></Label>
-        <TableView fx:id="patients" layoutX="251.0" layoutY="219.0" maxHeight="483.0" maxWidth="995.0" minHeight="483.0" minWidth="949.0" prefHeight="483.0" prefWidth="995.0" style="-fx-background-color: white;" stylesheets="@app.css">
+        <TableView fx:id="patients" layoutX="251.0" layoutY="219.0" maxHeight="487.0" maxWidth="995.0" minHeight="483.0" minWidth="949.0" prefHeight="487.0" prefWidth="995.0" style="-fx-background-color: white;" stylesheets="@app.css">
             <columns>
                 <TableColumn fx:id="PatientName" maxWidth="158.0" minWidth="158.0" prefWidth="158.0" text="Patient Name" />
                 <TableColumn fx:id="PatientContactNumber" maxWidth="158.0" minWidth="158.0" prefWidth="158.0" text="Contact Number" />
                 <TableColumn fx:id="AddressPatient" maxWidth="159.0" minWidth="159.0" prefWidth="159.0" text="Address" />
-                <TableColumn fx:id="DateColumn" maxWidth="158.0" minWidth="158.0" prefWidth="158.0" text="Date" />
+                <TableColumn fx:id="DateColumn" maxWidth="158.0" minWidth="158.0" prefWidth="158.0" text="Last day come" />
                <TableColumn fx:id="MoneyPayColumn" maxWidth="158.0" minWidth="158.0" prefWidth="158.0" text="Money paid" />
                 <TableColumn fx:id="Action" maxWidth="158.0" minWidth="158.0" prefWidth="158.0" text="Action" />
             </columns>

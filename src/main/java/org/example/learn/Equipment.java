@@ -19,6 +19,14 @@ public class Equipment {
     private Scene scene;
     private FXMLLoader fxmlLoader;
     @FXML
+    private TableView<Patient> treatmentTable;
+    @FXML
+    private TableColumn<Patient,String> PatientName;
+    @FXML
+    private TableColumn<Patient,String> PatientContactNumber;
+    @FXML
+    private TableColumn<Patient,String> AddressPatient;
+    @FXML
     private void switchToPatient(ActionEvent event) {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("PatientLog.fxml"));

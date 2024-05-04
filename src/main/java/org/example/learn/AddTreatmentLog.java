@@ -36,8 +36,6 @@ public class AddTreatmentLog {
 
     @FXML
     private Label labolabel;
-    @FXML
-    private RadioButton radioButtonNo;
 
     @FXML
     private RadioButton radioButton;
@@ -97,7 +95,6 @@ public class AddTreatmentLog {
                         DescriptionLabel.setVisible(true);
                         textArea.setVisible(true);
                         datePicker.setVisible(true);
-                        radioButtonNo.setVisible(true);
                         radioButton.setVisible(true);
                         patientId = rs.getInt("patient_id");
                         System.out.println(patientId);
@@ -161,7 +158,6 @@ public class AddTreatmentLog {
                     if (i==1){
                         JOptionPane.showMessageDialog(null, "Save data successfully");
                     }
-                    rs.close();
                     connection.close();
                     pst.close();
                 } catch (Exception e) {
@@ -226,4 +222,5 @@ public class AddTreatmentLog {
             e.printStackTrace();
         }
     }
+
 }

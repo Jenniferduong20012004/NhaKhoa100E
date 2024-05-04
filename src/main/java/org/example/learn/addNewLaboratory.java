@@ -8,20 +8,58 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+
+import javax.swing.*;
+import java.sql.*;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 public class addNewLaboratory {
     private Stage stage;
     private Scene scene;
     private FXMLLoader fxmlLoader;
     @FXML
-    private Label myLabel;
+    private TextField textField;
 
     @FXML
-    private TextArea textField1;
+    private TextField textField2;
+
+    @FXML
+    private TextField textField1;
     @FXML
     private Button saveButton;
-    String name;
+    private Connection connection;
+    private PreparedStatement pst = null;
+    private ResultSet rs = null;
+    @FXML
+    public void saveLaboratory (ActionEvent event){
+        String sql = "Insert into Laboratory (laboName, contactNumber, addressLaboratory) Values (?,?,?)";
+        String name = textField.getText();
+        String contactNumber = textField1.getText();
+        String address= textField2.getText();
+        if (name.isEmpty()||contactNumber.isEmpty()||address.isEmpty()){
+            JOptionPane.showMessageDialog(null, "Please fill all data");
+        }
+        else {
+            try{
+                connection =JDBConnection.NhaKhoa100eConnect();
+                pst = connection.prepareStatement(sql);
+                pst.setString(1, name);
+                pst.setString(2, contactNumber);
+                pst.setString(3, address);
+                int i =pst.executeUpdate();
+                if (i==1){
+                    JOptionPane.showMessageDialog(null, "Save data successfully");
+                }
+                pst.close();
+                connection.close();
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+        }
+    }
     public void switchToEquipment(ActionEvent event) {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("equipment.fxml"));

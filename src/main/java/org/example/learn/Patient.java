@@ -1,22 +1,20 @@
 package org.example.learn;
 
-import javafx.beans.Observable;
-import javafx.fxml.FXML;
-import javafx.scene.control.TableView;
-
-import java.sql.Date;
-
 public class Patient {
     private String name;
+
+
     private String address;
     private String contactNumber;
     private String date;
+    private String description;
 
-    public Patient (String name, String contactNumber, String address, String date){
+    public Patient (String name, String contactNumber, String address, String description, String dateLast){
         this.name = name;
         this.contactNumber= contactNumber;
         this.address = address;
-        this.date = date;
+        this.description = description;
+        this.date = dateLast;
     }
 
     public String getName() {
@@ -49,5 +47,12 @@ public class Patient {
 
     public void setDate(String date) {
         this.date = date;
+    }
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 }

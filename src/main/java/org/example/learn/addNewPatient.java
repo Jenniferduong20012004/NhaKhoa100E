@@ -35,18 +35,15 @@ public class addNewPatient implements Initializable {
     @FXML
     public void getInformation (ActionEvent event) throws SQLException {
         String sql = "Insert into Patient (namePatient, dateOfBirth, contactNumber, addressPatient) Values (?,?,?,?)";
-        String name = textField.getText();
-        String contactNumber = textField1.getText();
-        String address= textField2.getText();
+        String name = textField.getText().trim();
+        String contactNumber = textField1.getText().trim();
+        String address= textField2.getText().trim();
         LocalDate localDate = datePicker.getValue();
         Date date = Date.valueOf(localDate);
         String pattern = "MMMM dd, yyyy";
         String datePattern = localDate.format(DateTimeFormatter.ofPattern(pattern));
         if (name.isEmpty()||contactNumber.isEmpty()||address.isEmpty()){
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setHeaderText(null);
-            alert.setContentText("Please fill all data");
-            alert.showAndWait();
+            JOptionPane.showMessageDialog(null, "Please fill all data");
         }
         else {
             try{
@@ -60,13 +57,10 @@ public class addNewPatient implements Initializable {
                 if (i==1){
                     JOptionPane.showMessageDialog(null, "Save data successfully");
                 }
-
-
+                pst.close();
+                connection.close();
             } catch (SQLException e) {
                 throw new RuntimeException(e);
-            }
-            finally {
-                pst.close();
             }
         }
 

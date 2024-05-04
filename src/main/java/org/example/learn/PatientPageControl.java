@@ -115,7 +115,7 @@ public class PatientPageControl implements Initializable {
 
     }
     private void loadDataFromDatabase(){
-        try {
+        /*try {
             list.clear();
             pst = connection.prepareStatement("Select Treatment.patientName, Patient.contactnumber, Patient.addressPatient, Treatment.dateTreatment from Treatment, Patient where Patient.patientName = Treatment.patientName and Patient.contactnumber =Treatment.contactnumber");
             rs = pst.executeQuery();
@@ -131,6 +131,6 @@ public class PatientPageControl implements Initializable {
             Logger.getLogger(PatientPageControl.class.getName()).log(Level.SEVERE, null, e);
 
         }
-        patients.setItems(list);
+        patients.setItems(list);*/
     }
 }

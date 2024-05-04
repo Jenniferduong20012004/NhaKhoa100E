@@ -36,8 +36,6 @@ public class AddTreatmentLog {
 
     @FXML
     private Label labolabel;
-    @FXML
-    private RadioButton radioButtonNo;
 
     @FXML
     private RadioButton radioButton;
@@ -73,8 +71,7 @@ public class AddTreatmentLog {
     private int patientId;
     @FXML
     void CheckData(ActionEvent event) {
-            String name = textField1.getText();
-            name = name.trim();
+            String name = textField1.getText().trim();
             LocalDate localDate = datePickerdob.getValue();
             String pattern = "yyyy-MMMM-dd";
             String datePattern = localDate.format(DateTimeFormatter.ofPattern(pattern));
@@ -83,7 +80,6 @@ public class AddTreatmentLog {
             }
             else {
                 String sql = "DECLARE @class nvarchar(50) = N'" + name + "'" + " Select patient_id from Patient where namePatient = @class and dateOfBirth = ?";
-                System.out.println(sql);
                 connection = JDBConnection.NhaKhoa100eConnect();
                 try {
                     pst = connection.prepareStatement(sql);
@@ -97,7 +93,6 @@ public class AddTreatmentLog {
                         DescriptionLabel.setVisible(true);
                         textArea.setVisible(true);
                         datePicker.setVisible(true);
-                        radioButtonNo.setVisible(true);
                         radioButton.setVisible(true);
                         patientId = rs.getInt("patient_id");
                         System.out.println(patientId);
@@ -139,7 +134,7 @@ public class AddTreatmentLog {
     @FXML
     public void collectInformation (ActionEvent event) throws SQLException {
         if (checkedData ==true) {
-            String Description = textArea.getText();
+            String Description = textArea.getText().trim();
             LocalDate localDate = datePicker.getValue();
             Date date = java.sql.Date.valueOf(localDate);
             String pattern = "yyyy-MMMM-dd";
@@ -161,13 +156,39 @@ public class AddTreatmentLog {
                     if (i==1){
                         JOptionPane.showMessageDialog(null, "Save data successfully");
                     }
-                    rs.close();
                     connection.close();
                     pst.close();
                 } catch (Exception e) {
                     throw new RuntimeException(e);
                 }
+                if (clicked == true){
+                    addLaboratory(patientId,date);
+                }
             }
+        }
+    }
+    private void addLaboratory (int patient, Date date) throws SQLException {
+        try {
+            connection =JDBConnection.NhaKhoa100eConnect();
+            String sqlLaboratory = "Insert into labUse (patient_id, dateCome, Criteria, Quantity, laboName) Values (?,?,?,?,?)";
+            PreparedStatement pst1 = connection.prepareStatement(sqlLaboratory);
+            pst1.setInt(1, patient);
+            pst1.setDate(2, date);
+            String criteria = textField4.getText().trim();
+            String quantity = textField5.getText().trim();
+            String laboName = textField3.getText().trim();
+            pst1.setString(3, criteria);
+            pst1.setString(4, quantity);
+            pst1.setString(5, laboName);
+            int a = pst1.executeUpdate();
+            if (a==1){
+                JOptionPane.showMessageDialog(null, "Save laboratory data successfully");
+            }
+            pst1.close();
+            connection.close();
+        }
+        catch(Exception e){
+            throw new RuntimeException(e);
         }
     }
     public void switchToEquipment(ActionEvent event) {
@@ -226,4 +247,5 @@ public class AddTreatmentLog {
             e.printStackTrace();
         }
     }
+
 }

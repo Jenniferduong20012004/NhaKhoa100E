@@ -61,6 +61,7 @@ public class addNewPatient implements Initializable {
                     JOptionPane.showMessageDialog(null, "Save data successfully");
                 }
 
+
             } catch (SQLException e) {
                 throw new RuntimeException(e);
             }

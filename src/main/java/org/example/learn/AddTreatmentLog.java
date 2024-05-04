@@ -41,6 +41,8 @@ public class AddTreatmentLog {
 
     @FXML
     private RadioButton radioButton;
+    @FXML
+    private Label LaboratoryLabelCheck;
 
     @FXML
     private Button saveButton;
@@ -68,44 +70,49 @@ public class AddTreatmentLog {
     private PreparedStatement pst = null;
     private ResultSet rs = null;
     private boolean checkedData = false;
-    private String patientId;
+    private int patientId;
     @FXML
     void CheckData(ActionEvent event) {
             String name = textField1.getText();
             name = name.trim();
-            System.out.println(name);
             LocalDate localDate = datePickerdob.getValue();
-            java.sql.Date dateSQL = java.sql.Date.valueOf(localDate);
             String pattern = "yyyy-MMMM-dd";
             String datePattern = localDate.format(DateTimeFormatter.ofPattern(pattern));
             if (name.isEmpty() ||  datePattern.isEmpty()) {
                 JOptionPane.showMessageDialog(null, "Please fill in missing data");
-        }
-            String sql = "DECLARE @class nvarchar(50) = N'"+name+"'"+ " Select patient_id from Patient where namePatient = @class and dateOfBirth = ?";
-            System.out.println(sql);
-            connection = JDBConnection.NhaKhoa100eConnect();
-        try {
-            pst = connection.prepareStatement(sql);
-            pst.setString(1, datePattern);
-            rs = pst.executeQuery();
-            if (rs.isBeforeFirst()){
-                System.out.println(localDate);
-                Date.setVisible(true);
-                DescriptionLabel.setVisible(true);
-                textArea.setVisible(true);
-                datePicker.setVisible(true);
-                radioButtonNo.setVisible(true);
-                radioButton.setVisible(true);
-                //patientId = rs.getString(1);
-                System.out.println(patientId);
-                checkedData = true;
             }
-            else{
-                JOptionPane.showMessageDialog(null, "Patient first come to clinic insert in New Patient first");
+            else {
+                String sql = "DECLARE @class nvarchar(50) = N'" + name + "'" + " Select patient_id from Patient where namePatient = @class and dateOfBirth = ?";
+                System.out.println(sql);
+                connection = JDBConnection.NhaKhoa100eConnect();
+                try {
+                    pst = connection.prepareStatement(sql);
+                    pst.setString(1, datePattern);
+                    rs = pst.executeQuery();
+                    System.out.println(rs);
+                    if (rs.next()) {
+                        System.out.println(localDate);
+                        LaboratoryLabelCheck.setVisible(true);
+                        Date.setVisible(true);
+                        DescriptionLabel.setVisible(true);
+                        textArea.setVisible(true);
+                        datePicker.setVisible(true);
+                        radioButtonNo.setVisible(true);
+                        radioButton.setVisible(true);
+                        patientId = rs.getInt("patient_id");
+                        System.out.println(patientId);
+                        checkedData = true;
+                        rs.close();
+                        connection.close();
+                        pst.close();
+                    } else {
+                        JOptionPane.showMessageDialog(null, "Patient first come to clinic insert in New Patient first");
+                    }
+                } catch (SQLException e) {
+                    throw new RuntimeException(e);
+                }
             }
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
+
     }
     @FXML
     public void clickYes(ActionEvent event){
@@ -132,36 +139,34 @@ public class AddTreatmentLog {
     @FXML
     public void collectInformation (ActionEvent event) throws SQLException {
         if (checkedData ==true) {
-            String name = textField1.getText();
-            LocalDate localDate = datePicker.getValue();
-            java.sql.Date date = java.sql.Date.valueOf(localDate);
-            String pattern = "MMMM dd, yyyy";
-            String datePattern = localDate.format(DateTimeFormatter.ofPattern(pattern));
-            System.out.println(name + datePattern);
             String Description = textArea.getText();
-            String sql = "Insert into Treatment Values (?,?,?,?)";
-            if (name.isEmpty() || datePattern.isEmpty()) {
-                Alert alert = new Alert(Alert.AlertType.ERROR);
-                alert.setHeaderText(null);
-                alert.setContentText("Please fill missing data");
-                alert.showAndWait();
-            } else {
-                try {
-                    connection = JDBConnection.NhaKhoa100eConnect();
+            LocalDate localDate = datePicker.getValue();
+            Date date = java.sql.Date.valueOf(localDate);
+            String pattern = "yyyy-MMMM-dd";
+            String datePattern = localDate.format(DateTimeFormatter.ofPattern(pattern));
+            if (Description.isEmpty() ||  datePattern.isEmpty()) {
+                JOptionPane.showMessageDialog(null, "Please fill in missing data");
+            }
+            else {
+                String sql = "Insert into Treatment (patient_id, detail, dateCome) Values (?,?,?)";
+                System.out.println(sql);
+                connection = JDBConnection.NhaKhoa100eConnect();
+                try{
+                    connection =JDBConnection.NhaKhoa100eConnect();
                     pst = connection.prepareStatement(sql);
-                    pst.setString(1, name);
+                    pst.setInt(1, patientId);
+                    pst.setString(2,Description);
                     pst.setDate(3, date);
-                    pst.setString(4, Description);
-                    int i = pst.executeUpdate();
-                    if (i == 1) {
+                    int i =pst.executeUpdate();
+                    if (i==1){
                         JOptionPane.showMessageDialog(null, "Save data successfully");
                     }
-                } catch (SQLException e) {
-                    throw new RuntimeException(e);
-                } finally {
+                    rs.close();
+                    connection.close();
                     pst.close();
+                } catch (Exception e) {
+                    throw new RuntimeException(e);
                 }
-
             }
         }
     }

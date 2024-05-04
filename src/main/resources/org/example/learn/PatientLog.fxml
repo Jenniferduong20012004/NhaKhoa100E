@@ -13,14 +13,14 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="832.0" prefWidth="1280.0" styleClass="parent" stylesheets="@app.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.learn.Equipment">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="832.0" prefWidth="1280.0" styleClass="parent" stylesheets="@app.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.learn.PatientPageControl">
     <children>
         <Label fx:id="labelNhaKhoa" layoutY="12.0" text="NHA KHOA 100E" textFill="#141414">
             <padding>
                 <Insets left="24.0" right="24.0" />
             </padding>
         </Label>
-        <Label id="labelAddNewPatient" layoutX="272.0" layoutY="80.0" stylesheets="@app.css" text="Equipment">
+        <Label id="labelAddNewPatient" layoutX="274.0" layoutY="80.0" stylesheets="@app.css" text="Patients">
             <graphic>
                 <ImageView fitHeight="38.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
                     <image>
@@ -29,7 +29,7 @@
                 </ImageView>
             </graphic>
         </Label>
-        <Button fx:id="addLaboratoryButton" layoutX="1068.0" layoutY="170.0" maxHeight="36.0" maxWidth="170.0" minHeight="36.0" minWidth="170.0" mnemonicParsing="false" onAction="#switchToAddLaboratory" prefHeight="36.0" prefWidth="170.0" stylesheets="@app.css" text="+ Add laboratory" textFill="WHITE">
+        <Button fx:id="addLaboratoryButton" layoutX="1068.0" layoutY="170.0" maxHeight="36.0" maxWidth="170.0" minHeight="36.0" minWidth="170.0" mnemonicParsing="false" onAction="#switchToAddPatient" prefHeight="36.0" prefWidth="170.0" stylesheets="@app.css" text="+ Add patient" textFill="WHITE">
             <padding>
                 <Insets bottom="8.0" left="12.0" right="12.0" top="8.0" />
             </padding></Button>
@@ -37,17 +37,17 @@
             <font>
                 <Font name="OpenSans" size="20.0" />
             </font></Label>
-        <TableView layoutX="250.0" layoutY="219.0" prefHeight="483.0" prefWidth="1030.">
+        <TableView fx:id="patients" layoutX="251.0" layoutY="219.0" maxHeight="483.0" maxWidth="995.0" minHeight="483.0" minWidth="949.0" prefHeight="483.0" prefWidth="995.0" style="-fx-background-color: white;" stylesheets="@app.css">
             <columns>
-                <TableColumn fx:id="laboratoryIdColumn" prefWidth="171.0" text="Lab Name" />
-                <TableColumn fx:id="labonameColumn" prefWidth="171.0" text="Patient Name" />
-                <TableColumn fx:id="CriteriaColumn" prefWidth="171.0" text="Criteria" />
-                <TableColumn fx:id="QuạntityColumn" prefWidth="172.0" text="Quantity" />
-                <TableColumn fx:id="DateLaboColumn" prefWidth="171.0" text="Date" />
-                <TableColumn fx:id="PatientName" prefWidth="171.0" text="Action" />
+                <TableColumn fx:id="PatientName" maxWidth="158.0" minWidth="158.0" prefWidth="158.0" text="Patient Name" />
+                <TableColumn fx:id="PatientContactNumber" maxWidth="158.0" minWidth="158.0" prefWidth="158.0" text="Contact Number" />
+                <TableColumn fx:id="AddressPatient" maxWidth="159.0" minWidth="159.0" prefWidth="159.0" text="Address" />
+                <TableColumn fx:id="DateColumn" maxWidth="158.0" minWidth="158.0" prefWidth="158.0" text="Date" />
+               <TableColumn fx:id="MoneyPayColumn" maxWidth="158.0" minWidth="158.0" prefWidth="158.0" text="Money paid" />
+                <TableColumn fx:id="Action" maxWidth="158.0" minWidth="158.0" prefWidth="158.0" text="Action" />
             </columns>
         </TableView>
-        <TextField fx:id="search" layoutX="476.0" layoutY="170.0" maxHeight="32.0" maxWidth="441.0" minHeight="32.0" minWidth="441.0" prefHeight="32.0" prefWidth="441.0" promptText="Search..." />
+        <TextField fx:id="search" layoutX="476.0" layoutY="170.0" maxHeight="32.0" maxWidth="441.0" minHeight="32.0" minWidth="441.0" prefHeight="32.0" prefWidth="441.0" promptText="Search patient name" />
         <ComboBox layoutX="341.0" layoutY="170.0" maxHeight="31.0" maxWidth="43.0" minHeight="31.0" minWidth="43.0" prefHeight="31.0" prefWidth="43.0" />
         <Label fx:id="entriesLabel" layoutX="400.0" layoutY="170.0" maxHeight="30.0" maxWidth="60.0" minHeight="30.0" minWidth="60.0" prefHeight="30.0" prefWidth="60.0" text="entries" textFill="Black">
             <font>
@@ -64,7 +64,7 @@
                         </ImageView>
                     </graphic>
                 </Button>
-                <Button id="buttonMenu" alignment="BASELINE_LEFT" layoutX="17.0" layoutY="76.0" mnemonicParsing="false" onAction="#switchToPatient" prefHeight="60.0" prefWidth="216.0" stylesheets="@app.css" text="Patients">
+                <Button id="buttonMenuChoose" alignment="BASELINE_LEFT" layoutX="17.0" layoutY="76.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="216.0" stylesheets="@app.css" text="Patients">
                     <graphic>
                         <ImageView fitHeight="27.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
                             <image>
@@ -82,7 +82,7 @@
                         </ImageView>
                     </graphic>
                 </Button>
-                <Button id="buttonMenuChoose" alignment="BASELINE_LEFT" layoutX="17.0" layoutY="196.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="216.0" stylesheets="@app.css" text="Laboratory">
+                <Button id="buttonMenu" alignment="BASELINE_LEFT" layoutX="17.0" layoutY="196.0" mnemonicParsing="false" onAction="#switchToEquipment" prefHeight="60.0" prefWidth="216.0" stylesheets="@app.css" text="Laboratory">
                     <graphic>
                         <ImageView fitHeight="27.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
                             <image>

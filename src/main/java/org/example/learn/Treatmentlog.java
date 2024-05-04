@@ -9,13 +9,12 @@ import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.stage.Stage;
-import org.controlsfx.control.action.Action;
 
 import java.net.URL;
 import java.util.Date;
 import java.util.ResourceBundle;
 
-public class SceneController implements Initializable {
+public class Treatmentlog implements Initializable {
     private Stage stage;
     private Scene scene;
     private FXMLLoader fxmlLoader;
@@ -48,7 +47,7 @@ public class SceneController implements Initializable {
 
     public void switchToAddTreatment(ActionEvent event){
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("addNewTreatment.fxml"));
             stage = (Stage)((Node)event.getSource()).getScene().getWindow();
             scene = new Scene(fxmlLoader.load());
             stage.setScene(scene);
@@ -58,6 +57,31 @@ public class SceneController implements Initializable {
             e.printStackTrace();
         }
     }
+    public void switchToDashboard(ActionEvent event){
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("addNewTreatment.fxml"));
+            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            scene = new Scene(fxmlLoader.load());
+            stage.setScene(scene);
+            stage.show();
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
+    }
+    public void switchToPatient(ActionEvent event){
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("PatientLog.fxml"));
+            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            scene = new Scene(fxmlLoader.load());
+            stage.setScene(scene);
+            stage.show();
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
+    }
+
 
 
     @Override

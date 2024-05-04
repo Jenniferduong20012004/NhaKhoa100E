@@ -233,7 +233,7 @@
     -fx-alignment: center;
 }
 
-#addPatiendButton,#addLaboratoryButton, #saveButton, #cancelButton{
+#addPatiendButton,#addLaboratoryButton, #saveButton, #cancelButton, #checkButton{
     /* Frame 17 */
 
     /* Auto layout */

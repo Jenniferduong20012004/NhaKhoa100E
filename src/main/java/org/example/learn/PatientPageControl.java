@@ -126,6 +126,5 @@ public class PatientPageControl implements Initializable {
             Logger.getLogger(PatientPageControl.class.getName()).log(Level.SEVERE, null, e);
 
         }
-        patients.setItems(list);
     }
 }

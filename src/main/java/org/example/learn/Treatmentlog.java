@@ -1,5 +1,7 @@
 package org.example.learn;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -8,30 +10,35 @@ import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.Date;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class Treatmentlog implements Initializable {
     private Stage stage;
     private Scene scene;
     private FXMLLoader fxmlLoader;
     @FXML
-    private TableView<Patient> table;
+    private TableView<Treatment> treatmentTable;
     @FXML
-    private TableColumn<Patient, Integer > IDcolumn;
+    private TableColumn<Treatment, String > DescriptionColumn;
     @FXML
     private TableColumn<Patient, String> NameColumn;
     @FXML
     private TableColumn<Patient, Date> DateColumn;
-    @FXML
-    private TableColumn<Patient, String > DescriptionColumn;
-    @FXML
-    private TableColumn<Patient, String > AdditionalNoteColumn;
-    @FXML
-    private TableColumn<Patient, Integer > MoneyPayColumn;
+    ObservableList<Treatment> treatmentList = FXCollections.observableArrayList();
+    Connection connection = null;
+    ResultSet rs = null;
+    PreparedStatement pst = null;
     @FXML
     private void switchToEquipment(ActionEvent event){
         try {
@@ -89,6 +96,33 @@ public class Treatmentlog implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        connection = JDBConnection.NhaKhoa100eConnect();
+        setCellTable();
+        loadDataFromDatabase();
+        treatmentTable.setItems (treatmentList);
+    }
 
+    private void loadDataFromDatabase() {
+        try {
+            treatmentList.clear();
+            pst = connection.prepareStatement("Select Treatment.dateCome, Patient.namePatient, Treatment.detail from Treatment, Patient where Treatment.patient_id = Patient.patient_id order by dateCome desc");
+            rs = pst.executeQuery();
+            while (rs.next()){
+                treatmentList.add(new Treatment(rs.getString("namePatient"), //tên cột trong sql
+                        rs.getString("detail"),
+                        "" +rs.getDate("dateCome")));
+                treatmentTable.setItems(treatmentList);
+            }
+
+        } catch (SQLException e) {
+            Logger.getLogger(PatientPageControl.class.getName()).log(Level.SEVERE, null, e);
+
+        }
+    }
+
+    private void setCellTable() {
+        NameColumn.setCellValueFactory(new PropertyValueFactory<>("patientName"));
+        DateColumn.setCellValueFactory(new PropertyValueFactory<>("Date"));
+        DescriptionColumn.setCellValueFactory(new PropertyValueFactory<>("description"));//tên trong treatment class
     }
 }

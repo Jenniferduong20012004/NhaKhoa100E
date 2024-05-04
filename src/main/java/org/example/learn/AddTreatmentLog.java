@@ -67,9 +67,13 @@ public class AddTreatmentLog {
     private Connection connection;
     private PreparedStatement pst = null;
     private ResultSet rs = null;
+    private boolean checkedData = false;
+    private String patientId;
     @FXML
     void CheckData(ActionEvent event) {
             String name = textField1.getText();
+            name = name.trim();
+            System.out.println(name);
             LocalDate localDate = datePickerdob.getValue();
             java.sql.Date dateSQL = java.sql.Date.valueOf(localDate);
             String pattern = "yyyy-MMMM-dd";
@@ -77,7 +81,7 @@ public class AddTreatmentLog {
             if (name.isEmpty() ||  datePattern.isEmpty()) {
                 JOptionPane.showMessageDialog(null, "Please fill in missing data");
         }
-            String sql = "DECLARE @class nvarchar(50) = N'Như'"+ " Select patient_id from Patient where namePatient = @class and dateOfBirth = ?";
+            String sql = "DECLARE @class nvarchar(50) = N'"+name+"'"+ " Select patient_id from Patient where namePatient = @class and dateOfBirth = ?";
             System.out.println(sql);
             connection = JDBConnection.NhaKhoa100eConnect();
         try {
@@ -92,6 +96,9 @@ public class AddTreatmentLog {
                 datePicker.setVisible(true);
                 radioButtonNo.setVisible(true);
                 radioButton.setVisible(true);
+                //patientId = rs.getString(1);
+                System.out.println(patientId);
+                checkedData = true;
             }
             else{
                 JOptionPane.showMessageDialog(null, "Patient first come to clinic insert in New Patient first");
@@ -124,37 +131,38 @@ public class AddTreatmentLog {
 
     @FXML
     public void collectInformation (ActionEvent event) throws SQLException {
-        String name = textField1.getText();
-        LocalDate localDate = datePicker.getValue();
-        java.sql.Date date = java.sql.Date.valueOf(localDate);
-        String pattern = "MMMM dd, yyyy";
-        String datePattern = localDate.format(DateTimeFormatter.ofPattern(pattern));
-        System.out.println(name + datePattern);
-        String Description = textArea.getText();
-        String sql = "Insert into Treatment Values (?,?,?,?)";
-        if (name.isEmpty() ||  datePattern.isEmpty()) {
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setHeaderText(null);
-            alert.setContentText("Please fill missing data");
-            alert.showAndWait();
-        } else {
+        if (checkedData ==true) {
+            String name = textField1.getText();
+            LocalDate localDate = datePicker.getValue();
+            java.sql.Date date = java.sql.Date.valueOf(localDate);
+            String pattern = "MMMM dd, yyyy";
+            String datePattern = localDate.format(DateTimeFormatter.ofPattern(pattern));
+            System.out.println(name + datePattern);
+            String Description = textArea.getText();
+            String sql = "Insert into Treatment Values (?,?,?,?)";
+            if (name.isEmpty() || datePattern.isEmpty()) {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setHeaderText(null);
+                alert.setContentText("Please fill missing data");
+                alert.showAndWait();
+            } else {
                 try {
                     connection = JDBConnection.NhaKhoa100eConnect();
                     pst = connection.prepareStatement(sql);
                     pst.setString(1, name);
                     pst.setDate(3, date);
-                    pst.setString(4,Description);
+                    pst.setString(4, Description);
                     int i = pst.executeUpdate();
                     if (i == 1) {
                         JOptionPane.showMessageDialog(null, "Save data successfully");
                     }
-                }
-                catch (SQLException e) {
+                } catch (SQLException e) {
                     throw new RuntimeException(e);
                 } finally {
                     pst.close();
                 }
 
+            }
         }
     }
     public void switchToEquipment(ActionEvent event) {

@@ -35,8 +35,8 @@ public class addNewLaboratory {
     @FXML
     private void saveLaboratory (ActionEvent event){
         String sql = "Insert into Laboratory (laboName, contactNumber, addressLaboratory) Values (?,?,?)";
-        String name = textField.getText();
-        String contactNumber = textField1.getText();
+        String name = textField.getText().trim().toLowerCase();
+        String contactNumber = textField1.getText().trim().toLowerCase();
         String address= textField2.getText();
         if (name.isEmpty()||contactNumber.isEmpty()||address.isEmpty()){
             JOptionPane.showMessageDialog(null, "Please fill all data");

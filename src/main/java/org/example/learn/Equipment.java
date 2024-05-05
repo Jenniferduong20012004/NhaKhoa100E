@@ -18,8 +18,12 @@ import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.Date;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 public class Equipment implements Initializable {
     private Stage stage;
     private Scene scene;
@@ -99,6 +103,23 @@ public class Equipment implements Initializable {
     }
 
     private void loadDataFromDatabase() {
+        try {
+            laboUseList.clear();
+            pst = connection.prepareStatement("Select Patient.namePatient, labUse.dateCome, labUse.Criteria, labUse.Quantity, labUse. laboName from Patient, labUse where Patient.patient_id = labUse.patient_id");
+            rs = pst.executeQuery();
+            while (rs.next()){
+                laboUseList.add(new LaboratoryUse(rs.getString("laboName"),//tên cột trong sql
+                        rs.getString("namePatient"),
+                        rs.getString("Criteria"),
+                        ""+rs.getInt("Quantity"),
+                        "" +rs.getDate("dateCome")));
+                laboTable.setItems(laboUseList);
+            }
+
+        } catch (SQLException e) {
+            Logger.getLogger(PatientPageControl.class.getName()).log(Level.SEVERE, null, e);
+
+        }
     }
 
     private void setCellTable() {

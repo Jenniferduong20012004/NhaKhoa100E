@@ -4,13 +4,14 @@ public class LaboratoryUse {
     private String Labname;
     private String PatientName;
     private String criteria;
-    private int quantity;
+    private String quantity;
     private String date;
-    public LaboratoryUse (String Labname, String PatientName, String criteria, int quantity){
+    public LaboratoryUse (String Labname, String PatientName, String criteria, String quantity, String date){
         this.Labname =Labname;
         this.PatientName=PatientName;
         this.criteria =criteria;
         this.quantity = quantity;
+        this.date = date;
     }
 
     public String getLabname() {
@@ -21,11 +22,11 @@ public class LaboratoryUse {
         Labname = labname;
     }
 
-    public int getQuantity() {
+    public String getQuantity() {
         return quantity;
     }
 
-    public void setQuantity(int quantity) {
+    public void setQuantity(String quantity) {
         this.quantity = quantity;
     }
 

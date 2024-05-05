@@ -63,8 +63,8 @@ public class AddTreatmentLog {
     private int patientId;
     @FXML
     private void CheckData(ActionEvent event) {
-            String name = textField1.getText().trim();
-            String datePattern = textField6.getText().trim();
+            String name = textField1.getText().trim().toLowerCase();
+            String datePattern = textField6.getText().trim().toLowerCase();
             if (name.isEmpty() ||  datePattern.isEmpty()) {
                 JOptionPane.showMessageDialog(null, "Please fill in missing data");
             }
@@ -121,7 +121,7 @@ public class AddTreatmentLog {
     @FXML
     private void collectInformation (ActionEvent event) throws SQLException {
         if (checkedData ==true) {
-            String Description = textArea.getText().trim();
+            String Description = textArea.getText().trim().toLowerCase();
             LocalDate localDate = LocalDate.now();
             Date date = java.sql.Date.valueOf(localDate);
             String pattern = "yyyy-MM-dd";
@@ -142,15 +142,15 @@ public class AddTreatmentLog {
                     int i =pst.executeUpdate();
                     if (i==1){
                         JOptionPane.showMessageDialog(null, "Save data successfully");
-                        resetPage();
                     }
                     connection.close();
                     pst.close();
+                    if (clicked == true){
+                        addLaboratory(patientId,date);
+                    }
+                    resetPage();
                 } catch (Exception e) {
                     throw new RuntimeException(e);
-                }
-                if (clicked == true){
-                    addLaboratory(patientId,date);
                 }
             }
         }
@@ -176,9 +176,9 @@ public class AddTreatmentLog {
             PreparedStatement pst1 = connection.prepareStatement(sqlLaboratory);
             pst1.setInt(1, patient);
             pst1.setDate(2, date);
-            String criteria = textField4.getText().trim();
-            String quantity = textField5.getText().trim();
-            String laboName = textField3.getText().trim();
+            String criteria = textField4.getText().trim().toLowerCase();
+            String quantity = textField5.getText().trim().toLowerCase();
+            String laboName = textField3.getText().trim().toLowerCase();
             pst1.setString(3, criteria);
             pst1.setString(4, quantity);
             pst1.setString(5, laboName);

@@ -33,10 +33,10 @@ public class addNewPatient implements Initializable {
     @FXML
     private void getInformation (ActionEvent event) throws SQLException {
         String sql = "Insert into Patient (namePatient, dateOfBirth, contactNumber, addressPatient) Values (?,?,?,?)";
-        String name = textField.getText().trim();
-        String contactNumber = textField1.getText().trim();
-        String address= textField2.getText().trim();
-        String dob = textField3.getText().trim();
+        String name = textField.getText().trim().toLowerCase();
+        String contactNumber = textField1.getText().trim().toLowerCase();
+        String address= textField2.getText().trim().toLowerCase();
+        String dob = textField3.getText().trim().toLowerCase();
         if (name.isEmpty()||contactNumber.isEmpty()||address.isEmpty()||dob.isEmpty()){
             JOptionPane.showMessageDialog(null, "Please fill all data");
         }

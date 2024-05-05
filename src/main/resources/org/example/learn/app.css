@@ -6,24 +6,53 @@
     -fx-font-size: 14;
 }
 .combo-box{
-    -fx-display: flex;
-    -fx-flex-direction: row;
-    -fx-align-items: center;
-    -fx-padding: 8px 9px;
-    -fx-gap: 4px;
 
-    -fx-max-width: 43px;
+    -fx-max-width: 200px;
     -fx-max-height: 31px;
 
     -fx-background: #E0E0E0;
     -fx-border-radius: 50px;
     -fx-background-radius: 50px;
+    -fx-alignment: center;
 
     -fx-flex: none;
     -fx-order: 1;
     -fx-flex-grow: 0;
+    -fx-font-size: 15px;
+    -fx-font-weight: 700;
+    -fx-font-family: 'Montserrat';
+
+}.combo-box:hover{
+    -fx-text-fill: white;
+ }
+ .combo-box-base:hover{
+     -fx-border-color: #3B937E;
+ }
+.combo-box-base:focused{
+   -fx-text-fill: white;
+}
+.combo-box .list-view{
+    -fx-border-width: 0.5px;
+    -fx-border-color: #3B937E;
+    -fx-background-color: white;
+    -fx-padding: 0px;
+}
+.combo-box .list-view{
+    -fx-border-width: 0.5px;
+    -fx-background-color: white;
+    -fx-border-color: #3B937E;
+    -fx-padding: 0px;
+    -fx-font-weight: 700;
+    -fx-border-radius: 10px 10px 0px 0px;
+    -fx-background-radius: 10px 10px 0px 0px;
+}
+.combo-box .list-view .list-ce:filled{
+    -fx-text-fill: black;
+    -fx-font-size: 12px;
+    -fx-font-weight: 700
 
 }
+
 
 /*NHA KHOA 100E*/
 #label{

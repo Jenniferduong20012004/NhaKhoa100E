@@ -33,7 +33,7 @@
          <padding>
             <Insets bottom="8.0" left="12.0" right="12.0" top="8.0" />
          </padding></Button>
-      <Label fx:id="searchLabel" layoutX="275.0" layoutY="170.0" text="Show" textFill="Black">
+      <Label fx:id="searchLabel" layoutX="278.0" layoutY="170.0" text="Show" textFill="Black">
          <font>
             <Font name="OpenSans" size="20.0" />
          </font></Label>
@@ -46,8 +46,8 @@
         </columns>
       </TableView>
       <TextField fx:id="search" layoutX="460.0" layoutY="170.0" maxHeight="32.0" maxWidth="441.0" minHeight="32.0" minWidth="441.0" prefHeight="32.0" prefWidth="441.0" promptText="Search..." />
-      <ComboBox layoutX="341.0" layoutY="170.0" maxHeight="31.0" maxWidth="43.0" minHeight="31.0" minWidth="43.0" prefHeight="31.0" prefWidth="43.0" />
-        <Label fx:id="entriesLabel" layoutX="390.0" layoutY="170.0" maxHeight="30.0" maxWidth="60.0" minHeight="30.0" minWidth="60.0" prefHeight="30.0" prefWidth="60.0" text="entries" textFill="Black">
+      <ComboBox fx:id="comboBox" layoutX="330.0" layoutY="170.0" maxHeight="31.0" maxWidth="43.0" minHeight="31.0" minWidth="43.0" prefHeight="31.0" prefWidth="43.0" />
+        <Label fx:id="entriesLabel" layoutX="380.0" layoutY="170.0" maxHeight="30.0" maxWidth="60.0" minHeight="30.0" minWidth="60.0" prefHeight="30.0" prefWidth="60.0" text="entries" textFill="Black">
             <font>
                 <Font size="50.0" />
             </font></Label>

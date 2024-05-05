@@ -1,5 +1,7 @@
 package org.example.learn;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -8,24 +10,36 @@ import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import org.controlsfx.control.action.Action;
 
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.util.Date;
 import java.util.ResourceBundle;
-public class Equipment {
+public class Equipment implements Initializable {
     private Stage stage;
     private Scene scene;
     private FXMLLoader fxmlLoader;
     @FXML
-    private TableView<Patient> treatmentTable;
+    private TableView<LaboratoryUse> laboTable;
     @FXML
-    private TableColumn<Patient,String> PatientName;
+    private TableColumn<LaboratoryUse,String> laboratoryNameColumn;
     @FXML
-    private TableColumn<Patient,String> PatientContactNumber;
+    private TableColumn<LaboratoryUse,String> PatientName;
     @FXML
-    private TableColumn<Patient,String> AddressPatient;
+    private TableColumn<LaboratoryUse,String> CriteriaColumn;
+    @FXML
+    private TableColumn<LaboratoryUse, Integer> QuantityColumn;
+    @FXML
+    private TableColumn<LaboratoryUse,String> DateLaboColumn;
+    ObservableList<LaboratoryUse> laboUseList = FXCollections.observableArrayList();
+    Connection connection = null;
+    ResultSet rs = null;
+    PreparedStatement pst = null;
     @FXML
     private void switchToPatient(ActionEvent event) {
         try {
@@ -74,5 +88,24 @@ public class Equipment {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        connection = JDBConnection.NhaKhoa100eConnect();
+        setCellTable();
+        loadDataFromDatabase();
+        laboTable.setItems (laboUseList);
+    }
+
+    private void loadDataFromDatabase() {
+    }
+
+    private void setCellTable() {
+        laboratoryNameColumn.setCellValueFactory(new PropertyValueFactory<>("Labname"));
+        PatientName.setCellValueFactory(new PropertyValueFactory<>("PatientName"));
+        CriteriaColumn.setCellValueFactory(new PropertyValueFactory<>("criteria"));//tên trong treatment class
+        QuantityColumn.setCellValueFactory(new PropertyValueFactory<>("quantity"));
+        DateLaboColumn.setCellValueFactory(new PropertyValueFactory<>("date"));
     }
 }

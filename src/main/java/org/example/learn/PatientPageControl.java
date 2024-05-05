@@ -2,6 +2,8 @@ package org.example.learn;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
+import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -10,6 +12,7 @@ import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import java.net.URL;
@@ -21,6 +24,8 @@ import java.util.logging.Logger;
 public class PatientPageControl implements Initializable {
     private Stage stage;
     private Scene scene;
+    @FXML
+    private TextField search;
     private FXMLLoader fxmlLoader;
     @FXML
     private TableView<Patient> patients;
@@ -91,9 +96,7 @@ public class PatientPageControl implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         connection = JDBConnection.NhaKhoa100eConnect();
-        setCellTable();
         loadDataFromDatabase();
-        patients.setItems (list);
     }
     @FXML
     private void setCellTable(){
@@ -102,8 +105,32 @@ public class PatientPageControl implements Initializable {
         AddressPatient.setCellValueFactory(new PropertyValueFactory<>("address"));
         DateColumn.setCellValueFactory(new PropertyValueFactory<>("date"));
         MoneyPayColumn.setCellValueFactory(new PropertyValueFactory<>("description"));//tên trong patient class
-
-    }
+        FilteredList<Patient> filter = new FilteredList<>(list, b -> true);
+        search.textProperty().addListener((observable, oldValue, newValue) ->{
+            filter.setPredicate(list ->{
+                //no search value
+                if (newValue.isEmpty() || newValue.isBlank() || newValue ==null){
+                    return true;
+                }
+                String searchKeyWord=newValue.trim().toLowerCase();
+                if (list.getName().toLowerCase().indexOf(searchKeyWord)>-1){
+                    return true; //  found match in product name
+                }
+                else if (list.getContactNumber().toLowerCase().indexOf(searchKeyWord)>-1){
+                    return true;
+                }
+                else if (list.getDate().toLowerCase().indexOf(searchKeyWord)>-1){
+                    return true;
+                }
+                else{
+                    return false;
+                }
+            });
+        });
+        SortedList<Patient> sortedData = new SortedList<>(filter);
+        sortedData.comparatorProperty().bind(patients.comparatorProperty());
+        patients.setItems(sortedData);
+        }
     private void loadDataFromDatabase(){
         try {
             list.clear();
@@ -117,6 +144,7 @@ public class PatientPageControl implements Initializable {
                        "" +rs.getDate("dateLast")));
                 patients.setItems(list);
             }
+            setCellTable();
 
         } catch (SQLException e) {
             Logger.getLogger(PatientPageControl.class.getName()).log(Level.SEVERE, null, e);

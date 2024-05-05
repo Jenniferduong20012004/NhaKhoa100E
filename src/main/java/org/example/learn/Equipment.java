@@ -122,7 +122,7 @@ public class Equipment implements Initializable {
             setCellTable();
 
         } catch (SQLException e) {
-            Logger.getLogger(PatientPageControl.class.getName()).log(Level.SEVERE, null, e);
+            Logger.getLogger(Equipment.class.getName()).log(Level.SEVERE, null, e);
 
         }
     }

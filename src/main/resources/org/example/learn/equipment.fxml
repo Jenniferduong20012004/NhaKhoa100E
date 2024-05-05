@@ -37,14 +37,13 @@
             <font>
                 <Font name="OpenSans" size="20.0" />
             </font></Label>
-        <TableView layoutX="250.0" layoutY="219.0" prefHeight="483.0" prefWidth="1030.">
+        <TableView fx:id="laboTable" layoutX="250.0" layoutY="219.0" prefHeight="483.0" prefWidth="990.0">
             <columns>
-                <TableColumn fx:id="laboratoryIdColumn" prefWidth="171.0" text="Lab Name" />
-                <TableColumn fx:id="labonameColumn" prefWidth="171.0" text="Patient Name" />
+                <TableColumn fx:id="laboratoryNameColumn" prefWidth="171.0" text="Lab Name" />
+                <TableColumn fx:id="PatientName" prefWidth="171.0" text="Patient Name" />
                 <TableColumn fx:id="CriteriaColumn" prefWidth="171.0" text="Criteria" />
-                <TableColumn fx:id="QuạntityColumn" prefWidth="172.0" text="Quantity" />
+                <TableColumn fx:id="QuantityColumn" prefWidth="172.0" text="Quantity" />
                 <TableColumn fx:id="DateLaboColumn" prefWidth="171.0" text="Date" />
-                <TableColumn fx:id="PatientName" prefWidth="171.0" text="Action" />
             </columns>
         </TableView>
         <TextField fx:id="search" layoutX="476.0" layoutY="170.0" maxHeight="32.0" maxWidth="441.0" minHeight="32.0" minWidth="441.0" prefHeight="32.0" prefWidth="441.0" promptText="Search..." />

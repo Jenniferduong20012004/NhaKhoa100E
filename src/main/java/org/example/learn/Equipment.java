@@ -1,5 +1,7 @@
 package org.example.learn;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -8,24 +10,40 @@ import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import org.controlsfx.control.action.Action;
 
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.Date;
 import java.util.ResourceBundle;
-public class Equipment {
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+public class Equipment implements Initializable {
     private Stage stage;
     private Scene scene;
     private FXMLLoader fxmlLoader;
     @FXML
-    private TableView<Patient> treatmentTable;
+    private TableView<LaboratoryUse> laboTable;
     @FXML
-    private TableColumn<Patient,String> PatientName;
+    private TableColumn<LaboratoryUse,String> laboratoryNameColumn;
     @FXML
-    private TableColumn<Patient,String> PatientContactNumber;
+    private TableColumn<LaboratoryUse,String> PatientName;
     @FXML
-    private TableColumn<Patient,String> AddressPatient;
+    private TableColumn<LaboratoryUse,String> CriteriaColumn;
+    @FXML
+    private TableColumn<LaboratoryUse, Integer> QuantityColumn;
+    @FXML
+    private TableColumn<LaboratoryUse,String> DateLaboColumn;
+    ObservableList<LaboratoryUse> laboUseList = FXCollections.observableArrayList();
+    Connection connection = null;
+    ResultSet rs = null;
+    PreparedStatement pst = null;
     @FXML
     private void switchToPatient(ActionEvent event) {
         try {
@@ -74,5 +92,41 @@ public class Equipment {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        connection = JDBConnection.NhaKhoa100eConnect();
+        setCellTable();
+        loadDataFromDatabase();
+        laboTable.setItems (laboUseList);
+    }
+
+    private void loadDataFromDatabase() {
+        try {
+            laboUseList.clear();
+            pst = connection.prepareStatement("Select Patient.namePatient, labUse.dateCome, labUse.Criteria, labUse.Quantity, labUse. laboName from Patient, labUse where Patient.patient_id = labUse.patient_id");
+            rs = pst.executeQuery();
+            while (rs.next()){
+                laboUseList.add(new LaboratoryUse(rs.getString("laboName"),//tên cột trong sql
+                        rs.getString("namePatient"),
+                        rs.getString("Criteria"),
+                        ""+rs.getInt("Quantity"),
+                        "" +rs.getDate("dateCome")));
+                laboTable.setItems(laboUseList);
+            }
+
+        } catch (SQLException e) {
+            Logger.getLogger(PatientPageControl.class.getName()).log(Level.SEVERE, null, e);
+
+        }
+    }
+
+    private void setCellTable() {
+        laboratoryNameColumn.setCellValueFactory(new PropertyValueFactory<>("Labname"));
+        PatientName.setCellValueFactory(new PropertyValueFactory<>("PatientName"));
+        CriteriaColumn.setCellValueFactory(new PropertyValueFactory<>("criteria"));//tên trong treatment class
+        QuantityColumn.setCellValueFactory(new PropertyValueFactory<>("quantity"));
+        DateLaboColumn.setCellValueFactory(new PropertyValueFactory<>("date"));
     }
 }

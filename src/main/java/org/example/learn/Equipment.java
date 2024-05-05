@@ -8,6 +8,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -40,6 +41,8 @@ public class Equipment implements Initializable {
     private TableColumn<LaboratoryUse, Integer> QuantityColumn;
     @FXML
     private TableColumn<LaboratoryUse,String> DateLaboColumn;
+    @FXML
+    private ComboBox<String> comboBox;
     ObservableList<LaboratoryUse> laboUseList = FXCollections.observableArrayList();
     Connection connection = null;
     ResultSet rs = null;
@@ -96,6 +99,7 @@ public class Equipment implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        comboBox.setItems(FXCollections.observableArrayList("Patient name", "Laboratory Name"));
         connection = JDBConnection.NhaKhoa100eConnect();
         setCellTable();
         loadDataFromDatabase();
@@ -128,5 +132,23 @@ public class Equipment implements Initializable {
         CriteriaColumn.setCellValueFactory(new PropertyValueFactory<>("criteria"));//tên trong treatment class
         QuantityColumn.setCellValueFactory(new PropertyValueFactory<>("quantity"));
         DateLaboColumn.setCellValueFactory(new PropertyValueFactory<>("date"));
+    }
+    @FXML
+    private void search(ActionEvent event){
+        String info = comboBox.getValue().trim();
+        System.out.println(info);
+        if (info.equals("Patient name")){
+            searchPatient();
+        }
+        else if (info.equals("Laboratory Name")){
+            searchLaboname();
+        }
+    }
+
+    private void searchLaboname() {
+        
+    }
+
+    private void searchPatient() {
     }
 }

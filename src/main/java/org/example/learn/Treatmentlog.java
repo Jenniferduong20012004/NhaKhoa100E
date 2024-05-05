@@ -2,6 +2,8 @@ package org.example.learn;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
+import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -10,6 +12,7 @@ import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
@@ -27,6 +30,8 @@ public class Treatmentlog implements Initializable {
     private Stage stage;
     private Scene scene;
     private FXMLLoader fxmlLoader;
+    @FXML
+    private TextField search;
     @FXML
     private TableView<Treatment> treatmentTable;
     @FXML
@@ -97,9 +102,7 @@ public class Treatmentlog implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         connection = JDBConnection.NhaKhoa100eConnect();
-        setCellTable();
         loadDataFromDatabase();
-        treatmentTable.setItems (treatmentList);
     }
 
     private void loadDataFromDatabase() {
@@ -113,6 +116,7 @@ public class Treatmentlog implements Initializable {
                         "" +rs.getDate("dateCome")));
                 treatmentTable.setItems(treatmentList);
             }
+            setCellTable();
 
         } catch (SQLException e) {
             Logger.getLogger(PatientPageControl.class.getName()).log(Level.SEVERE, null, e);
@@ -124,5 +128,30 @@ public class Treatmentlog implements Initializable {
         NameColumn.setCellValueFactory(new PropertyValueFactory<>("patientName"));
         DateColumn.setCellValueFactory(new PropertyValueFactory<>("Date"));
         DescriptionColumn.setCellValueFactory(new PropertyValueFactory<>("description"));//tên trong treatment class
+        FilteredList<Treatment> filter = new FilteredList<>(treatmentList, b -> true);
+        search.textProperty().addListener((observable, oldValue, newValue) ->{
+            filter.setPredicate(treatmentList ->{
+                //no search value
+                if (newValue.isEmpty() || newValue.isBlank() || newValue ==null){
+                    return true;
+                }
+                String searchKeyWord=newValue.trim().toLowerCase();
+                if (treatmentList.getPatientName().toLowerCase().indexOf(searchKeyWord)>-1){
+                    return true; //  found match in product name
+                }
+                else if (treatmentList.getDescription().toLowerCase().indexOf(searchKeyWord)>-1){
+                    return true;
+                }
+                else if (treatmentList.getDate().toLowerCase().indexOf(searchKeyWord)>-1){
+                    return true;
+                }
+                else{
+                    return false;
+                }
+            });
+        });
+        SortedList<Treatment> sortedData = new SortedList<>(filter);
+        sortedData.comparatorProperty().bind(treatmentTable.comparatorProperty());
+        treatmentTable.setItems(sortedData);
     }
 }

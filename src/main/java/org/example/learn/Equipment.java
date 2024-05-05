@@ -2,6 +2,8 @@ package org.example.learn;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
+import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -11,6 +13,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import org.controlsfx.control.action.Action;
@@ -42,12 +45,12 @@ public class Equipment implements Initializable {
     @FXML
     private TableColumn<LaboratoryUse,String> DateLaboColumn;
     @FXML
-    private ComboBox<String> comboBox;
+    private TextField search;
     ObservableList<LaboratoryUse> laboUseList = FXCollections.observableArrayList();
     Connection connection = null;
     ResultSet rs = null;
     PreparedStatement pst = null;
-    @FXML
+     @FXML
     private void switchToPatient(ActionEvent event) {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("PatientLog.fxml"));
@@ -99,11 +102,8 @@ public class Equipment implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        comboBox.setItems(FXCollections.observableArrayList("Patient name", "Laboratory Name"));
         connection = JDBConnection.NhaKhoa100eConnect();
-        setCellTable();
         loadDataFromDatabase();
-        laboTable.setItems (laboUseList);
     }
 
     private void loadDataFromDatabase() {
@@ -119,9 +119,10 @@ public class Equipment implements Initializable {
                         "" +rs.getDate("dateCome")));
                 laboTable.setItems(laboUseList);
             }
+            setCellTable();
 
         } catch (SQLException e) {
-            Logger.getLogger(PatientPageControl.class.getName()).log(Level.SEVERE, null, e);
+            Logger.getLogger(Equipment.class.getName()).log(Level.SEVERE, null, e);
 
         }
     }
@@ -132,23 +133,31 @@ public class Equipment implements Initializable {
         CriteriaColumn.setCellValueFactory(new PropertyValueFactory<>("criteria"));//tên trong treatment class
         QuantityColumn.setCellValueFactory(new PropertyValueFactory<>("quantity"));
         DateLaboColumn.setCellValueFactory(new PropertyValueFactory<>("date"));
-    }
-    @FXML
-    private void search(ActionEvent event){
-        String info = comboBox.getValue().trim();
-        System.out.println(info);
-        if (info.equals("Patient name")){
-            searchPatient();
-        }
-        else if (info.equals("Laboratory Name")){
-            searchLaboname();
-        }
+        FilteredList<LaboratoryUse> filterLabo = new FilteredList<>(laboUseList, b -> true);
+        search.textProperty().addListener((observable, oldValue, newValue) ->{
+            filterLabo.setPredicate(laboUseList ->{
+                //no search value
+                if (newValue.isEmpty() || newValue.isBlank() || newValue ==null){
+                    return true;
+                }
+                String searchKeyWord=newValue.trim().toLowerCase();
+                if (laboUseList.getLabname().toLowerCase().indexOf(searchKeyWord)>-1){
+                    return true; //  found match in product name
+                }
+                else if (laboUseList.getPatientName().toLowerCase().indexOf(searchKeyWord)>-1){
+                    return true;
+                }
+                else if (laboUseList.getDate().toLowerCase().indexOf(searchKeyWord)>-1){
+                    return true;
+                }
+                else{
+                    return false;
+                }
+            });
+        });
+        SortedList<LaboratoryUse> sortedData = new SortedList<>(filterLabo);
+        sortedData.comparatorProperty().bind(laboTable.comparatorProperty());
+        laboTable.setItems(sortedData);
     }
 
-    private void searchLaboname() {
-        
-    }
-
-    private void searchPatient() {
-    }
 }

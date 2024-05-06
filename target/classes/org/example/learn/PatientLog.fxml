@@ -31,7 +31,7 @@
             <padding>
                 <Insets bottom="8.0" left="12.0" right="12.0" top="8.0" />
             </padding></Button>
-        <TableView fx:id="patients" layoutX="251.0" layoutY="219.0" maxHeight="487.0" maxWidth="995.0" minHeight="483.0" minWidth="949.0" prefHeight="487.0" prefWidth="995.0" style="-fx-background-color: white;" stylesheets="@app.css">
+        <TableView fx:id="patients" layoutX="251.0" layoutY="219.0" maxHeight="613.0" maxWidth="995.0" minHeight="613.0" minWidth="949.0" prefHeight="613.0" prefWidth="995.0" style="-fx-background-color: white;" stylesheets="@app.css">
             <columns>
                 <TableColumn fx:id="PatientName" maxWidth="158.0" minWidth="158.0" prefWidth="158.0" text="Patient Name" />
                 <TableColumn fx:id="PatientContactNumber" maxWidth="158.0" minWidth="158.0" prefWidth="158.0" text="Contact Number" />
@@ -82,11 +82,6 @@
                 </Button>
             </children>
         </Pane>
-        <Button fx:id="previous" layoutX="614.0" layoutY="745.0" mnemonicParsing="false" text="Previous" />
-        <Button fx:id="button1" layoutX="681.0" layoutY="745.0" maxHeight="31.0" maxWidth="31.0" minHeight="31.0" minWidth="31.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="31.0" text="1" />
-        <Button fx:id="button2" layoutX="722.0" layoutY="745.0" maxHeight="31.0" maxWidth="31.0" minHeight="31.0" minWidth="31.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="31.0" text="2" />
-        <Button fx:id="button3" layoutX="763.0" layoutY="745.0" maxHeight="31.0" maxWidth="31.0" minHeight="31.0" minWidth="31.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="31.0" text="3" />
-        <Button fx:id="next" layoutX="804.0" layoutY="745.0" mnemonicParsing="false" text="Next" />
     </children>
     <opaqueInsets>
         <Insets />

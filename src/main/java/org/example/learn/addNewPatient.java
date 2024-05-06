@@ -6,18 +6,13 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.net.URL;
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.ResourceBundle;
 import javax.swing.JOptionPane;
 
@@ -30,6 +25,18 @@ public class addNewPatient implements Initializable {
     private Connection connection;
 
     private PreparedStatement pst = null;
+    private boolean update = false;
+    public Patient patient =null;
+    private int patientid;
+
+    public boolean isUpdate() {
+        return update;
+    }
+
+    public void setUpdate(boolean update) {
+        this.update = update;
+    }
+
     @FXML
     private void getInformation (ActionEvent event) throws SQLException {
         String sql = "Insert into Patient (namePatient, dateOfBirth, contactNumber, addressPatient) Values (?,?,?,?)";
@@ -137,5 +144,12 @@ public class addNewPatient implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
+    }
+    public void setTextField(int id, String patientName, String contactNumber, String address, String dob){
+        patientid = id;
+        textField.setText(patientName);
+        textField1.setText(contactNumber);
+        textField2.setText(address);
+        textField3.setText(dob);
     }
 }

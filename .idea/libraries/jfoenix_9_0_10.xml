@@ -2,6 +2,7 @@
   <library name="jfoenix-9.0.10">
     <CLASSES>
       <root url="jar://$PROJECT_DIR$/../Code app/jfoenix-9.0.10.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../Code app/fontawesomefx-8.2.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

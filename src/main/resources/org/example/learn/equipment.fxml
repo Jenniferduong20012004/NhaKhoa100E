@@ -31,7 +31,7 @@
             <padding>
                 <Insets bottom="8.0" left="12.0" right="12.0" top="8.0" />
             </padding></Button>
-        <TableView fx:id="laboTable" layoutX="250.0" layoutY="219.0" prefHeight="483.0" prefWidth="990.0">
+        <TableView fx:id="laboTable" layoutX="250.0" layoutY="219.0" prefHeight="613.0" prefWidth="990.0">
             <columns>
                 <TableColumn fx:id="laboratoryNameColumn" prefWidth="171.0" text="Lab Name" />
                 <TableColumn fx:id="PatientName" prefWidth="171.0" text="Patient Name" />
@@ -81,11 +81,6 @@
                 </Button>
             </children>
         </Pane>
-        <Button fx:id="previous" layoutX="614.0" layoutY="745.0" mnemonicParsing="false" text="Previous" />
-        <Button fx:id="button1" layoutX="681.0" layoutY="745.0" maxHeight="31.0" maxWidth="31.0" minHeight="31.0" minWidth="31.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="31.0" text="1" />
-        <Button fx:id="button2" layoutX="722.0" layoutY="745.0" maxHeight="31.0" maxWidth="31.0" minHeight="31.0" minWidth="31.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="31.0" text="2" />
-        <Button fx:id="button3" layoutX="763.0" layoutY="745.0" maxHeight="31.0" maxWidth="31.0" minHeight="31.0" minWidth="31.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="31.0" text="3" />
-        <Button fx:id="next" layoutX="804.0" layoutY="745.0" mnemonicParsing="false" text="Next" />
     </children>
     <opaqueInsets>
         <Insets />

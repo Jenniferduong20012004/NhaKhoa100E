@@ -145,8 +145,7 @@ public class addNewPatient implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
     }
-    public void setTextField(int id, String patientName, String contactNumber, String address, String dob){
-        patientid = id;
+    public void setTextField(String patientName, String contactNumber, String address, String dob){
         textField.setText(patientName);
         textField1.setText(contactNumber);
         textField2.setText(address);

@@ -6,15 +6,20 @@ public class Patient {
 
     private String address;
     private String contactNumber;
-    private String date;
-    private String description;
+    private String dateOfBirth;
 
-    public Patient (String name, String contactNumber, String address, String description, String dateLast){
+    public Patient (String name, String contactNumber, String address, String dateOfBirth){
         this.name = name;
         this.contactNumber= contactNumber;
         this.address = address;
-        this.description = description;
-        this.date = dateLast;
+        this.dateOfBirth=dateOfBirth;
+    }
+    public String getDateOfBirth() {
+        return dateOfBirth;
+    }
+
+    public void setDateOfBirth(String dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
     }
 
     public String getName() {
@@ -39,20 +44,5 @@ public class Patient {
 
     public void setContactNumber(String contactNumber) {
         this.contactNumber = contactNumber;
-    }
-
-    public String getDate() {
-        return date;
-    }
-
-    public void setDate(String date) {
-        this.date = date;
-    }
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
     }
 }

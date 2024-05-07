@@ -189,42 +189,6 @@
     -fx-flex-grow: 0;
 
 }
-#PatientName, #Date, #Description, #AdditionalNote, #MoneyPay{
-    /* Background Colour */
-
-    -fx-pref-width: 201px;
-    -fx-pref-height: 21px;
-
-    -fx-font-family: 'Poppins';
-    -fx-font-style: normal;
-    -fx-font-weight: bold;
-    -fx-font-size: 20px;
-    -fx-line-height: 24px;
-    -fx-letter-spacing: 0.03em;
-
-    -fx-text-fill: #181818;
-    /* Frame 26919 */
-
-    box-sizing: border-box;
-
-    /* Auto layout */
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 0px 27px 0px 7px;
-
-    width: 527px;
-    height: 118px;
-
-    -fx-border-radius:  5px;
-
-    /* Inside auto layout */
-    flex: none;
-    order: 1;
-    flex-grow: 0;
-
-
-}
 #textField, #textField2, #textField3{
 }
 #textField5, #textField4{
@@ -316,7 +280,8 @@
 .table-view:focused{
     -fx-background-color: transparent;
 }
-#Action, #NameColumn, #DateColumn,#PatientContactNumber, #DescriptionColumn, #AdditionalNoteColumn, #MoneyPayColumn, #laboratoryIdColumn, #contactNumberColumn, #AddressPatient, #QuantityColumn, #DateLaboColumn, #PatientName, #CriteriaColumn{
+#Action, #NameColumn, #DateColumn,#PatientContactNumber, #DescriptionColumn, #AdditionalNoteColumn, #MoneyPayColumn, #laboratoryIdColumn, #contactNumberColumn, #AddressPatient, #QuantityColumn, #DateLaboColumn, #PatientName, #CriteriaColumn#PatientName, #Date, #Description, #AdditionalNote, #MoneyPay{
+    /* Background Colour */
 -fx-font-size: 17;
 }
 .table-view .column-header{
@@ -328,12 +293,12 @@
 .table-view .column-header-background.label{
     -fx-text-fill: black;
 }
-.table-row-cell-odd{
+.table-row-cell:odd{
     -fx-background-color:#C9E7EE;
     -fx-background-insets: 0, 0 0 1 0;
     -fx-padding:  0.0em;
 }
-.table-row-cell-even{
+.table-row-cell:even{
     -fx-background-color:white;
     -fx-background-insets: 0, 0 0 1 0;
     -fx-padding:  0.0em;

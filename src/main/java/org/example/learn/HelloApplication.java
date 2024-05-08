@@ -15,9 +15,10 @@ public class HelloApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("addNewPatient.fxml"));
-            Scene scene = new Scene(fxmlLoader.load());
+            Parent parent = FXMLLoader.load(getClass().getResource("TreatmentLog.fxml"));
+            Scene scene = new Scene(parent);
             stage.setScene(scene);
+
             stage.show();
         }
         catch(Exception e){

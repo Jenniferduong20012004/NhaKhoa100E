@@ -5,20 +5,22 @@ import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
 import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
 import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 import javafx.util.Callback;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
 
-import java.awt.event.MouseEvent;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.*;
@@ -44,12 +46,6 @@ public class PatientPageControl implements Initializable {
     private TableColumn<Patient,String> AddressPatient;
     @FXML
     private TableColumn<Patient, String> DateColumn;
-    @FXML
-    private TableColumn<Patient, String> MoneyPayColumn;
-    @FXML
-    private TableColumn<Patient, String>  Action;
-    Patient patient = null;
-
     ObservableList<Patient> list = FXCollections.observableArrayList();
     Connection connection = null;
     ResultSet rs = null;
@@ -114,64 +110,7 @@ public class PatientPageControl implements Initializable {
         PatientName.setCellValueFactory(new PropertyValueFactory<>("name"));
         PatientContactNumber.setCellValueFactory(new PropertyValueFactory<>("contactNumber"));
         AddressPatient.setCellValueFactory(new PropertyValueFactory<>("address"));
-        DateColumn.setCellValueFactory(new PropertyValueFactory<>("date"));
-        MoneyPayColumn.setCellValueFactory(new PropertyValueFactory<>("description"));//tên trong patient class
-        Callback<TableColumn<Patient,String>, TableCell<Patient, String>> cellFactory =(TableColumn<Patient, String> param) ->{
-            final TableCell <Patient, String>cell = new TableCell<Patient,String>(){
-                //overide update item method
-                @Override
-                public void updateItem(String item, boolean empty){
-                    super.updateItem(item,empty);
-                    //ensure the cell is created only on non-empty rows
-                    if (empty){
-                        setGraphic(null);
-                        setText(null);
-
-                    }
-                    else{
-                        final Button editButton = new Button ("Edit");
-                        editButton.setStyle(
-                                "-fx-background-color: #489E98;"+
-                                        "-fx-border-radius: 8px 8px 8px 8px;"+
-                                        "-fx-font-family: 'Montserrat';"+
-                                        "-fx-background-radius: 20;"+
-                                        "-fx-text-fill: white;"+
-
-                        );
-                        final Button deleteButton = new Button ("Delete");
-                        deleteButton.setStyle(
-                                "-fx-background-color: #ff1744;"+
-                                        "-fx-border-radius: 8px 8px 8px 8px;"+
-                                        "-fx-font-family: 'Montserrat';"+
-                                        "-fx-background-radius: 20;"+
-                                        "-fx-text-fill: white;"
-                        );
-                        editButton.setOnAction(event->{
-                            patient = patients.getSelectionModel().getSelectedItem();
-                            FXMLLoader load = new FXMLLoader();
-                            load.setLocation(getClass().getResource("addNewPatient.fxml"));
-                            try {
-                                load.load();
-                            }
-                            catch (IOException ex){
-                                Logger.getLogger(PatientPageControl.class.getName()).log(Level.SEVERE, null, ex);
-                            }
-                            addNewPatient addnewpatient = load.getController();
-                            addnewpatient.setUpdate(true);
-                        });
-                        HBox managebtn = new HBox(editButton, deleteButton);
-                        managebtn.setStyle("-fx-alignment:center");
-                        HBox.setMargin(deleteButton, new Insets(2, 2, 0, 3));
-                        HBox.setMargin(editButton, new Insets(2, 3, 0, 2));
-
-                        setGraphic(managebtn);
-
-                        setText(null);
-                    }
-                };
-            };
-            return cell;
-        };
+        DateColumn.setCellValueFactory(new PropertyValueFactory<>("dateOfBirth"));//tên trong patient class
         FilteredList<Patient> filter = new FilteredList<>(list, b -> true);
         search.textProperty().addListener((observable, oldValue, newValue) ->{
             filter.setPredicate(list ->{
@@ -186,7 +125,7 @@ public class PatientPageControl implements Initializable {
                 else if (list.getContactNumber().toLowerCase().indexOf(searchKeyWord)>-1){
                     return true;
                 }
-                else if (list.getDate().toLowerCase().indexOf(searchKeyWord)>-1){
+                else if (list.getDateOfBirth().toLowerCase().indexOf(searchKeyWord)>-1){
                     return true;
                 }
                 else{
@@ -196,20 +135,19 @@ public class PatientPageControl implements Initializable {
         });
         SortedList<Patient> sortedData = new SortedList<>(filter);
         sortedData.comparatorProperty().bind(patients.comparatorProperty());
-        Action.setCellFactory(cellFactory);
         patients.setItems(sortedData);
         }
     private void loadDataFromDatabase(){
         try {
             list.clear();
-            pst = connection.prepareStatement("Select Treatment.detail, newTable.namePatient, newTable.contactNumber, newTable.addressPatient, newTable.dateLast from (Select Patient.namePatient, Patient.patient_id, Patient.contactNumber, Patient.addressPatient, Max(dateCome) as dateLast from Treatment, Patient where Treatment.patient_id = Patient.patient_id group by Patient.patient_id, Patient.contactNumber, Patient.addressPatient,Patient.namePatient) as newTable left join Treatment on Treatment.dateCome = newTable.dateLast and Treatment.patient_id=newTable.patient_id");
+            pst = connection.prepareStatement("Select namePatient, dateOfBirth, contactNumber, addressPatient\n" +
+                    "from Patient");
             rs = pst.executeQuery();
             while (rs.next()){
                 list.add(new Patient(rs.getString("namePatient"), //tên cột trong sql
                         rs.getString("contactNumber"),
                         rs.getString("addressPatient"),
-                       rs.getString("detail"),
-                       "" +rs.getDate("dateLast")));
+                       "" +rs.getDate("dateOfBirth")));
                 patients.setItems(list);
             }
             setCellTable();
@@ -219,4 +157,27 @@ public class PatientPageControl implements Initializable {
 
         }
     }
+    @FXML
+    public void update(ActionEvent event) {
+        Patient patient = patients.getSelectionModel().getSelectedItem();
+        FXMLLoader loader = new FXMLLoader ();
+        loader.setLocation(getClass().getResource("addNewPatient.fxml"));
+        try {
+            loader.load();
+        } catch (IOException ex) {
+            Logger.getLogger(PatientPageControl.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        addNewPatient addnewpatient = loader.getController();
+        addnewpatient.setUpdate(true);
+        addnewpatient.setTextField(patient.getName(), patient.getContactNumber(), patient.getAddress(), patient.getDateOfBirth());
+        Parent parent = loader.getRoot();
+        Stage stage = new Stage();
+        stage.setScene(new Scene(parent));
+        stage.show();
+
+    }
+    @FXML
+    public void delete(ActionEvent event) {
+    }
+
 }

@@ -27,19 +27,10 @@ public class addNewPatient implements Initializable {
     private PreparedStatement pst = null;
     private boolean update = false;
     public Patient patient =null;
-    private int patientid;
-
-    public boolean isUpdate() {
-        return update;
-    }
-
-    public void setUpdate(boolean update) {
-        this.update = update;
-    }
+    private int id;
 
     @FXML
     private void getInformation (ActionEvent event) throws SQLException {
-        String sql = "Insert into Patient (namePatient, dateOfBirth, contactNumber, addressPatient) Values (?,?,?,?)";
         String name = textField.getText().trim().toLowerCase();
         String contactNumber = textField1.getText().trim().toLowerCase();
         String address= textField2.getText().trim().toLowerCase();
@@ -49,6 +40,7 @@ public class addNewPatient implements Initializable {
         }
         else {
             try{
+                String sql = getQuery();
                 connection =JDBConnection.NhaKhoa100eConnect();
                 pst = connection.prepareStatement(sql);
                 pst.setString(1, name);
@@ -67,6 +59,15 @@ public class addNewPatient implements Initializable {
             }
         }
 
+    }
+
+    private String getQuery() {
+        if (update == true){
+            return "";
+        }
+        else{
+            return "Insert into Patient (namePatient, dateOfBirth, contactNumber, addressPatient) Values (?,?,?,?)";
+        }
     }
 
     private void resetText() {
@@ -150,5 +151,12 @@ public class addNewPatient implements Initializable {
         textField1.setText(contactNumber);
         textField2.setText(address);
         textField3.setText(dob);
+    }
+    public boolean isUpdate() {
+        return update;
+    }
+
+    public void setUpdate(boolean update) {
+        this.update = update;
     }
 }

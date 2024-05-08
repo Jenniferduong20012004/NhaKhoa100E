@@ -1,5 +1,6 @@
 package org.example.learn;
 
+import ViewModel.addNewLaboratoryVM;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -29,42 +30,10 @@ public class addNewLaboratory {
     private TextField textField1;
     @FXML
     private Button saveButton;
-    private Connection connection;
-    private PreparedStatement pst = null;
-    private ResultSet rs = null;
+    private addNewLaboratoryVM addnewlaboratoryvm = new addNewLaboratoryVM();
     @FXML
     private void saveLaboratory (ActionEvent event){
-        String sql = "Insert into Laboratory (laboName, contactNumber, addressLaboratory) Values (?,?,?)";
-        String name = textField.getText().trim().toLowerCase();
-        String contactNumber = textField1.getText().trim().toLowerCase();
-        String address= textField2.getText();
-        if (name.isEmpty()||contactNumber.isEmpty()||address.isEmpty()){
-            JOptionPane.showMessageDialog(null, "Please fill all data");
-        }
-        else {
-            try{
-                connection =JDBConnection.NhaKhoa100eConnect();
-                pst = connection.prepareStatement(sql);
-                pst.setString(1, name);
-                pst.setString(2, contactNumber);
-                pst.setString(3, address);
-                int i =pst.executeUpdate();
-                if (i==1){
-                    JOptionPane.showMessageDialog(null, "Save data successfully");
-                    resetText();
-                }
-                pst.close();
-                connection.close();
-            } catch (SQLException e) {
-                throw new RuntimeException(e);
-            }
-        }
-    }
-
-    private void resetText() {
-        textField.setText(null);
-        textField1.setText(null);
-        textField2.setText(null);
+        addnewlaboratoryvm.saveLaboratory(textField, textField1, textField2);
     }
 
     @FXML
@@ -129,7 +98,7 @@ public class addNewLaboratory {
     }
     @FXML
     private void Cancel (ActionEvent event){
-        resetText();
+        addnewlaboratoryvm.resetText(textField, textField1, textField2);
     }
 
 }

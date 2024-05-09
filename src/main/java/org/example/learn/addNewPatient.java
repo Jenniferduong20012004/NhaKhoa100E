@@ -1,5 +1,6 @@
 package org.example.learn;
 
+import ViewModel.addNewPatientVM;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -28,6 +29,7 @@ public class addNewPatient implements Initializable {
     private boolean update = false;
     public Patient patient =null;
     private int id;
+    private addNewPatientVM addNewpatientvm = new addNewPatientVM();
 
     @FXML
     private void getInformation (ActionEvent event) throws SQLException {
@@ -35,46 +37,8 @@ public class addNewPatient implements Initializable {
         String contactNumber = textField1.getText().trim().toLowerCase();
         String address= textField2.getText().trim().toLowerCase();
         String dob = textField3.getText().trim().toLowerCase();
-        if (name.isEmpty()||contactNumber.isEmpty()||address.isEmpty()||dob.isEmpty()){
-            JOptionPane.showMessageDialog(null, "Please fill all data");
-        }
-        else {
-            try{
-                String sql = getQuery();
-                connection =JDBConnection.NhaKhoa100eConnect();
-                pst = connection.prepareStatement(sql);
-                pst.setString(1, name);
-                pst.setString(2,dob);
-                pst.setString(3, contactNumber);
-                pst.setString(4, address);
-                int i =pst.executeUpdate();
-                if (i==1){
-                    JOptionPane.showMessageDialog(null, "Save data successfully");
-                    resetText();
-                }
-                pst.close();
-                connection.close();
-            } catch (SQLException e) {
-                throw new RuntimeException(e);
-            }
-        }
-
-    }
-
-    private String getQuery() {
-        if (update == true){
-            return "";
-        }
-        else{
-            return "Insert into Patient (namePatient, dateOfBirth, contactNumber, addressPatient) Values (?,?,?,?)";
-        }
-    }
-
-    private void resetText() {
-        textField.setText(null);
-        textField1.setText(null);
-        textField2.setText(null);
-        textField3.setText(null);
+        addNewpatientvm.saveInformation(name, contactNumber, address, dob);
+        resetText();
     }
 
     @FXML
@@ -152,11 +116,10 @@ public class addNewPatient implements Initializable {
         textField2.setText(address);
         textField3.setText(dob);
     }
-    public boolean isUpdate() {
-        return update;
-    }
-
-    public void setUpdate(boolean update) {
-        this.update = update;
+    public void resetText() {
+        textField.setText(null);
+        textField1.setText(null);
+        textField2.setText(null);
+        textField3.setText(null);
     }
 }

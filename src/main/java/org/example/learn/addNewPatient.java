@@ -1,5 +1,6 @@
 package org.example.learn;
 
+import ViewModel.Patient;
 import ViewModel.addNewPatientVM;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -15,7 +16,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
-import javax.swing.JOptionPane;
 
 public class addNewPatient implements Initializable {
     private Stage stage;

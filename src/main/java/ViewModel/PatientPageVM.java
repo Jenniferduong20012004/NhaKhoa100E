@@ -2,8 +2,6 @@ package ViewModel;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import org.example.learn.JDBConnection;
-import org.example.learn.Patient;
 import org.example.learn.PatientPageControl;
 
 import java.sql.Connection;

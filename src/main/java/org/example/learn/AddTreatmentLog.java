@@ -17,8 +17,6 @@ import java.time.format.DateTimeFormatter;
 public class AddTreatmentLog {
     @FXML
     private Label DescriptionLabel;
-    @FXML
-    private Button checkButton;
     private Stage stage;
     private Scene scene;
 

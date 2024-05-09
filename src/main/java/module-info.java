@@ -10,4 +10,6 @@ module org.example.learn {
 
     opens org.example.learn to javafx.fxml;
     exports org.example.learn;
+    exports ViewModel;
+    opens ViewModel to javafx.fxml;
 }

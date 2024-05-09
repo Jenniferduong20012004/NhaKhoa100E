@@ -1,9 +1,5 @@
 package ViewModel;
 
-import javafx.scene.control.TextField;
-import org.example.learn.JDBConnection;
-import org.example.learn.Patient;
-
 import javax.swing.*;
 import java.sql.Connection;
 import java.sql.PreparedStatement;

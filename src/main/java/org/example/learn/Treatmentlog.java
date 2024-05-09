@@ -1,7 +1,8 @@
 package org.example.learn;
 
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
+import ViewModel.Patient;
+import ViewModel.Treatment;
+import ViewModel.TreatmentLogVM;
 import javafx.collections.transformation.FilteredList;
 import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
@@ -17,14 +18,8 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 import java.net.URL;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.Date;
 import java.util.ResourceBundle;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 public class Treatmentlog implements Initializable {
     private Stage stage;
@@ -40,10 +35,7 @@ public class Treatmentlog implements Initializable {
     private TableColumn<Patient, String> NameColumn;
     @FXML
     private TableColumn<Patient, Date> DateColumn;
-    ObservableList<Treatment> treatmentList = FXCollections.observableArrayList();
-    Connection connection = null;
-    ResultSet rs = null;
-    PreparedStatement pst = null;
+    private TreatmentLogVM treatmentLogVm = new TreatmentLogVM();
     @FXML
     private void switchToEquipment(ActionEvent event){
         try {
@@ -101,34 +93,17 @@ public class Treatmentlog implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        connection = JDBConnection.NhaKhoa100eConnect();
-        loadDataFromDatabase();
+        treatmentLogVm.init();
+        treatmentTable.setItems(treatmentLogVm.getTreatmentList());
+        setCellTable();
     }
 
-    private void loadDataFromDatabase() {
-        try {
-            treatmentList.clear();
-            pst = connection.prepareStatement("Select Treatment.dateCome, Patient.namePatient, Treatment.detail from Treatment, Patient where Treatment.patient_id = Patient.patient_id order by dateCome desc");
-            rs = pst.executeQuery();
-            while (rs.next()){
-                treatmentList.add(new Treatment(rs.getString("namePatient"), //tên cột trong sql
-                        rs.getString("detail"),
-                        "" +rs.getDate("dateCome")));
-                treatmentTable.setItems(treatmentList);
-            }
-            setCellTable();
-
-        } catch (SQLException e) {
-            Logger.getLogger(PatientPageControl.class.getName()).log(Level.SEVERE, null, e);
-
-        }
-    }
 
     private void setCellTable() {
         NameColumn.setCellValueFactory(new PropertyValueFactory<>("patientName"));
         DateColumn.setCellValueFactory(new PropertyValueFactory<>("Date"));
         DescriptionColumn.setCellValueFactory(new PropertyValueFactory<>("description"));//tên trong treatment class
-        FilteredList<Treatment> filter = new FilteredList<>(treatmentList, b -> true);
+        FilteredList<Treatment> filter = new FilteredList<>(treatmentLogVm.getTreatmentList(), b -> true);
         search.textProperty().addListener((observable, oldValue, newValue) ->{
             filter.setPredicate(treatmentList ->{
                 //no search value

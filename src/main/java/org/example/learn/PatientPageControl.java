@@ -1,5 +1,6 @@
 package org.example.learn;
 
+import ViewModel.Patient;
 import ViewModel.PatientPageVM;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;

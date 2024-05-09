@@ -1,5 +1,8 @@
 package org.example.learn;
 
+import ViewModel.JDBConnection;
+import ViewModel.LaboratoryUse;
+import ViewModel.LaboratoryUseVM;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
@@ -10,20 +13,17 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Scene;
-import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
-import org.controlsfx.control.action.Action;
 
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.Date;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -46,10 +46,10 @@ public class Equipment implements Initializable {
     private TableColumn<LaboratoryUse,String> DateLaboColumn;
     @FXML
     private TextField search;
-    ObservableList<LaboratoryUse> laboUseList = FXCollections.observableArrayList();
     Connection connection = null;
     ResultSet rs = null;
     PreparedStatement pst = null;
+    private LaboratoryUseVM laboVM;
      @FXML
     private void switchToPatient(ActionEvent event) {
         try {
@@ -102,30 +102,12 @@ public class Equipment implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        connection = JDBConnection.NhaKhoa100eConnect();
-        loadDataFromDatabase();
+        laboVM = new LaboratoryUseVM();
+        laboVM.init();
+        laboTable.setItems(laboVM.getLaboUseList());
+        setCellTable();
     }
 
-    private void loadDataFromDatabase() {
-        try {
-            laboUseList.clear();
-            pst = connection.prepareStatement("Select Patient.namePatient, labUse.dateCome, labUse.Criteria, labUse.Quantity, labUse. laboName from Patient, labUse where Patient.patient_id = labUse.patient_id");
-            rs = pst.executeQuery();
-            while (rs.next()){
-                laboUseList.add(new LaboratoryUse(rs.getString("laboName"),//tên cột trong sql
-                        rs.getString("namePatient"),
-                        rs.getString("Criteria"),
-                        ""+rs.getInt("Quantity"),
-                        "" +rs.getDate("dateCome")));
-                laboTable.setItems(laboUseList);
-            }
-            setCellTable();
-
-        } catch (SQLException e) {
-            Logger.getLogger(Equipment.class.getName()).log(Level.SEVERE, null, e);
-
-        }
-    }
 
     private void setCellTable() {
         laboratoryNameColumn.setCellValueFactory(new PropertyValueFactory<>("Labname"));
@@ -133,7 +115,7 @@ public class Equipment implements Initializable {
         CriteriaColumn.setCellValueFactory(new PropertyValueFactory<>("criteria"));//tên trong treatment class
         QuantityColumn.setCellValueFactory(new PropertyValueFactory<>("quantity"));
         DateLaboColumn.setCellValueFactory(new PropertyValueFactory<>("date"));
-        FilteredList<LaboratoryUse> filterLabo = new FilteredList<>(laboUseList, b -> true);
+        FilteredList<LaboratoryUse> filterLabo = new FilteredList<>(laboVM.getLaboUseList(), b -> true);
         search.textProperty().addListener((observable, oldValue, newValue) ->{
             filterLabo.setPredicate(laboUseList ->{
                 //no search value

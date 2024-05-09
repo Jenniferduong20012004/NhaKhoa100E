@@ -33,7 +33,11 @@ public class addNewLaboratory {
     private addNewLaboratoryVM addnewlaboratoryvm = new addNewLaboratoryVM();
     @FXML
     private void saveLaboratory (ActionEvent event){
-        addnewlaboratoryvm.saveLaboratory(textField, textField1, textField2);
+        String name = textField.getText().trim().toLowerCase();
+        String contactNumber = textField1.getText().trim().toLowerCase();
+        String address= textField2.getText();
+        addnewlaboratoryvm.saveLaboratory(name, contactNumber, address);
+        resetText();
     }
 
     @FXML
@@ -97,8 +101,11 @@ public class addNewLaboratory {
         }
     }
     @FXML
-    private void Cancel (ActionEvent event){
-        addnewlaboratoryvm.resetText(textField, textField1, textField2);
+    private void Cancel (ActionEvent event){resetText();
     }
-
+    public void resetText() {
+        textField.setText(null);
+        textField1.setText(null);
+        textField2.setText(null);
+    }
 }

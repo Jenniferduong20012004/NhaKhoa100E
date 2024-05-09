@@ -280,7 +280,7 @@
 .table-view:focused{
     -fx-background-color: transparent;
 }
-#Action, #NameColumn, #DateColumn,#PatientContactNumber, #DescriptionColumn, #AdditionalNoteColumn, #MoneyPayColumn, #laboratoryIdColumn, #contactNumberColumn, #AddressPatient, #QuantityColumn, #DateLaboColumn, #PatientName, #CriteriaColumn#PatientName, #Date, #Description, #AdditionalNote, #MoneyPay{
+#Action, #NameColumn, #DateColumn,#PatientContactNumber, #DescriptionColumn, #AdditionalNoteColumn, #MoneyPayColumn, #laboratoryIdColumn, #contactNumberColumn, #AddressPatient, #QuantityColumn, #DateLaboColumn, #PatientName, #CriteriaColumn#PatientName, #Date, #Description, #id, #MoneyPay{
     /* Background Colour */
 -fx-font-size: 17;
     -fx-text-fill: black;

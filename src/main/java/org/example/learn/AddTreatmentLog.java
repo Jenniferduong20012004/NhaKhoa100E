@@ -1,5 +1,6 @@
 package org.example.learn;
 
+import ViewModel.addTreatmentlogVM;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -20,7 +21,6 @@ public class AddTreatmentLog {
     private Button checkButton;
     private Stage stage;
     private Scene scene;
-    private FXMLLoader fxmlLoader;
 
     @FXML
     private Label amountlabel;
@@ -55,51 +55,30 @@ public class AddTreatmentLog {
     private TextField textField4;
     @FXML
     private TextField textField5, textField6;
-    private boolean clicked= false;
     private Connection connection;
     private PreparedStatement pst = null;
     private ResultSet rs = null;
-    private boolean checkedData = false;
     private int patientId;
+    private addTreatmentlogVM addTreatmentlogVM = new addTreatmentlogVM();
     @FXML
     private void CheckData(ActionEvent event) {
             String name = textField1.getText().trim().toLowerCase();
             String datePattern = textField6.getText().trim().toLowerCase();
-            if (name.isEmpty() ||  datePattern.isEmpty()) {
-                JOptionPane.showMessageDialog(null, "Please fill in missing data");
-            }
-            else {
-                String sql = "DECLARE @class nvarchar(50) = N'" + name + "'" + " Select patient_id from Patient where namePatient = @class and dateOfBirth = ?";
-                connection = JDBConnection.NhaKhoa100eConnect();
-                try {
-                    pst = connection.prepareStatement(sql);
-                    pst.setString(1, datePattern);
-                    rs = pst.executeQuery();
-                    System.out.println(rs);
-                    if (rs.next()) {
-                        LaboratoryLabelCheck.setVisible(true);
-                        DescriptionLabel.setVisible(true);
-                        textArea.setVisible(true);
-                        radioButton.setVisible(true);
-                        patientId = rs.getInt("patient_id");
-                        System.out.println(patientId);
-                        checkedData = true;
-                        rs.close();
-                        connection.close();
-                        pst.close();
-                    } else {
-                        JOptionPane.showMessageDialog(null, "Patient first come to clinic insert in New Patient first");
-                    }
-                } catch (SQLException e) {
-                    throw new RuntimeException(e);
-                }
+            addTreatmentlogVM.checkData(name, datePattern);
+            if (addTreatmentlogVM.isVisibleButton()) {
+                LaboratoryLabelCheck.setVisible(true);
+                DescriptionLabel.setVisible(true);
+                textArea.setVisible(true);
+                radioButton.setVisible(true);
+            } else {
+                JOptionPane.showMessageDialog(null, "Patient first come to clinic insert in New Patient first");
             }
 
     }
     @FXML
     private void clickYes(ActionEvent event){
-        if (clicked == false){
-            clicked = true;
+        if (addTreatmentlogVM.isClicked()==false){
+            addTreatmentlogVM.setClicked(true);
             textField3.setVisible(true);
             textField4.setVisible(true);
             textField5.setVisible(true);
@@ -108,7 +87,7 @@ public class AddTreatmentLog {
             labolabel.setVisible(true);
         }
         else{
-           clicked = false;
+            addTreatmentlogVM.setClicked(false);
             textField3.setVisible(false);
             textField4.setVisible(false);
             textField5.setVisible(false);
@@ -120,39 +99,16 @@ public class AddTreatmentLog {
 
     @FXML
     private void collectInformation (ActionEvent event) throws SQLException {
-        if (checkedData ==true) {
+        if (addTreatmentlogVM.isCheckedData()){
             String Description = textArea.getText().trim().toLowerCase();
-            LocalDate localDate = LocalDate.now();
-            Date date = java.sql.Date.valueOf(localDate);
-            String pattern = "yyyy-MM-dd";
-            String datePattern = localDate.format(DateTimeFormatter.ofPattern(pattern));
-            if (Description.isEmpty() ||  datePattern.isEmpty()) {
-                JOptionPane.showMessageDialog(null, "Please fill in missing data");
+            addTreatmentlogVM.getInformation(Description);
+            if (addTreatmentlogVM.isClicked()){
+                String criteria = textField4.getText().trim().toLowerCase();
+                String quantity = textField5.getText().trim().toLowerCase();
+                String laboName = textField3.getText().trim().toLowerCase();
+                addTreatmentlogVM.addLaboratory(criteria, quantity, laboName);
             }
-            else {
-                String sql = "Insert into Treatment (patient_id, detail, dateCome) Values (?,?,?)";
-                System.out.println(sql);
-                connection = JDBConnection.NhaKhoa100eConnect();
-                try{
-                    connection =JDBConnection.NhaKhoa100eConnect();
-                    pst = connection.prepareStatement(sql);
-                    pst.setInt(1, patientId);
-                    pst.setString(2,Description);
-                    pst.setDate(3, date);
-                    int i =pst.executeUpdate();
-                    if (i==1){
-                        JOptionPane.showMessageDialog(null, "Save data successfully");
-                    }
-                    connection.close();
-                    pst.close();
-                    if (clicked == true){
-                        addLaboratory(patientId,date);
-                    }
-                    resetPage();
-                } catch (Exception e) {
-                    throw new RuntimeException(e);
-                }
-            }
+            resetPage();
         }
     }
 
@@ -164,34 +120,9 @@ public class AddTreatmentLog {
         textField4.setText(null);
         textField5.setText(null);
         textField6.setText(null);
-        clicked = false;
-        checkedData = false;
-    }
-    @FXML
+        addTreatmentlogVM.setClicked(false);
+        addTreatmentlogVM.setVisibleButton(false);
 
-    private void addLaboratory (int patient, Date date) throws SQLException {
-        try {
-            connection =JDBConnection.NhaKhoa100eConnect();
-            String sqlLaboratory = "Insert into labUse (patient_id, dateCome, Criteria, Quantity, laboName) Values (?,?,?,?,?)";
-            PreparedStatement pst1 = connection.prepareStatement(sqlLaboratory);
-            pst1.setInt(1, patient);
-            pst1.setDate(2, date);
-            String criteria = textField4.getText().trim().toLowerCase();
-            String quantity = textField5.getText().trim().toLowerCase();
-            String laboName = textField3.getText().trim().toLowerCase();
-            pst1.setString(3, criteria);
-            pst1.setString(4, quantity);
-            pst1.setString(5, laboName);
-            int a = pst1.executeUpdate();
-            if (a==1){
-                JOptionPane.showMessageDialog(null, "Save laboratory data successfully");
-            }
-            pst1.close();
-            connection.close();
-        }
-        catch(Exception e){
-            throw new RuntimeException(e);
-        }
     }
     @FXML
     private void switchToEquipment(ActionEvent event) {

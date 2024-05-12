@@ -1,4 +1,4 @@
-package org.example.learn;
+package ViewModel;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;

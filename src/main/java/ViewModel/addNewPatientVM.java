@@ -1,9 +1,5 @@
 package ViewModel;
 
-import javafx.scene.control.TextField;
-import org.example.learn.JDBConnection;
-import org.example.learn.Patient;
-
 import javax.swing.*;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -15,7 +11,7 @@ public class addNewPatientVM {
     private PreparedStatement pst = null;
     private boolean update = false;
     public Patient patient =null;
-    private int id;
+    private int patientId;
     public void saveInformation(String name, String contactNumber, String address, String dob){
         if (name.isEmpty()||contactNumber.isEmpty()||address.isEmpty()||dob.isEmpty()){
             JOptionPane.showMessageDialog(null, "Please fill all data");
@@ -23,6 +19,7 @@ public class addNewPatientVM {
         else {
             try{
                 String sql = getQuery();
+                System.out.println (sql);
                 connection = JDBConnection.NhaKhoa100eConnect();
                 pst = connection.prepareStatement(sql);
                 pst.setString(1, name);
@@ -40,9 +37,18 @@ public class addNewPatientVM {
             }
         }
     }
+
+    public int getPatientId() {
+        return patientId;
+    }
+
+    public void setPatientId(int patientId) {
+        this.patientId = patientId;
+    }
+
     private String getQuery() {
         if (update == true){
-            return "";
+            return "update Patient set namePatient = ?, dateOfBirth = ?, contactNumber = ?, addressPatient = ? where patient_id ="+ patientId;
         }
         else{
             return "Insert into Patient (namePatient, dateOfBirth, contactNumber, addressPatient) Values (?,?,?,?)";

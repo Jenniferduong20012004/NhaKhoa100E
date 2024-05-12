@@ -2,9 +2,8 @@ package ViewModel;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import org.example.learn.JDBConnection;
-import org.example.learn.Patient;
 import org.example.learn.PatientPageControl;
+import org.example.learn.addNewPatient;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -15,6 +14,7 @@ import java.util.logging.Logger;
 
 public class PatientPageVM {
     private addNewPatientVM addNewPatientVM;
+    private addNewPatient addNewPatient;
     Connection connection = null;
     ResultSet rs = null;
     PreparedStatement pst = null;
@@ -43,8 +43,9 @@ public class PatientPageVM {
         }
         return list;
     }
-    public void update(){
-        addNewPatientVM = new ViewModel.addNewPatientVM();
+    public void update(int id, addNewPatientVM addNewPatientVM){
+        this.addNewPatientVM = addNewPatientVM;
+        addNewPatientVM.setPatientId(id);
         addNewPatientVM.setUpdate(true);
     }
 }

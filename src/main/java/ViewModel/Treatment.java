@@ -1,4 +1,4 @@
-package org.example.learn;
+package ViewModel;
 
 public class Treatment {
     private String patientName;

@@ -1,7 +1,5 @@
 package ViewModel;
 
-import org.example.learn.JDBConnection;
-
 import javax.swing.*;
 import java.sql.*;
 import java.time.LocalDate;

@@ -1,16 +1,12 @@
 package org.example.learn;
 
-import ViewModel.JDBConnection;
 import ViewModel.LaboratoryUse;
 import ViewModel.LaboratoryUseVM;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
 import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
@@ -19,19 +15,10 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
-import java.net.URL;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.ResourceBundle;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
-public class Equipment implements Initializable {
+public class Equipment {
     private Stage stage;
     private Scene scene;
-    private FXMLLoader fxmlLoader;
+    private ViewHandler viewHandler;
     @FXML
     private TableView<LaboratoryUse> laboTable;
     @FXML
@@ -46,66 +33,22 @@ public class Equipment implements Initializable {
     private TableColumn<LaboratoryUse,String> DateLaboColumn;
     @FXML
     private TextField search;
-    Connection connection = null;
-    ResultSet rs = null;
-    PreparedStatement pst = null;
     private LaboratoryUseVM laboVM;
      @FXML
     private void switchToPatient(ActionEvent event) {
-        try {
-            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("PatientLog.fxml"));
-            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            scene = new Scene(fxmlLoader.load());
-            stage.setScene(scene);
-            stage.show();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        viewHandler.openPatient();
     }
     @FXML
     private void switchToTreatment(ActionEvent event){
-        try {
-            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("TreatmentLog.fxml"));
-            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-            scene = new Scene(fxmlLoader.load());
-            stage.setScene(scene);
-            stage.show();
-        }
-        catch(Exception e){
-            e.printStackTrace();
-        }
+        viewHandler.openTreatmentlog();
     }
     @FXML
     private void switchToDashboard(ActionEvent event) {
-        try {
-            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("addLaboratory.fxml"));
-            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            scene = new Scene(fxmlLoader.load());
-            stage.setScene(scene);
-            stage.show();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        viewHandler.openAddTreatment();
     }
     @FXML
     private void switchToAddLaboratory(ActionEvent event) {
-        try {
-            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("addLaboratory.fxml"));
-            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            scene = new Scene(fxmlLoader.load());
-            stage.setScene(scene);
-            stage.show();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-        laboVM = new LaboratoryUseVM();
-        laboVM.init();
-        laboTable.setItems(laboVM.getLaboUseList());
-        setCellTable();
+        viewHandler.openAddTreatment();
     }
 
 
@@ -142,4 +85,12 @@ public class Equipment implements Initializable {
         laboTable.setItems(sortedData);
     }
 
+    public void init(LaboratoryUseVM equipmentVM, ViewHandler viewHandler) {
+         this.laboVM = equipmentVM;
+         this.viewHandler = viewHandler;
+        laboVM = new LaboratoryUseVM();
+        laboVM.init();
+        laboTable.setItems(laboVM.getLaboUseList());
+        setCellTable();
+    }
 }

@@ -5,33 +5,42 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="01a30629-adf4-4571-9697-c07b86b80414" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/ViewModel/LaboratoryUseVM.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ViewModel/TreatmentLogVM.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ViewModel/PatientPageVM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ViewModel/PatientPageVM.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ViewModel/addNewLaboratoryVM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ViewModel/addNewLaboratoryVM.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ViewModel/TreatmentLogVM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ViewModel/TreatmentLogVM.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ViewModel/addNewPatientVM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ViewModel/addNewPatientVM.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ViewModel/addTreatmentlogVM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ViewModel/addTreatmentlogVM.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/learn/AddTreatmentLog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/learn/AddTreatmentLog.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/learn/Equipment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/learn/Equipment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/learn/JDBConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ViewModel/JDBConnection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/learn/LaboratoryUse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ViewModel/LaboratoryUse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/learn/Patient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ViewModel/Patient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/learn/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/learn/HelloApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/learn/PatientPageControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/learn/PatientPageControl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/learn/Treatment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ViewModel/Treatment.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/learn/Treatmentlog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/learn/Treatmentlog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/learn/addNewLaboratory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/learn/addNewLaboratory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/learn/addNewPatient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/learn/addNewPatient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/learn/TreatmentLog.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/learn/TreatmentLog.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/learn/addLaboratory.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/learn/addLaboratory.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/learn/addNewPatient.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/learn/addNewPatient.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/learn/addNewTreatment.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/learn/addNewTreatment.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/learn/equipment.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/learn/equipment.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/ViewModel/PatientPageVM.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ViewModel/PatientPageVM.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ViewModel/TreatmentLogVM.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ViewModel/TreatmentLogVM.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ViewModel/addNewLaboratoryVM.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ViewModel/addNewLaboratoryVM.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/ViewModel/addNewPatientVM.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ViewModel/addNewPatientVM.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/module-info.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ViewModel/addTreatmentlogVM.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ViewModel/addTreatmentlogVM.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/example/learn/AddTreatmentLog.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/learn/AddTreatmentLog.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/example/learn/Equipment.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/learn/Equipment.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/learn/Patient.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/learn/HelloApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/learn/HelloApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/learn/JDBConnection.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/learn/LaboratoryUse.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/example/learn/PatientPageControl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/learn/PatientPageControl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/learn/Treatment.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/learn/TreatmentLog.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/learn/TreatmentLog.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/example/learn/Treatmentlog.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/learn/Treatmentlog.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/learn/addLaboratory.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/learn/addLaboratory.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/learn/addNewLaboratory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/learn/addNewLaboratory.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/example/learn/addNewPatient.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/learn/addNewPatient.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/learn/addNewPatient.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/learn/addNewPatient.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/learn/addNewTreatment.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/learn/addNewTreatment.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/learn/equipment.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/learn/equipment.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,6 +100,7 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;Application.HelloApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
     &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
@@ -98,7 +108,7 @@
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;F:/sipm&quot;,
+    &quot;last_opened_file_path&quot;: &quot;F:/pro&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -192,7 +202,15 @@
       <workItem from="1715218243539" duration="4153000" />
       <workItem from="1715234610861" duration="487000" />
       <workItem from="1715235105395" duration="10000" />
-      <workItem from="1715235123775" duration="2089000" />
+      <workItem from="1715235123775" duration="6861000" />
+      <workItem from="1715258759279" duration="1196000" />
+      <workItem from="1715303294372" duration="5184000" />
+      <workItem from="1715349808562" duration="602000" />
+      <workItem from="1715394252449" duration="2351000" />
+      <workItem from="1715425830457" duration="7480000" />
+      <workItem from="1715485524989" duration="484000" />
+      <workItem from="1715486023452" duration="6702000" />
+      <workItem from="1715496583289" duration="647000" />
     </task>
     <servers />
   </component>
@@ -215,8 +233,13 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/example/learn/HelloApplication.java</url>
-          <line>19</line>
+          <line>13</line>
           <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/learn/Treatmentlog.java</url>
+          <line>69</line>
+          <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

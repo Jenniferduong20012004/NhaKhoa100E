@@ -9,20 +9,13 @@ import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
 import javafx.scene.Node;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
-import java.io.IOException;
-import java.net.URL;
-import java.util.ResourceBundle;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
-public class PatientPageControl implements Initializable {
+public class PatientPageControl {
     private Stage stage;
     private Scene scene;
     @FXML
@@ -40,65 +33,35 @@ public class PatientPageControl implements Initializable {
     private TableColumn<Patient,String> AddressPatient;
     @FXML
     private TableColumn<Patient, String> DateColumn;
-    private PatientPageVM patientpagevm = new PatientPageVM();
+    private PatientPageVM patientpagevm;
     ObservableList<Patient> list = FXCollections.observableArrayList();
-    @FXML
-    private void switchToEquipment(ActionEvent event) {
-        try {
-            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("equipment.fxml"));
-            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            scene = new Scene(fxmlLoader.load());
-            stage.setScene(scene);
-            stage.show();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-    @FXML
-    private void switchToTreatment(ActionEvent event) {
-        try {
-            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("TreatmentLog.fxml"));
-            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            scene = new Scene(fxmlLoader.load());
-            stage.setScene(scene);
-            stage.show();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-    @FXML
-    private void switchToDashboard(ActionEvent event) {
-        try {
-            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("addNewPatient.fxml"));
-            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            scene = new Scene(fxmlLoader.load());
-            stage.setScene(scene);
-            stage.show();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-    @FXML
-
-    private void switchToAddPatient(ActionEvent event) {
-        try {
-            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("addNewPatient.fxml"));
-            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            scene = new Scene(fxmlLoader.load());
-            stage.setScene(scene);
-            stage.show();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
+    private ViewHandler viewHandler;
+    public void init (PatientPageVM patientpagevm, ViewHandler viewHandler){
+        this.patientpagevm = patientpagevm;
+        this.viewHandler = viewHandler;
         patientpagevm.init();
         list = patientpagevm.loadDataFromDatabase();
         patients.setItems(list);
         setCellTable();
     }
+    @FXML
+    private void switchToEquipment(ActionEvent event) {
+        viewHandler.openEquipment();
+    }
+    @FXML
+    private void switchToTreatment(ActionEvent event) {
+        viewHandler.openTreatmentlog();
+    }
+    @FXML
+    private void switchToDashboard(ActionEvent event) {
+        viewHandler.openPatient();
+    }
+    @FXML
+
+    private void switchToAddPatient(ActionEvent event) {
+        viewHandler.openAddPatient();
+    }
+
     @FXML
     private void setCellTable(){
         id.setCellValueFactory(new PropertyValueFactory<>("id"));
@@ -135,20 +98,18 @@ public class PatientPageControl implements Initializable {
     @FXML
     public void update(ActionEvent event) {
         Patient patient = patients.getSelectionModel().getSelectedItem();
-        FXMLLoader loader = new FXMLLoader ();
-        loader.setLocation(getClass().getResource("addNewPatient.fxml"));
         try {
-            loader.load();
-        } catch (IOException ex) {
-            Logger.getLogger(PatientPageControl.class.getName()).log(Level.SEVERE, null, ex);
+            fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("addNewPatient.fxml"));
+            addNewPatient addnewpatient = fxmlLoader.getController();
+            patientpagevm.update(patient.getId(), addnewpatient.getAddNewpatientvm());
+            addnewpatient.setTextField(patient.getName(), patient.getContactNumber(), patient.getAddress(), patient.getDateOfBirth());
+            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            scene = new Scene(fxmlLoader.load());
+            stage.setScene(scene);
+            stage.show();
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-        addNewPatient addnewpatient = loader.getController();
-        patientpagevm.update();
-        addnewpatient.setTextField(patient.getName(), patient.getContactNumber(), patient.getAddress(), patient.getDateOfBirth());
-        Parent parent = loader.getRoot();
-        Stage stage = new Stage();
-        stage.setScene(new Scene(parent));
-        stage.show();
 
     }
     @FXML

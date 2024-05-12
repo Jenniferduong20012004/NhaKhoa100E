@@ -3,6 +3,7 @@ package ViewModel;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import org.example.learn.PatientPageControl;
+import org.example.learn.Treatmentlog;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -32,7 +33,7 @@ public class TreatmentLogVM {
             }
 
         } catch (SQLException e) {
-            Logger.getLogger(PatientPageControl.class.getName()).log(Level.SEVERE, null, e);
+            Logger.getLogger(Treatmentlog.class.getName()).log(Level.SEVERE, null, e);
 
         }
     }

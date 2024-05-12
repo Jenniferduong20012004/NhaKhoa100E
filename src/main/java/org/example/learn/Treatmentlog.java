@@ -8,7 +8,6 @@ import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
@@ -17,14 +16,11 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
-import java.net.URL;
 import java.util.Date;
-import java.util.ResourceBundle;
 
-public class Treatmentlog implements Initializable {
+public class Treatmentlog {
     private Stage stage;
     private Scene scene;
-    private FXMLLoader fxmlLoader;
     @FXML
     private TextField search;
     @FXML
@@ -35,68 +31,33 @@ public class Treatmentlog implements Initializable {
     private TableColumn<Patient, String> NameColumn;
     @FXML
     private TableColumn<Patient, Date> DateColumn;
-    private TreatmentLogVM treatmentLogVm = new TreatmentLogVM();
+    private TreatmentLogVM treatmentLogVm;
+    private ViewHandler viewHandler;
     @FXML
     private void switchToEquipment(ActionEvent event){
-        try {
-            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("equipment.fxml"));
-            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-            scene = new Scene(fxmlLoader.load());
-            stage.setScene(scene);
-            stage.show();
-        }
-        catch(Exception e){
-            e.printStackTrace();
-        }
+        viewHandler.openEquipment();
     }
     @FXML
     private void switchToAddTreatment(ActionEvent event){
-        try {
-            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("addNewTreatment.fxml"));
-            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-            scene = new Scene(fxmlLoader.load());
-            stage.setScene(scene);
-            stage.show();
-        }
-        catch(Exception e){
-            e.printStackTrace();
-        }
+        viewHandler.openAddTreatment();
     }
     @FXML
     private void switchToDashboard(ActionEvent event){
-        try {
-            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("addNewTreatment.fxml"));
-            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-            scene = new Scene(fxmlLoader.load());
-            stage.setScene(scene);
-            stage.show();
-        }
-        catch(Exception e){
-            e.printStackTrace();
-        }
+        viewHandler.openAddTreatment();
     }
     @FXML
     private void switchToPatient(ActionEvent event){
-        try {
-            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("PatientLog.fxml"));
-            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-            scene = new Scene(fxmlLoader.load());
-            stage.setScene(scene);
-            stage.show();
-        }
-        catch(Exception e){
-            e.printStackTrace();
-        }
+        viewHandler.openPatient();
     }
 
-
-
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
+    public void init(TreatmentLogVM treatmentLogVm, ViewHandler viewHandler){
+        this.treatmentLogVm = treatmentLogVm;
+        this.viewHandler = viewHandler;
         treatmentLogVm.init();
         treatmentTable.setItems(treatmentLogVm.getTreatmentList());
         setCellTable();
     }
+
 
 
     private void setCellTable() {

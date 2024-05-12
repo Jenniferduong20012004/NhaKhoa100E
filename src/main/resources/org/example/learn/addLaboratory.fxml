@@ -11,7 +11,7 @@
 <AnchorPane maxHeight="832.0" maxWidth="1280.0" minHeight="832.0" minWidth="1280.0" prefHeight="832.0" prefWidth="1280.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.learn.addNewLaboratory">
     <children>
         <Label id="labelNhaKhoa100E" layoutX="24.0" layoutY="11.5" stylesheets="@app.css" text="NHA KHOA 100E" />
-        <Pane id="vBox" layoutY="80.0" prefHeight="759.0" prefWidth="250.0" stylesheets="@app.css">
+        <Pane id="vBox" layoutY="80.0" prefHeight="759.0" prefWidth="252.0" stylesheets="@app.css">
             <children>
                 <Button id="buttonMenuChoose" alignment="BASELINE_LEFT" layoutX="17.0" layoutY="16.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="216.0" stylesheets="@app.css" text="Dashboard">
                     <graphic>
@@ -51,7 +51,7 @@
                 </Button>
             </children>
         </Pane>
-        <AnchorPane layoutX="250.0" layoutY="80.0" minWidth="1010.0" prefHeight="676.0" prefWidth="700.0" style="-fx-background-color: #FFFFFF;">
+        <AnchorPane layoutX="252.0" layoutY="80.0" minWidth="1010.0" prefHeight="676.0" prefWidth="700.0" style="-fx-background-color: #FFFFFF;">
             <children>
                 <Label id="labelAddNewPatient" layoutX="23.0" stylesheets="@app.css" text="Dashboard">
                     <graphic>

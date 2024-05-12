@@ -11,8 +11,6 @@ import javafx.stage.Stage;
 
 import javax.swing.*;
 import java.sql.*;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 
 public class AddTreatmentLog {
     @FXML
@@ -53,10 +51,7 @@ public class AddTreatmentLog {
     private TextField textField4;
     @FXML
     private TextField textField5, textField6;
-    private Connection connection;
-    private PreparedStatement pst = null;
-    private ResultSet rs = null;
-    private int patientId;
+    private ViewHandler viewHandler;
     private addTreatmentlogVM addTreatmentlogVM = new addTreatmentlogVM();
     @FXML
     private void CheckData(ActionEvent event) {
@@ -124,67 +119,32 @@ public class AddTreatmentLog {
     }
     @FXML
     private void switchToEquipment(ActionEvent event) {
-        try {
-            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("equipment.fxml"));
-            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            scene = new Scene(fxmlLoader.load());
-            stage.setScene(scene);
-            stage.show();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        viewHandler.openEquipment();
     }
     @FXML
     private void switchToTreatment(ActionEvent event) {
-        try {
-            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("TreatmentLog.fxml"));
-            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            scene = new Scene(fxmlLoader.load());
-            stage.setScene(scene);
-            stage.show();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        viewHandler.openTreatmentlog();
     }
     @FXML
     private void switchToPatient(ActionEvent event) {
-        try {
-            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("PatientLog.fxml"));
-            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            scene = new Scene(fxmlLoader.load());
-            stage.setScene(scene);
-            stage.show();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        viewHandler.openPatient();
     }
     @FXML
     private void switchToAddPatient(ActionEvent event) {
-        try {
-            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("addNewPatient.fxml"));
-            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            scene = new Scene(fxmlLoader.load());
-            stage.setScene(scene);
-            stage.show();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        viewHandler.openAddPatient();
     }
     @FXML
     private void switchToAddLaboratory(ActionEvent event) {
-        try {
-            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("addLaboratory.fxml"));
-            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            scene = new Scene(fxmlLoader.load());
-            stage.setScene(scene);
-            stage.show();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        viewHandler.openAddEquipment();
     }
 
     @FXML
     private void Cancel(ActionEvent event) {
         resetPage();
+    }
+
+    public void init(addTreatmentlogVM addTreatmentlogVM, ViewHandler viewHandler) {
+        this.addTreatmentlogVM = addTreatmentlogVM;
+        this.viewHandler = viewHandler;
     }
 }

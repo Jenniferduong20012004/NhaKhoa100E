@@ -6,15 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="01a30629-adf4-4571-9697-c07b86b80414" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ViewModel/LaboratoryUseVM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ViewModel/LaboratoryUseVM.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ViewModel/PatientPageVM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ViewModel/PatientPageVM.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ViewModel/TreatmentLogVM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ViewModel/TreatmentLogVM.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ViewModel/addTreatmentlogVM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ViewModel/addTreatmentlogVM.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/learn/AddTreatmentLog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/learn/AddTreatmentLog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ViewModel/LaboratoryUseVM.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ViewModel/LaboratoryUseVM.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ViewModel/PatientPageVM.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ViewModel/PatientPageVM.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ViewModel/TreatmentLogVM.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ViewModel/TreatmentLogVM.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ViewModel/addTreatmentlogVM.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ViewModel/addTreatmentlogVM.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -197,7 +190,7 @@
       <workItem from="1715736753540" duration="982000" />
       <workItem from="1715737761732" duration="17000" />
       <workItem from="1715747797351" duration="3074000" />
-      <workItem from="1715765857097" duration="9869000" />
+      <workItem from="1715765857097" duration="12488000" />
     </task>
     <servers />
   </component>

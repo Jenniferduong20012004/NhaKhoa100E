@@ -52,7 +52,7 @@ public class AddTreatmentLog {
     @FXML
     private TextField textField5, textField6;
     private ViewHandler viewHandler;
-    private addTreatmentlogVM addTreatmentlogVM = new addTreatmentlogVM();
+    private addTreatmentlogVM addTreatmentlogVM;
     @FXML
     private void CheckData(ActionEvent event) {
             addTreatmentlogVM.checkData();
@@ -68,7 +68,7 @@ public class AddTreatmentLog {
     }
     @FXML
     private void clickYes(ActionEvent event){
-        if (addTreatmentlogVM.isClicked()==false){
+        if (!addTreatmentlogVM.isClicked()){
             addTreatmentlogVM.setClicked(true);
             textField3.setVisible(true);
             textField4.setVisible(true);
@@ -91,53 +91,54 @@ public class AddTreatmentLog {
     @FXML
     private void collectInformation (ActionEvent event) throws SQLException {
         if (addTreatmentlogVM.isCheckedData()){
-            String Description = textArea.getText().trim().toLowerCase();
-            addTreatmentlogVM.getInformation(Description);
+            addTreatmentlogVM.getInformation();
             if (addTreatmentlogVM.isClicked()){
-                String criteria = textField4.getText().trim().toLowerCase();
-                String quantity = textField5.getText().trim().toLowerCase();
-                String laboName = textField3.getText().trim().toLowerCase();
-                addTreatmentlogVM.addLaboratory(criteria, quantity, laboName);
+                addTreatmentlogVM.addLaboratory();
             }
+            addTreatmentlogVM.clear();
             resetPage();
         }
     }
 
     private void resetPage() {
-        textArea.setText(null);
-        textField1.setText(null);
-        textField3.setText(null);
-        textField4.setText(null);
-        textField4.setText(null);
-        textField5.setText(null);
-        textField6.setText(null);
         addTreatmentlogVM.setClicked(false);
         addTreatmentlogVM.setVisibleButton(false);
 
     }
     @FXML
     private void switchToEquipment(ActionEvent event) {
+        addTreatmentlogVM.clear();
+        resetPage();
         viewHandler.openEquipment();
     }
     @FXML
     private void switchToTreatment(ActionEvent event) {
+        addTreatmentlogVM.clear();
+        resetPage();
         viewHandler.openTreatmentlog();
     }
     @FXML
     private void switchToPatient(ActionEvent event) {
+        addTreatmentlogVM.clear();
+        resetPage();
         viewHandler.openPatient();
     }
     @FXML
     private void switchToAddPatient(ActionEvent event) {
+        addTreatmentlogVM.clear();
+        resetPage();
         viewHandler.openAddPatient();
     }
     @FXML
     private void switchToAddLaboratory(ActionEvent event) {
+        addTreatmentlogVM.clear();
+        resetPage();
         viewHandler.openAddEquipment();
     }
 
     @FXML
     private void Cancel(ActionEvent event) {
+        addTreatmentlogVM.clear();
         resetPage();
     }
 
@@ -147,5 +148,10 @@ public class AddTreatmentLog {
         textField1.textProperty().bindBidirectional(addTreatmentlogVM.nameProperty());
         textField6.textProperty().bindBidirectional(addTreatmentlogVM.dateOfBirthProperty());
         checkButton.disableProperty().bind(addTreatmentlogVM.checkButtonDisabledProperty());
+        textArea.textProperty().bindBidirectional(addTreatmentlogVM.descriptionProperty());
+        saveButton.disableProperty().bind(addTreatmentlogVM.saveButtonDisabledProperty());
+        textField4.textProperty().bindBidirectional(addTreatmentlogVM.criteriaProperty());
+        textField3.textProperty().bindBidirectional(addTreatmentlogVM.laboNameProperty());
+        textField5.textProperty().bindBidirectional(addTreatmentlogVM.quantityProperty());
     }
 }

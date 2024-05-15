@@ -1,4 +1,4 @@
-package ViewModel;
+package Entity;
 
 public class Patient {
     private int id;

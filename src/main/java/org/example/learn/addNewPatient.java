@@ -4,73 +4,70 @@ import ViewModel.addNewPatientVM;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
+import javax.swing.*;
 import java.sql.SQLException;
 
 public class addNewPatient{
-    private Stage stage;
+    @FXML
+    private Button saveButton;
     @FXML
     TextField textField, textField1, textField2,textField3;
-    private Scene scene;
-
     private addNewPatientVM addNewpatientvm;
-
-    public addNewPatientVM getAddNewpatientvm() {
-        return addNewpatientvm;
-    }
     private ViewHandler viewHandler;
     @FXML
     private void getInformation (ActionEvent event) throws SQLException {
-        String name = textField.getText().trim().toLowerCase();
-        String contactNumber = textField1.getText().trim().toLowerCase();
-        String address= textField2.getText().trim().toLowerCase();
-        String dob = textField3.getText().trim().toLowerCase();
-        addNewpatientvm.saveInformation(name, contactNumber, address, dob);
-        resetText();
+        addNewpatientvm.saveInformation();
     }
 
     @FXML
     private void switchToEquipment(ActionEvent event) {
+        addNewpatientvm.clear();
         viewHandler.openEquipment();
     }
     @FXML
     private void switchToTreatment(ActionEvent event) {
+        addNewpatientvm.clear();
         viewHandler.openTreatmentlog();
     }
     @FXML
     private void switchToPatient(ActionEvent event) {
+        addNewpatientvm.clear();
         viewHandler.openPatient();
     }
     @FXML
     private void switchToAddNewTreatmentLog(ActionEvent event) {
+        addNewpatientvm.clear();
         viewHandler.openAddTreatment();
     }
     @FXML
     private void switchToAddNewLaboratory(ActionEvent event) {
+        addNewpatientvm.clear();
         viewHandler.openAddEquipment();
     }
     @FXML
     private void Cancel(ActionEvent event){
-        resetText();
-    }
-
-    public void setTextField(String patientName, String contactNumber, String address, String dob){
-        textField.setText(patientName);
-        textField1.setText(contactNumber);
-        textField2.setText(address);
-        textField3.setText(dob);
-    }
-    public void resetText() {
-        textField.setText(null);
-        textField1.setText(null);
-        textField2.setText(null);
-        textField3.setText(null);
+        addNewpatientvm.clear();
     }
 
     public void init(addNewPatientVM addNewPatientVM, ViewHandler viewHandler) {
         this.addNewpatientvm = addNewPatientVM;
         this.viewHandler = viewHandler;
+        textField.textProperty().bindBidirectional(addNewPatientVM.nameProperty());
+        textField1.textProperty().bindBidirectional(addNewPatientVM.contactNumberProperty());
+        textField2.textProperty().bindBidirectional(addNewPatientVM.addressProperty());
+        textField3.textProperty().bindBidirectional(addNewPatientVM.dateOfBirthProperty());
+        saveButton.disableProperty().bind(addNewPatientVM.saveButtonDisabledProperty());
+        addNewPatientVM.saveResponseProperty().addListener((observableValue, oldValue, newValue) -> onSavingResult(newValue));
+    }
+
+    private void onSavingResult(String newValue) {
+        if("OK".equals(newValue)) {
+            JOptionPane.showMessageDialog(null, "Save data successfully");
+            System.out.println("okok");
+        }
     }
 }

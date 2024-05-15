@@ -1,4 +1,4 @@
-package ViewModel;
+package Entity;
 
 public class Treatment {
     private String patientName;

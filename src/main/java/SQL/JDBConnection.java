@@ -1,4 +1,4 @@
-package ViewModel;
+package SQL;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;

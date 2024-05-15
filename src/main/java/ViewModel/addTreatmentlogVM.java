@@ -1,6 +1,10 @@
 package ViewModel;
 
 import SQL.JDBConnection;
+import javafx.beans.property.BooleanProperty;
+import javafx.beans.property.SimpleBooleanProperty;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
 
 import javax.swing.*;
 import java.sql.*;
@@ -8,32 +12,36 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
 public class addTreatmentlogVM {
+    private StringProperty name, address, description, dateOfBirth, saveResponse;
+    private BooleanProperty saveButtonDisabled, checkButtonDisabled;
     private Connection connection;
     private PreparedStatement pst = null;
     private ResultSet rs = null;
     private boolean visibleButton = false;
     private boolean checkedData = false;
     private String patientName;
-    private String Description;
     private String Date;
     private Date date;
 
     private int patientId;
     private boolean clicked;// laboratory click
 
-    public String getPatientName() {
-        return patientName;
+    public boolean isCheckButtonDisabled() {
+        return checkButtonDisabled.get();
     }
 
-    public void setPatientName(String patientName) {
-        this.patientName = patientName;
+    public BooleanProperty checkButtonDisabledProperty() {
+        return checkButtonDisabled;
     }
 
-    public String getDate() {
-        return Date;
+    public String getDateOfBirth() {
+        return dateOfBirth.get();
     }
 
-    public void setDate(String date) {
+    public StringProperty dateOfBirthProperty() {
+        return dateOfBirth;
+    }
+       public void setDate(String date) {
         Date = date;
     }
 
@@ -61,18 +69,44 @@ public class addTreatmentlogVM {
         this.clicked = clicked;
     }
 
-    public void checkData(String name, String datePattern){
-        if (name.isEmpty() ||  datePattern.isEmpty()) {
-            JOptionPane.showMessageDialog(null, "Please fill in missing data");
-        }
-        else {
-            patientName = name;
-            Date = datePattern;
-            String sql = "DECLARE @class nvarchar(50) = N'" + name + "'" + " Select patient_id from Patient where namePatient = @class and dateOfBirth = ?";
+    public String getName() {
+        return name.get();
+    }
+
+    public StringProperty nameProperty() {
+        return name;
+    }
+
+    public String getAddress() {
+        return address.get();
+    }
+
+    public StringProperty addressProperty() {
+        return address;
+    }
+
+    public addTreatmentlogVM(){
+        name = new SimpleStringProperty();
+        dateOfBirth = new SimpleStringProperty();
+        saveResponse = new SimpleStringProperty();
+        checkButtonDisabled= new SimpleBooleanProperty();
+        saveButtonDisabled = new SimpleBooleanProperty();
+        description = new SimpleStringProperty();
+        name.addListener((observableValue, oldValue, newValue)->onSavingChangeCheck());
+        dateOfBirth.addListener((observableValue, oldValue, newValue)->onSavingChangeCheck());
+    }
+
+    private void onSavingChangeCheck() {
+        boolean disable = name.get()== null || name.get().equals("")||dateOfBirth.get()== null ||dateOfBirth.get().equals("");
+        checkButtonDisabled.set(disable);
+    }
+
+    public void checkData(){
+            String sql = "DECLARE @class nvarchar(50) = N'" + name.get() + "'" + " Select patient_id from Patient where namePatient = @class and dateOfBirth = ?";
             connection = JDBConnection.NhaKhoa100eConnect();
             try {
                 pst = connection.prepareStatement(sql);
-                pst.setString(1, datePattern);
+                pst.setString(1, dateOfBirth.get());
                 rs = pst.executeQuery();
                 if (rs.next()) {
                     visibleButton = true;
@@ -87,7 +121,6 @@ public class addTreatmentlogVM {
             } catch (SQLException e) {
                 throw new RuntimeException(e);
             }
-        }
 
     }
     public void addLaboratory(String criteria, String quantity, String laboName){

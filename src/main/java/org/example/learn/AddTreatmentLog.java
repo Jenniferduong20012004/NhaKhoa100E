@@ -36,7 +36,7 @@ public class AddTreatmentLog {
     private Button saveButton;
 
     @FXML
-    private Button saveButton1;
+    private Button checkButton;
 
     @FXML
     private TextArea textArea;
@@ -55,9 +55,7 @@ public class AddTreatmentLog {
     private addTreatmentlogVM addTreatmentlogVM = new addTreatmentlogVM();
     @FXML
     private void CheckData(ActionEvent event) {
-            String name = textField1.getText().trim().toLowerCase();
-            String datePattern = textField6.getText().trim().toLowerCase();
-            addTreatmentlogVM.checkData(name, datePattern);
+            addTreatmentlogVM.checkData();
             if (addTreatmentlogVM.isVisibleButton()) {
                 LaboratoryLabelCheck.setVisible(true);
                 DescriptionLabel.setVisible(true);
@@ -146,5 +144,8 @@ public class AddTreatmentLog {
     public void init(addTreatmentlogVM addTreatmentlogVM, ViewHandler viewHandler) {
         this.addTreatmentlogVM = addTreatmentlogVM;
         this.viewHandler = viewHandler;
+        textField1.textProperty().bindBidirectional(addTreatmentlogVM.nameProperty());
+        textField6.textProperty().bindBidirectional(addTreatmentlogVM.dateOfBirthProperty());
+        checkButton.disableProperty().bind(addTreatmentlogVM.checkButtonDisabledProperty());
     }
 }

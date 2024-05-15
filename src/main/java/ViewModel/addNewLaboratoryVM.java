@@ -30,7 +30,7 @@ public class addNewLaboratoryVM {
     }
 
     private void onSavingChange() {
-        boolean disable = name.get()== null || name.get().equals("")||address.get()== null ||address.get().equals("")|| contactNumber.get()== null || contactNumber.get().equals("");
+        boolean disable = name.get()== null || name.get().isEmpty() ||address.get()== null || address.get().isEmpty() || contactNumber.get()== null || contactNumber.get().isEmpty();
         saveButtonDisabled.set(disable);
     }
 

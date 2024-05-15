@@ -14,9 +14,10 @@ public class TreatmentLogVM {
     private Connection connection = null;
     private ResultSet rs = null;
     private PreparedStatement pst = null;
-    ObservableList<Treatment> treatmentList = FXCollections.observableArrayList();
+    private ObservableList<Treatment> treatmentList;
     private CallableStatement call = null;
     public void init(){
+        treatmentList = FXCollections.observableArrayList();
         connection = JDBConnection.NhaKhoa100eConnect();
         loadDataFromDatabase();
     }

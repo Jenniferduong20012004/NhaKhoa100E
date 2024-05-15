@@ -170,7 +170,7 @@ public class addTreatmentlogVM {
             String sqlLaboratory = "Insert into labUse (patient_id, dateCome, Criteria, Quantity, laboName) Values (?,?,?,?,?)";
             PreparedStatement pst1 = connection.prepareStatement(sqlLaboratory);
             pst1.setInt(1, patientId);
-            pst1.setDate(2, date);
+            pst1.setDate(2, dateToday);
             pst1.setString(3, criteria.get());
             pst1.setString(4, quantity.get());
             pst1.setString(5, laboName.get());

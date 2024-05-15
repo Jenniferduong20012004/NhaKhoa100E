@@ -26,6 +26,14 @@ public class addTreatmentlogVM {
     private int patientId;
     private boolean clicked;// laboratory click
 
+    public String getDescription() {
+        return description.get();
+    }
+
+    public StringProperty descriptionProperty() {
+        return description;
+    }
+
     public boolean isCheckButtonDisabled() {
         return checkButtonDisabled.get();
     }
@@ -85,6 +93,14 @@ public class addTreatmentlogVM {
         return address;
     }
 
+    public boolean isSaveButtonDisabled() {
+        return saveButtonDisabled.get();
+    }
+
+    public BooleanProperty saveButtonDisabledProperty() {
+        return saveButtonDisabled;
+    }
+
     public addTreatmentlogVM(){
         name = new SimpleStringProperty();
         dateOfBirth = new SimpleStringProperty();
@@ -94,6 +110,12 @@ public class addTreatmentlogVM {
         description = new SimpleStringProperty();
         name.addListener((observableValue, oldValue, newValue)->onSavingChangeCheck());
         dateOfBirth.addListener((observableValue, oldValue, newValue)->onSavingChangeCheck());
+        description.addListener((observableValue, oldValue, newValue)->onSavingChange());
+    }
+
+    private void onSavingChange() {
+        boolean disable = description.get()== null || description.get().equals("");
+        saveButtonDisabled.set(disable);
     }
 
     private void onSavingChangeCheck() {
@@ -145,16 +167,12 @@ public class addTreatmentlogVM {
         }
 
     }
-    public void getInformation(String Description){
+    public void getInformation(){
         if (checkedData ==true) {
             LocalDate localDate = LocalDate.now();
             date = java.sql.Date.valueOf(localDate);
             String pattern = "yyyy-MM-dd";
             String datePattern = localDate.format(DateTimeFormatter.ofPattern(pattern));
-            if (Description.isEmpty() ||  datePattern.isEmpty()) {
-                JOptionPane.showMessageDialog(null, "Please fill in missing data");
-            }
-            else {
                 String sql = "Insert into Treatment (patient_id, detail, dateCome) Values (?,?,?)";
                 System.out.println(sql);
                 connection = JDBConnection.NhaKhoa100eConnect();
@@ -162,7 +180,7 @@ public class addTreatmentlogVM {
                     connection =JDBConnection.NhaKhoa100eConnect();
                     pst = connection.prepareStatement(sql);
                     pst.setInt(1, patientId);
-                    pst.setString(2,Description);
+                    pst.setString(2,description.get());
                     pst.setDate(3, date);
                     int i =pst.executeUpdate();
                     if (i==1){
@@ -172,7 +190,6 @@ public class addTreatmentlogVM {
                     pst.close();
                 } catch (Exception e) {
                     throw new RuntimeException(e);
-                }
             }
         }
     }

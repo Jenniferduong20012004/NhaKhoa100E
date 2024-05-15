@@ -6,18 +6,16 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import org.example.learn.Treatmentlog;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class TreatmentLogVM {
-    Connection connection = null;
-    ResultSet rs = null;
-    PreparedStatement pst = null;
+    private Connection connection = null;
+    private ResultSet rs = null;
+    private PreparedStatement pst = null;
     ObservableList<Treatment> treatmentList = FXCollections.observableArrayList();
+    private CallableStatement call = null;
     public void init(){
         connection = JDBConnection.NhaKhoa100eConnect();
         loadDataFromDatabase();
@@ -25,13 +23,17 @@ public class TreatmentLogVM {
     private void loadDataFromDatabase() {
         try {
             treatmentList.clear();
-            pst = connection.prepareStatement("Select Treatment.dateCome, Patient.namePatient, Treatment.detail from Treatment, Patient where Treatment.patient_id = Patient.patient_id order by dateCome desc");
-            rs = pst.executeQuery();
+            call = connection.prepareCall("{call showTreatment}");
+            call.execute();
+            rs = call.getResultSet();
             while (rs.next()){
                 treatmentList.add(new Treatment(rs.getString("namePatient"), //tên cột trong sql
                         rs.getString("detail"),
                         "" +rs.getDate("dateCome")));
             }
+            call.close();
+            connection.close();
+            rs.close();
 
         } catch (SQLException e) {
             Logger.getLogger(Treatmentlog.class.getName()).log(Level.SEVERE, null, e);

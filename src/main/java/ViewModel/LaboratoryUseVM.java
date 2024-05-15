@@ -11,10 +11,10 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class LaboratoryUseVM {
-    ObservableList<LaboratoryUse> laboUseList = FXCollections.observableArrayList();
-    Connection connection = null;
-    ResultSet rs = null;
-    CallableStatement call;
+    private ObservableList<LaboratoryUse> laboUseList = FXCollections.observableArrayList();
+    private Connection connection = null;
+    private ResultSet rs = null;
+    private CallableStatement call;
 
     public ObservableList<LaboratoryUse> getLaboUseList() {
         return laboUseList;
@@ -39,6 +39,9 @@ public class LaboratoryUseVM {
                         "" +rs.getDate("dateCome")));
 
             }
+            call.close();
+            connection.close();
+            rs.close();
 
         } catch (SQLException e) {
             Logger.getLogger(Equipment.class.getName()).log(Level.SEVERE, null, e);

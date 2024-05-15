@@ -1,5 +1,7 @@
 package ViewModel;
 
+import SQL.JDBConnection;
+
 import javax.swing.*;
 import java.sql.*;
 import java.time.LocalDate;

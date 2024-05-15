@@ -36,8 +36,9 @@
                 <TableColumn fx:id="laboratoryNameColumn" prefWidth="171.0" text="Lab Name" />
                 <TableColumn fx:id="PatientName" prefWidth="171.0" text="Patient Name" />
                 <TableColumn fx:id="CriteriaColumn" prefWidth="171.0" text="Criteria" />
-                <TableColumn fx:id="QuantityColumn" prefWidth="172.0" text="Quantity" />
+                <TableColumn fx:id="QuantityColumn" prefWidth="140.0" text="Quantity" />
                 <TableColumn fx:id="DateLaboColumn" prefWidth="171.0" text="Date" />
+            <TableColumn fx:id="Action" prefWidth="170.0" text="Action" />
             </columns>
         </TableView>
         <TextField id="text" fx:id="search" layoutX="280.0" layoutY="170.0" maxHeight="32.0" maxWidth="750.0" minHeight="32.0" minWidth="750.0" prefHeight="32.0" prefWidth="750.0" promptText="Search..." stylesheets="@app.css" />

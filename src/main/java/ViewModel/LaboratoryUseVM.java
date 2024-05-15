@@ -1,5 +1,7 @@
 package ViewModel;
 
+import Entity.LaboratoryUse;
+import SQL.JDBConnection;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import org.example.learn.Equipment;
@@ -21,9 +23,6 @@ public class LaboratoryUseVM {
         return laboUseList;
     }
 
-    public void setLaboUseList(ObservableList<LaboratoryUse> laboUseList) {
-        this.laboUseList = laboUseList;
-    }
     public void init(){
         connection = JDBConnection.NhaKhoa100eConnect();
         loadDataFromDatabase();
@@ -49,4 +48,6 @@ public class LaboratoryUseVM {
         }
     }
 
+    public void removeRecord(LaboratoryUse c) {
+    }
 }

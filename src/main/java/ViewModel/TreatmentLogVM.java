@@ -1,8 +1,9 @@
 package ViewModel;
 
+import Entity.Treatment;
+import SQL.JDBConnection;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import org.example.learn.PatientPageControl;
 import org.example.learn.Treatmentlog;
 
 import java.sql.Connection;

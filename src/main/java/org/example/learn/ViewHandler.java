@@ -11,6 +11,11 @@ import java.io.IOException;
 public class ViewHandler {
     private Stage mainStage;
     private ViewModelFactory vmf;
+
+    public ViewModelFactory getVmf() {
+        return vmf;
+    }
+
     public ViewHandler(ViewModelFactory vmf){
         mainStage = new Stage();
         this.vmf = vmf;
@@ -98,6 +103,22 @@ public class ViewHandler {
             Parent root = (Parent) loader.load();
             addNewPatient addNewPatient =  loader.getController();
             addNewPatient.init(vmf.getAddNewPatientVM(), this);
+            Scene addNewPatientScene = new Scene(root);
+            mainStage.setScene(addNewPatientScene);
+        }
+        catch (IOException e){
+            e.printStackTrace();
+        }
+    }
+    public void updatePatient(int id){
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("addNewPatient.fxml"));
+        try{
+            Parent root = (Parent) loader.load();
+            addNewPatient addNewPatient =  loader.getController();
+            addNewPatient.init(vmf.getAddNewPatientVM(), this);
+            vmf.getAddNewPatientVM().update(id);
+            System.out.println (id);
             Scene addNewPatientScene = new Scene(root);
             mainStage.setScene(addNewPatientScene);
         }

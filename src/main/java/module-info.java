@@ -12,4 +12,8 @@ module org.example.learn {
     exports org.example.learn;
     exports ViewModel;
     opens ViewModel to javafx.fxml;
+    exports Entity;
+    opens Entity to javafx.fxml;
+    exports SQL;
+    opens SQL to javafx.fxml;
 }

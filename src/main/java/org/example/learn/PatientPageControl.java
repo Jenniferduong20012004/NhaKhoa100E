@@ -1,6 +1,6 @@
 package org.example.learn;
 
-import ViewModel.Patient;
+import Entity.Patient;
 import ViewModel.PatientPageVM;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -9,7 +9,6 @@ import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -54,7 +53,7 @@ public class PatientPageControl {
     }
     @FXML
     private void switchToDashboard(ActionEvent event) {
-        viewHandler.openPatient();
+        viewHandler.openAddPatient();
     }
     @FXML
 
@@ -98,22 +97,11 @@ public class PatientPageControl {
     @FXML
     public void update(ActionEvent event) {
         Patient patient = patients.getSelectionModel().getSelectedItem();
-        try {
-            fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("addNewPatient.fxml"));
-            addNewPatient addnewpatient = fxmlLoader.getController();
-            patientpagevm.update(patient.getId(), addnewpatient.getAddNewpatientvm());
-            addnewpatient.setTextField(patient.getName(), patient.getContactNumber(), patient.getAddress(), patient.getDateOfBirth());
-            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            scene = new Scene(fxmlLoader.load());
-            stage.setScene(scene);
-            stage.show();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
 
     }
     @FXML
     public void delete(ActionEvent event) {
+
     }
 
 }

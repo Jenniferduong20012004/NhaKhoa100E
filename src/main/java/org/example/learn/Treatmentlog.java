@@ -1,26 +1,20 @@
 package org.example.learn;
 
-import ViewModel.Patient;
-import ViewModel.Treatment;
+import Entity.Patient;
+import Entity.Treatment;
 import ViewModel.TreatmentLogVM;
 import javafx.collections.transformation.FilteredList;
 import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.stage.Stage;
 
 import java.util.Date;
 
 public class Treatmentlog {
-    private Stage stage;
-    private Scene scene;
     @FXML
     private TextField search;
     @FXML

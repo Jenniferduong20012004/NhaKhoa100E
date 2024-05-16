@@ -17,6 +17,7 @@ public class addTreatmentlogVM {
     private Connection connection;
     private PreparedStatement pst = null;
     private ResultSet rs = null;
+    private CallableStatement call = null;
     private boolean visibleButton = false;
     private boolean checkedData = false;
     private String Date;
@@ -25,16 +26,8 @@ public class addTreatmentlogVM {
     private int patientId;
     private boolean clicked;// laboratory click
 
-    public String getLaboName() {
-        return laboName.get();
-    }
-
     public StringProperty laboNameProperty() {
         return laboName;
-    }
-
-    public String getQuantity() {
-        return quantity.get();
     }
 
     public StringProperty quantityProperty() {
@@ -137,19 +130,20 @@ public class addTreatmentlogVM {
     }
 
     public void checkData(){
-            String sql = "DECLARE @class nvarchar(50) = N'" + name.get() + "'" + " Select patient_id from Patient where namePatient = @class and dateOfBirth = ?";
             connection = JDBConnection.NhaKhoa100eConnect();
             try {
-                pst = connection.prepareStatement(sql);
-                pst.setString(1, dateOfBirth.get());
-                rs = pst.executeQuery();
+                call = connection.prepareCall("{call checkData(?,?)}");
+                call.setString(1, name.get());
+                call.setDate(2, java.sql.Date.valueOf(dateOfBirth.get()));
+                call.execute();
+                rs = call.getResultSet();
                 if (rs.next()) {
                     visibleButton = true;
                     patientId = rs.getInt("patient_id");
                     checkedData = true;
                     rs.close();
                     connection.close();
-                    pst.close();
+                    call.close();
                 } else {
                     JOptionPane.showMessageDialog(null, "Patient first come to clinic insert in New Patient first");
                 }
@@ -161,19 +155,18 @@ public class addTreatmentlogVM {
     public void addLaboratory(){
         try {
             connection = JDBConnection.NhaKhoa100eConnect();
-            String sqlLaboratory = "Insert into labUse (patient_id, dateCome, Criteria, Quantity, laboName) Values (?,?,?,?,?)";
-            PreparedStatement pst1 = connection.prepareStatement(sqlLaboratory);
-            pst1.setInt(1, patientId);
-            pst1.setDate(2, dateToday);
-            pst1.setString(3, criteria.get());
-            pst1.setString(4, quantity.get());
-            pst1.setString(5, laboName.get());
-            int a = pst1.executeUpdate();
-            if (a==1){
-                JOptionPane.showMessageDialog(null, "Save laboratory data successfully");
-            }
-            pst1.close();
+            call = connection.prepareCall("{call addLaboratory(?,?,?,?,?)}");
+            call.setInt(1, patientId);
+            call.setDate(2, dateToday);
+            call.setString(3,  criteria.get());
+            call.setInt(4, Integer.valueOf(quantity.get()));
+            call.setString(5, laboName.get());
+            call.execute();
+            rs = call.getResultSet();
+            JOptionPane.showMessageDialog(null, "Save laboratory data successfully");
             connection.close();
+            call.close();
+            rs.close();
         }
         catch(Exception e){
             throw new RuntimeException(e);

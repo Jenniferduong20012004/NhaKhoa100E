@@ -11,7 +11,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class LaboratoryUseVM {
-    private ObservableList<LaboratoryUse> laboUseList = FXCollections.observableArrayList();
+    private ObservableList<LaboratoryUse> laboUseList;
     private Connection connection = null;
     private ResultSet rs = null;
     private CallableStatement call;
@@ -21,6 +21,7 @@ public class LaboratoryUseVM {
     }
 
     public void init(){
+        laboUseList= FXCollections.observableArrayList();
         connection = JDBConnection.NhaKhoa100eConnect();
         loadDataFromDatabase();
     }

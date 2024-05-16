@@ -19,7 +19,6 @@ public class addTreatmentlogVM {
     private ResultSet rs = null;
     private boolean visibleButton = false;
     private boolean checkedData = false;
-    private String patientName;
     private String Date;
     private Date dateToday;
 
@@ -65,15 +64,10 @@ public class addTreatmentlogVM {
     public BooleanProperty checkButtonDisabledProperty() {
         return checkButtonDisabled;
     }
-
-    public String getDateOfBirth() {
-        return dateOfBirth.get();
-    }
-
     public StringProperty dateOfBirthProperty() {
         return dateOfBirth;
     }
-       public void setDate(String date) {
+    public void setDate(String date) {
         Date = date;
     }
 

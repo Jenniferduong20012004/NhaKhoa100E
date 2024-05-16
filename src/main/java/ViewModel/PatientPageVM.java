@@ -14,8 +14,9 @@ public class PatientPageVM {
     private Connection connection = null;
     private ResultSet rs = null;
     private CallableStatement call = null;
-    private ObservableList<Patient> list = FXCollections.observableArrayList();
+    private ObservableList<Patient> list;
     public void init(){
+        list = FXCollections.observableArrayList();
         connection = JDBConnection.NhaKhoa100eConnect();
     }
     public ObservableList<Patient> loadDataFromDatabase(){

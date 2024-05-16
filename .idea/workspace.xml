@@ -6,14 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="01a30629-adf4-4571-9697-c07b86b80414" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ViewModel/TreatmentLogVM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ViewModel/TreatmentLogVM.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ViewModel/addNewLaboratoryVM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ViewModel/addNewLaboratoryVM.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ViewModel/addNewPatientVM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ViewModel/addNewPatientVM.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ViewModel/LaboratoryUseVM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ViewModel/LaboratoryUseVM.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ViewModel/PatientPageVM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ViewModel/PatientPageVM.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ViewModel/addTreatmentlogVM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ViewModel/addTreatmentlogVM.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ViewModel/TreatmentLogVM.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ViewModel/TreatmentLogVM.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ViewModel/addNewLaboratoryVM.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ViewModel/addNewLaboratoryVM.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ViewModel/addNewPatientVM.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ViewModel/addNewPatientVM.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ViewModel/addTreatmentlogVM.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ViewModel/addTreatmentlogVM.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ViewModel/LaboratoryUseVM.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ViewModel/LaboratoryUseVM.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ViewModel/PatientPageVM.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ViewModel/PatientPageVM.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,30 +68,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.HelloApplication.executor": "Run",
-    "Application.Main.executor": "Run",
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "F:/pro",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.47586206",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.HelloApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;F:/pro&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.47586206&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="F:\pro\src\main\resources\pictures" />
@@ -196,7 +193,8 @@
       <workItem from="1715736753540" duration="982000" />
       <workItem from="1715737761732" duration="17000" />
       <workItem from="1715747797351" duration="3074000" />
-      <workItem from="1715765857097" duration="14377000" />
+      <workItem from="1715765857097" duration="15242000" />
+      <workItem from="1715824112372" duration="3993000" />
     </task>
     <servers />
   </component>

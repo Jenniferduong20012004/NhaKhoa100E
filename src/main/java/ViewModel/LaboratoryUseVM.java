@@ -33,7 +33,9 @@ public class LaboratoryUseVM {
             call.execute();
             rs = call.getResultSet();
             while (rs.next()){
-                laboUseList.add(new LaboratoryUse(rs.getString("laboName"),//tên cột trong sql
+                laboUseList.add(new LaboratoryUse(
+                        rs.getInt("patient_id"),
+                        rs.getString("laboName"),//tên cột trong sql
                         rs.getString("namePatient"),
                         rs.getString("Criteria"),
                         ""+rs.getInt("Quantity"),
@@ -41,7 +43,6 @@ public class LaboratoryUseVM {
 
             }
             call.close();
-            connection.close();
             rs.close();
 
         } catch (SQLException e) {
@@ -51,5 +52,16 @@ public class LaboratoryUseVM {
     }
 
     public void removeRecord(LaboratoryUse c) {
+        try {
+            call = connection.prepareCall("{call delete_labUse(?,?,?)}");
+            call.setInt(1, c.getPatientId());
+            call.setDate(2, Date.valueOf(c.getDate()));
+            call.setString(3, c.getLabname());
+            call.execute();
+        } catch (SQLException e) {
+            Logger.getLogger(Equipment.class.getName()).log(Level.SEVERE, null, e);
+        }
+        loadDataFromDatabase();
     }
+
 }

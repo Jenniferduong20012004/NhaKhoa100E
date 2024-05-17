@@ -13,6 +13,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import javax.swing.*;
+import java.sql.SQLException;
 
 public class addNewLaboratory {
     private Stage stage;
@@ -30,7 +31,7 @@ public class addNewLaboratory {
     private ViewHandler viewHandler;
     private addNewLaboratoryVM addnewlaboratoryvm;
     @FXML
-    private void saveLaboratory (ActionEvent event){
+    private void saveLaboratory (ActionEvent event) throws SQLException {
         addnewlaboratoryvm.clear();
         addnewlaboratoryvm.saveLaboratory();
     }

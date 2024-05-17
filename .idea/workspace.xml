@@ -6,8 +6,25 @@
   <component name="ChangeListManager">
     <list default="true" id="01a30629-adf4-4571-9697-c07b86b80414" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ViewModel/addTreatmentlogVM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ViewModel/addTreatmentlogVM.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ViewModel/addTreatmentlogVM.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ViewModel/addTreatmentlogVM.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Entity/LaboratoryUse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Entity/LaboratoryUse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Entity/Treatment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Entity/Treatment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ViewModel/LaboratoryUseVM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ViewModel/LaboratoryUseVM.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ViewModel/PatientPageVM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ViewModel/PatientPageVM.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ViewModel/TreatmentLogVM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ViewModel/TreatmentLogVM.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ViewModel/addNewLaboratoryVM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ViewModel/addNewLaboratoryVM.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/learn/Equipment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/learn/Equipment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/learn/PatientPageControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/learn/PatientPageControl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/learn/Treatmentlog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/learn/Treatmentlog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/learn/addNewLaboratory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/learn/addNewLaboratory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/learn/TreatmentLog.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/learn/TreatmentLog.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Entity/LaboratoryUse.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Entity/LaboratoryUse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Entity/Treatment.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Entity/Treatment.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ViewModel/LaboratoryUseVM.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ViewModel/LaboratoryUseVM.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ViewModel/PatientPageVM.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ViewModel/PatientPageVM.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ViewModel/TreatmentLogVM.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ViewModel/TreatmentLogVM.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ViewModel/addNewLaboratoryVM.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ViewModel/addNewLaboratoryVM.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/learn/Equipment.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/learn/Equipment.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/learn/addNewLaboratory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/learn/addNewLaboratory.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -192,7 +209,11 @@
       <workItem from="1715747797351" duration="3074000" />
       <workItem from="1715765857097" duration="15242000" />
       <workItem from="1715824112372" duration="3993000" />
-      <workItem from="1715849143502" duration="1510000" />
+      <workItem from="1715849143502" duration="3179000" />
+      <workItem from="1715862272841" duration="4095000" />
+      <workItem from="1715907837705" duration="1549000" />
+      <workItem from="1715927264664" duration="591000" />
+      <workItem from="1715954801452" duration="8164000" />
     </task>
     <servers />
   </component>
@@ -220,7 +241,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/example/learn/Treatmentlog.java</url>
-          <line>63</line>
+          <line>104</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>

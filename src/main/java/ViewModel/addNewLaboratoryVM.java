@@ -7,17 +7,14 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
 import javax.swing.*;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 
 public class addNewLaboratoryVM {
     private Connection connection;
     private StringProperty name, address, contactNumber, saveResponse;
     private BooleanProperty saveButtonDisabled;
     private PreparedStatement pst = null;
-    private ResultSet rs = null;
+    private CallableStatement call = null;
     public addNewLaboratoryVM(){
         name = new SimpleStringProperty();
         address = new SimpleStringProperty();
@@ -30,7 +27,7 @@ public class addNewLaboratoryVM {
     }
 
     private void onSavingChange() {
-        boolean disable = name.get()== null || name.get().equals("")||address.get()== null ||address.get().equals("")|| contactNumber.get()== null || contactNumber.get().equals("");
+        boolean disable = name.get()== null || name.get().isEmpty() ||address.get()== null || address.get().isEmpty() || contactNumber.get()== null || contactNumber.get().isEmpty();
         saveButtonDisabled.set(disable);
     }
 
@@ -80,22 +77,22 @@ public class addNewLaboratoryVM {
         saveResponse.set("");
     }
 
-    public void saveLaboratory (){
-        String sql = "Insert into Laboratory (laboName, contactNumber, addressLaboratory) Values (?,?,?)";
+    public void saveLaboratory () throws SQLException {
             try{
                 connection = JDBConnection.NhaKhoa100eConnect();
-                pst = connection.prepareStatement(sql);
-                pst.setString(1, name.get());
-                pst.setString(2, contactNumber.get());
-                pst.setString(3, address.get());
-                int i =pst.executeUpdate();
-                if (i==1){
-                    JOptionPane.showMessageDialog(null, "Save data successfully");
-                }
-                pst.close();
-                connection.close();
+                call = connection.prepareCall("{call insertLabo(?,?,?)}");
+                call.setString(1, name.get());
+                call.setString(2, address.get());
+                call.setString(3,  contactNumber.get());
+                call.execute();
+                JOptionPane.showMessageDialog(null, "Save data successfully");
+
             } catch (SQLException e) {
                 throw new RuntimeException(e);
+            }
+            finally {
+                connection.close();
+                call.close();
             }
         }
 

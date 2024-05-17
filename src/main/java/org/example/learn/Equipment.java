@@ -16,8 +16,6 @@ import javafx.util.Callback;
 import java.io.IOException;
 
 public class Equipment {
-    private Stage stage;
-    private Scene scene;
     private ViewHandler viewHandler;
     @FXML
     private TableView<LaboratoryUse> laboTable;
@@ -46,11 +44,11 @@ public class Equipment {
     }
     @FXML
     private void switchToDashboard(ActionEvent event) {
-        viewHandler.openAddTreatment();
+        viewHandler.openAddEquipment();
     }
     @FXML
     private void switchToAddLaboratory(ActionEvent event) {
-        viewHandler.openAddTreatment();
+        viewHandler.openAddEquipment();
     }
 
 
@@ -87,6 +85,7 @@ public class Equipment {
                             btn.setOnAction((ActionEvent event) -> {
                                 LaboratoryUse c = getTableView().getItems().get(getIndex());
                                 laboVM.removeRecord(c);
+                                laboTable.setItems(laboVM.getLaboUseList());
                                 setGraphic(btn);
                             });
                             setGraphic(btn);
@@ -127,7 +126,6 @@ public class Equipment {
     public void init(LaboratoryUseVM equipmentVM, ViewHandler viewHandler) {
          this.laboVM = equipmentVM;
          this.viewHandler = viewHandler;
-        laboVM = new LaboratoryUseVM();
         laboVM.init();
         laboTable.setItems(laboVM.getLaboUseList());
         setCellTable();

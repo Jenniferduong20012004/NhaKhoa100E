@@ -9,7 +9,14 @@ public class LaboratoryUse {
     private String quantity;
     private String date;
     private Button removeButton;
-    public LaboratoryUse (String Labname, String PatientName, String criteria, String quantity, String date){
+    private int patientId;
+
+    public int getPatientId() {
+        return patientId;
+    }
+
+    public LaboratoryUse (int id,String Labname, String PatientName, String criteria, String quantity, String date){
+        this.patientId = id;
         this.Labname =Labname;
         this.PatientName=PatientName;
         this.criteria =criteria;

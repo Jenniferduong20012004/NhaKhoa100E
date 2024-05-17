@@ -8,10 +8,7 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
 import javax.swing.*;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 
 public class addNewPatientVM {
     private StringProperty name, address, contactNumber, dateOfBirth, saveResponse;
@@ -22,6 +19,7 @@ public class addNewPatientVM {
     private PreparedStatement pst = null;
     private boolean update = false;
     public Patient patient =null;
+    private CallableStatement call = null;
     private int patientId;
     public addNewPatientVM(){
         name = new SimpleStringProperty();
@@ -53,19 +51,17 @@ public class addNewPatientVM {
     public void saveInformation(){
             try{
                 String sql = getQuery();
-                System.out.println (sql);
                 connection = JDBConnection.NhaKhoa100eConnect();
-                pst = connection.prepareStatement(sql);
-                pst.setString(1, name.get());
-                pst.setString(2, dateOfBirth.get());
-                pst.setString(3, contactNumber.get());
-                pst.setString(4, address.get());
-                int i =pst.executeUpdate();
-                if (i==1){
-                    JOptionPane.showMessageDialog(null, "Save data successfully");
-                    clear();
-                }
-                pst.close();
+                call = connection.prepareCall("{call insertPatient(?,?,?,?)}");
+                call.setString(1, name.get());
+                call.setString(2, dateOfBirth.get());
+                call.setString(3, contactNumber.get());
+                call.setString(4, address.get());
+                call.execute();
+                rs = call.getResultSet();
+                JOptionPane.showMessageDialog(null, "Save data successfully");
+                clear();
+                call.close();
                 connection.close();
             } catch (SQLException e) {
                 throw new RuntimeException(e);

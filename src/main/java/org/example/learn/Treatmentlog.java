@@ -7,11 +7,12 @@ import javafx.collections.transformation.FilteredList;
 import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.util.Callback;
 
+import java.io.IOException;
 import java.util.Date;
 
 public class Treatmentlog {
@@ -22,9 +23,11 @@ public class Treatmentlog {
     @FXML
     private TableColumn<Treatment, String > DescriptionColumn;
     @FXML
-    private TableColumn<Patient, String> NameColumn;
+    private TableColumn<Treatment, String> NameColumn;
     @FXML
-    private TableColumn<Patient, Date> DateColumn;
+    private TableColumn<Treatment, Date> DateColumn;
+    @FXML
+    private TableColumn<Treatment, String> Action;
     private TreatmentLogVM treatmentLogVm;
     private ViewHandler viewHandler;
     @FXML
@@ -58,6 +61,44 @@ public class Treatmentlog {
         NameColumn.setCellValueFactory(new PropertyValueFactory<>("patientName"));
         DateColumn.setCellValueFactory(new PropertyValueFactory<>("Date"));
         DescriptionColumn.setCellValueFactory(new PropertyValueFactory<>("description"));//tên trong treatment class
+        Callback<TableColumn<Treatment, String>, TableCell<Treatment, String>> cellFactory = new Callback<TableColumn<Treatment, String>, TableCell<Treatment, String>>() {
+            @Override
+            public TableCell<Treatment, String> call(final TableColumn<Treatment, String> param) {
+                final TableCell<Treatment, String> cell = new TableCell<Treatment, String>() {
+                    @Override
+                    public void updateItem(String item, boolean empty) {
+                        super.updateItem(item, empty);
+                        if (empty) {
+                            setGraphic(null); //empty rows do not get buttons
+                            setText(null);
+                        } else {
+                            FXMLLoader loader = new FXMLLoader(getClass().getResource("button.fxml"));
+                            final Button btn;
+                            try {
+                                btn = loader.load();
+                            } catch (IOException e) {
+                                throw new RuntimeException(e);
+                            }
+                            btn.setStyle(
+                                    " -fx-cursor: hand ;"
+                                            + "-glyph-size:28px;"
+                                            + "-fx-alignment: BASELINE_CENTER;" +
+                                            "-fx-background-color: transparent"
+                            );
+                            btn.setOnAction((ActionEvent event) -> {
+                                Treatment c = getTableView().getItems().get(getIndex());
+                                treatmentLogVm.removeRecord(c);
+                                treatmentTable.setItems(treatmentLogVm.getTreatmentList());
+                                setGraphic(btn);
+                            });
+                            setGraphic(btn);
+                        }
+                    }
+                };
+                return cell;
+            }
+        };
+        Action.setCellFactory(cellFactory);
         FilteredList<Treatment> filter = new FilteredList<>(treatmentLogVm.getTreatmentList(), b -> true);
         search.textProperty().addListener((observable, oldValue, newValue) ->{
             filter.setPredicate(treatmentList ->{

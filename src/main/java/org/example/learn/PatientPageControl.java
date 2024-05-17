@@ -101,7 +101,8 @@ public class PatientPageControl {
     }
     @FXML
     public void delete(ActionEvent event) {
-
+        patientpagevm.delete();
+        patientpagevm.reload();
     }
 
 }

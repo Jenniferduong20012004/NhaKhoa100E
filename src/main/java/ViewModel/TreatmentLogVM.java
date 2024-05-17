@@ -4,6 +4,7 @@ import Entity.Treatment;
 import SQL.JDBConnection;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import org.example.learn.Equipment;
 import org.example.learn.Treatmentlog;
 
 import java.sql.*;
@@ -14,9 +15,10 @@ public class TreatmentLogVM {
     private Connection connection = null;
     private ResultSet rs = null;
     private PreparedStatement pst = null;
-    ObservableList<Treatment> treatmentList = FXCollections.observableArrayList();
+    private ObservableList<Treatment> treatmentList;
     private CallableStatement call = null;
     public void init(){
+        treatmentList = FXCollections.observableArrayList();
         connection = JDBConnection.NhaKhoa100eConnect();
         loadDataFromDatabase();
     }
@@ -27,12 +29,12 @@ public class TreatmentLogVM {
             call.execute();
             rs = call.getResultSet();
             while (rs.next()){
-                treatmentList.add(new Treatment(rs.getString("namePatient"), //tên cột trong sql
+                treatmentList.add(new Treatment(rs.getInt("patient_id"),
+                        rs.getString("namePatient"), //tên cột trong sql
                         rs.getString("detail"),
                         "" +rs.getDate("dateCome")));
             }
             call.close();
-            connection.close();
             rs.close();
 
         } catch (SQLException e) {
@@ -45,7 +47,15 @@ public class TreatmentLogVM {
         return treatmentList;
     }
 
-    public void setTreatmentList(ObservableList<Treatment> treatmentList) {
-        this.treatmentList = treatmentList;
+    public void removeRecord(Treatment c) {
+        try {
+            call = connection.prepareCall("{call delete_treatment(?,?)}");
+            call.setInt(1, c.getPatientId());
+            call.setDate(2, Date.valueOf(c.getDate()));
+            call.execute();
+        } catch (SQLException e) {
+            Logger.getLogger(Equipment.class.getName()).log(Level.SEVERE, null, e);
+        }
+        loadDataFromDatabase();
     }
 }

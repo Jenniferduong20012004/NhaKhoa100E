@@ -36,10 +36,11 @@
         <TableView fx:id="patients" layoutX="251.0" layoutY="219.0" maxHeight="613.0" maxWidth="995.0" minHeight="613.0" minWidth="949.0" prefHeight="613.0" prefWidth="995.0" style="-fx-background-color: white;" stylesheets="@app.css">
             <columns>
                 <TableColumn fx:id="id" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" text="Patient ID" />
-                <TableColumn fx:id="PatientName" maxWidth="250.0" minWidth="250.0" prefWidth="250.0" text="Patient Name" />
-                <TableColumn fx:id="PatientContactNumber" maxWidth="200.0" minWidth="200.0" prefWidth="200.0" text="Contact Number" />
-                <TableColumn fx:id="AddressPatient" maxWidth="250.0" minWidth="250.0" prefWidth="250.0" text="Address" />
-                <TableColumn fx:id="DateColumn" maxWidth="193.0" minWidth="193.0" prefWidth="193.0" text="Date of birth" />
+                <TableColumn fx:id="PatientName" maxWidth="240.0" minWidth="240.0" prefWidth="240.0" text="Patient Name" />
+                <TableColumn fx:id="PatientContactNumber" maxWidth="150.0" minWidth="150.0" prefWidth="150.0" text="Contact Number" />
+                <TableColumn fx:id="AddressPatient" maxWidth="200.0" minWidth="200.0" prefWidth="200.0" text="Address" />
+                <TableColumn fx:id="DateColumn" maxWidth="140.0" minWidth="140.0" prefWidth="140.0" text="Date of birth" />
+            <TableColumn fx:id="Action" maxWidth="165.0" minWidth="165.0" prefWidth="165.0" text="Action" />
             </columns>
          <contextMenu>
             <ContextMenu>

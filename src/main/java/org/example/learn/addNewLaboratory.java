@@ -31,7 +31,12 @@ public class addNewLaboratory {
     private ViewHandler viewHandler;
     private addNewLaboratoryVM addnewlaboratoryvm;
     @FXML
-    private void saveLaboratory (ActionEvent event) throws SQLException {
+    private void newImageScene(ActionEvent event) {
+        addnewlaboratoryvm.clear();
+        viewHandler.openAddImage();
+    }
+    @FXML
+    private void saveLaboratory (ActionEvent event){
         addnewlaboratoryvm.clear();
         addnewlaboratoryvm.saveLaboratory();
     }

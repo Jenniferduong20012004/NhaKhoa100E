@@ -141,6 +141,12 @@ public class AddTreatmentLog {
         addTreatmentlogVM.clear();
         resetPage();
     }
+    @FXML
+    private void switchToNewImage(ActionEvent event) {
+        addTreatmentlogVM.clear();
+        resetPage();
+        viewHandler.openAddImage();
+    }
 
     public void init(addTreatmentlogVM addTreatmentlogVM, ViewHandler viewHandler) {
         this.addTreatmentlogVM = addTreatmentlogVM;

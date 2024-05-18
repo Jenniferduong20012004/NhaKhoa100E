@@ -77,7 +77,7 @@ public class addNewLaboratoryVM {
         saveResponse.set("");
     }
 
-    public void saveLaboratory () throws SQLException {
+    public void saveLaboratory () {
             try{
                 connection = JDBConnection.NhaKhoa100eConnect();
                 call = connection.prepareCall("{call insertLabo(?,?,?)}");
@@ -86,13 +86,10 @@ public class addNewLaboratoryVM {
                 call.setString(3,  contactNumber.get());
                 call.execute();
                 JOptionPane.showMessageDialog(null, "Save data successfully");
+                call.close();
 
             } catch (SQLException e) {
                 throw new RuntimeException(e);
-            }
-            finally {
-                connection.close();
-                call.close();
             }
         }
 

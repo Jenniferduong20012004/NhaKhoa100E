@@ -22,6 +22,11 @@ public class addNewPatient{
     private void getInformation (ActionEvent event) throws SQLException {
         addNewpatientvm.saveInformation();
     }
+    @FXML
+    private void switchToNewImage(ActionEvent event) {
+        addNewpatientvm.clear();
+        viewHandler.openAddImage();
+    }
 
     @FXML
     private void switchToEquipment(ActionEvent event) {

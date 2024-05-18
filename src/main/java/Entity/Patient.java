@@ -1,5 +1,8 @@
 package Entity;
 
+
+import javafx.scene.control.Button;
+
 public class Patient {
     private int id;
     private String name;
@@ -8,6 +11,7 @@ public class Patient {
     private String address;
     private String contactNumber;
     private String dateOfBirth;
+    private Button removeButton;
 
     public Patient (int id, String name, String contactNumber, String address, String dateOfBirth){
         this.id = id;
@@ -15,6 +19,7 @@ public class Patient {
         this.contactNumber= contactNumber;
         this.address = address;
         this.dateOfBirth=dateOfBirth;
+        removeButton = new Button();
     }
     public String getDateOfBirth() {
         return dateOfBirth;

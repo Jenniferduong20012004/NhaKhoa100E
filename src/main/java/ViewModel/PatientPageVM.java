@@ -19,7 +19,12 @@ public class PatientPageVM {
         list = FXCollections.observableArrayList();
         connection = JDBConnection.NhaKhoa100eConnect();
     }
-    public ObservableList<Patient> loadDataFromDatabase(){
+
+    public ObservableList<Patient> getList() {
+        return list;
+    }
+
+    public void loadDataFromDatabase(){
         try {
             list.clear();
             call = connection.prepareCall("{call getpatient}");
@@ -34,28 +39,22 @@ public class PatientPageVM {
                         "" +rs.getDate("dateOfBirth")));
             }
             call.close();
-            connection.close();
             rs.close();
 
         } catch (SQLException e) {
             Logger.getLogger(PatientPageControl.class.getName()).log(Level.SEVERE, null, e);
 
         }
-        return list;
     }
 
-    public void delete() {
+    public void removeRecord(Patient c) {
         try {
             call = connection.prepareCall("{call delete_patient(?)}");
-            //call.setInt();
-            //call.execute();
+            call.setInt(1, c.getId());
+            call.execute();
         }catch (SQLException e) {
             Logger.getLogger(PatientPageControl.class.getName()).log(Level.SEVERE, null, e);
         }
-    }
-
-    public void reload() {
-
-
+        loadDataFromDatabase();
     }
 }

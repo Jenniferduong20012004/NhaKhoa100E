@@ -9,9 +9,14 @@ public class ViewModelFactory {
     private addNewLaboratoryVM addNewLaboratoryVM;
     private addNewPatientVM addNewPatientVM;
     private addTreatmentlogVM addTreatmentlogVM;
-    public ViewModelFactory(){
-
+    private addNewImageVM addNewImageVM;
+    public addNewImageVM getAddNewImageVM(){
+        if (addNewImageVM== null){
+            addNewImageVM = new addNewImageVM();
+        }
+        return addNewImageVM;
     }
+
     public PatientPageVM getPatientPageVM(){
         if (patientPageVM == null){
             patientPageVM = new PatientPageVM();

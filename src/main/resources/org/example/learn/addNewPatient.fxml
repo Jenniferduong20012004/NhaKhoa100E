@@ -80,6 +80,7 @@
                   <TextField fx:id="textField3" layoutX="287.0" layoutY="228.0" prefHeight="30.0" prefWidth="384.0" promptText="yyyy-mm-dd" />
                     </children>
                 </AnchorPane>
+            <Button id="dashboardbutton" layoutX="12.0" layoutY="281.0" mnemonicParsing="false" onAction="#switchToNewImage" prefHeight="30.0" prefWidth="250.0" stylesheets="@app.css" text="New Image" />
             </children>
         </AnchorPane>
 

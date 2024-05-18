@@ -126,4 +126,19 @@ public class ViewHandler {
             e.printStackTrace();
         }
     }
+
+    public void openAddImage() {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("addImage.fxml"));
+        try{
+            Parent root = (Parent) loader.load();
+            addNewImage addNewImage=  loader.getController();
+            addNewImage.init(vmf.getAddNewImageVM(), this);
+            Scene addImage = new Scene(root);
+            mainStage.setScene(addImage);
+        }
+        catch (IOException e){
+            e.printStackTrace();
+        }
+    }
 }

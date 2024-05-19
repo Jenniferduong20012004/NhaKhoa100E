@@ -11,7 +11,7 @@ import javax.swing.*;
 import java.sql.*;
 
 public class addNewPatientVM {
-    private StringProperty name, address, contactNumber, dateOfBirth, saveResponse;
+    private StringProperty name, address, contactNumber, saveResponse;
     private BooleanProperty saveButtonDisabled;
     private Connection connection;
     private ResultSet rs = null;
@@ -25,14 +25,11 @@ public class addNewPatientVM {
         name = new SimpleStringProperty();
         address = new SimpleStringProperty();
         contactNumber = new SimpleStringProperty();
-        dateOfBirth = new SimpleStringProperty();
         saveResponse = new SimpleStringProperty();
         saveButtonDisabled = new SimpleBooleanProperty();
         name.addListener((observableValue, oldValue, newValue)->onSavingChange());
         address.addListener((observableValue, oldValue, newValue)->onSavingChange());
         contactNumber.addListener((observableValue, oldValue, newValue)->onSavingChange());
-        dateOfBirth.addListener((observableValue, oldValue, newValue)->onSavingChange());
-
     }
 
     public String getSaveResponse() {
@@ -44,19 +41,17 @@ public class addNewPatientVM {
     }
 
     private void onSavingChange() {
-        boolean disable = name.get()== null || name.get().equals("")||address.get()== null ||address.get().equals("")|| contactNumber.get()== null || contactNumber.get().equals("")||dateOfBirth.get()== null || dateOfBirth.get().equals("");
+        boolean disable = name.get()== null || name.get().equals("")||address.get()== null ||address.get().equals("")|| contactNumber.get()== null || contactNumber.get().equals("");
         saveButtonDisabled.set(disable);
     }
 
     public void saveInformation(){
             try{
-                String sql = getQuery();
                 connection = JDBConnection.NhaKhoa100eConnect();
-                call = connection.prepareCall("{call insertPatient(?,?,?,?)}");
+                call = connection.prepareCall("{call insertPatient(?,?,?)}");
                 call.setString(1, name.get());
-                call.setString(2, dateOfBirth.get());
-                call.setString(3, contactNumber.get());
-                call.setString(4, address.get());
+                call.setString(2, contactNumber.get());
+                call.setString(3, address.get());
                 call.execute();
                 rs = call.getResultSet();
                 JOptionPane.showMessageDialog(null, "Save data successfully");
@@ -88,9 +83,6 @@ public class addNewPatientVM {
         return contactNumber;
     }
 
-    public StringProperty dateOfBirthProperty() {
-        return dateOfBirth;
-    }
 
     public String getAddress() {
         return address.get();
@@ -103,39 +95,11 @@ public class addNewPatientVM {
     public void setPatientId(int patientId) {
         this.patientId = patientId;
     }
-
-    private String getQuery() {
-        if (update == true){
-            return "update Patient set namePatient = ?, dateOfBirth = ?, contactNumber = ?, addressPatient = ? where patient_id ="+ patientId;
-        }
-        else{
-            return "Insert into Patient (namePatient, dateOfBirth, contactNumber, addressPatient) Values (?,?,?,?)";
-        }
-    }
     public void clear(){
         name.set("");
         address.set("");
         contactNumber.set("");
-        dateOfBirth.set("");
         saveResponse.set("");
-    }
-
-    public void update(int id){
-        String sql = "Select * from Patient where patient_id = ?";
-        try{
-            connection = JDBConnection.NhaKhoa100eConnect();
-            pst = connection.prepareStatement(sql);
-            pst.setInt(1, id);
-            rs = pst.executeQuery();
-            name.set(rs.getString("namePatient"));
-            address.set(rs.getString("addressPatient"));
-            contactNumber.set(rs.getString("contactNumber"));
-            dateOfBirth.set(""+rs.getDate("dateOfBirth"));
-            pst.close();
-            connection.close();
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
     }
 
 }

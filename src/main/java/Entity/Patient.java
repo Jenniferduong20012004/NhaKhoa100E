@@ -10,21 +10,16 @@ public class Patient {
 
     private String address;
     private String contactNumber;
-    private String dateOfBirth;
     private Button removeButton;
     private Button addButton;
 
-    public Patient (int id, String name, String contactNumber, String address, String dateOfBirth){
+    public Patient (int id, String name, String contactNumber, String address) {
         this.id = id;
         this.name = name;
-        this.contactNumber= contactNumber;
+        this.contactNumber = contactNumber;
         this.address = address;
-        this.dateOfBirth=dateOfBirth;
         removeButton = new Button();
         addButton = new Button();
-    }
-    public String getDateOfBirth() {
-        return dateOfBirth;
     }
 
     public int getId() {
@@ -33,10 +28,6 @@ public class Patient {
 
     public void setId(int id) {
         this.id = id;
-    }
-
-    public void setDateOfBirth(String dateOfBirth) {
-        this.dateOfBirth = dateOfBirth;
     }
 
     public String getName() {

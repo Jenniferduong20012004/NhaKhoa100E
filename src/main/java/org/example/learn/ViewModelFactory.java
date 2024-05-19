@@ -28,7 +28,7 @@ public class ViewModelFactory {
 
     public PatientPageVM getPatientPageVM(){
         if (patientPageVM == null){
-            patientPageVM = new PatientPageVM(getAddNewTreatmentVM(), getAddNewImageVM());
+            patientPageVM = new PatientPageVM(getAddNewTreatmentVM(), getAddNewImageVM(), getViewPatientVM());
         }
         return patientPageVM;
     }

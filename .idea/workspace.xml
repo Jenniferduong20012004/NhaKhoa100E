@@ -4,14 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="01a30629-adf4-4571-9697-c07b86b80414" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/Entity/NotificationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/util/NotificationService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ViewModel/PatientPageVM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ViewModel/PatientPageVM.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ViewModel/addNewImageVM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ViewModel/addNewImageVM.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/learn/addNewImage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/learn/addNewImage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/learn/addImage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/learn/addImage.fxml" afterDir="false" />
-    </list>
+    <list default="true" id="01a30629-adf4-4571-9697-c07b86b80414" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -206,7 +199,7 @@
       <workItem from="1716027033169" duration="56000" />
       <workItem from="1716030085933" duration="6444000" />
       <workItem from="1716047549365" duration="2939000" />
-      <workItem from="1716084144054" duration="10344000" />
+      <workItem from="1716084144054" duration="10768000" />
     </task>
     <servers />
   </component>

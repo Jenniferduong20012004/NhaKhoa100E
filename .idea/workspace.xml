@@ -6,12 +6,25 @@
   <component name="ChangeListManager">
     <list default="true" id="01a30629-adf4-4571-9697-c07b86b80414" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/learn/AddTreatmentLog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/learn/AddTreatmentLog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Entity/Patient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Entity/Patient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ViewModel/PatientPageVM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ViewModel/PatientPageVM.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ViewModel/ViewPatientVM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ViewModel/ViewPatientVM.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ViewModel/addNewPatientVM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ViewModel/addNewPatientVM.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/learn/PatientImageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/learn/PatientImageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/learn/PatientPageControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/learn/PatientPageControl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/learn/ViewHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/learn/ViewHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/learn/ViewModelFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/learn/ViewModelFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/learn/ViewPatient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/learn/ViewPatient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/learn/addNewImage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/learn/addNewImage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/learn/addNewPatient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/learn/addNewPatient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/util/NotificationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/util/NotificationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/learn/PatientLog.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/learn/PatientLog.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/learn/ViewPatient.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/learn/ViewPatient.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/learn/addImage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/learn/addImage.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/learn/addNewPatient.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/learn/addNewPatient.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Entity/Patient.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Entity/Patient.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ViewModel/PatientPageVM.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ViewModel/PatientPageVM.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ViewModel/ViewPatientVM.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ViewModel/ViewPatientVM.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ViewModel/addNewPatientVM.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ViewModel/addNewPatientVM.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/util/NotificationService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/util/NotificationService.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -208,7 +221,7 @@
       <workItem from="1716030085933" duration="6444000" />
       <workItem from="1716047549365" duration="2939000" />
       <workItem from="1716084144054" duration="12638000" />
-      <workItem from="1716108467556" duration="1420000" />
+      <workItem from="1716108467556" duration="9030000" />
     </task>
     <servers />
   </component>

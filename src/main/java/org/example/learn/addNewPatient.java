@@ -15,7 +15,7 @@ public class addNewPatient{
     @FXML
     private Button saveButton;
     @FXML
-    TextField textField, textField1, textField2,textField3;
+    TextField textField, textField1, textField2;
     private addNewPatientVM addNewpatientvm;
     private ViewHandler viewHandler;
     @FXML
@@ -54,7 +54,6 @@ public class addNewPatient{
         textField.textProperty().bindBidirectional(addNewPatientVM.nameProperty());
         textField1.textProperty().bindBidirectional(addNewPatientVM.contactNumberProperty());
         textField2.textProperty().bindBidirectional(addNewPatientVM.addressProperty());
-        textField3.textProperty().bindBidirectional(addNewPatientVM.dateOfBirthProperty());
         saveButton.disableProperty().bind(addNewPatientVM.saveButtonDisabledProperty());
         addNewPatientVM.saveResponseProperty().addListener((observableValue, oldValue, newValue) -> onSavingResult(newValue));
     }

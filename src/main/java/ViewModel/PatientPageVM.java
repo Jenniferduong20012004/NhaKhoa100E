@@ -17,8 +17,8 @@ public class PatientPageVM {
     private CallableStatement call = null;
     private ObservableList<Patient> list;
     private NotificationService notification;
-    public PatientPageVM (addTreatmentlogVM add, addNewImageVM img){
-        notification = new NotificationService(add, img);
+    public PatientPageVM (addTreatmentlogVM add, addNewImageVM img, ViewPatientVM view){
+        notification = new NotificationService(add, img, view);
     }
     public void init(){
         list = FXCollections.observableArrayList();
@@ -40,8 +40,7 @@ public class PatientPageVM {
                         rs.getInt("patient_id"),
                         rs.getString("namePatient"), //tên cột trong sql
                         rs.getString("contactNumber"),
-                        rs.getString("addressPatient"),
-                        "" +rs.getDate("dateOfBirth")));
+                        rs.getString("addressPatient")));
             }
             call.close();
             rs.close();
@@ -65,5 +64,9 @@ public class PatientPageVM {
 
     public void addTreatment(Patient c) {
         notification.notify (c);
+    }
+
+    public void view(Patient c) {
+        notification.notify(c);
     }
 }

@@ -1,10 +1,10 @@
 package org.example.learn;
 
+import Entity.Patient;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import org.example.learn.*;
 
 import java.io.IOException;
 
@@ -120,6 +120,20 @@ public class ViewHandler {
             addNewImage.init(vmf.getAddNewImageVM(), this);
             Scene addImage = new Scene(root);
             mainStage.setScene(addImage);
+        }
+        catch (IOException e){
+            e.printStackTrace();
+        }
+    }
+    public void openViewPatient(Patient c){
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("viewPatient.fxml"));
+        try{
+            Parent root = (Parent) loader.load();
+            ViewPatient view=  loader.getController();
+            view.init(vmf.getViewPatientVM(), this);
+            Scene viewScene = new Scene(root);
+            mainStage.setScene(viewScene);
         }
         catch (IOException e){
             e.printStackTrace();

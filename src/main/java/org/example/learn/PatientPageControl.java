@@ -38,8 +38,6 @@ public class PatientPageControl {
     @FXML
     private TableColumn<Patient,String> AddressPatient;
     @FXML
-    private TableColumn<Patient, String> DateColumn;
-    @FXML
     private TableColumn<Patient, String> Action;
     private PatientPageVM patientpagevm;
     private ViewHandler viewHandler;
@@ -75,8 +73,7 @@ public class PatientPageControl {
         id.setCellValueFactory(new PropertyValueFactory<>("id"));
         PatientName.setCellValueFactory(new PropertyValueFactory<>("name"));
         PatientContactNumber.setCellValueFactory(new PropertyValueFactory<>("contactNumber"));
-        AddressPatient.setCellValueFactory(new PropertyValueFactory<>("address"));
-        DateColumn.setCellValueFactory(new PropertyValueFactory<>("dateOfBirth"));//tên trong patient class
+        AddressPatient.setCellValueFactory(new PropertyValueFactory<>("address"));//tên trong patient class
         Callback<TableColumn<Patient, String>, TableCell<Patient, String>> cellFactory = new Callback<TableColumn<Patient, String>, TableCell<Patient, String>>() {
             @Override
             public TableCell<Patient, String> call(final TableColumn<Patient, String> param) {
@@ -90,11 +87,14 @@ public class PatientPageControl {
                         } else {
                             FXMLLoader addloader = new FXMLLoader(getClass().getResource("AddButton.fxml"));
                             FXMLLoader loader = new FXMLLoader(getClass().getResource("button.fxml"));
+                            FXMLLoader viewloader = new FXMLLoader(getClass().getResource("ViewButton.fxml"));
                             final Button btn;
                             final Button add;
+                            final Button view;
                             try {
                                 btn = loader.load();
                                 add = addloader.load();
+                                view = viewloader.load();
                             } catch (IOException e) {
                                 throw new RuntimeException(e);
                             }
@@ -108,6 +108,11 @@ public class PatientPageControl {
                                             + "-glyph-size:28px;"
                                         + "-fx-background-color: transparent"
                             );
+                            view.setStyle(
+                                    " -fx-cursor: hand ;"
+                                            + "-glyph-size:28px;"
+                                            + "-fx-background-color: transparent"
+                            );
                             add.setOnAction((ActionEvent event) -> {
                                 Patient c = getTableView().getItems().get(getIndex());
                                 addTreatment(c);
@@ -117,11 +122,15 @@ public class PatientPageControl {
                                 patientpagevm.removeRecord(c);
                                 patients.setItems(patientpagevm.getList());
                             });
-                            HBox managebtn = new HBox(add, btn);
+                            view.setOnAction((ActionEvent event) -> {
+                                Patient c = getTableView().getItems().get(getIndex());
+                                view(c);
+                            });
+                            HBox managebtn = new HBox(add, btn, view);
                             managebtn.setStyle("-fx-alignment:center");
                             HBox.setMargin(add, new Insets(2, 2, 0, 3));
                             HBox.setMargin(btn, new Insets(2, 3, 0, 2));
-
+                            HBox.setMargin(view, new Insets(2, 4, 0, 2));
                             setGraphic(managebtn);
                         }
                     }
@@ -144,9 +153,6 @@ public class PatientPageControl {
                 else if (list.getContactNumber().toLowerCase().indexOf(searchKeyWord)>-1){
                     return true;
                 }
-                else if (list.getDateOfBirth().toLowerCase().indexOf(searchKeyWord)>-1){
-                    return true;
-                }
                 else{
                     return false;
                 }
@@ -157,18 +163,14 @@ public class PatientPageControl {
         patients.setItems(sortedData);
         }
 
+    private void view(Patient c) {
+        patientpagevm.view(c);
+        viewHandler.openViewPatient(c);
+    }
+
     private void addTreatment(Patient c) {
         patientpagevm.addTreatment(c);
         viewHandler.openAddTreatment();
-    }
-
-    @FXML
-    public void update(ActionEvent event) {
-        Patient patient = patients.getSelectionModel().getSelectedItem();
-
-    }
-    @FXML
-    public void delete(ActionEvent event) {
     }
 
 }

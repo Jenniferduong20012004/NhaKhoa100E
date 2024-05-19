@@ -75,8 +75,6 @@
                         <TextField fx:id="textField" layoutX="287.0" layoutY="88.0" prefHeight="30.0" prefWidth="384.0" />
                         <TextField fx:id="textField1" layoutX="287.0" layoutY="133.0" prefHeight="30.0" prefWidth="384.0" />
                         <TextField fx:id="textField2" layoutX="287.0" layoutY="181.0" prefHeight="30.0" prefWidth="384.0" />
-                  <Label id="normalLabel" layoutX="48.0" layoutY="228.0" stylesheets="@app.css" text="Date Of Birth" />
-                  <TextField fx:id="textField3" layoutX="287.0" layoutY="228.0" prefHeight="30.0" prefWidth="384.0" promptText="yyyy-mm-dd" />
                     </children>
                 </AnchorPane>
             </children>

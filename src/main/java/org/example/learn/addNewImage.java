@@ -73,18 +73,35 @@ public class addNewImage {
     private void chooseFile(ActionEvent event) {
         addNewImageVM.chooseFile();
     }
+    @FXML
+    private void chooseFile2(ActionEvent event) {
+        addNewImageVM.chooseFile2();
+    }
+    @FXML
+    private void chooseFile3(ActionEvent event) {
+        addNewImageVM.chooseFile3();
+    }
+    @FXML
+    private void chooseFile4(ActionEvent event) {
+        addNewImageVM.chooseFile4();
+    }
+    @FXML
+    private void chooseFile5(ActionEvent event) {
+        addNewImageVM.chooseFile5();
+    }
+    @FXML
+    private void chooseFile6(ActionEvent event) {
+        addNewImageVM.chooseFile6();
+    }
+    @FXML
+    private void chooseFile7(ActionEvent event) {
+        addNewImageVM.chooseFile7();
+    }
 
     @FXML
     private void getInformation(ActionEvent event) {
         addNewImageVM.getInformation();
     }
-
-    @FXML
-    private void switchToAddNewLaboratory(ActionEvent event) {
-        addNewImageVM.clear();
-        viewHandler.openAddEquipment();
-    }
-
     @FXML
     private void switchToAddNewTreatmentLog(ActionEvent event) {
         viewHandler.openAddTreatment();

@@ -1,6 +1,6 @@
 package ViewModel;
 
-import Entity.NotificationService;
+import util.NotificationService;
 import Entity.Patient;
 import SQL.JDBConnection;
 import javafx.collections.FXCollections;

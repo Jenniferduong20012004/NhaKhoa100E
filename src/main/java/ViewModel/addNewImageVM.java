@@ -7,11 +7,13 @@ import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.stage.FileChooser;
+import util.HelpMethods;
 
 import javax.swing.*;
 import java.io.*;
 import java.sql.*;
 import java.time.LocalDate;
+import java.util.Stack;
 
 public class addNewImageVM {
     private Connection connection;
@@ -24,6 +26,7 @@ public class addNewImageVM {
     private byte[] imageData;
     private Date dateToday;
     private BooleanProperty chooseFile2, chooseFile3, chooseFile4, chooseFile5, chooseFile6, chooseFile7;
+    private Stack<byte[]> filePaths;
 
     public String getName() {
         return name.get();
@@ -96,6 +99,7 @@ public class addNewImageVM {
 
 
     public addNewImageVM (){
+        filePaths = new Stack<>();
         name = new SimpleStringProperty();
         id = new SimpleStringProperty();
         image1 = new SimpleStringProperty();
@@ -172,18 +176,25 @@ public class addNewImageVM {
     }
 
     public void chooseFile() {
-        FileChooser chooser = new FileChooser();
-        File file = chooser.showOpenDialog(null);
-        try{
-            if (file != null) {
-                String filePath = file.getAbsolutePath();
-                image1.set(filePath);
-                byte[] imageData = readImageData(filePath);
-                setImageData(imageData);
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        filePaths.push(HelpMethods.chooseFile(image1));
+    }
+    public void chooseFile2() {
+        filePaths.push(HelpMethods.chooseFile(image2));
+    }
+    public void chooseFile3() {
+        filePaths.push(HelpMethods.chooseFile(image3));
+    }
+    public void chooseFile4() {
+        filePaths.push(HelpMethods.chooseFile(image4));
+    }
+    public void chooseFile5() {
+        filePaths.push(HelpMethods.chooseFile(image5));
+    }
+    public void chooseFile6() {
+        filePaths.push(HelpMethods.chooseFile(image6));
+    }
+    public void chooseFile7() {
+        filePaths.push(HelpMethods.chooseFile(image7));
     }
 
     private void setImageData(byte[] imageData) {
@@ -210,20 +221,22 @@ public class addNewImageVM {
     public void getInformation() {
         LocalDate localDate = LocalDate.now();
         dateToday = java.sql.Date.valueOf(localDate);
-        try{
-            connection = JDBConnection.NhaKhoa100eConnect();
-            call = connection.prepareCall("{call insertImage(?,?,?)}");
-            call.setInt(1, patient.getId());
-            call.setDate(2, dateToday);
-            call.setBytes(3, getImageData());
-            call.execute();
-            rs = call.getResultSet();
-            JOptionPane.showMessageDialog(null, "Save data successfully");
-            clear();
-            call.close();
-            connection.close();
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
+        while (!filePaths.isEmpty()) {
+            try {
+                connection = JDBConnection.NhaKhoa100eConnect();
+                call = connection.prepareCall("{call insertImage(?,?,?)}");
+                call.setInt(1, patient.getId());
+                call.setDate(2, dateToday);
+                call.setBytes(3, filePaths.pop());
+                call.execute();
+                rs = call.getResultSet();
+                JOptionPane.showMessageDialog(null, "Save data successfully");
+                clear();
+                call.close();
+                connection.close();
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
         }
     }
 

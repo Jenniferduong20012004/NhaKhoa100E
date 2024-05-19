@@ -1,4 +1,5 @@
-package Entity;
+package util;
+import Entity.Patient;
 import ViewModel.addTreatmentlogVM;
 import ViewModel.addNewImageVM;
 

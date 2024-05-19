@@ -16,4 +16,6 @@ module org.example.learn {
     opens Entity to javafx.fxml;
     exports SQL;
     opens SQL to javafx.fxml;
+    exports util;
+    opens util to javafx.fxml;
 }

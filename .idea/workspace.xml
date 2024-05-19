@@ -5,13 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="01a30629-adf4-4571-9697-c07b86b80414" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Entity/NotificationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/util/NotificationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ViewModel/PatientPageVM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ViewModel/PatientPageVM.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ViewModel/addNewImageVM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ViewModel/addNewImageVM.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/learn/addNewImage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/learn/addNewImage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/learn/addImage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/learn/addImage.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/learn/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/learn/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ViewModel/addNewImageVM.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ViewModel/addNewImageVM.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/learn/addNewImage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/learn/addNewImage.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,7 +108,7 @@
       <module name="learn" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Entity.*" />
+          <option name="PATTERN" value="util.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -207,7 +206,7 @@
       <workItem from="1716027033169" duration="56000" />
       <workItem from="1716030085933" duration="6444000" />
       <workItem from="1716047549365" duration="2939000" />
-      <workItem from="1716084144054" duration="8018000" />
+      <workItem from="1716084144054" duration="10344000" />
     </task>
     <servers />
   </component>

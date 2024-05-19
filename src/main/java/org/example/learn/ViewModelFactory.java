@@ -3,6 +3,7 @@ package org.example.learn;
 import ViewModel.*;
 
 public class ViewModelFactory {
+    private ViewPatientVM viewPatientVM;
     private TreatmentLogVM treatmentLogVM;
     private PatientPageVM patientPageVM;
     private LaboratoryUseVM laboratoryUseVM;
@@ -10,6 +11,14 @@ public class ViewModelFactory {
     private addNewPatientVM addNewPatientVM;
     private addTreatmentlogVM addTreatmentlogVM;
     private addNewImageVM addNewImageVM;
+
+    public ViewPatientVM getViewPatientVM() {
+        if(viewPatientVM == null){
+            viewPatientVM = new ViewPatientVM();
+        }
+        return viewPatientVM;
+    }
+
     public addNewImageVM getAddNewImageVM(){
         if (addNewImageVM== null){
             addNewImageVM = new addNewImageVM();

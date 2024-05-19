@@ -118,7 +118,11 @@ public class addNewImage {
         addNewImageVM.clear();
         viewHandler.openPatient();
     }
-
+    @FXML
+    private void switchToDashboard(ActionEvent event) {
+        addNewImageVM.clear();
+        viewHandler.openAddPatient();
+    }
     @FXML
     private void switchToTreatment(ActionEvent event) {
         addNewImageVM.clear();

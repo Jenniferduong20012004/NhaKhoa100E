@@ -1,5 +1,6 @@
 package ViewModel;
 
+import Entity.NotificationService;
 import Entity.Patient;
 import SQL.JDBConnection;
 import javafx.collections.FXCollections;
@@ -15,6 +16,10 @@ public class PatientPageVM {
     private ResultSet rs = null;
     private CallableStatement call = null;
     private ObservableList<Patient> list;
+    private NotificationService notification;
+    public PatientPageVM (addTreatmentlogVM add, addNewImageVM img){
+        notification = new NotificationService(add, img);
+    }
     public void init(){
         list = FXCollections.observableArrayList();
         connection = JDBConnection.NhaKhoa100eConnect();
@@ -56,5 +61,9 @@ public class PatientPageVM {
             Logger.getLogger(PatientPageControl.class.getName()).log(Level.SEVERE, null, e);
         }
         loadDataFromDatabase();
+    }
+
+    public void addTreatment(Patient c) {
+        notification.notify (c);
     }
 }

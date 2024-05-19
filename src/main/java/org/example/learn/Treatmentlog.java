@@ -40,7 +40,7 @@ public class Treatmentlog {
     }
     @FXML
     private void switchToDashboard(ActionEvent event){
-        viewHandler.openAddTreatment();
+        viewHandler.openAddPatient();
     }
     @FXML
     private void switchToPatient(ActionEvent event){

@@ -11,6 +11,8 @@ public class addNewImage {
 
     @FXML
     private TextField textField1;
+    @FXML
+    private TextField textField2;
     private ViewHandler viewHandler;
     private addNewImageVM addNewImageVM;
     public void init(addNewImageVM addNewImageVM, ViewHandler viewHandler) {
@@ -18,6 +20,7 @@ public class addNewImage {
         this.viewHandler=viewHandler;
         textField.textProperty().bindBidirectional(addNewImageVM.nameProperty());
         textField1.textProperty().bindBidirectional(addNewImageVM.idProperty());
+        textField2.textProperty().bindBidirectional(addNewImageVM.image1Property());
     }
     @FXML
     private void Cancel(ActionEvent event) {
@@ -31,7 +34,7 @@ public class addNewImage {
 
     @FXML
     private void getInformation(ActionEvent event) {
-
+        addNewImageVM.getInformation();
     }
 
     @FXML
@@ -42,7 +45,6 @@ public class addNewImage {
 
     @FXML
     private void switchToAddNewTreatmentLog(ActionEvent event) {
-        addNewImageVM.clear();
         viewHandler.openAddTreatment();
     }
 

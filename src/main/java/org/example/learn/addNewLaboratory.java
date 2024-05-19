@@ -31,11 +31,6 @@ public class addNewLaboratory {
     private ViewHandler viewHandler;
     private addNewLaboratoryVM addnewlaboratoryvm;
     @FXML
-    private void newImageScene(ActionEvent event) {
-        addnewlaboratoryvm.clear();
-        viewHandler.openAddImage();
-    }
-    @FXML
     private void saveLaboratory (ActionEvent event){
         addnewlaboratoryvm.clear();
         addnewlaboratoryvm.saveLaboratory();
@@ -45,11 +40,6 @@ public class addNewLaboratory {
     private void switchToEquipment(ActionEvent event) {
         addnewlaboratoryvm.clear();
         viewHandler.openEquipment();
-    }
-    @FXML
-    private void switchToAddTreatmentLog(ActionEvent event) {
-        addnewlaboratoryvm.clear();
-        viewHandler.openAddTreatment();
     }
     @FXML
     private void switchToTreatment(ActionEvent event) {

@@ -12,6 +12,7 @@ public class Patient {
     private String contactNumber;
     private String dateOfBirth;
     private Button removeButton;
+    private Button addButton;
 
     public Patient (int id, String name, String contactNumber, String address, String dateOfBirth){
         this.id = id;
@@ -20,6 +21,7 @@ public class Patient {
         this.address = address;
         this.dateOfBirth=dateOfBirth;
         removeButton = new Button();
+        addButton = new Button();
     }
     public String getDateOfBirth() {
         return dateOfBirth;

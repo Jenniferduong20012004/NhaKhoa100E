@@ -65,8 +65,7 @@
                 <Button fx:id="saveButton" layoutX="640.0" layoutY="640.0" maxHeight="36.0" maxWidth="117.0" minHeight="36.0" minWidth="117.0" mnemonicParsing="false" onAction="#getInformation" prefHeight="36.0" prefWidth="117.0" stylesheets="@app.css" text="Save" textFill="WHITE" />
                 <Button id="cancelButton" fx:id="saveButton1" layoutX="798.0" layoutY="640.0" maxHeight="36.0" maxWidth="117.0" minHeight="36.0" minWidth="117.0" mnemonicParsing="false" onAction="#Cancel" prefHeight="36.0" prefWidth="117.0" stylesheets="@app.css" text="Cancel" textFill="WHITE" />
                 <Button id="dashboardbuttonchoose" layoutX="12.0" layoutY="107.0" maxHeight="30.0" maxWidth="250.0" minHeight="30.0" minWidth="250.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="250.0" stylesheets="@app.css" text="New Patient" />
-                <Button id="dashboardbutton" layoutX="12.0" layoutY="165.0" maxHeight="30.0" maxWidth="250.0" minHeight="30.0" minWidth="250.0" mnemonicParsing="false" onAction="#switchToAddNewTreatmentLog" prefHeight="30.0" prefWidth="250.0" stylesheets="@app.css" text="New Treatment Log" />
-                <Button id="dashboardbutton" layoutX="12.0" layoutY="223.0" maxHeight="30.0" maxWidth="250.0" minHeight="30.0" minWidth="250.0" mnemonicParsing="false" onAction="#switchToAddNewLaboratory" prefHeight="30.0" prefWidth="250.0" stylesheets="@app.css" text="New Laboratory" />
+                <Button id="dashboardbutton" layoutX="12.0" layoutY="165.0" maxHeight="30.0" maxWidth="250.0" minHeight="30.0" minWidth="250.0" mnemonicParsing="false" onAction="#switchToAddNewLaboratory" prefHeight="30.0" prefWidth="250.0" stylesheets="@app.css" text="New Laboratory" />
                 <AnchorPane id="frame" layoutX="304.0" layoutY="90.0" maxHeight="528.0" maxWidth="700.0" minHeight="528.0" minWidth="700.0" prefHeight="528.0" prefWidth="700.0" style="-fx-border-color: #000000;" stylesheets="@app.css">
                     <children>
                         <Label id="labelNewPatient" layoutX="48.0" layoutY="19.0" stylesheets="@app.css" text="New Patient" />
@@ -80,7 +79,6 @@
                   <TextField fx:id="textField3" layoutX="287.0" layoutY="228.0" prefHeight="30.0" prefWidth="384.0" promptText="yyyy-mm-dd" />
                     </children>
                 </AnchorPane>
-            <Button id="dashboardbutton" layoutX="12.0" layoutY="281.0" mnemonicParsing="false" onAction="#switchToNewImage" prefHeight="30.0" prefWidth="250.0" stylesheets="@app.css" text="New Image" />
             </children>
         </AnchorPane>
 

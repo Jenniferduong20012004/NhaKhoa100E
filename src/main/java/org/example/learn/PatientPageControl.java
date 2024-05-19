@@ -10,13 +10,16 @@ import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 import javafx.util.Callback;
 
 import java.io.IOException;
+import java.sql.CallableStatement;
 
 public class PatientPageControl {
     private Stage stage;
@@ -40,6 +43,7 @@ public class PatientPageControl {
     private TableColumn<Patient, String> Action;
     private PatientPageVM patientpagevm;
     private ViewHandler viewHandler;
+    private CallableStatement call = null;
     public void init (PatientPageVM patientpagevm, ViewHandler viewHandler){
         this.patientpagevm = patientpagevm;
         this.viewHandler = viewHandler;
@@ -84,26 +88,41 @@ public class PatientPageControl {
                             setGraphic(null); //empty rows do not get buttons
                             setText(null);
                         } else {
+                            FXMLLoader addloader = new FXMLLoader(getClass().getResource("AddButton.fxml"));
                             FXMLLoader loader = new FXMLLoader(getClass().getResource("button.fxml"));
                             final Button btn;
+                            final Button add;
                             try {
                                 btn = loader.load();
+                                add = addloader.load();
                             } catch (IOException e) {
                                 throw new RuntimeException(e);
                             }
+                            add.setStyle(
+                                    " -fx-cursor: hand ;"
+                                            + "-glyph-size:28px;"
+                                            +"-fx-background-color: transparent"
+                            );
                             btn.setStyle(
                                     " -fx-cursor: hand ;"
                                             + "-glyph-size:28px;"
-                                            + "-fx-alignment: BASELINE_CENTER;" +
-                                            "-fx-background-color: transparent"
+                                        + "-fx-background-color: transparent"
                             );
+                            add.setOnAction((ActionEvent event) -> {
+                                Patient c = getTableView().getItems().get(getIndex());
+                                addTreatment(c);
+                            });
                             btn.setOnAction((ActionEvent event) -> {
                                 Patient c = getTableView().getItems().get(getIndex());
                                 patientpagevm.removeRecord(c);
                                 patients.setItems(patientpagevm.getList());
-                                setGraphic(btn);
                             });
-                            setGraphic(btn);
+                            HBox managebtn = new HBox(add, btn);
+                            managebtn.setStyle("-fx-alignment:center");
+                            HBox.setMargin(add, new Insets(2, 2, 0, 3));
+                            HBox.setMargin(btn, new Insets(2, 3, 0, 2));
+
+                            setGraphic(managebtn);
                         }
                     }
                 };
@@ -137,6 +156,12 @@ public class PatientPageControl {
         sortedData.comparatorProperty().bind(patients.comparatorProperty());
         patients.setItems(sortedData);
         }
+
+    private void addTreatment(Patient c) {
+        patientpagevm.addTreatment(c);
+        viewHandler.openAddTreatment();
+    }
+
     @FXML
     public void update(ActionEvent event) {
         Patient patient = patients.getSelectionModel().getSelectedItem();

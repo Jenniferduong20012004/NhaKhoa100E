@@ -79,6 +79,19 @@ public class ViewPatientVM {
                 PatientImageController controller = loader.getController();
                 controller.initImageInfo(imageId);
             }
+            for (AnchorPane pane : productPaneList) {
+                pane.setLayoutX(xIndex * width);
+                pane.setLayoutY(yIndex * height);
+                pane.setPrefWidth(width);
+                pane.setPrefHeight(height);
+
+                anchorPane.getChildren().add(pane);
+                xIndex++;
+                if (xIndex % 4 == 0) {
+                    xIndex = 0;
+                    yIndex++;
+                }
+            }
         }
         catch (Exception e){
 

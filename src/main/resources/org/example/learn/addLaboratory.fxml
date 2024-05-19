@@ -76,9 +76,7 @@
                 <Button fx:id="saveButton" layoutX="640.0" layoutY="640.0" maxHeight="36.0" maxWidth="117.0" minHeight="36.0" minWidth="117.0" mnemonicParsing="false" onAction="#saveLaboratory" prefHeight="36.0" prefWidth="117.0" stylesheets="@app.css" text="Save" textFill="WHITE" />
                 <Button id="cancelButton" fx:id="saveButton1" layoutX="798.0" layoutY="640.0" maxHeight="36.0" maxWidth="117.0" minHeight="36.0" minWidth="117.0" mnemonicParsing="false" onAction="#Cancel" prefHeight="36.0" prefWidth="117.0" stylesheets="@app.css" text="Cancel" textFill="WHITE" />
                 <Button id="dashboardbutton" layoutX="12.0" layoutY="107.0" maxHeight="30.0" maxWidth="250.0" minHeight="30.0" minWidth="250.0" mnemonicParsing="false" onAction="#switchToAddPatient" prefHeight="30.0" prefWidth="250.0" stylesheets="@app.css" text="New Patient" />
-                <Button id="dashboardbutton" layoutX="12.0" layoutY="165.0" maxHeight="30.0" maxWidth="250.0" minHeight="30.0" minWidth="250.0" mnemonicParsing="false" onAction="#switchToAddTreatmentLog" prefHeight="30.0" prefWidth="250.0" stylesheets="@app.css" text="New Treatment Log" />
-                <Button id="dashboardbuttonchoose" layoutX="12.0" layoutY="223.0" maxHeight="30.0" maxWidth="250.0" minHeight="30.0" minWidth="250.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="250.0" stylesheets="@app.css" text="New Laboratory" />
-            <Button id="dashboardbutton" layoutX="12.0" layoutY="281.0" maxHeight="30.0" maxWidth="250.0" minHeight="30.0" minWidth="250.0" mnemonicParsing="false" onAction="#newImageScene" prefHeight="30.0" prefWidth="250.0" stylesheets="@app.css" text="New Image" />
+                <Button id="dashboardbuttonchoose" layoutX="12.0" layoutY="165.0" maxHeight="30.0" maxWidth="250.0" minHeight="30.0" minWidth="250.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="250.0" stylesheets="@app.css" text="New Laboratory" />
             </children>
         </AnchorPane>
 

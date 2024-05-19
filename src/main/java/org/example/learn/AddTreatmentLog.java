@@ -15,8 +15,6 @@ import java.sql.*;
 public class AddTreatmentLog {
     @FXML
     private Label DescriptionLabel;
-    private Stage stage;
-    private Scene scene;
 
     @FXML
     private Label amountlabel;
@@ -36,9 +34,6 @@ public class AddTreatmentLog {
     private Button saveButton;
 
     @FXML
-    private Button checkButton;
-
-    @FXML
     private TextArea textArea;
 
     @FXML
@@ -50,22 +45,10 @@ public class AddTreatmentLog {
     @FXML
     private TextField textField4;
     @FXML
-    private TextField textField5, textField6;
+    private TextField textField5;
     private ViewHandler viewHandler;
     private addTreatmentlogVM addTreatmentlogVM;
-    @FXML
-    private void CheckData(ActionEvent event) {
-            addTreatmentlogVM.checkData();
-            if (addTreatmentlogVM.isVisibleButton()) {
-                LaboratoryLabelCheck.setVisible(true);
-                DescriptionLabel.setVisible(true);
-                textArea.setVisible(true);
-                radioButton.setVisible(true);
-            } else {
-                JOptionPane.showMessageDialog(null, "Patient first come to clinic insert in New Patient first");
-            }
 
-    }
     @FXML
     private void clickYes(ActionEvent event){
         if (!addTreatmentlogVM.isClicked()){
@@ -88,22 +71,20 @@ public class AddTreatmentLog {
         }
     }
 
+
     @FXML
     private void collectInformation (ActionEvent event) throws SQLException {
-        if (addTreatmentlogVM.isCheckedData()){
             addTreatmentlogVM.getInformation();
             if (addTreatmentlogVM.isClicked()){
                 addTreatmentlogVM.addLaboratory();
             }
             addTreatmentlogVM.clear();
             resetPage();
-        }
     }
 
     private void resetPage() {
+        addTreatmentlogVM.setPatient(null);
         addTreatmentlogVM.setClicked(false);
-        addTreatmentlogVM.setVisibleButton(false);
-
     }
     @FXML
     private void switchToEquipment(ActionEvent event) {
@@ -123,18 +104,6 @@ public class AddTreatmentLog {
         resetPage();
         viewHandler.openPatient();
     }
-    @FXML
-    private void switchToAddPatient(ActionEvent event) {
-        addTreatmentlogVM.clear();
-        resetPage();
-        viewHandler.openAddPatient();
-    }
-    @FXML
-    private void switchToAddLaboratory(ActionEvent event) {
-        addTreatmentlogVM.clear();
-        resetPage();
-        viewHandler.openAddEquipment();
-    }
 
     @FXML
     private void Cancel(ActionEvent event) {
@@ -143,8 +112,6 @@ public class AddTreatmentLog {
     }
     @FXML
     private void switchToNewImage(ActionEvent event) {
-        addTreatmentlogVM.clear();
-        resetPage();
         viewHandler.openAddImage();
     }
 
@@ -152,8 +119,6 @@ public class AddTreatmentLog {
         this.addTreatmentlogVM = addTreatmentlogVM;
         this.viewHandler = viewHandler;
         textField1.textProperty().bindBidirectional(addTreatmentlogVM.nameProperty());
-        textField6.textProperty().bindBidirectional(addTreatmentlogVM.dateOfBirthProperty());
-        checkButton.disableProperty().bind(addTreatmentlogVM.checkButtonDisabledProperty());
         textArea.textProperty().bindBidirectional(addTreatmentlogVM.descriptionProperty());
         saveButton.disableProperty().bind(addTreatmentlogVM.saveButtonDisabledProperty());
         textField4.textProperty().bindBidirectional(addTreatmentlogVM.criteriaProperty());

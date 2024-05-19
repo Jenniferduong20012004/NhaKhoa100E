@@ -44,7 +44,7 @@ public class Equipment {
     }
     @FXML
     private void switchToDashboard(ActionEvent event) {
-        viewHandler.openAddEquipment();
+        viewHandler.openAddPatient();
     }
     @FXML
     private void switchToAddLaboratory(ActionEvent event) {

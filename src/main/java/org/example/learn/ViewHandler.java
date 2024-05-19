@@ -12,9 +12,6 @@ public class ViewHandler {
     private Stage mainStage;
     private ViewModelFactory vmf;
 
-    public ViewModelFactory getVmf() {
-        return vmf;
-    }
 
     public ViewHandler(ViewModelFactory vmf){
         mainStage = new Stage();

@@ -11,6 +11,13 @@ public class ViewModelFactory {
     private addNewPatientVM addNewPatientVM;
     private addTreatmentlogVM addTreatmentlogVM;
     private addNewImageVM addNewImageVM;
+    private PatientImageConVM patientImageConVM;
+    public PatientImageConVM getPatientImageConVM() {
+        if(patientImageConVM == null){
+            patientImageConVM = new PatientImageConVM();
+        }
+        return patientImageConVM;
+    }
 
     public ViewPatientVM getViewPatientVM() {
         if(viewPatientVM == null){

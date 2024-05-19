@@ -114,6 +114,10 @@ public class AddTreatmentLog {
     private void switchToNewImage(ActionEvent event) {
         viewHandler.openAddImage();
     }
+    @FXML
+    private void switchToDashboard(ActionEvent event) {
+        viewHandler.openAddPatient();
+    }
 
     public void init(addTreatmentlogVM addTreatmentlogVM, ViewHandler viewHandler) {
         this.addTreatmentlogVM = addTreatmentlogVM;

@@ -73,7 +73,7 @@ public class AddTreatmentLog {
 
 
     @FXML
-    private void collectInformation (ActionEvent event) throws SQLException {
+    private void collectInformation(ActionEvent event) throws SQLException {
             addTreatmentlogVM.getInformation();
             if (addTreatmentlogVM.isClicked()){
                 addTreatmentlogVM.addLaboratory();

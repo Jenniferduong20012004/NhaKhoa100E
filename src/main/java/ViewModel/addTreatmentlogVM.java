@@ -53,10 +53,6 @@ public class addTreatmentlogVM {
     public void setVisibleButton(boolean visibleButton) {
         this.visibleButton = visibleButton;
     }
-
-    public boolean isCheckedData() {
-        return checkedData;
-    }
     public boolean isClicked() {
         return clicked;
     }
@@ -97,10 +93,12 @@ public class addTreatmentlogVM {
     }
 
     public void addLaboratory(){
+        LocalDate localDate = LocalDate.now();
+        dateToday = java.sql.Date.valueOf(localDate);
         try {
             connection = JDBConnection.NhaKhoa100eConnect();
             call = connection.prepareCall("{call addLaboratory(?,?,?,?,?)}");
-            call.setInt(1, patientId);
+            call.setInt(1, patient.getId());
             call.setDate(2, dateToday);
             call.setString(3,  criteria.get());
             call.setInt(4, Integer.valueOf(quantity.get()));
@@ -122,11 +120,13 @@ public class addTreatmentlogVM {
         dateToday = java.sql.Date.valueOf(localDate);
         connection = JDBConnection.NhaKhoa100eConnect();
             try{
-                call = connection.prepareCall("{call insertToTreatment(?, ?, ?}");
+                call = connection.prepareCall("{call insertToTreatment(?, ?, ?)}");
                 call.setInt(1, patient.getId());
                 call.setString(2,description.get());
                 call.setDate(3, dateToday);
                 call.execute();
+                JOptionPane.showMessageDialog(null, patient.getId());
+                JOptionPane.showMessageDialog(null, "Save data successfully");
                 connection.close();
                 call.close();
                 } catch (Exception e) {

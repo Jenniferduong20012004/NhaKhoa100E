@@ -85,6 +85,7 @@ public class AddTreatmentLog {
     private void resetPage() {
         addTreatmentlogVM.setPatient(null);
         addTreatmentlogVM.setClicked(false);
+        textArea.setText("");
     }
     @FXML
     private void switchToEquipment(ActionEvent event) {

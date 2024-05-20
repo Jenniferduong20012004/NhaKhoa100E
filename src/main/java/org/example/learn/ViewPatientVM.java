@@ -1,4 +1,4 @@
-package ViewModel;
+package org.example.learn;
 
 import Entity.Patient;
 import SQL.JDBConnection;
@@ -8,6 +8,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.AnchorPane;
 import org.example.learn.PatientImageController;
 
+import javax.swing.*;
 import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -27,17 +28,13 @@ public class ViewPatientVM {
     public StringProperty nameProperty() {
         return name;
     }
-
-    public AnchorPane getAnchorPane(){
-        AnchorPane anchorPane = new AnchorPane();
-        anchorPane.setLayoutX(0);
-        anchorPane.setLayoutY(0);
-        anchorPane.setPrefWidth(1200);
-        anchorPane.setPrefHeight(getAnchorHeight());
-        return anchorPane;
+    public void clear(){
+        patient = null;
+        name.set("");
     }
 
-    private double getAnchorHeight() {
+
+    public int getAnchorHeight() {
         int countPur = 0;
         try{
             connection = JDBConnection.NhaKhoa100eConnect();
@@ -48,10 +45,13 @@ public class ViewPatientVM {
             while (rs.next()) {
                 countPur++;
             }
+            connection.close();
+            call.close();
+            rs.close();
         } catch (Exception e){
             e.printStackTrace();
         }
-        return (int) (Math.ceil((double) countPur / 4)) * 250;
+        return (int) (Math.ceil((double) countPur / 2)) * 250;
     }
 
     public void viewImageWithPatientInformation(Patient c) {
@@ -87,14 +87,15 @@ public class ViewPatientVM {
 
                 anchorPane.getChildren().add(pane);
                 xIndex++;
-                if (xIndex % 4 == 0) {
+                if (xIndex % 2== 0) {
                     xIndex = 0;
                     yIndex++;
                 }
             }
         }
         catch (Exception e){
-
+            e.printStackTrace();
         }
+
     }
 }

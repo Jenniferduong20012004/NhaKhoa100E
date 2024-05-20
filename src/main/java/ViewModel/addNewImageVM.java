@@ -36,9 +36,6 @@ public class addNewImageVM {
         return id.get();
     }
 
-    public StringProperty idProperty() {
-        return id;
-    }
 
     public StringProperty nameProperty() {
         return name;
@@ -173,6 +170,12 @@ public class addNewImageVM {
         name.set("");
         id.set("");
         image1.set("");
+        image2.set("");
+        image3.set("");
+        image4.set("");
+        image5.set("");
+        image6.set("");
+        image7.set("");
     }
 
     public void chooseFile() {
@@ -201,17 +204,6 @@ public class addNewImageVM {
         this.imageData = imageData;
     }
 
-    private byte[] readImageData(String filePath) {
-        try (InputStream inputStream = new FileInputStream(filePath)) {
-            byte[] buffer = new byte[inputStream.available()];
-            inputStream.read(buffer);
-            return buffer;
-        } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-    }
 
     public void addImageWithPatientInformation(Patient c) {
         this.patient = c;
@@ -226,11 +218,12 @@ public class addNewImageVM {
                 connection = JDBConnection.NhaKhoa100eConnect();
                 call = connection.prepareCall("{call insertImage(?,?,?)}");
                 call.setInt(1, patient.getId());
+                JOptionPane.showMessageDialog(null,filePaths.size());
                 call.setDate(2, dateToday);
                 call.setBytes(3, filePaths.pop());
+                JOptionPane.showMessageDialog(null,filePaths.size());
                 call.execute();
                 rs = call.getResultSet();
-                JOptionPane.showMessageDialog(null, "Save data successfully");
                 clear();
                 call.close();
                 connection.close();

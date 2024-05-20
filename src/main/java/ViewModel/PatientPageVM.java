@@ -1,5 +1,6 @@
 package ViewModel;
 
+import org.example.learn.ViewPatientVM;
 import util.NotificationService;
 import Entity.Patient;
 import SQL.JDBConnection;

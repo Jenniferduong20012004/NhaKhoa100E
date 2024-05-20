@@ -122,7 +122,7 @@ public class ViewHandler {
             e.printStackTrace();
         }
     }
-    public void openViewPatient(Patient c){
+    public void openViewPatient(){
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("viewPatient.fxml"));
         try{

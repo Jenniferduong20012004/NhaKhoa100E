@@ -165,7 +165,7 @@ public class PatientPageControl {
 
     private void view(Patient c) {
         patientpagevm.view(c);
-        viewHandler.openViewPatient(c);
+        viewHandler.openViewPatient();
     }
 
     private void addTreatment(Patient c) {

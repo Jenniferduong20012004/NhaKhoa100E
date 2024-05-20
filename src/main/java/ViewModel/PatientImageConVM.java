@@ -48,4 +48,17 @@ public class PatientImageConVM {
             imgProd.setImage(null);
         }
     }
+    public void removeImage(){
+        try{
+            connection = JDBConnection.NhaKhoa100eConnect();
+            call = connection.prepareCall("{call deleteImage(?)}");
+            call.setInt(1,id);
+            call.execute();
+            connection.close();
+            call.close();
+            rs.close();
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+    }
 }

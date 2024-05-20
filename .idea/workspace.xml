@@ -7,80 +7,11 @@
     <list default="true" id="01a30629-adf4-4571-9697-c07b86b80414" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ViewModel/PatientImageConVM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ViewModel/PatientImageConVM.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ViewModel/PatientPageVM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ViewModel/PatientPageVM.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ViewModel/ViewPatientVM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/learn/ViewPatientVM.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ViewModel/addNewImageVM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ViewModel/addNewImageVM.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/learn/AddTreatmentLog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/learn/AddTreatmentLog.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/learn/PatientImageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/learn/PatientImageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/learn/PatientPageControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/learn/PatientPageControl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/learn/ViewHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/learn/ViewHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/learn/ViewModelFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/learn/ViewModelFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/learn/ViewPatient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/learn/ViewPatient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/util/HelpMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/util/HelpMethods.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/util/NotificationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/util/NotificationService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/learn/PatientImage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/learn/PatientImage.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/learn/ViewPatient.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/learn/ViewPatient.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Entity/LaboratoryUse.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Entity/Patient.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Entity/Treatment.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SQL/JDBConnection.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ViewModel/LaboratoryUseVM.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ViewModel/OpenImageVM.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ViewModel/PatientImageConVM.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ViewModel/PatientImageVM.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ViewModel/PatientPageVM.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ViewModel/TreatmentLogVM.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ViewModel/ViewPatientVM.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ViewModel/addNewImageVM.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ViewModel/addNewLaboratoryVM.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ViewModel/addNewPatientVM.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ViewModel/addTreatmentlogVM.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/module-info.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/learn/AddButton.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/learn/AddTreatmentLog.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/learn/Equipment$1$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/learn/Equipment$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/learn/Equipment.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/learn/HelloApplication.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/learn/OpenImage.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/learn/OpenImage.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/learn/PatientImage.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/learn/PatientImageController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/learn/PatientLog.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/learn/PatientPageControl$1$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/learn/PatientPageControl$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/learn/PatientPageControl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/learn/TreatmentLog.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/learn/Treatmentlog$1$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/learn/Treatmentlog$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/learn/Treatmentlog.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/learn/ViewButton.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/learn/ViewHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/learn/ViewModelFactory.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/learn/ViewPatient.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/learn/ViewPatient.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/learn/addImage.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/learn/addLaboratory.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/learn/addNewImage.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/learn/addNewLaboratory.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/learn/addNewPatient.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/learn/addNewPatient.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/learn/addNewTreatment.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/learn/app.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/learn/button.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/learn/equipment.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pictures/Delete.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pictures/DentalMachine.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pictures/EditProperty.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pictures/Pill.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pictures/Plus.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pictures/View.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pictures/dashboard.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pictures/ic_outline-logout.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pictures/mingcute_menu-fill.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pictures/patients.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/util/HelpMethods.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/util/NotificationService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ViewModel/PatientImageConVM.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ViewModel/PatientImageConVM.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/learn/PatientImage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/learn/PatientImage.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/learn/PatientImageController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/learn/PatientImageController.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -127,7 +58,7 @@
     </option>
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
+    <option name="selectedTabId" value="QODANA_PROBLEMS_VIEW_TAB" />
   </component>
   <component name="ProjectColorInfo">{
     &quot;associatedIndex&quot;: 5
@@ -164,6 +95,23 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="QodanaHighlightedReportService">
+    <option name="localRunNotPublishedPersistedInfo">
+      <LocalReportPersistedInfo>
+        <option name="path" value="C:\Users\Admin\AppData\Local\Temp\qodana_output\qodana.sarif.json" />
+        <option name="reportGuid" value="c7a4ec51-5b11-44d1-b70f-086cf5ddc679" />
+        <option name="reportName" value="pro/qodana/2024-05-20" />
+      </LocalReportPersistedInfo>
+    </option>
+  </component>
+  <component name="QodanaIsSelectedPersistenceService">
+    <option name="selectedOrLoading" value="true" />
+  </component>
+  <component name="QodanaReportsService">
+    <option name="descriptions">
+      <ReportDescription localRun="true" path="C:\Users\Admin\AppData\Local\Temp\qodana_output\qodana.sarif.json" reportGuid="c7a4ec51-5b11-44d1-b70f-086cf5ddc679" reportId="pro/qodana/2024-05-20" />
+    </option>
+  </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="F:\pro\src\main\resources\pictures" />
@@ -281,7 +229,7 @@
       <workItem from="1716108467556" duration="10827000" />
       <workItem from="1716128882159" duration="8325000" />
       <workItem from="1716167121213" duration="3680000" />
-      <workItem from="1716178408291" duration="9130000" />
+      <workItem from="1716178408291" duration="11310000" />
     </task>
     <servers />
   </component>

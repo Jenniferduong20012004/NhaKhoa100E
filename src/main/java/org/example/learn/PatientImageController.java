@@ -21,6 +21,7 @@ public class PatientImageController {
     private AnchorPane productInfoPane;
     @FXML
     public void onDeleteButtonClick(ActionEvent event) {
+        viewVM.removeImage();
     }
 
     @FXML

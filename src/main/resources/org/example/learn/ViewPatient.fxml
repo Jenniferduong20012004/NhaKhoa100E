@@ -65,7 +65,7 @@
                 </Button>
             </children>
         </Pane>
-      <ScrollPane fx:id="scrollPane" layoutX="456.0" layoutY="201.0" prefHeight="600.0" prefWidth="771.0"> </ScrollPane>
+        <ScrollPane fx:id="scrollPane" layoutX="460.0" layoutY="185.0" prefHeight="600.0" prefWidth="762.0" />
       <Button id="dashboardbuttonchoose" layoutX="276.0" layoutY="169.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="150.0" stylesheets="@app.css" text="Image" />
       <Button id="dashboardbutton" layoutX="276.0" layoutY="216.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="150.0" stylesheets="@app.css" text="Date Come" />
       <Label id="normalLabel" layoutX="460.0" layoutY="154.0" stylesheets="@app.css" text="Patient Name:" />

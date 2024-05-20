@@ -1,6 +1,6 @@
 package util;
 import Entity.Patient;
-import ViewModel.ViewPatientVM;
+import org.example.learn.ViewPatientVM;
 import ViewModel.addTreatmentlogVM;
 import ViewModel.addNewImageVM;
 

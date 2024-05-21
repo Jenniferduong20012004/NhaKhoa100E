@@ -66,14 +66,14 @@
                 </Button>
             </children>
         </Pane>
-        <Button id="dashboardbutton" layoutX="276.0" layoutY="169.0" mnemonicParsing="false" onAction= "#switchToImage" prefHeight="30.0" prefWidth="150.0" stylesheets="@app.css" text="Image" />
+        <Button id="dashboardbutton" layoutX="276.0" layoutY="169.0" mnemonicParsing="false" onAction="#switchToImage" prefHeight="30.0" prefWidth="150.0" stylesheets="@app.css" text="Image" />
         <Button id="dashboardbuttonchoose" layoutX="276.0" layoutY="216.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="150.0" stylesheets="@app.css" text="Date Come" />
         <Label id="normalLabel" layoutX="460.0" layoutY="154.0" stylesheets="@app.css" text="Patient Name:" />
         <Label id="normalLabel" fx:id="labelName" layoutX="590.0" layoutY="154.0" stylesheets="@app.css" text="Label" />
-      <TableView layoutX="460.0" layoutY="210.0" prefHeight="587.0" prefWidth="700.0">
+      <TableView fx:id="laboTable" layoutX="460.0" layoutY="210.0" prefHeight="587.0" prefWidth="700.0" stylesheets="@app.css">
         <columns>
-          <TableColumn prefWidth="150.0" text="Date Come" />
-          <TableColumn prefWidth="550.0" text="Description" />
+          <TableColumn fx:id="DateLaboColumn" prefWidth="150.0" text="Date Come" />
+          <TableColumn fx:id="QuantityColumn" prefWidth="550.0" text="Description" />
         </columns>
       </TableView>
     </children>

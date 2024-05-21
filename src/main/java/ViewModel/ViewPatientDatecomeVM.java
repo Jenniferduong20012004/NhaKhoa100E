@@ -71,5 +71,6 @@ public class ViewPatientDatecomeVM {
 
     public void viewWithPatientInformation(Patient c) {
         this.patient = c;
+        name.set(patient.getName());
     }
 }

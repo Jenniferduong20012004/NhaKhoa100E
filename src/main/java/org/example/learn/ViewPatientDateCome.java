@@ -26,6 +26,7 @@ public class ViewPatientDateCome {
     private ViewHandler viewHandler;
     public void init(ViewPatientDatecomeVM viewPatientDatecomeVM, ViewHandler viewHandler) {
         this.viewPatientDatecomeVM = viewPatientDatecomeVM;
+        labelName.textProperty().bindBidirectional(viewPatientDatecomeVM.nameProperty());
         this.viewHandler = viewHandler;
         viewPatientDatecomeVM.init();
         viewPatientDatecomeVM.loadFromDatabase();

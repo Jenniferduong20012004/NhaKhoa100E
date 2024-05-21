@@ -18,15 +18,13 @@ import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 import javafx.util.Callback;
 
+import javax.swing.*;
 import java.io.IOException;
 import java.sql.CallableStatement;
 
 public class PatientPageControl {
-    private Stage stage;
-    private Scene scene;
     @FXML
     private TextField search;
-    private FXMLLoader fxmlLoader;
     @FXML
     private TableView<Patient> patients;
     @FXML

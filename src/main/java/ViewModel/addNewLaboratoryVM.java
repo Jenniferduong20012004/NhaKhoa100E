@@ -13,7 +13,6 @@ public class addNewLaboratoryVM {
     private Connection connection;
     private StringProperty name, address, contactNumber, saveResponse;
     private BooleanProperty saveButtonDisabled;
-    private PreparedStatement pst = null;
     private CallableStatement call = null;
     public addNewLaboratoryVM(){
         name = new SimpleStringProperty();
@@ -81,8 +80,8 @@ public class addNewLaboratoryVM {
             try{
                 connection = JDBConnection.NhaKhoa100eConnect();
                 call = connection.prepareCall("{call insertLabo(?,?,?)}");
-                call.setString(1, name.get());
-                call.setString(2, address.get());
+                call.setNString(1, name.get());
+                call.setNString(2, address.get());
                 call.setString(3,  contactNumber.get());
                 call.execute();
                 JOptionPane.showMessageDialog(null, "Save data successfully");

@@ -21,8 +21,34 @@ public class ViewPatientVM {
     private CallableStatement call = null;
     private Patient patient;
     private StringProperty name;
+    private List<AnchorPane> productPaneList;
     public ViewPatientVM (){
         name = new SimpleStringProperty();
+        productPaneList =  new ArrayList<AnchorPane>();
+    }
+
+    public List<AnchorPane> getProductPaneList() {
+        return productPaneList;
+    }
+
+    void loadDatabase() {
+        try {
+            connection = JDBConnection.NhaKhoa100eConnect();
+            call = connection.prepareCall("{call getPatientImage(?)}");
+            call.setInt(1, patient.getId());
+            call.execute();
+            rs = call.getResultSet();
+            while (rs.next()) {
+                int imageId = rs.getInt("iId");
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("PatientImage.fxml"));
+                AnchorPane pane = loader.load();
+                productPaneList.add(pane);
+                PatientImageController controller = loader.getController();
+                controller.initImageInfo(imageId, this);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public StringProperty nameProperty() {
@@ -31,6 +57,8 @@ public class ViewPatientVM {
     public void clear(){
         patient = null;
         name.set("");
+        productPaneList = null;
+
     }
 
 
@@ -58,44 +86,8 @@ public class ViewPatientVM {
         this.patient = c;
         name.set(patient.getName());
     }
-
-    public void showPicture(AnchorPane anchorPane) {
-        int width = 300;
-        int height = 250;
-        int xIndex = 0;
-        int yIndex = 0;
-        List<AnchorPane> productPaneList = new ArrayList<AnchorPane>();
-        try{
-            connection = JDBConnection.NhaKhoa100eConnect();
-            call = connection.prepareCall("{call getPatientImage(?)}");
-            call.setInt(1,patient.getId());
-            call.execute();
-            rs = call.getResultSet();
-            while (rs.next()) {
-                int imageId = rs.getInt("iId");
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("PatientImage.fxml"));
-                AnchorPane pane = loader.load();
-                productPaneList.add(pane);
-                PatientImageController controller = loader.getController();
-                controller.initImageInfo(imageId);
-            }
-            for (AnchorPane pane : productPaneList) {
-                pane.setLayoutX(xIndex * width);
-                pane.setLayoutY(yIndex * height);
-                pane.setPrefWidth(width);
-                pane.setPrefHeight(height);
-
-                anchorPane.getChildren().add(pane);
-                xIndex++;
-                if (xIndex % 2== 0) {
-                    xIndex = 0;
-                    yIndex++;
-                }
-            }
-        }
-        catch (Exception e){
-            e.printStackTrace();
-        }
-
+    public void delete() {
+        productPaneList = null;
+        loadDatabase();
     }
 }

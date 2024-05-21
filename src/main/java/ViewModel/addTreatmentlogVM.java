@@ -100,9 +100,9 @@ public class addTreatmentlogVM {
             call = connection.prepareCall("{call addLaboratory(?,?,?,?,?)}");
             call.setInt(1, patient.getId());
             call.setDate(2, dateToday);
-            call.setString(3,  criteria.get());
+            call.setNString(3,  criteria.get());
             call.setInt(4, Integer.valueOf(quantity.get()));
-            call.setString(5, laboName.get());
+            call.setNString(5, laboName.get());
             call.execute();
             rs = call.getResultSet();
             JOptionPane.showMessageDialog(null, "Save laboratory data successfully");

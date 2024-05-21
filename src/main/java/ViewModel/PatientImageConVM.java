@@ -1,8 +1,12 @@
 package ViewModel;
 
 import SQL.JDBConnection;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import org.example.learn.ViewPatientVM;
+import util.NotificationImage;
 
 import javax.swing.*;
 import java.io.ByteArrayInputStream;
@@ -13,12 +17,22 @@ import java.sql.SQLException;
 
 public class PatientImageConVM {
     private int id;
+    private StringProperty dateTake;
     private Connection connection;
     private ResultSet rs = null;
     private CallableStatement call = null;
-    public PatientImageConVM (int i){
+    private NotificationImage noti;
+    public PatientImageConVM (int i, ViewPatientVM viewVM){
         this.id =i;
+        noti = new NotificationImage(viewVM);
+        dateTake = new SimpleStringProperty();
     }
+
+
+    public StringProperty dateTakeProperty() {
+        return dateTake;
+    }
+
     public ResultSet loadDataFromImage(ImageView imgProd) {
         try{
             connection = JDBConnection.NhaKhoa100eConnect();
@@ -28,6 +42,7 @@ public class PatientImageConVM {
             rs = call.getResultSet();
             while (rs.next()) {
                 showImage(imgProd, rs);
+                dateTake.set(rs.getString("dateTake"));
             }
             connection.close();
             call.close();
@@ -60,5 +75,6 @@ public class PatientImageConVM {
         } catch (Exception e){
             e.printStackTrace();
         }
+        noti.notifyToDelete();
     }
 }

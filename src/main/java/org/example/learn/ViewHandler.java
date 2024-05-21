@@ -136,4 +136,18 @@ public class ViewHandler {
             e.printStackTrace();
         }
     }
+    public void openViewPatientDateCome(){
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("ViewPatientDateCome.fxml"));
+        try{
+            Parent root = (Parent) loader.load();
+            ViewPatientDateCome view=  loader.getController();
+            view.init(vmf.getViewPatientDatecomeVM(), this);
+            Scene viewScene = new Scene(root);
+            mainStage.setScene(viewScene);
+        }
+        catch (IOException e){
+            e.printStackTrace();
+        }
+    }
 }

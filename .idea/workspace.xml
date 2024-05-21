@@ -6,12 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="01a30629-adf4-4571-9697-c07b86b80414" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ViewModel/PatientImageConVM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ViewModel/PatientImageConVM.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/learn/PatientImageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/learn/PatientImageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/learn/PatientImage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/learn/PatientImage.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ViewModel/PatientImageConVM.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ViewModel/PatientImageConVM.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/learn/PatientImage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/learn/PatientImage.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/learn/PatientImageController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/learn/PatientImageController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Entity/Treatment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Entity/Treatment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ViewModel/ViewPatientDatecomeVM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ViewModel/ViewPatientDatecomeVM.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/learn/ViewPatientDateCome.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/learn/ViewPatientDateCome.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/learn/ViewModelFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/learn/ViewModelFactory.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,7 +56,7 @@
     </option>
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="QODANA_PROBLEMS_VIEW_TAB" />
+    <option name="selectedTabId" value="ProjectErrors" />
   </component>
   <component name="ProjectColorInfo">{
     &quot;associatedIndex&quot;: 5
@@ -95,23 +93,6 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="QodanaHighlightedReportService">
-    <option name="localRunNotPublishedPersistedInfo">
-      <LocalReportPersistedInfo>
-        <option name="path" value="C:\Users\Admin\AppData\Local\Temp\qodana_output\qodana.sarif.json" />
-        <option name="reportGuid" value="c7a4ec51-5b11-44d1-b70f-086cf5ddc679" />
-        <option name="reportName" value="pro/qodana/2024-05-20" />
-      </LocalReportPersistedInfo>
-    </option>
-  </component>
-  <component name="QodanaIsSelectedPersistenceService">
-    <option name="selectedOrLoading" value="true" />
-  </component>
-  <component name="QodanaReportsService">
-    <option name="descriptions">
-      <ReportDescription localRun="true" path="C:\Users\Admin\AppData\Local\Temp\qodana_output\qodana.sarif.json" reportGuid="c7a4ec51-5b11-44d1-b70f-086cf5ddc679" reportId="pro/qodana/2024-05-20" />
-    </option>
-  </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="F:\pro\src\main\resources\pictures" />
@@ -229,7 +210,10 @@
       <workItem from="1716108467556" duration="10827000" />
       <workItem from="1716128882159" duration="8325000" />
       <workItem from="1716167121213" duration="3680000" />
-      <workItem from="1716178408291" duration="11310000" />
+      <workItem from="1716178408291" duration="11859000" />
+      <workItem from="1716207518873" duration="8447000" />
+      <workItem from="1716257708259" duration="916000" />
+      <workItem from="1716274714553" duration="3268000" />
     </task>
     <servers />
   </component>

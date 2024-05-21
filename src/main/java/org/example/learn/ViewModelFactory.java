@@ -11,6 +11,13 @@ public class ViewModelFactory {
     private addNewPatientVM addNewPatientVM;
     private addTreatmentlogVM addTreatmentlogVM;
     private addNewImageVM addNewImageVM;
+    private ViewPatientDatecomeVM viewPatientDatecomeVM;
+    public ViewPatientDatecomeVM getViewPatientDatecomeVM(){
+        if (viewPatientDatecomeVM == null){
+            viewPatientDatecomeVM = new ViewPatientDatecomeVM();
+        }
+        return viewPatientDatecomeVM;
+    }
 
     public ViewPatientVM getViewPatientVM() {
         if(viewPatientVM == null){
@@ -28,7 +35,7 @@ public class ViewModelFactory {
 
     public PatientPageVM getPatientPageVM(){
         if (patientPageVM == null){
-            patientPageVM = new PatientPageVM(getAddNewTreatmentVM(), getAddNewImageVM(), getViewPatientVM());
+            patientPageVM = new PatientPageVM(getAddNewTreatmentVM(), getAddNewImageVM(), getViewPatientVM(), getViewPatientDatecomeVM());
         }
         return patientPageVM;
     }

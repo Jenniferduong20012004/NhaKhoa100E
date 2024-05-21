@@ -3,13 +3,14 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="832.0" prefWidth="1280.0" styleClass="parent" stylesheets="@app.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.learn.ViewPatient">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="832.0" prefWidth="1280.0" styleClass="parent" stylesheets="@app.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.learn.ViewPatientDateCome">
     <children>
         <Label fx:id="labelNhaKhoa" layoutY="12.0" text="NHA KHOA 100E" textFill="#141414">
             <padding>
@@ -65,11 +66,16 @@
                 </Button>
             </children>
         </Pane>
-        <ScrollPane fx:id="scrollPane" layoutX="460.0" layoutY="185.0" prefHeight="600.0" prefWidth="762.0" />
-      <Button id="dashboardbuttonchoose" layoutX="276.0" layoutY="169.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="150.0" stylesheets="@app.css" text="Image" />
-      <Button id="dashboardbutton" layoutX="276.0" layoutY="216.0" mnemonicParsing="false" onAction = "#switchToDateCome" prefHeight="30.0" prefWidth="150.0" stylesheets="@app.css" text="Date Come" />
-      <Label id="normalLabel" layoutX="460.0" layoutY="154.0" stylesheets="@app.css" text="Patient Name:" />
-      <Label id="normalLabel" fx:id="labelName" layoutX="590.0" layoutY="154.0" stylesheets="@app.css" text="Label" />
+        <Button id="dashboardbutton" layoutX="276.0" layoutY="169.0" mnemonicParsing="false" onAction= "#switchToImage" prefHeight="30.0" prefWidth="150.0" stylesheets="@app.css" text="Image" />
+        <Button id="dashboardbuttonchoose" layoutX="276.0" layoutY="216.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="150.0" stylesheets="@app.css" text="Date Come" />
+        <Label id="normalLabel" layoutX="460.0" layoutY="154.0" stylesheets="@app.css" text="Patient Name:" />
+        <Label id="normalLabel" fx:id="labelName" layoutX="590.0" layoutY="154.0" stylesheets="@app.css" text="Label" />
+      <TableView layoutX="460.0" layoutY="210.0" prefHeight="587.0" prefWidth="700.0">
+        <columns>
+          <TableColumn prefWidth="150.0" text="Date Come" />
+          <TableColumn prefWidth="550.0" text="Description" />
+        </columns>
+      </TableView>
     </children>
     <opaqueInsets>
         <Insets />

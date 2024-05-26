@@ -22,27 +22,6 @@ public class addNewPatient{
     private void getInformation (ActionEvent event) throws SQLException {
         addNewpatientvm.saveInformation();
     }
-
-    @FXML
-    private void switchToEquipment(ActionEvent event) {
-        addNewpatientvm.clear();
-        viewHandler.openEquipment();
-    }
-    @FXML
-    private void switchToTreatment(ActionEvent event) {
-        addNewpatientvm.clear();
-        viewHandler.openTreatmentlog();
-    }
-    @FXML
-    private void switchToPatient(ActionEvent event) {
-        addNewpatientvm.clear();
-        viewHandler.openPatient();
-    }
-    @FXML
-    private void switchToAddNewLaboratory(ActionEvent event) {
-        addNewpatientvm.clear();
-        viewHandler.openAddEquipment();
-    }
     @FXML
     private void Cancel(ActionEvent event){
         addNewpatientvm.clear();

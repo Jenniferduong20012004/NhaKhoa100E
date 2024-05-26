@@ -87,38 +87,7 @@ public class AddTreatmentLog {
         addTreatmentlogVM.setClicked(false);
         textArea.setText("");
     }
-    @FXML
-    private void switchToEquipment(ActionEvent event) {
-        addTreatmentlogVM.clear();
-        resetPage();
-        viewHandler.openEquipment();
-    }
-    @FXML
-    private void switchToTreatment(ActionEvent event) {
-        addTreatmentlogVM.clear();
-        resetPage();
-        viewHandler.openTreatmentlog();
-    }
-    @FXML
-    private void switchToPatient(ActionEvent event) {
-        addTreatmentlogVM.clear();
-        resetPage();
-        viewHandler.openPatient();
-    }
 
-    @FXML
-    private void Cancel(ActionEvent event) {
-        addTreatmentlogVM.clear();
-        resetPage();
-    }
-    @FXML
-    private void switchToNewImage(ActionEvent event) {
-        viewHandler.openAddImage();
-    }
-    @FXML
-    private void switchToDashboard(ActionEvent event) {
-        viewHandler.openAddPatient();
-    }
 
     public void init(addTreatmentlogVM addTreatmentlogVM, ViewHandler viewHandler) {
         this.addTreatmentlogVM = addTreatmentlogVM;

@@ -30,23 +30,6 @@ public class Treatmentlog {
     private TableColumn<Treatment, String> Action;
     private TreatmentLogVM treatmentLogVm;
     private ViewHandler viewHandler;
-    @FXML
-    private void switchToEquipment(ActionEvent event){
-        viewHandler.openEquipment();
-    }
-    @FXML
-    private void switchToAddTreatment(ActionEvent event){
-        viewHandler.openAddTreatment();
-    }
-    @FXML
-    private void switchToDashboard(ActionEvent event){
-        viewHandler.openAddPatient();
-    }
-    @FXML
-    private void switchToPatient(ActionEvent event){
-        viewHandler.openPatient();
-    }
-
     public void init(TreatmentLogVM treatmentLogVm, ViewHandler viewHandler){
         this.treatmentLogVm = treatmentLogVm;
         this.viewHandler = viewHandler;

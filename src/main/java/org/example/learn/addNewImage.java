@@ -102,30 +102,5 @@ public class addNewImage {
     private void getInformation(ActionEvent event) {
         addNewImageVM.getInformation();
     }
-    @FXML
-    private void switchToAddNewTreatmentLog(ActionEvent event) {
-        viewHandler.openAddTreatment();
-    }
 
-    @FXML
-    private void switchToEquipment(ActionEvent event) {
-        addNewImageVM.clear();
-        viewHandler.openEquipment();
-    }
-
-    @FXML
-    private void switchToPatient(ActionEvent event) {
-        addNewImageVM.clear();
-        viewHandler.openPatient();
-    }
-    @FXML
-    private void switchToDashboard(ActionEvent event) {
-        addNewImageVM.clear();
-        viewHandler.openAddPatient();
-    }
-    @FXML
-    private void switchToTreatment(ActionEvent event) {
-        addNewImageVM.clear();
-        viewHandler.openTreatmentlog();
-    }
 }

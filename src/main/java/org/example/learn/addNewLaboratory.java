@@ -16,8 +16,6 @@ import javax.swing.*;
 import java.sql.SQLException;
 
 public class addNewLaboratory {
-    private Stage stage;
-    private Scene scene;
     @FXML
     private TextField textField;
 
@@ -34,27 +32,6 @@ public class addNewLaboratory {
     private void saveLaboratory (ActionEvent event){
         addnewlaboratoryvm.clear();
         addnewlaboratoryvm.saveLaboratory();
-    }
-
-    @FXML
-    private void switchToEquipment(ActionEvent event) {
-        addnewlaboratoryvm.clear();
-        viewHandler.openEquipment();
-    }
-    @FXML
-    private void switchToTreatment(ActionEvent event) {
-        addnewlaboratoryvm.clear();
-        viewHandler.openTreatmentlog();
-    }
-    @FXML
-    private void switchToPatient(ActionEvent event) {
-        addnewlaboratoryvm.clear();
-        viewHandler.openPatient();
-    }
-    @FXML
-    private void switchToAddPatient(ActionEvent event) {
-        addnewlaboratoryvm.clear();
-        viewHandler.openAddPatient();
     }
     @FXML
     private void Cancel (ActionEvent event){addnewlaboratoryvm.clear();

@@ -42,26 +42,6 @@ public class ViewPatient {
         anchorPane.setPrefHeight(viewVM.getAnchorHeight());
         return anchorPane;
     }
-    @FXML
-    private void switchToDashboard(ActionEvent event) {
-        viewVM.clear();
-        viewHandler.openAddPatient();
-    }
-    @FXML
-    private void switchToPatient(ActionEvent event) {
-        viewVM.clear();
-        viewHandler.openPatient();
-    }
-    @FXML
-    private void switchToEquipment(ActionEvent event) {
-        viewVM.clear();
-        viewHandler.openEquipment();
-    }
-    @FXML
-    private void switchToTreatment(ActionEvent event) {
-        viewVM.clear();
-        viewHandler.openTreatmentlog();
-    }
     private void showPicture() {
         int width = 300;
         int height = 250;

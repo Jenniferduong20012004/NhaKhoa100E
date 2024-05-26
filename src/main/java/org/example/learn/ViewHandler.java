@@ -1,9 +1,10 @@
 package org.example.learn;
 
-import Entity.Patient;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -18,17 +19,16 @@ public class ViewHandler {
         this.vmf = vmf;
     }
     public void start(){
-        openPatient();
+        openBase();
         mainStage.show();
     }
-
-    public void openTreatmentlog() {
+    public void openBase(){
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("TreatmentLog.fxml"));
+        loader.setLocation(getClass().getResource("Base.fxml"));
         try{
             Parent root = (Parent) loader.load();
-            Treatmentlog treatmentlog =  loader.getController();
-            treatmentlog.init(vmf.getTreatmentLogVM(), this);
+            Base treatmentlog =  loader.getController();
+            treatmentlog.init(vmf.getBase(), this);
             Scene treatmentLogScnene = new Scene(root);
             mainStage.setScene(treatmentLogScnene);
         }
@@ -36,118 +36,180 @@ public class ViewHandler {
             e.printStackTrace();
         }
     }
-    public void openPatient(){
+
+    public AnchorPane openTreatmentlog() {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("TreatmentLog.fxml"));
+        try{
+            AnchorPane newContent = loader.load();
+            Treatmentlog treatmentlog =  loader.getController();
+            treatmentlog.init(vmf.getTreatmentLogVM(), this);
+            return newContent;
+        }
+        catch (IOException e){
+            e.printStackTrace();
+        }
+        return null;
+    }
+    public AnchorPane openBaseAdd(){
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("BaseAdd.fxml"));
+        try{
+            AnchorPane newContent = loader.load();
+            BaseAdd addNewPatient =  loader.getController();
+            addNewPatient.init(this);
+            return newContent;
+        }
+        catch (IOException e){
+            e.printStackTrace();
+        }
+        return null;
+    }
+    public AnchorPane openPatient(){
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("PatientLog.fxml"));
         try{
-            Parent root = (Parent) loader.load();
-            PatientPageControl patientPageControl =  loader.getController();
-            patientPageControl.init(vmf.getPatientPageVM(), this);
-            Scene patient = new Scene(root);
-            mainStage.setScene(patient);
+            AnchorPane newContent = loader.load();
+            PatientPageControl addNewPatient =  loader.getController();
+            addNewPatient.init(vmf.getPatientPageVM(), this);
+            return newContent;
         }
         catch (IOException e){
             e.printStackTrace();
         }
+        return null;
     }
-    public void openEquipment(){
+    public AnchorPane openEquipment(){
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("equipment.fxml"));
         try{
-            Parent root = (Parent) loader.load();
+            AnchorPane newContent = loader.load();
             Equipment equipment =  loader.getController();
             equipment.init(vmf.getEquipmentVM(), this);
-            Scene equipmentScene = new Scene(root);
-            mainStage.setScene(equipmentScene);
+            return  newContent;
         }
         catch (IOException e){
             e.printStackTrace();
         }
+        return null;
     }
-    public void openAddTreatment(){
+    public AnchorPane openAddTreatment(){
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("addNewTreatment.fxml"));
         try{
-            Parent root = (Parent) loader.load();
+            AnchorPane newContent = loader.load();
             AddTreatmentLog addTreatmentLog =  loader.getController();
             addTreatmentLog.init(vmf.getAddNewTreatmentVM(), this);
-            Scene addTreatmentScene = new Scene(root);
-            mainStage.setScene(addTreatmentScene);
+            return newContent;
         }
         catch (IOException e){
             e.printStackTrace();
         }
+        return null;
     }
-    public void openAddEquipment(){
+    public AnchorPane openAddEquipment(){
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("addLaboratory.fxml"));
         try{
-            Parent root = (Parent) loader.load();
+            AnchorPane newContent = loader.load();
             addNewLaboratory addTreatmentLog =  loader.getController();
             addTreatmentLog.init(vmf.getAddNewLaboratoryVM(), this);
-            Scene addLaboratory = new Scene(root);
-            mainStage.setScene(addLaboratory);
+            return  newContent;
         }
         catch (IOException e){
             e.printStackTrace();
         }
+        return null;
     }
 
-    public void openAddPatient() {
+    public AnchorPane openAddPatient() {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("addNewPatient.fxml"));
         try{
-            Parent root = (Parent) loader.load();
+            AnchorPane newContent = loader.load();
             addNewPatient addNewPatient =  loader.getController();
             addNewPatient.init(vmf.getAddNewPatientVM(), this);
-            Scene addNewPatientScene = new Scene(root);
-            mainStage.setScene(addNewPatientScene);
+            return newContent;
         }
         catch (IOException e){
             e.printStackTrace();
+        }
+        return null;
+    }
+    public void openBaseAddTreatmentImage() {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("BaseAddTreatmentImage.fxml"));
+        try {
+            Parent root = loader.load();
+            BaseAddTreatmentImage base = loader.getController();
+            base.init(this);
+            Stage stage = new Stage();
+            stage.setTitle("Add Treatment");
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
     }
 
-    public void openAddImage() {
+    public AnchorPane openAddImage() {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("addImage.fxml"));
         try{
-            Parent root = (Parent) loader.load();
+            AnchorPane newContent = loader.load();
             addNewImage addNewImage=  loader.getController();
             addNewImage.init(vmf.getAddNewImageVM(), this);
-            Scene addImage = new Scene(root);
-            mainStage.setScene(addImage);
+            return newContent;
         }
         catch (IOException e){
             e.printStackTrace();
         }
+        return null;
     }
-    public void openViewPatient(){
+    public AnchorPane openViewPatient(){
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("viewPatient.fxml"));
         try{
-            Parent root = (Parent) loader.load();
+            AnchorPane newContent = loader.load();
             ViewPatient view=  loader.getController();
             view.init(vmf.getViewPatientVM(), this);
-            Scene viewScene = new Scene(root);
-            mainStage.setScene(viewScene);
+            return newContent;
         }
         catch (IOException e){
             e.printStackTrace();
         }
+        return null;
     }
-    public void openViewPatientDateCome(){
+    public AnchorPane openViewPatientDateCome(){
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("ViewPatientDateCome.fxml"));
         try{
-            Parent root = (Parent) loader.load();
+            AnchorPane newContent = loader.load();
             ViewPatientDateCome view=  loader.getController();
             view.init(vmf.getViewPatientDatecomeVM(), this);
-            Scene viewScene = new Scene(root);
-            mainStage.setScene(viewScene);
+            return newContent;
         }
         catch (IOException e){
             e.printStackTrace();
+        }
+        return null;
+    }
+
+    public void openBaseViewPatient() {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("BaseView.fxml"));
+        try {
+            Parent root = loader.load();
+            BaseView base = loader.getController();
+            base.init(this);
+            Stage stage = new Stage();
+            stage.setTitle("View Patient");
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
     }
 }

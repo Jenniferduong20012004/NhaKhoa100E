@@ -38,24 +38,4 @@ public class ViewPatientDateCome {
         DateLaboColumn.setCellValueFactory(new PropertyValueFactory<>("Date"));
         QuantityColumn.setCellValueFactory(new PropertyValueFactory<>("description"));//tên trong treatment class
     }
-    @FXML
-    private void switchToDashboard(ActionEvent event) {
-        viewHandler.openAddPatient();
-    }
-    @FXML
-    private void switchToPatient(ActionEvent event) {
-        viewHandler.openPatient();
-    }
-    @FXML
-    private void switchToTreatment(ActionEvent event) {
-        viewHandler.openTreatmentlog();
-    }
-    @FXML
-    private void switchToEquipment(ActionEvent event) {
-        viewHandler.openEquipment();
-    }
-    @FXML
-    private void switchToImage(ActionEvent event) {
-        viewHandler.openViewPatient();
-    }
 }

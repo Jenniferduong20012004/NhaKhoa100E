@@ -6,7 +6,6 @@ module org.example.learn {
     requires org.kordamp.bootstrapfx.core;
     requires java.sql;
     requires java.desktop;
-    requires fontawesomefx;
 
     opens org.example.learn to javafx.fxml;
     exports org.example.learn;

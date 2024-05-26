@@ -48,23 +48,6 @@ public class PatientPageControl {
         patients.setItems(patientpagevm.getList());
         setCellTable();
     }
-    @FXML
-    private void switchToEquipment(ActionEvent event) {
-        viewHandler.openEquipment();
-    }
-    @FXML
-    private void switchToTreatment(ActionEvent event) {
-        viewHandler.openTreatmentlog();
-    }
-    @FXML
-    private void switchToDashboard(ActionEvent event) {
-        viewHandler.openAddPatient();
-    }
-    @FXML
-
-    private void switchToAddPatient(ActionEvent event) {
-        viewHandler.openAddPatient();
-    }
 
     @FXML
     private void setCellTable(){
@@ -163,12 +146,12 @@ public class PatientPageControl {
 
     private void view(Patient c) {
         patientpagevm.view(c);
-        viewHandler.openViewPatient();
+        viewHandler.openBaseViewPatient();
     }
 
     private void addTreatment(Patient c) {
         patientpagevm.addTreatment(c);
-        viewHandler.openAddTreatment();
+        viewHandler.openBaseAddTreatmentImage();
     }
 
 }

@@ -12,6 +12,7 @@ public class ViewModelFactory {
     private addTreatmentlogVM addTreatmentlogVM;
     private addNewImageVM addNewImageVM;
     private ViewPatientDatecomeVM viewPatientDatecomeVM;
+    private BaseVM baseVM;
     public ViewPatientDatecomeVM getViewPatientDatecomeVM(){
         if (viewPatientDatecomeVM == null){
             viewPatientDatecomeVM = new ViewPatientDatecomeVM();
@@ -70,5 +71,12 @@ public class ViewModelFactory {
             addNewPatientVM = new addNewPatientVM ();
         }
         return addNewPatientVM;
+    }
+
+    public BaseVM getBase() {
+        if (baseVM== null){
+            baseVM= new BaseVM ();
+        }
+        return baseVM;
     }
 }

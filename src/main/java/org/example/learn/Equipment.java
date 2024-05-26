@@ -34,22 +34,9 @@ public class Equipment {
     @FXML
     private TextField search;
     private LaboratoryUseVM laboVM;
-     @FXML
-    private void switchToPatient(ActionEvent event) {
-        viewHandler.openPatient();
-    }
-    @FXML
-    private void switchToTreatment(ActionEvent event){
-        viewHandler.openTreatmentlog();
-    }
-    @FXML
-    private void switchToDashboard(ActionEvent event) {
-        viewHandler.openAddPatient();
-    }
     @FXML
     private void switchToAddLaboratory(ActionEvent event) {
-        viewHandler.openAddEquipment();
-    }
+        viewHandler.openBaseAdd();    }
 
 
     private void setCellTable() {

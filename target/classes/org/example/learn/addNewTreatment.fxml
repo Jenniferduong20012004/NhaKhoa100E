@@ -5,89 +5,30 @@
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.Pane?>
 
-<AnchorPane maxHeight="832.0" maxWidth="1280.0" minHeight="832.0" minWidth="1280.0" prefHeight="832.0" prefWidth="1280.0" style="-fx-background-color: #FFFFFF;" styleClass="parent" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.learn.AddTreatmentLog">
-    <children>
-        <Label id="labelNhaKhoa100E" layoutX="24.0" layoutY="11.5" stylesheets="@app.css" text="NHA KHOA 100E" />
-        <Pane id="vBox" layoutY="80.0" prefHeight="759.0" prefWidth="252.0" stylesheets="@app.css">
-            <children>
-                <Button id="buttonMenu" alignment="BASELINE_LEFT" layoutX="17.0" layoutY="16.0" mnemonicParsing="false" onAction="#switchToDashboard" prefHeight="60.0" prefWidth="216.0" stylesheets="@app.css" text="Dashboard">
-                    <graphic>
-                        <ImageView fitHeight="27.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="@../../../pictures/dashboard.png" />
-                            </image>
-                        </ImageView>
-                    </graphic>
-                </Button>
-                <Button id="buttonMenuChoose" alignment="BASELINE_LEFT" layoutX="17.0" layoutY="76.0" mnemonicParsing="false" onAction="#switchToPatient" prefHeight="60.0" prefWidth="216.0" stylesheets="@app.css" text="Patients">
-                    <graphic>
-                        <ImageView fitHeight="27.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="@../../../pictures/patients.png" />
-                            </image>
-                        </ImageView>
-                    </graphic>
-                </Button>
-                <Button id="buttonMenu" alignment="BASELINE_LEFT" layoutX="17.0" layoutY="136.0" mnemonicParsing="false" onAction="#switchToTreatment" prefHeight="60.0" prefWidth="217.0" stylesheets="@app.css" text="Treatment logs">
-                    <graphic>
-                        <ImageView fitHeight="27.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="@../../../pictures/EditProperty.png" />
-                            </image>
-                        </ImageView>
-                    </graphic>
-                </Button>
-                <Button id="buttonMenu" alignment="BASELINE_LEFT" layoutX="17.0" layoutY="196.0" mnemonicParsing="false" onAction="#switchToEquipment" prefHeight="60.0" prefWidth="216.0" stylesheets="@app.css" text="Laboratory">
-                    <graphic>
-                        <ImageView fitHeight="27.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="@../../../pictures/DentalMachine.png" />
-                            </image>
-                        </ImageView>
-                    </graphic>
-                </Button>
-            </children>
-        </Pane>
-        <AnchorPane layoutX="252.0" layoutY="80.0" prefHeight="759.0" prefWidth="956.0" style="-fx-background-color: white;">
-            <children>
-                <Label id="labelAddNewPatient" layoutX="23.0" stylesheets="@app.css" text="Add Information">
-                    <graphic>
-                        <ImageView fitHeight="38.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="@../../../pictures/mingcute_menu-fill.png" />
-                            </image>
-                        </ImageView>
-                    </graphic>
-                </Label>
-                <Button fx:id="saveButton" layoutX="640.0" layoutY="640.0" maxHeight="36.0" maxWidth="117.0" minHeight="36.0" minWidth="117.0" mnemonicParsing="false" onAction="#collectInformation" prefHeight="36.0" prefWidth="117.0" stylesheets="@app.css" text="Save" textFill="WHITE" />
-                <Button id="cancelButton" fx:id="saveButton1" layoutX="798.0" layoutY="640.0" maxHeight="36.0" maxWidth="117.0" minHeight="36.0" minWidth="117.0" mnemonicParsing="false" onAction="#Cancel" prefHeight="36.0" prefWidth="117.0" stylesheets="@app.css" text="Cancel" textFill="WHITE" />
-                <Button id="dashboardbuttonchoose" layoutX="12.0" layoutY="107.0" maxHeight="30.0" maxWidth="250.0" minHeight="30.0" minWidth="250.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="250.0" stylesheets="@app.css" text="New Treatment Log" />
-            <Button id="dashboardbutton" layoutX="12.0" layoutY="165.0" mnemonicParsing="false" onAction="#switchToNewImage" prefHeight="30.0" prefWidth="250.0" stylesheets="@app.css" text="New Image" />
-                      <AnchorPane id="frame" layoutX="304.0" layoutY="90.0" maxHeight="610.0" maxWidth="700.0" minHeight="484.0" minWidth="700.0" prefHeight="484.0" prefWidth="700.0" style="-fx-border-color: #494949; -fx-background-color: white;" stylesheets="@app.css">
-                          <children>
-                              <Label id="labelNewPatient" layoutX="48.0" layoutY="19.0" stylesheets="@app.css" text="New Treatment Log" />
-                              <Label id="normalLabel" layoutX="48.0" layoutY="88.0" prefHeight="30.0" prefWidth="118.0" stylesheets="@app.css" text="Patient name" />
-                              <Label id="normalLabel" fx:id="DescriptionLabel" layoutX="48.0" layoutY="136.0" prefHeight="30.0" prefWidth="156.0" stylesheets="@app.css" text="Description" />
-                              <TextField fx:id="textField1" layoutX="287.0" layoutY="88.0" prefHeight="30.0" prefWidth="384.0" text=" " />
-                        <Label id="normalLabel" fx:id="LaboratoryLabelCheck" layoutX="48.0" layoutY="280.0" prefHeight="30.0" prefWidth="156.0" stylesheets="@app.css" text="Laboratory" />
-                        <RadioButton fx:id="radioButton" layoutX="287.0" layoutY="280.0" mnemonicParsing="false" onAction="#clickYes" text="Yes" />
-                        <TextArea fx:id="textArea" layoutX="287.0" layoutY="136.0" prefHeight="120.0" prefWidth="384.0" style="-fx-border-color: #494949;" />
-                        <TextField fx:id="textField3" layoutX="287.0" layoutY="328.0" prefHeight="30.0" prefWidth="384.0" visible="false" />
-                        <TextField fx:id="textField4" layoutX="287.0" layoutY="376.0" prefHeight="30.0" prefWidth="384.0" visible="false" />
-                  <TextField fx:id="textField5" layoutX="287.0" layoutY="424.0" prefHeight="30.0" prefWidth="384.0" visible="false" />
-                  <Label id="normalLabel" fx:id="labolabel" layoutX="48.0" layoutY="328.0" stylesheets="@app.css" text="Laboratory name" visible="false" />
-                  <Label id="normalLabel" fx:id="criterialabel" layoutX="48.0" layoutY="376.0" stylesheets="@app.css" text="Criteria" visible="false" />
-                  <Label id="normalLabel" fx:id="amountlabel" layoutX="48.0" layoutY="424.0" stylesheets="@app.css" text="Amount" visible="false" />
-                          </children>
-                      </AnchorPane>
 
-            </children>
-        </AnchorPane>
+  <AnchorPane maxHeight="577.0" maxWidth="700.0" minHeight="577.0" minWidth="700.0" prefHeight="577.0" prefWidth="700.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.learn.AddTreatmentLog">
+      <children>
+          <Button fx:id="saveButton" layoutX="330.0" layoutY="510.0" maxHeight="36.0" maxWidth="117.0" minHeight="36.0" minWidth="117.0" mnemonicParsing="false" onAction="#collectInformation" prefHeight="36.0" prefWidth="117.0" stylesheets="@app.css" text="Save" textFill="WHITE" />
+          <Button id="cancelButton" fx:id="saveButton1" layoutX="500.0" layoutY="510.0" maxHeight="36.0" maxWidth="117.0" minHeight="36.0" minWidth="117.0" mnemonicParsing="false" onAction="#Cancel" prefHeight="36.0" prefWidth="117.0" stylesheets="@app.css" text="Cancel" textFill="WHITE" />
+                <AnchorPane id="frame" layoutY="10.0" maxHeight="610.0" maxWidth="700.0" minHeight="484.0" minWidth="700.0" prefHeight="484.0" prefWidth="700.0" style="-fx-border-color: #494949; -fx-background-color: white;" stylesheets="@app.css">
+                    <children>
+                        <Label id="labelNewPatient" layoutX="48.0" layoutY="19.0" stylesheets="@app.css" text="New Treatment Log" />
+                        <Label id="normalLabel" layoutX="48.0" layoutY="88.0" prefHeight="30.0" prefWidth="118.0" stylesheets="@app.css" text="Patient name" />
+                        <Label id="normalLabel" fx:id="DescriptionLabel" layoutX="48.0" layoutY="136.0" prefHeight="30.0" prefWidth="156.0" stylesheets="@app.css" text="Description" />
+                        <TextField fx:id="textField1" layoutX="287.0" layoutY="88.0" prefHeight="30.0" prefWidth="384.0" text=" " />
+                  <Label id="normalLabel" fx:id="LaboratoryLabelCheck" layoutX="48.0" layoutY="280.0" prefHeight="30.0" prefWidth="156.0" stylesheets="@app.css" text="Laboratory" />
+                  <RadioButton fx:id="radioButton" layoutX="287.0" layoutY="280.0" mnemonicParsing="false" onAction="#clickYes" text="Yes" />
+                  <TextArea fx:id="textArea" layoutX="287.0" layoutY="136.0" prefHeight="120.0" prefWidth="384.0" style="-fx-border-color: #494949;" />
+                  <TextField fx:id="textField3" layoutX="287.0" layoutY="328.0" prefHeight="30.0" prefWidth="384.0" visible="false" />
+                  <TextField fx:id="textField4" layoutX="287.0" layoutY="376.0" prefHeight="30.0" prefWidth="384.0" visible="false" />
+            <TextField fx:id="textField5" layoutX="287.0" layoutY="424.0" prefHeight="30.0" prefWidth="384.0" visible="false" />
+            <Label id="normalLabel" fx:id="labolabel" layoutX="48.0" layoutY="328.0" stylesheets="@app.css" text="Laboratory name" visible="false" />
+            <Label id="normalLabel" fx:id="criterialabel" layoutX="48.0" layoutY="376.0" stylesheets="@app.css" text="Criteria" visible="false" />
+            <Label id="normalLabel" fx:id="amountlabel" layoutX="48.0" layoutY="424.0" stylesheets="@app.css" text="Amount" visible="false" />
+                    </children>
+                </AnchorPane>
 
-    </children>
-</AnchorPane>
+      </children>
+  </AnchorPane>

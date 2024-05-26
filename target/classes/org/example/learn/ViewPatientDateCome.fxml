@@ -1,79 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.Pane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="832.0" prefWidth="1280.0" styleClass="parent" stylesheets="@app.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.learn.ViewPatientDateCome">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="579.0" prefWidth="821.0" styleClass="parent" stylesheets="@app.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.learn.ViewPatientDateCome">
     <children>
-        <Label fx:id="labelNhaKhoa" layoutY="12.0" text="NHA KHOA 100E" textFill="#141414">
-            <padding>
-                <Insets left="24.0" right="24.0" />
-            </padding>
-        </Label>
-        <Label id="labelAddNewPatient" layoutX="274.0" layoutY="80.0" stylesheets="@app.css" text="View Patient">
-            <graphic>
-                <ImageView fitHeight="38.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
-                    <image>
-                        <Image url="@../../../pictures/mingcute_menu-fill.png" />
-                    </image>
-                </ImageView>
-            </graphic>
-        </Label>
-        <Pane id="vBox" layoutY="80.0" prefHeight="759.0" prefWidth="252.0" stylesheets="@app.css">
-            <children>
-                <Button id="buttonMenu" alignment="BASELINE_LEFT" layoutX="17.0" layoutY="16.0" mnemonicParsing="false" onAction="#switchToDashboard" prefHeight="60.0" prefWidth="216.0" stylesheets="@app.css" text="Dashboard">
-                    <graphic>
-                        <ImageView fitHeight="27.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="@../../../pictures/dashboard.png" />
-                            </image>
-                        </ImageView>
-                    </graphic>
-                </Button>
-                <Button id="buttonMenuChoose" alignment="BASELINE_LEFT" layoutX="17.0" layoutY="76.0" mnemonicParsing="false" onAction="#switchToPatient" prefHeight="60.0" prefWidth="216.0" stylesheets="@app.css" text="Patients">
-                    <graphic>
-                        <ImageView fitHeight="27.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="@../../../pictures/patients.png" />
-                            </image>
-                        </ImageView>
-                    </graphic>
-                </Button>
-                <Button id="buttonMenu" alignment="BASELINE_LEFT" layoutX="17.0" layoutY="136.0" mnemonicParsing="false" onAction="#switchToTreatment" prefHeight="60.0" prefWidth="216.0" stylesheets="@app.css" text="Treatment logs">
-                    <graphic>
-                        <ImageView fitHeight="27.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="@../../../pictures/EditProperty.png" />
-                            </image>
-                        </ImageView>
-                    </graphic>
-                </Button>
-                <Button id="buttonMenu" alignment="BASELINE_LEFT" layoutX="17.0" layoutY="196.0" mnemonicParsing="false" onAction="#switchToEquipment" prefHeight="60.0" prefWidth="216.0" stylesheets="@app.css" text="Laboratory">
-                    <graphic>
-                        <ImageView fitHeight="27.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="@../../../pictures/DentalMachine.png" />
-                            </image>
-                        </ImageView>
-                    </graphic>
-                </Button>
-            </children>
-        </Pane>
-        <Button id="dashboardbutton" layoutX="276.0" layoutY="169.0" mnemonicParsing="false" onAction="#switchToImage" prefHeight="30.0" prefWidth="150.0" stylesheets="@app.css" text="Image" />
-        <Button id="dashboardbuttonchoose" layoutX="276.0" layoutY="216.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="150.0" stylesheets="@app.css" text="Date Come" />
-        <Label id="normalLabel" layoutX="460.0" layoutY="154.0" stylesheets="@app.css" text="Patient Name:" />
-        <Label id="normalLabel" fx:id="labelName" layoutX="590.0" layoutY="154.0" stylesheets="@app.css" text="Label" />
-      <TableView fx:id="laboTable" layoutX="460.0" layoutY="210.0" prefHeight="587.0" prefWidth="700.0" stylesheets="@app.css">
+        <Label id="normalLabel" layoutX="10.0" layoutY="10.0" stylesheets="@app.css" text="Patient Name:" />
+        <Label id="normalLabel" fx:id="labelName" layoutX="145.0" layoutY="10.0" stylesheets="@app.css" text="Label" />
+      <TableView fx:id="laboTable" layoutX="10.0" layoutY="44.0" prefHeight="509.0" prefWidth="802.0" stylesheets="@app.css">
         <columns>
           <TableColumn fx:id="DateLaboColumn" prefWidth="150.0" text="Date Come" />
-          <TableColumn fx:id="QuantityColumn" prefWidth="550.0" text="Description" />
+          <TableColumn fx:id="QuantityColumn" prefWidth="649.0" text="Description" />
         </columns>
       </TableView>
     </children>

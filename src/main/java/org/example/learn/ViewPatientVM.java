@@ -22,6 +22,11 @@ public class ViewPatientVM {
     private Patient patient;
     private StringProperty name;
     private List<AnchorPane> productPaneList;
+
+    public void setProductPaneList() {
+        this.productPaneList.clear();
+    }
+
     public ViewPatientVM (){
         name = new SimpleStringProperty();
         productPaneList =  new ArrayList<AnchorPane>();
@@ -31,7 +36,7 @@ public class ViewPatientVM {
         return productPaneList;
     }
 
-    void loadDatabase() {
+    public void loadDatabase() {
         try {
             connection = JDBConnection.NhaKhoa100eConnect();
             call = connection.prepareCall("{call getPatientImage(?)}");
@@ -85,9 +90,5 @@ public class ViewPatientVM {
     public void viewImageWithPatientInformation(Patient c) {
         this.patient = c;
         name.set(patient.getName());
-    }
-    public void delete() {
-        productPaneList = null;
-        loadDatabase();
     }
 }

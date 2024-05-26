@@ -6,9 +6,7 @@ import javafx.beans.property.StringProperty;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import org.example.learn.ViewPatientVM;
-import util.NotificationImage;
 
-import javax.swing.*;
 import java.io.ByteArrayInputStream;
 import java.sql.CallableStatement;
 import java.sql.Connection;
@@ -21,10 +19,8 @@ public class PatientImageConVM {
     private Connection connection;
     private ResultSet rs = null;
     private CallableStatement call = null;
-    private NotificationImage noti;
     public PatientImageConVM (int i, ViewPatientVM viewVM){
         this.id =i;
-        noti = new NotificationImage(viewVM);
         dateTake = new SimpleStringProperty();
     }
 
@@ -75,6 +71,5 @@ public class PatientImageConVM {
         } catch (Exception e){
             e.printStackTrace();
         }
-        noti.notifyToDelete();
     }
 }

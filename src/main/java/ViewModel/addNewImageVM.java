@@ -23,7 +23,6 @@ public class addNewImageVM {
     private CallableStatement call = null;
     private Patient patient;
     private StringProperty name, id, image1, image2, image3, image4, image5, image6, image7;
-    private byte[] imageData;
     private Date dateToday;
     private BooleanProperty chooseFile2, chooseFile3, chooseFile4, chooseFile5, chooseFile6, chooseFile7;
     private Stack<byte[]> filePaths;
@@ -200,11 +199,6 @@ public class addNewImageVM {
         filePaths.push(HelpMethods.chooseFile(image7));
     }
 
-    private void setImageData(byte[] imageData) {
-        this.imageData = imageData;
-    }
-
-
     public void addImageWithPatientInformation(Patient c) {
         this.patient = c;
         name.set(patient.getName());
@@ -231,9 +225,5 @@ public class addNewImageVM {
                 throw new RuntimeException(e);
             }
         }
-    }
-
-    private byte[] getImageData() {
-        return imageData;
     }
 }

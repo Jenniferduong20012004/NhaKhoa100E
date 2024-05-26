@@ -99,4 +99,8 @@ public class AddTreatmentLog {
         textField3.textProperty().bindBidirectional(addTreatmentlogVM.laboNameProperty());
         textField5.textProperty().bindBidirectional(addTreatmentlogVM.quantityProperty());
     }
+
+    public void Cancel(ActionEvent event) {
+        addTreatmentlogVM.clear();
+    }
 }

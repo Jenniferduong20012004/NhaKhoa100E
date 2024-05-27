@@ -1,14 +1,12 @@
 package org.example.learn;
 
-import javafx.event.ActionEvent;
+import ViewModel.OpenImageVM;
 
 public class OpenImage {
-    public void switchToPatient(ActionEvent event) {
-    }
-
-    public void switchToTreatment(ActionEvent event) {
-    }
-
-    public void switchToEquipment(ActionEvent event) {
+    private ViewHandler viewHandler;
+    private OpenImageVM openVM;
+    public void init(OpenImageVM openVM, ViewHandler viewHandler) {
+        this.openVM = openVM;
+        this.viewHandler = viewHandler;
     }
 }

@@ -7,6 +7,7 @@ import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
+import javax.swing.*;
 import java.io.IOException;
 
 public class ViewHandler {
@@ -31,6 +32,7 @@ public class ViewHandler {
             treatmentlog.init(vmf.getBase(), this);
             Scene treatmentLogScnene = new Scene(root);
             mainStage.setScene(treatmentLogScnene);
+            mainStage.setTitle("Nha Khoa 100E");
         }
         catch (IOException e){
             e.printStackTrace();
@@ -136,6 +138,22 @@ public class ViewHandler {
         }
         return null;
     }
+    public void openBaseViewPatient() {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("BaseView.fxml"));
+        try {
+            Parent root = loader.load();
+            BaseView base = loader.getController();
+            base.init(this);
+            Stage stage = new Stage();
+            stage.setTitle("View Patient");
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
     public void openBaseAddTreatmentImage() {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("BaseAddTreatmentImage.fxml"));
@@ -195,16 +213,15 @@ public class ViewHandler {
         }
         return null;
     }
-
-    public void openBaseViewPatient() {
+    public void openOpenImage() {
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("BaseView.fxml"));
+        loader.setLocation(getClass().getResource("OpenImage.fxml"));
         try {
             Parent root = loader.load();
-            BaseView base = loader.getController();
-            base.init(this);
+            OpenImage base = loader.getController();
+            base.init(vmf.getOpenImageVM(),this);
             Stage stage = new Stage();
-            stage.setTitle("View Patient");
+            stage.setTitle("Add Treatment");
             Scene scene = new Scene(root);
             stage.setScene(scene);
             stage.show();
@@ -212,4 +229,6 @@ public class ViewHandler {
             throw new RuntimeException(e);
         }
     }
+
+
 }

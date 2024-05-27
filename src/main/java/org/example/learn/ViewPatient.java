@@ -23,12 +23,14 @@ public class ViewPatient {
         this.viewVM = viewVM;
         this.viewHandler = viewHandler;
         labelName.textProperty().bindBidirectional(viewVM.nameProperty());
+        this.viewVM.setProductPaneList();
         scrollPane.setStyle("-fx-background-color: white;");
-        viewVM.loadDatabase();
+        viewVM.loadDatabase(this);
         anchorPane = getAnchorPane();
         scrollPane.setContent(anchorPane);
         showPicture();
     }
+
 
     public AnchorPane getAnchorPane(){
 
@@ -61,8 +63,11 @@ public class ViewPatient {
             }
         }
     }
-    @FXML
-    private void switchToDateCome(ActionEvent event) {
-        viewHandler.openViewPatientDateCome();
+    public void refreshImage() {
+        this.viewVM.setProductPaneList();
+        viewVM.loadDatabase(this);
+        anchorPane = getAnchorPane();
+        scrollPane.setContent(anchorPane);
+        showPicture();
     }
 }

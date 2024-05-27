@@ -7,8 +7,8 @@
     <children>
         <AnchorPane layoutY="-1.0" prefHeight="679.0" prefWidth="302.0" style="-fx-background-color: white;">
             <children>
-                <Button id="dashboardbutton" layoutX="30.0" layoutY="100.0" maxHeight="30.0" maxWidth="250.0" minHeight="30.0" minWidth="250.0" mnemonicParsing="false" onAction="#switchToAddNewLaboratory" prefHeight="30.0" prefWidth="250.0" stylesheets="@app.css" text="New Laboratory" />
-                <Button id="dashboardbuttonchoose" layoutX="30.0" layoutY="50.0" maxHeight="30.0" maxWidth="250.0" minHeight="30.0" minWidth="250.0" mnemonicParsing="false"  onAction="#switchToAddNewPatient" prefHeight="30.0" prefWidth="250.0" stylesheets="@app.css" text="New Patient" />
+                <Button id="dashboardbutton" fx:id="butttonlab" layoutX="30.0" layoutY="100.0" maxHeight="30.0" maxWidth="250.0" minHeight="30.0" minWidth="250.0" mnemonicParsing="false" onAction="#switchToAddNewLaboratory" prefHeight="30.0" prefWidth="250.0" stylesheets="@app.css" text="New Laboratory" />
+                <Button id="dashboardbutton" fx:id="buttonpatient" layoutX="30.0" layoutY="50.0" maxHeight="30.0" maxWidth="250.0" minHeight="30.0" minWidth="250.0" mnemonicParsing="false" onAction="#switchToAddNewPatient" prefHeight="30.0" prefWidth="250.0" stylesheets="@app.css" text="New Patient" />
             </children>
         </AnchorPane>
       <AnchorPane fx:id="anchorAdd" layoutX="302.0" layoutY="46.0" prefHeight="600.0" prefWidth="616.0" />

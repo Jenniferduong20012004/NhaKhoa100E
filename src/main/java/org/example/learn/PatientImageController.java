@@ -17,6 +17,7 @@ public class PatientImageController {
 
     @FXML
     private AnchorPane productInfoPane;
+    private ViewHandler viewHandler;
     @FXML
     public void onDeleteButtonClick(ActionEvent event) {
         viewVM.removeImage();
@@ -24,10 +25,12 @@ public class PatientImageController {
 
     @FXML
     public void onViewButtonClicked(ActionEvent event) {
+        viewVM.view();
+
     }
 
-    public void initImageInfo(int imageId, ViewPatientVM vm) throws SQLException {
-        viewVM = new PatientImageConVM(imageId, vm);
+    public void initImageInfo(int imageId, ViewPatientVM vm, ViewPatient view) throws SQLException {
+        viewVM = new PatientImageConVM(imageId, vm, view);
         txt_pName.textProperty().bindBidirectional(viewVM.dateTakeProperty());
         viewVM.loadDataFromImage(imgProd);
     }

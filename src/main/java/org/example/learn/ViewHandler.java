@@ -213,6 +213,22 @@ public class ViewHandler {
         }
         return null;
     }
+    public void openOpenImage() {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("OpenImage.fxml"));
+        try {
+            Parent root = loader.load();
+            OpenImage base = loader.getController();
+            base.init(vmf.getOpenImageVM(),this);
+            Stage stage = new Stage();
+            stage.setTitle("Add Treatment");
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
 
 
 }

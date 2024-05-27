@@ -5,48 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="01a30629-adf4-4571-9697-c07b86b80414" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/pictures/refresh.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ViewModel/PatientImageConVM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ViewModel/PatientImageConVM.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ViewModel/addNewImageVM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ViewModel/addNewImageVM.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/learn/AddTreatmentLog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/learn/AddTreatmentLog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/learn/Base.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/learn/Base.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/learn/BaseAdd.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/learn/BaseAdd.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/learn/BaseAddTreatmentImage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/learn/BaseAddTreatmentImage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/learn/BaseView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/learn/BaseView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/learn/OpenImage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/learn/OpenImage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/learn/PatientImageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/learn/PatientImageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/learn/Test.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/learn/ViewHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/learn/ViewHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/learn/ViewModelFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/learn/ViewModelFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/learn/ViewPatient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/learn/ViewPatient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/learn/ViewPatientVM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/learn/ViewPatientVM.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/util/NotificationImage.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/learn/Base.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/learn/Base.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/learn/BaseAdd.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/learn/BaseAdd.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/learn/BaseAddTreatmentImage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/learn/BaseAddTreatmentImage.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/learn/BaseView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/learn/BaseView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/learn/OpenImage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/learn/OpenImage.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/learn/ViewPatient.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/learn/ViewPatient.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/ViewModel/PatientImageConVM.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ViewModel/PatientImageConVM.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ViewModel/addNewImageVM.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ViewModel/addNewImageVM.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/learn/AddTreatmentLog.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/learn/AddTreatmentLog.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/learn/Base.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/learn/Base.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/learn/Base.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/learn/Base.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/learn/BaseAdd.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/learn/BaseAdd.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/learn/BaseAdd.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/learn/BaseAdd.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/learn/BaseAddTreatmentImage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/learn/BaseAddTreatmentImage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/learn/BaseAddTreatmentImage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/learn/BaseAddTreatmentImage.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/learn/BaseView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/learn/BaseView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/learn/BaseView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/learn/BaseView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/learn/OpenImage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/learn/OpenImage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/learn/OpenImage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/learn/OpenImage.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/learn/PatientImageController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/learn/PatientImageController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/learn/Test.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/learn/ViewHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/learn/ViewHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/learn/ViewPatient.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/learn/ViewPatient.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/learn/ViewPatient.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/learn/ViewPatient.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/learn/ViewPatientVM.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/learn/ViewPatientVM.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/util/NotificationImage.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -279,7 +247,10 @@
       <workItem from="1716693269991" duration="1975000" />
       <workItem from="1716716566754" duration="4331000" />
       <workItem from="1716722675046" duration="2754000" />
-      <workItem from="1716729636021" duration="4581000" />
+      <workItem from="1716729636021" duration="4723000" />
+      <workItem from="1716744033271" duration="797000" />
+      <workItem from="1716775887632" duration="7000" />
+      <workItem from="1716776738068" duration="3337000" />
     </task>
     <servers />
   </component>

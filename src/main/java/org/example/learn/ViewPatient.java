@@ -25,7 +25,7 @@ public class ViewPatient {
         labelName.textProperty().bindBidirectional(viewVM.nameProperty());
         this.viewVM.setProductPaneList();
         scrollPane.setStyle("-fx-background-color: white;");
-        viewVM.loadDatabase();
+        viewVM.loadDatabase(this);
         anchorPane = getAnchorPane();
         scrollPane.setContent(anchorPane);
         showPicture();
@@ -63,10 +63,9 @@ public class ViewPatient {
             }
         }
     }
-
-    public void refresh(ActionEvent event) {
+    public void refreshImage() {
         this.viewVM.setProductPaneList();
-        viewVM.loadDatabase();
+        viewVM.loadDatabase(this);
         anchorPane = getAnchorPane();
         scrollPane.setContent(anchorPane);
         showPicture();

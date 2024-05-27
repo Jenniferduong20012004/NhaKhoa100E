@@ -1,8 +1,10 @@
-package org.example.learn;
+package util;
 
 import ViewModel.*;
+import org.example.learn.ViewPatientVM;
 
 public class ViewModelFactory {
+    private EditPatientVM editPVM;
     private ViewPatientVM viewPatientVM;
     private TreatmentLogVM treatmentLogVM;
     private PatientPageVM patientPageVM;
@@ -14,6 +16,12 @@ public class ViewModelFactory {
     private ViewPatientDatecomeVM viewPatientDatecomeVM;
     private OpenImageVM openVM;
     private BaseVM baseVM;
+    public EditPatientVM getEditPVM(){
+        if (editPVM == null){
+            editPVM = new EditPatientVM();
+        }
+        return editPVM;
+    }
     public OpenImageVM getOpenImageVM(){
         if (openVM == null){
             openVM = new OpenImageVM();
@@ -43,7 +51,7 @@ public class ViewModelFactory {
 
     public PatientPageVM getPatientPageVM(){
         if (patientPageVM == null){
-            patientPageVM = new PatientPageVM(getAddNewTreatmentVM(), getAddNewImageVM(), getViewPatientVM(), getViewPatientDatecomeVM());
+            patientPageVM = new PatientPageVM(getAddNewTreatmentVM(), getAddNewImageVM(), getViewPatientVM(), getViewPatientDatecomeVM(), getEditPVM());
         }
         return patientPageVM;
     }

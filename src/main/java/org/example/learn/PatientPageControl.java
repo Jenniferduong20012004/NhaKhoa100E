@@ -69,13 +69,16 @@ public class PatientPageControl {
                             FXMLLoader addloader = new FXMLLoader(getClass().getResource("AddButton.fxml"));
                             FXMLLoader loader = new FXMLLoader(getClass().getResource("button.fxml"));
                             FXMLLoader viewloader = new FXMLLoader(getClass().getResource("ViewButton.fxml"));
+                            FXMLLoader editloader = new FXMLLoader(getClass().getResource("EditButton.fxml"));
                             final Button btn;
                             final Button add;
                             final Button view;
+                            final Button edit;
                             try {
                                 btn = loader.load();
                                 add = addloader.load();
                                 view = viewloader.load();
+                                edit = editloader.load();
                             } catch (IOException e) {
                                 throw new RuntimeException(e);
                             }
@@ -94,6 +97,9 @@ public class PatientPageControl {
                                             + "-glyph-size:28px;"
                                             + "-fx-background-color: transparent"
                             );
+                            edit.setStyle( " -fx-cursor: hand ;"
+                                    + "-glyph-size:28px;"
+                                    + "-fx-background-color: transparent");
                             add.setOnAction((ActionEvent event) -> {
                                 Patient c = getTableView().getItems().get(getIndex());
                                 addTreatment(c);
@@ -107,11 +113,16 @@ public class PatientPageControl {
                                 Patient c = getTableView().getItems().get(getIndex());
                                 view(c);
                             });
-                            HBox managebtn = new HBox(add, btn, view);
+                            edit.setOnAction((ActionEvent) ->{
+                                Patient c = getTableView().getItems().get(getIndex());
+                                editPatient(c);
+                            });
+                            HBox managebtn = new HBox(add, btn, view, edit);
                             managebtn.setStyle("-fx-alignment:center");
                             HBox.setMargin(add, new Insets(2, 2, 0, 3));
                             HBox.setMargin(btn, new Insets(2, 3, 0, 2));
                             HBox.setMargin(view, new Insets(2, 4, 0, 2));
+                            HBox.setMargin(edit, new Insets(2, 5, 0, 3));
                             setGraphic(managebtn);
                         }
                     }
@@ -131,9 +142,6 @@ public class PatientPageControl {
                 if (list.getName().toLowerCase().indexOf(searchKeyWord)>-1){
                     return true; //  found match in product name
                 }
-                else if (list.getContactNumber().toLowerCase().indexOf(searchKeyWord)>-1){
-                    return true;
-                }
                 else{
                     return false;
                 }
@@ -143,6 +151,11 @@ public class PatientPageControl {
         sortedData.comparatorProperty().bind(patients.comparatorProperty());
         patients.setItems(sortedData);
         }
+
+    private void editPatient(Patient c) {
+        patientpagevm.edit(c);
+        viewHandler.openEditPatient();
+    }
 
     private void view(Patient c) {
         patientpagevm.view(c);

@@ -18,8 +18,8 @@ public class PatientPageVM {
     private CallableStatement call = null;
     private ObservableList<Patient> list;
     private NotificationService notification;
-    public PatientPageVM (addTreatmentlogVM add, addNewImageVM img, ViewPatientVM view, ViewPatientDatecomeVM viewDatecome){
-        notification = new NotificationService(add, img, view, viewDatecome);
+    public PatientPageVM (addTreatmentlogVM add, addNewImageVM img, ViewPatientVM view, ViewPatientDatecomeVM viewDatecome, EditPatientVM edit){
+        notification = new NotificationService(add, img, view, viewDatecome, edit);
     }
     public void init(){
         list = FXCollections.observableArrayList();
@@ -70,4 +70,6 @@ public class PatientPageVM {
     public void view(Patient c) {
         notification.notify(c);
     }
+
+    public void edit(Patient c) {notification.notify(c);}
 }

@@ -19,17 +19,19 @@ public class PatientImageController {
     private AnchorPane productInfoPane;
     private ViewHandler viewHandler;
     @FXML
-    public void onDeleteButtonClick(ActionEvent event) {
+    private void onDeleteButtonClick(ActionEvent event) {
         viewVM.removeImage();
     }
 
     @FXML
-    public void onViewButtonClicked(ActionEvent event) {
+    private void onViewButtonClicked(ActionEvent event) {
         viewVM.view();
+        viewHandler.openOpenImage();
 
     }
 
-    public void initImageInfo(int imageId, ViewPatientVM vm, ViewPatient view) throws SQLException {
+    public void initImageInfo(int imageId, ViewPatientVM vm, ViewPatient view, ViewHandler viewHandler) throws SQLException {
+        this.viewHandler = viewHandler;
         viewVM = new PatientImageConVM(imageId, vm, view);
         txt_pName.textProperty().bindBidirectional(viewVM.dateTakeProperty());
         viewVM.loadDataFromImage(imgProd);

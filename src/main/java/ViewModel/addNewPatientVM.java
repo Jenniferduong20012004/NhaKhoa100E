@@ -15,9 +15,6 @@ public class addNewPatientVM {
     private BooleanProperty saveButtonDisabled;
     private Connection connection;
     private ResultSet rs = null;
-
-    private PreparedStatement pst = null;
-    private boolean update = false;
     public Patient patient =null;
     private CallableStatement call = null;
     private int patientId;

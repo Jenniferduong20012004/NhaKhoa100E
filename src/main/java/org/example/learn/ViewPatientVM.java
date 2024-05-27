@@ -36,7 +36,7 @@ public class ViewPatientVM {
         return productPaneList;
     }
 
-    public void loadDatabase(ViewPatient view) {
+    public void loadDatabase(ViewPatient view, ViewHandler viewHandler) {
         try {
             connection = JDBConnection.NhaKhoa100eConnect();
             call = connection.prepareCall("{call getPatientImage(?)}");
@@ -49,7 +49,7 @@ public class ViewPatientVM {
                 AnchorPane pane = loader.load();
                 productPaneList.add(pane);
                 PatientImageController controller = loader.getController();
-                controller.initImageInfo(imageId, this, view );
+                controller.initImageInfo(imageId, this, view, viewHandler);
             }
         } catch (Exception e) {
             e.printStackTrace();

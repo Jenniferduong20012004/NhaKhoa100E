@@ -21,6 +21,7 @@ public class addNewPatient{
     @FXML
     private void getInformation (ActionEvent event) throws SQLException {
         addNewpatientvm.saveInformation();
+        viewHandler.openViewPatient();
     }
     @FXML
     private void Cancel(ActionEvent event){

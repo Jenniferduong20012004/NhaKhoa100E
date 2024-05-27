@@ -80,6 +80,8 @@ public class AddTreatmentLog {
             }
             addTreatmentlogVM.clear();
             resetPage();
+        Stage currentStage = (Stage) textArea.getScene().getWindow();
+        currentStage.close();
     }
 
     private void resetPage() {

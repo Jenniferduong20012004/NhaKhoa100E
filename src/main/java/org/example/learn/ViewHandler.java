@@ -1,13 +1,12 @@
 package org.example.learn;
 
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import util.ViewModelFactory;
 
-import javax.swing.*;
 import java.io.IOException;
 
 public class ViewHandler {
@@ -222,6 +221,22 @@ public class ViewHandler {
             base.init(vmf.getOpenImageVM(),this);
             Stage stage = new Stage();
             stage.setTitle("Add Treatment");
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    public void openEditPatient(){
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("EditPatient.fxml"));
+        try {
+            Parent root = loader.load();
+            EditPatient base = loader.getController();
+            base.init(vmf.getEditPVM(),this);
+            Stage stage = new Stage();
+            stage.setTitle("Edit Patient");
             Scene scene = new Scene(root);
             stage.setScene(scene);
             stage.show();

@@ -1,5 +1,6 @@
 package util;
 import Entity.Patient;
+import ViewModel.EditPatientVM;
 import ViewModel.ViewPatientDatecomeVM;
 import org.example.learn.ViewPatientVM;
 import ViewModel.addTreatmentlogVM;
@@ -10,11 +11,13 @@ public class NotificationService {
     private addNewImageVM addNewImageVM;
     private ViewPatientVM view;
     private ViewPatientDatecomeVM viewDatecome;
-    public NotificationService(addTreatmentlogVM add, addNewImageVM image, ViewPatientVM view,ViewPatientDatecomeVM viewDatecom){
+    private EditPatientVM edit;
+    public NotificationService(addTreatmentlogVM add, addNewImageVM image, ViewPatientVM view,ViewPatientDatecomeVM viewDatecome, EditPatientVM edit){
         this.add = add;
         this.addNewImageVM = image;
         this.view = view;
-        this.viewDatecome = viewDatecom;
+        this.viewDatecome = viewDatecome;
+        this.edit = edit;
     }
 
     public void notify(Patient c) {
@@ -22,5 +25,6 @@ public class NotificationService {
         addNewImageVM.addImageWithPatientInformation (c);
         view.viewImageWithPatientInformation(c);
         viewDatecome.viewWithPatientInformation(c);
+        edit.editWithPatientInformation(c);
     }
 }

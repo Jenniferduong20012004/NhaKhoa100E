@@ -11,10 +11,10 @@
         <TableView fx:id="patients" layoutX="10.0" layoutY="60.0" maxHeight="613.0" maxWidth="929.0" minHeight="613.0" minWidth="929.0" prefHeight="613.0" prefWidth="929.0" style="-fx-background-color: white;" stylesheets="@app.css">
             <columns>
                 <TableColumn fx:id="id" maxWidth="90.0" minWidth="90.0" prefWidth="90.0" text="Patient ID" />
-                <TableColumn fx:id="PatientName" maxWidth="240.0" minWidth="240.0" prefWidth="240.0" text="Patient Name" />
+                <TableColumn fx:id="PatientName" maxWidth="230.0" minWidth="230.0" prefWidth="230.0" text="Patient Name" />
                 <TableColumn fx:id="PatientContactNumber" maxWidth="150.0" minWidth="150.0" prefWidth="150.0" text="Contact Number" />
                 <TableColumn fx:id="AddressPatient" maxWidth="200.0" minWidth="200.0" prefWidth="200.0" text="Address" />
-            <TableColumn fx:id="Action" maxWidth="280.0" minWidth="280.0" prefWidth="280.0" text="Action" />
+            <TableColumn fx:id="Action" maxWidth="245.0" minWidth="245.0" prefWidth="245.0" text="Action" />
             </columns>
         </TableView>
         <TextField fx:id="search" layoutX="10.0" layoutY="10.0" maxHeight="32.0" maxWidth="750.0" minHeight="32.0" minWidth="750.0" prefHeight="32.0" prefWidth="750.0" promptText="Search..." />

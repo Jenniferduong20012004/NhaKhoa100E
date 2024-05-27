@@ -1,16 +1,21 @@
 package ViewModel;
 
 import Entity.Patient;
+import SQL.JDBConnection;
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import org.example.learn.EditPatient;
 
+import javax.swing.*;
+import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 
 public class EditPatientVM {
+    private CallableStatement call = null;
     private StringProperty name, address, contactNumber, saveResponse;
     private BooleanProperty saveButtonDisabled;
     private Connection connection;
@@ -58,8 +63,33 @@ public class EditPatientVM {
 
     public void editWithPatientInformation(Patient c) {
         this.patient = c;
-        name.set(c.getName());
-        address.set(c.getAddress());
-        contactNumber.set(c.getContactNumber());
+        name.set(patient.getName());
+        address.set(patient.getAddress());
+        contactNumber.set(patient.getContactNumber());
+    }
+
+    public void clear() {
+        name.set(patient.getName());
+        address.set(patient.getAddress());
+        contactNumber.set(patient.getContactNumber());
+    }
+
+    public void edit() {
+        try{
+            connection = JDBConnection.NhaKhoa100eConnect();
+            call = connection.prepareCall("{call updatePatient(?,?,?, ?)}");
+            call.setInt(1, patient.getId());
+            call.setNString(2, name.get());
+            call.setNString(3, contactNumber.get());
+            call.setNString(4, address.get());
+            call.execute();
+            rs = call.getResultSet();
+            JOptionPane.showMessageDialog(null, "Update successfully");
+            clear();
+            call.close();
+            connection.close();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 }

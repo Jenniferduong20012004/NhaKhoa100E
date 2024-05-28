@@ -5,14 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="01a30629-adf4-4571-9697-c07b86b80414" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/CircularDoublyLinkList/DoublyCircularLinkList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/CircularDoublyLinkList/Node.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Entity/Picture.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ViewModel/EditPatientVM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ViewModel/EditPatientVM.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/learn/AddTreatmentLog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/learn/AddTreatmentLog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/learn/EditPatient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/learn/EditPatient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/learn/addNewPatient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/learn/addNewPatient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/learn/PatientLog.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/learn/PatientLog.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ViewModel/EditPatientVM.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ViewModel/EditPatientVM.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/learn/EditPatient.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/learn/EditPatient.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/learn/addNewPatient.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/learn/addNewPatient.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +24,7 @@
         <option value="Kotlin Class" />
         <option value="Interface" />
         <option value="FxmlFile" />
+        <option value="package-info" />
         <option value="Class" />
       </list>
     </option>
@@ -249,7 +247,8 @@
       <workItem from="1716744033271" duration="797000" />
       <workItem from="1716775887632" duration="7000" />
       <workItem from="1716776738068" duration="7070000" />
-      <workItem from="1716819146521" duration="8652000" />
+      <workItem from="1716819146521" duration="8854000" />
+      <workItem from="1716861098640" duration="1759000" />
     </task>
     <servers />
   </component>

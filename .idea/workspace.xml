@@ -5,11 +5,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="01a30629-adf4-4571-9697-c07b86b80414" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/CircularDoublyLinkList/DoublyCircularLinkList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/CircularDoublyLinkList/Node.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Entity/Picture.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/learn/addNewPatient.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/learn/addNewPatient.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CircularDoublyLinkList/DoublyCircularLinkList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CircularDoublyLinkList/DoublyCircularLinkList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Entity/Patient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Entity/Patient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Entity/Picture.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Entity/Picture.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Entity/Treatment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Entity/Treatment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ViewModel/addNewImageVM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ViewModel/addNewImageVM.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ViewModel/addNewPatientVM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ViewModel/addNewPatientVM.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ViewModel/addTreatmentlogVM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ViewModel/addTreatmentlogVM.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/learn/Treatmentlog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/learn/Treatmentlog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/learn/ViewPatientVM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/learn/ViewPatientVM.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/learn/addNewImage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/learn/addNewImage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/util/ViewModelFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/util/ViewModelFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Entity/Patient.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Entity/Patient.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Entity/Picture.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Entity/Picture.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Entity/Treatment.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Entity/Treatment.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ViewModel/addNewImageVM.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ViewModel/addNewImageVM.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ViewModel/addNewPatientVM.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ViewModel/addNewPatientVM.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ViewModel/addTreatmentlogVM.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ViewModel/addTreatmentlogVM.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/learn/Treatmentlog$1$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/learn/Treatmentlog$1$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/learn/Treatmentlog$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/learn/Treatmentlog$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/learn/Treatmentlog.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/learn/Treatmentlog.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/learn/ViewPatientVM.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/learn/ViewPatientVM.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/util/ViewModelFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/util/ViewModelFactory.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -248,7 +266,11 @@
       <workItem from="1716775887632" duration="7000" />
       <workItem from="1716776738068" duration="7070000" />
       <workItem from="1716819146521" duration="8854000" />
-      <workItem from="1716861098640" duration="1759000" />
+      <workItem from="1716861098640" duration="6279000" />
+      <workItem from="1716877334964" duration="2431000" />
+      <workItem from="1716902616294" duration="5275000" />
+      <workItem from="1716959595267" duration="2568000" />
+      <workItem from="1716997719043" duration="2955000" />
     </task>
     <servers />
   </component>
@@ -271,7 +293,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/example/learn/Treatmentlog.java</url>
-          <line>87</line>
+          <line>105</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>

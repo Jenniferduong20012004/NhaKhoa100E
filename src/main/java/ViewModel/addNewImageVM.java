@@ -181,8 +181,7 @@ public class addNewImageVM {
         filePaths.push(HelpMethods.chooseFile(image1));
     }
     public void chooseFile2() {
-        filePaths.push(HelpMethods.chooseFile(image2));
-    }
+        filePaths.push(HelpMethods.chooseFile(image2));    }
     public void chooseFile3() {
         filePaths.push(HelpMethods.chooseFile(image3));
     }
@@ -212,18 +211,26 @@ public class addNewImageVM {
                 connection = JDBConnection.NhaKhoa100eConnect();
                 call = connection.prepareCall("{call insertImage(?,?,?)}");
                 call.setInt(1, patient.getId());
-                JOptionPane.showMessageDialog(null,filePaths.size());
                 call.setDate(2, dateToday);
-                call.setBytes(3, filePaths.pop());
-                JOptionPane.showMessageDialog(null,filePaths.size());
+                byte[] pic = filePaths.pop();
+                call.setBytes(3, pic);
                 call.execute();
-                rs = call.getResultSet();
-                clear();
                 call.close();
                 connection.close();
             } catch (SQLException e) {
                 throw new RuntimeException(e);
             }
         }
+        clearFilePath();
+    }
+
+    public void clearFilePath() {
+        image1.set("");
+        image2.set("");
+        image3.set("");
+        image4.set("");
+        image5.set("");
+        image6.set("");
+        image7.set("");
     }
 }

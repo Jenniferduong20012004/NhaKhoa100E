@@ -8,8 +8,10 @@ import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Insets;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.HBox;
 import javafx.util.Callback;
 
 import java.io.IOException;
@@ -56,9 +58,12 @@ public class Treatmentlog {
                             setText(null);
                         } else {
                             FXMLLoader loader = new FXMLLoader(getClass().getResource("button.fxml"));
+                            FXMLLoader editloader = new FXMLLoader(getClass().getResource("EditButton.fxml"));
                             final Button btn;
+                            final Button editButton;
                             try {
                                 btn = loader.load();
+                                editButton = editloader.load();
                             } catch (IOException e) {
                                 throw new RuntimeException(e);
                             }
@@ -68,13 +73,26 @@ public class Treatmentlog {
                                             + "-fx-alignment: BASELINE_CENTER;" +
                                             "-fx-background-color: transparent"
                             );
+                            editButton.setStyle(
+                                    " -fx-cursor: hand ;"
+                                            + "-glyph-size:28px;"
+                                            + "-fx-alignment: BASELINE_CENTER;" +
+                                            "-fx-background-color: transparent"
+                            );
+                            editButton.setOnAction((ActionEvent event) -> {
+                                Treatment c = getTableView().getItems().get(getIndex());
+                                editTreat(c);
+                            });
                             btn.setOnAction((ActionEvent event) -> {
                                 Treatment c = getTableView().getItems().get(getIndex());
                                 treatmentLogVm.removeRecord(c);
                                 treatmentTable.setItems(treatmentLogVm.getTreatmentList());
-                                setGraphic(btn);
                             });
-                            setGraphic(btn);
+                            HBox managebtn = new HBox(btn, editButton);
+                            managebtn.setStyle("-fx-alignment:center");
+                            HBox.setMargin(btn, new Insets(2, 2, 0, 3));
+                            HBox.setMargin(editButton, new Insets(2, 3, 0, 2));
+                            setGraphic(managebtn);
                         }
                     }
                 };
@@ -107,5 +125,8 @@ public class Treatmentlog {
         SortedList<Treatment> sortedData = new SortedList<>(filter);
         sortedData.comparatorProperty().bind(treatmentTable.comparatorProperty());
         treatmentTable.setItems(sortedData);
+    }
+
+    private void editTreat(Treatment c) {
     }
 }

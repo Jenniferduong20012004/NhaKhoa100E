@@ -1,5 +1,6 @@
 package util;
 
+import Entity.Patient;
 import ViewModel.*;
 import org.example.learn.ViewPatientVM;
 

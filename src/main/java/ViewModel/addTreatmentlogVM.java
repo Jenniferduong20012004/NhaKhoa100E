@@ -125,7 +125,6 @@ public class addTreatmentlogVM {
                 call.setString(2,description.get());
                 call.setDate(3, dateToday);
                 call.execute();
-                JOptionPane.showMessageDialog(null, patient.getId());
                 JOptionPane.showMessageDialog(null, "Save data successfully");
                 connection.close();
                 call.close();

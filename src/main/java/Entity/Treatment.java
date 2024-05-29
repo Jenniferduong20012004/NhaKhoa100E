@@ -6,25 +6,17 @@ public class Treatment {
     private String patientName;
     private String description;
     private String Date;
-    private Button removeButton;
     private int patientId;
-    private Button viewButton;
     public Treatment (int patientId, String patientName, String description, String Date){
         this.patientId = patientId;
         this.patientName = patientName;
         this.description = description;
         this.Date = Date;
-        removeButton = new Button();
-        viewButton = new Button();
     }
 
 
     public int getPatientId() {
         return patientId;
-    }
-
-    public Button getRemoveButton() {
-        return removeButton;
     }
 
     public String getPatientName() {

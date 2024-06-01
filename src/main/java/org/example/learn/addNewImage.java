@@ -66,7 +66,7 @@ public class addNewImage {
     }
     @FXML
     private void Cancel(ActionEvent event) {
-        addNewImageVM.clear();
+        addNewImageVM.clearFilePath();
     }
 
     @FXML

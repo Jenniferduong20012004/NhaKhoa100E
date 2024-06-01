@@ -58,4 +58,7 @@ public class TreatmentLogVM {
         }
         loadDataFromDatabase();
     }
+
+    public void edit(Treatment c) {
+    }
 }

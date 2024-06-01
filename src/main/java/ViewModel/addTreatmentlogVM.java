@@ -20,7 +20,6 @@ public class addTreatmentlogVM {
     private ResultSet rs = null;
     private CallableStatement call = null;
     private boolean visibleButton = false;
-    private boolean checkedData = false;
     private String Date;
     private Date dateToday;
     private Patient patient;
@@ -125,7 +124,6 @@ public class addTreatmentlogVM {
                 call.setString(2,description.get());
                 call.setDate(3, dateToday);
                 call.execute();
-                JOptionPane.showMessageDialog(null, patient.getId());
                 JOptionPane.showMessageDialog(null, "Save data successfully");
                 connection.close();
                 call.close();

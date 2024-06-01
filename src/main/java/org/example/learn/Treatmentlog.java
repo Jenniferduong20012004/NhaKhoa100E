@@ -128,5 +128,7 @@ public class Treatmentlog {
     }
 
     private void editTreat(Treatment c) {
+        treatmentLogVm.edit(c);
+        viewHandler.openEditTreatment();
     }
 }

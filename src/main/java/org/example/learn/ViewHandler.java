@@ -246,4 +246,20 @@ public class ViewHandler {
     }
 
 
+    public void openEditTreatment() {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("EditTreatment.fxml"));
+        try {
+            Parent root = loader.load();
+            EditTreatment base = loader.getController();
+            base.init(vmf.getEditTreatment(),this);
+            Stage stage = new Stage();
+            stage.setTitle("Edit Patient");
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }

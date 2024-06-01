@@ -17,6 +17,7 @@ public class ViewModelFactory {
     private ViewPatientDatecomeVM viewPatientDatecomeVM;
     private OpenImageVM openVM;
     private BaseVM baseVM;
+    private EditTreatmentVM editTVM;
     public EditPatientVM getEditPVM(){
         if (editPVM == null){
             editPVM = new EditPatientVM();
@@ -94,5 +95,12 @@ public class ViewModelFactory {
             baseVM= new BaseVM ();
         }
         return baseVM;
+    }
+
+    public EditTreatmentVM getEditTreatment() {
+        if(editTVM == null){
+            editTVM = new EditTreatmentVM();
+        }
+        return  editTVM;
     }
 }

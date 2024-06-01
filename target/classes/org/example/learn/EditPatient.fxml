@@ -9,7 +9,7 @@
     <children>
         <Button fx:id="saveButton" layoutX="286.0" layoutY="600.0" maxHeight="36.0" maxWidth="117.0" minHeight="36.0" minWidth="117.0" mnemonicParsing="false" onAction="#getInformation" prefHeight="36.0" prefWidth="117.0" stylesheets="@app.css" text="Save" textFill="WHITE" />
         <Button id="cancelButton" fx:id="saveButton1" layoutX="442.0" layoutY="600.0" maxHeight="36.0" maxWidth="117.0" minHeight="36.0" minWidth="117.0" mnemonicParsing="false" onAction="#Cancel" prefHeight="36.0" prefWidth="117.0" stylesheets="@app.css" text="Cancel" textFill="WHITE" />
-        <AnchorPane id="frame" layoutX="40.0" layoutY="40.0" maxHeight="528.0" maxWidth="700.0" minHeight="528.0" minWidth="616.0" prefHeight="528.0" prefWidth="616.0" style="-fx-border-color: #000000;" stylesheets="@app.css">
+        <AnchorPane id="frame" layoutX="40.0" layoutY="40.0" maxHeight="528.0" maxWidth="616.0" minHeight="528.0" minWidth="616.0" prefHeight="528.0" prefWidth="616.0" style="-fx-border-color: #000000;" stylesheets="@app.css">
             <children>
                 <Label id="labelNewPatient" layoutX="48.0" layoutY="19.0" stylesheets="@app.css" text="Edit Patient" />
                 <Label id="normalLabel" layoutX="48.0" layoutY="136.0" stylesheets="@app.css" text="Contact number" />

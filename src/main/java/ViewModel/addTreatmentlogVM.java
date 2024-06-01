@@ -20,7 +20,6 @@ public class addTreatmentlogVM {
     private ResultSet rs = null;
     private CallableStatement call = null;
     private boolean visibleButton = false;
-    private boolean checkedData = false;
     private String Date;
     private Date dateToday;
     private Patient patient;

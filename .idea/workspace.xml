@@ -5,9 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="01a30629-adf4-4571-9697-c07b86b80414" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/ViewModel/TreatmentLogVM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ViewModel/TreatmentLogVM.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/learn/ViewHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/learn/ViewHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/util/ViewModelFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/util/ViewModelFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/learn/addLaboratory.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/learn/addLaboratory.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -271,7 +270,7 @@
       <workItem from="1725355411722" duration="2587000" />
       <workItem from="1725769745915" duration="5092000" />
       <workItem from="1725798563686" duration="546000" />
-      <workItem from="1725807653583" duration="331000" />
+      <workItem from="1725807653583" duration="827000" />
     </task>
     <servers />
   </component>

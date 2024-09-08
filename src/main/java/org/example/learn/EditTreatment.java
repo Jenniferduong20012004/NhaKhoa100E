@@ -85,6 +85,8 @@ public class EditTreatment {
     public void init(EditTreatmentVM editPVM, ViewHandler viewHandler) {
         this.editTreatmentVM = editPVM;
         this.viewHandler=viewHandler;
-
+        textField1.textProperty().bindBidirectional(editTreatmentVM.nameProperty());
+        textArea.textProperty().bindBidirectional(editTreatmentVM.descriptionProperty());
+        datePicler.valueProperty().bindBidirectional(editTreatmentVM.dateProperty());
     }
 }

@@ -40,8 +40,6 @@ public class Treatmentlog {
         setCellTable();
     }
 
-
-
     private void setCellTable() {
         NameColumn.setCellValueFactory(new PropertyValueFactory<>("patientName"));
         DateColumn.setCellValueFactory(new PropertyValueFactory<>("Date"));

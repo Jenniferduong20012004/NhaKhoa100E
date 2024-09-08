@@ -52,20 +52,6 @@ public class ViewHandler {
         }
         return null;
     }
-    public AnchorPane openBaseAdd(){
-        FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("BaseAdd.fxml"));
-        try{
-            AnchorPane newContent = loader.load();
-            BaseAdd addNewPatient =  loader.getController();
-            addNewPatient.init(this);
-            return newContent;
-        }
-        catch (IOException e){
-            e.printStackTrace();
-        }
-        return null;
-    }
     public AnchorPane openPatient(){
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("PatientLog.fxml"));
@@ -80,6 +66,21 @@ public class ViewHandler {
         }
         return null;
     }
+    public AnchorPane openBaseAdd(){
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("BaseAdd.fxml"));
+        try{
+            AnchorPane newContent = loader.load();
+            BaseAdd addNewPatient =  loader.getController();
+            addNewPatient.init(this);
+            return newContent;
+        }
+        catch (IOException e){
+            e.printStackTrace();
+        }
+        return null;
+    }
+
     public AnchorPane openEquipment(){
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("equipment.fxml"));
@@ -252,7 +253,7 @@ public class ViewHandler {
         try {
             Parent root = loader.load();
             EditTreatment base = loader.getController();
-            base.init(vmf.getEditTreatment(),this);
+            base.init(vmf.getEditTreatmentVM(),this);
             Stage stage = new Stage();
             stage.setTitle("Edit Patient");
             Scene scene = new Scene(root);

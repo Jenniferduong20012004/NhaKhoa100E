@@ -6,9 +6,9 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="679.0" maxWidth="949.0" minHeight="679.0" minWidth="949.0" prefHeight="679.0" prefWidth="949.0" styleClass="parent" stylesheets="@app.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.learn.Treatmentlog">
+<AnchorPane maxHeight="400.0" maxWidth="949.0" minHeight="400.0" minWidth="949.0" prefHeight="400.0" prefWidth="949.0" styleClass="parent" stylesheets="@app.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.learn.Treatmentlog">
     <children>
-      <TableView fx:id="treatmentTable" layoutX="10.0" layoutY="60.0" maxHeight="613.0" maxWidth="929.0" minHeight="613.0" minWidth="929.0" prefHeight="613.0" prefWidth="929.0">
+      <TableView fx:id="treatmentTable" layoutX="10.0" layoutY="60.0" maxHeight="400.0" maxWidth="929.0" minHeight="400.0" minWidth="929.0" prefHeight="400.0" prefWidth="929.0">
         <columns>
           <TableColumn fx:id="DateColumn" prefWidth="171.0" text="Date" />
           <TableColumn fx:id="NameColumn" prefWidth="250.0" text="Name" />

@@ -1,7 +1,4 @@
 package org.example.learn;
-
-import CircularDoublyLinkList.DoublyCircularLinkList;
-import CircularDoublyLinkList.Node;
 import Entity.Patient;
 import Entity.Picture;
 import SQL.JDBConnection;
@@ -25,11 +22,7 @@ public class ViewPatientVM {
     private Patient patient;
     private StringProperty name;
     private List<AnchorPane> productPaneList;
-    private DoublyCircularLinkList linkList;
 
-    public Node getLinkList() {
-        return linkList.getHead();
-    }
 
     public void setProductPaneList() {
         this.productPaneList.clear();
@@ -38,7 +31,6 @@ public class ViewPatientVM {
     public ViewPatientVM (){
         name = new SimpleStringProperty();
         productPaneList =  new ArrayList<AnchorPane>();
-        linkList = new DoublyCircularLinkList();
     }
 
     public List<AnchorPane> getProductPaneList() {
@@ -56,7 +48,6 @@ public class ViewPatientVM {
                 int imageId = rs.getInt("iId");
                 byte[] imgData = rs.getBytes("pImage");
                 Picture picture = new Picture(imageId, imgData);
-                linkList.insert(picture);
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("PatientImage.fxml"));
                 AnchorPane pane = loader.load();
                 productPaneList.add(pane);

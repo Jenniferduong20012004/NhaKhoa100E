@@ -59,7 +59,7 @@ public class ViewModelFactory {
     }
     public TreatmentLogVM getTreatmentLogVM(){
         if (treatmentLogVM == null){
-            treatmentLogVM = new TreatmentLogVM();
+            treatmentLogVM = new TreatmentLogVM(getEditTreatmentVM());
         }
         return treatmentLogVM;
     }
@@ -97,7 +97,7 @@ public class ViewModelFactory {
         return baseVM;
     }
 
-    public EditTreatmentVM getEditTreatment() {
+    public EditTreatmentVM getEditTreatmentVM() {
         if(editTVM == null){
             editTVM = new EditTreatmentVM();
         }

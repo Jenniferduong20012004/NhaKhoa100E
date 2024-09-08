@@ -6,6 +6,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import org.example.learn.Equipment;
 import org.example.learn.Treatmentlog;
+import util.NotiTreatmentFix;
 
 import java.sql.*;
 import java.util.logging.Level;
@@ -13,10 +14,14 @@ import java.util.logging.Logger;
 
 public class TreatmentLogVM {
     private Connection connection = null;
+    private NotiTreatmentFix notification;
     private ResultSet rs = null;
     private PreparedStatement pst = null;
     private ObservableList<Treatment> treatmentList;
     private CallableStatement call = null;
+    public TreatmentLogVM (EditTreatmentVM edit){
+        notification = new NotiTreatmentFix (edit);
+    }
     public void init(){
         treatmentList = FXCollections.observableArrayList();
         connection = JDBConnection.NhaKhoa100eConnect();
@@ -60,5 +65,6 @@ public class TreatmentLogVM {
     }
 
     public void edit(Treatment c) {
+        notification.notify(c);
     }
 }

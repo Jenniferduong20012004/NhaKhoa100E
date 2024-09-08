@@ -253,7 +253,7 @@ public class ViewHandler {
         try {
             Parent root = loader.load();
             EditTreatment base = loader.getController();
-            base.init(vmf.getEditTreatment(),this);
+            base.init(vmf.getEditTreatmentVM(),this);
             Stage stage = new Stage();
             stage.setTitle("Edit Patient");
             Scene scene = new Scene(root);

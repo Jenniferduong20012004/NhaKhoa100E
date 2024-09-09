@@ -3,6 +3,8 @@ package org.example.learn;
 import Entity.Patient;
 import Entity.Treatment;
 import ViewModel.TreatmentLogVM;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
 import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
@@ -11,13 +13,17 @@ import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 import javafx.util.Callback;
 
 import java.io.IOException;
 import java.util.Date;
 
 public class Treatmentlog {
+    @FXML
+    private  Pagination pagination;
     @FXML
     private TextField search;
     @FXML
@@ -30,14 +36,23 @@ public class Treatmentlog {
     private TableColumn<Treatment, Date> DateColumn;
     @FXML
     private TableColumn<Treatment, String> Action;
+    private int PAGE_SIZE = 7;
     private TreatmentLogVM treatmentLogVm;
     private ViewHandler viewHandler;
     public void init(TreatmentLogVM treatmentLogVm, ViewHandler viewHandler){
         this.treatmentLogVm = treatmentLogVm;
         this.viewHandler = viewHandler;
         treatmentLogVm.init();
-        treatmentTable.setItems(treatmentLogVm.getTreatmentList());
         setCellTable();
+        pagination.setPageFactory(this::createPage);
+        pagination.setPageCount((int) Math.ceil( (double)(treatmentLogVm.getTreatmentList().size() / PAGE_SIZE)));
+    }
+    private TableView<Treatment> createPage(int pageIndex) {
+        int start = pageIndex * PAGE_SIZE;
+        int end = Math.min(start + PAGE_SIZE, treatmentLogVm.getTreatmentList().size());
+        ObservableList<Treatment> pageData = FXCollections.observableArrayList(treatmentLogVm.getTreatmentList().subList(start, end));
+        treatmentTable.setItems(pageData);
+        return treatmentTable;
     }
 
     private void setCellTable() {
